@@ -48,7 +48,8 @@ const HeroSection = () => {
           "-right-8",
           "text-deco",
           "font-sans",
-          "md:right-8",
+          "md:right-4",
+          "lg:right-8",
           "select-none",
           "leading-none",
           "font-extrabold",
@@ -69,10 +70,12 @@ const HeroSection = () => {
         className={classNames(
           "w-px",
           "top-0",
-          "left-8",
+          "left-4",
           "bottom-0",
           "absolute",
-          "md:left-16",
+          "sm:left-6",
+          "md:left-10",
+          "lg:left-16",
           "origin-top",
           "bg-red/30",
         )}
@@ -82,10 +85,15 @@ const HeroSection = () => {
         style={{ y: heroY, opacity: heroOpacity }}
         className={classNames(
           "z-10",
-          "px-12",
-          "md:px-24",
+          "px-8",
+          "w-full",
+          "sm:px-12",
+          "md:px-20",
+          "lg:px-28",
+          "xl:px-36",
           "relative",
           "max-w-7xl",
+          "2xl:max-w-352",
         )}
       >
         {/* Eyebrow */}
@@ -93,7 +101,13 @@ const HeroSection = () => {
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.7 }}
-          className={classNames("flex", "items-center", "gap-3", "mb-8")}
+          className={classNames(
+            "flex",
+            "items-center",
+            "gap-3",
+            "mb-6",
+            "md:mb-8",
+          )}
         >
           <span
             className={classNames(
@@ -136,7 +150,7 @@ const HeroSection = () => {
           </motion.h1>
         </div>
 
-        {/* Subtitle row — asymmetric split */}
+        {/* Subtitle row */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -144,7 +158,8 @@ const HeroSection = () => {
           className={classNames(
             "flex",
             "gap-8",
-            "mt-10",
+            "mt-6",
+            "md:mt-10",
             "flex-col",
             "md:flex-row",
             "md:items-end",
@@ -159,6 +174,7 @@ const HeroSection = () => {
               "font-light",
               "text-white/40",
               "leading-relaxed",
+              "lg:max-w-md",
             )}
           >
             I build production-grade systems — microservices, cross-platform
@@ -220,10 +236,14 @@ const HeroSection = () => {
           transition={{ delay: 1.1, duration: 0.7 }}
           className={classNames(
             "flex",
-            "pt-10",
-            "mt-14",
-            "gap-10",
+            "pt-8",
+            "mt-10",
+            "gap-8",
             "border-t",
+            "md:pt-10",
+            "md:mt-14",
+            "sm:gap-10",
+            "lg:gap-16",
             "border-white/[0.07]",
           )}
         >
@@ -235,7 +255,9 @@ const HeroSection = () => {
             <div key={label}>
               <div
                 className={classNames(
-                  "text-3xl",
+                  "text-2xl",
+                  "sm:text-3xl",
+                  "lg:text-4xl",
                   "font-sans",
                   "text-white",
                   "leading-none",
@@ -261,7 +283,7 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
 
-      {/* Scroll cue */}
+      {/* Scroll cue — hidden on mobile to reduce clutter */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -269,7 +291,8 @@ const HeroSection = () => {
         aria-hidden="true"
         className={classNames(
           "gap-2",
-          "flex",
+          "hidden",
+          "sm:flex",
           "flex-col",
           "absolute",
           "right-10",

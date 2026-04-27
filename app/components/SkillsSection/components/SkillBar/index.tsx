@@ -35,7 +35,10 @@ const SkillBar = ({ skill, index }: SkillBarProps) => {
       <div className={classNames("flex-1", "flex", "items-center", "gap-4")}>
         <span
           className={classNames(
-            "w-52",
+            "w-28",
+            "sm:w-36",
+            "md:w-44",
+            "lg:w-52",
             "text-sm",
             "shrink-0",
             "font-sans",

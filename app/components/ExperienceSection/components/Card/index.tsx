@@ -64,7 +64,8 @@ const ExperienceCard = ({
             <div>
               <h3
                 className={classNames(
-                  "text-xl",
+                  "text-lg",
+                  "md:text-xl",
                   "font-sans",
                   "font-bold",
                   "leading-tight",
@@ -161,7 +162,7 @@ const ExperienceCard = ({
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className={classNames("overflow-hidden")}
           >
-            <ul className={classNames("pl-12", "pb-8", "space-y-3")}>
+            <ul className={classNames("pl-8", "md:pl-12", "pb-8", "space-y-3")}>
               {exp.bullets.map((b, i) => (
                 <li
                   key={i}

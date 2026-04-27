@@ -19,15 +19,15 @@ const SkillsSection = () => {
   return (
     <section
       aria-label="Technical skills"
-      className={classNames("py-32", "min-h-screen", "bg-surface")}
+      className={classNames("py-16", "sm:py-24", "lg:py-32", "min-h-screen", "bg-surface")}
     >
-      <div className={classNames("max-w-5xl", "mx-auto", "px-8", "md:px-16")}>
+      <div className={classNames("max-w-5xl", "mx-auto", "px-6", "sm:px-8", "md:px-16", "2xl:max-w-6xl")}>
         <motion.div
           ref={ref}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className={classNames("mb-16")}
+          className={classNames("mb-10", "md:mb-16")}
         >
           <span
             className={classNames(
@@ -43,7 +43,9 @@ const SkillsSection = () => {
           <h2
             className={classNames(
               "mt-2",
-              "text-5xl",
+              "text-3xl",
+              "sm:text-4xl",
+              "md:text-5xl",
               "font-sans",
               "text-white",
               "leading-none",

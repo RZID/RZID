@@ -16,15 +16,15 @@ const ContactSection = () => {
   return (
     <section
       aria-label="Contact"
-      className={classNames("py-32", "min-h-screen", "bg-bg")}
+      className={classNames("py-16", "sm:py-24", "lg:py-32", "min-h-screen", "bg-bg")}
     >
-      <div className={classNames("max-w-5xl", "mx-auto", "px-8", "md:px-16")}>
+      <div className={classNames("max-w-5xl", "mx-auto", "px-6", "sm:px-8", "md:px-16", "2xl:max-w-6xl")}>
         <motion.div
           ref={ref}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className={classNames("mb-20")}
+          className={classNames("mb-12", "md:mb-20")}
         >
           <span
             className={classNames(

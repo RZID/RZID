@@ -150,10 +150,12 @@ const App = () => {
       </main>
       <footer
         className={classNames(
-          "px-8",
-          "py-10",
+          "px-6",
+          "py-8",
           "border-t",
+          "sm:px-8",
           "md:px-16",
+          "md:py-10",
           "border-white/6",
         )}
       >
@@ -161,9 +163,10 @@ const App = () => {
           className={classNames(
             "flex",
             "mx-auto",
-            "max-w-6xl",
+            "max-w-7xl",
             "items-center",
             "justify-between",
+            "2xl:max-w-7xl",
           )}
         >
           <span

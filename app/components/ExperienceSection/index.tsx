@@ -17,9 +17,9 @@ const ExperienceSection = () => {
   return (
     <section
       aria-label="Work experience"
-      className={classNames("py-32", "min-h-screen", "bg-bg")}
+      className={classNames("py-16", "sm:py-24", "lg:py-32", "min-h-screen", "bg-bg")}
     >
-      <div className={classNames("max-w-5xl", "mx-auto", "px-8", "md:px-16")}>
+      <div className={classNames("max-w-5xl", "mx-auto", "px-6", "sm:px-8", "md:px-16", "2xl:max-w-6xl")}>
         {/* Section header */}
         <motion.div
           ref={ref}
@@ -28,7 +28,8 @@ const ExperienceSection = () => {
           transition={{ duration: 0.8 }}
           className={classNames(
             "flex",
-            "mb-16",
+            "mb-10",
+            "md:mb-16",
             "items-end",
             "justify-between",
           )}
@@ -48,7 +49,9 @@ const ExperienceSection = () => {
             <h2
               className={classNames(
                 "mt-2",
-                "text-5xl",
+                "text-3xl",
+                "sm:text-4xl",
+                "md:text-5xl",
                 "font-sans",
                 "text-white",
                 "leading-none",
