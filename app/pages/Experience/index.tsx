@@ -1,10 +1,13 @@
-import { ExperienceSection } from "~/components/ExperienceSection";
-import { PageTransition } from "~/components/PageTransition";
+// Components
+import PageTransition from "~/components/PageTransition";
+import ExperienceSection from "~/components/ExperienceSection";
 
-export default function Experience() {
+const Experience = () => {
   return (
     <PageTransition>
       <ExperienceSection />
     </PageTransition>
   );
-}
+};
+
+export default Experience;

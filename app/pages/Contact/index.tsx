@@ -1,10 +1,13 @@
-import { ContactSection } from "~/components/ContactSection";
-import { PageTransition } from "~/components/PageTransition";
+// Components
+import ContactSection from "~/components/ContactSection";
+import PageTransition from "~/components/PageTransition";
 
-export default function Contact() {
+const Contact = () => {
   return (
     <PageTransition>
       <ContactSection />
     </PageTransition>
   );
-}
+};
+
+export default Contact;

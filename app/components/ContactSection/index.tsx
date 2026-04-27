@@ -1,41 +1,74 @@
-import { type FC, useRef } from "react";
+// Deps
+import { useRef } from "react";
+import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
+
+// Constants
 import { CONTACT_LINKS } from "~/data";
 
-export const ContactSection: FC = () => {
+const ContactSection = () => {
+  // Refs
   const ref = useRef<HTMLDivElement>(null);
+
+  // Hooks
   const inView = useInView(ref, { once: true });
 
   return (
     <section
       aria-label="Contact"
-      className="py-32 min-h-screen bg-bg"
+      className={classNames("py-32", "min-h-screen", "bg-bg")}
     >
-      <div className="max-w-5xl mx-auto px-8 md:px-16">
+      <div className={classNames("max-w-5xl", "mx-auto", "px-8", "md:px-16")}>
         <motion.div
           ref={ref}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-20"
+          className={classNames("mb-20")}
         >
-          <span className="font-mono text-label text-red/70 tracking-[0.4em] uppercase">
+          <span
+            className={classNames(
+              "font-mono",
+              "uppercase",
+              "text-label",
+              "text-red/70",
+              "tracking-[0.4em]",
+            )}
+          >
             04 / Connect
           </span>
           {/* Big CTA heading */}
-          <h2 className="font-sans text-cta font-extrabold text-white leading-[0.9] mt-3">
+          <h2
+            className={classNames(
+              "mt-3",
+              "text-cta",
+              "font-sans",
+              "text-white",
+              "leading-[0.9]",
+              "font-extrabold",
+            )}
+          >
             Let's build
             <br />
-            <span className="text-white/20">something.</span>
+            <span className={classNames("text-white/20")}>something.</span>
           </h2>
-          <p className="font-sans text-white/35 text-prose mt-8 max-w-sm leading-relaxed">
+          <p
+            className={classNames(
+              "mt-8",
+              "max-w-sm",
+              "font-sans",
+              "text-prose",
+              "text-white/35",
+              "leading-relaxed",
+            )}
+          >
             Open to full-time roles, consulting, and interesting problems. I
             respond within 24 hours.
           </p>
         </motion.div>
 
         {/* Contact rows */}
-        <div className="border-t border-white/[0.07]">
+        <div className={classNames("border-t", "border-white/[0.07]")}>
           {CONTACT_LINKS.map((link, i) => (
             <motion.a
               key={link.label}
@@ -45,18 +78,54 @@ export const ContactSection: FC = () => {
               initial={{ opacity: 0, x: -16 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: i * 0.09 + 0.3, duration: 0.5 }}
-              className="group flex items-center justify-between py-5 border-b border-white/[0.07] hover:border-white/15 transition-colors duration-200"
+              className={classNames(
+                "py-5",
+                "flex",
+                "group",
+                "border-b",
+                "duration-200",
+                "items-center",
+                "justify-between",
+                "transition-colors",
+                "border-white/[0.07]",
+                "hover:border-white/15",
+              )}
             >
-              <span className="font-mono text-label text-white/20 tracking-[0.3em] uppercase w-28">
+              <span
+                className={classNames(
+                  "w-28",
+                  "uppercase",
+                  "font-mono",
+                  "text-label",
+                  "text-white/20",
+                  "tracking-[0.3em]",
+                )}
+              >
                 {link.label}
               </span>
-              <span className="font-sans text-sm text-white/45 group-hover:text-white transition-colors flex-1 text-center">
+              <span
+                className={classNames(
+                  "flex-1",
+                  "text-sm",
+                  "font-sans",
+                  "text-center",
+                  "text-white/45",
+                  "transition-colors",
+                  "group-hover:text-white",
+                )}
+              >
                 {link.value}
               </span>
               <motion.span
                 initial={{ x: 0 }}
                 whileHover={{ x: 4 }}
-                className="font-mono text-tag text-red/0 group-hover:text-red transition-colors"
+                className={classNames(
+                  "text-tag",
+                  "font-mono",
+                  "text-red/0",
+                  "transition-colors",
+                  "group-hover:text-red",
+                )}
               >
                 ↗
               </motion.span>
@@ -67,3 +136,5 @@ export const ContactSection: FC = () => {
     </section>
   );
 };
+
+export default ContactSection;

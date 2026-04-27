@@ -1,10 +1,13 @@
-import { HeroSection } from "~/components/HeroSection";
-import { PageTransition } from "~/components/PageTransition";
+// Deps
+import HeroSection from "~/components/HeroSection";
+import PageTransition from "~/components/PageTransition";
 
-export default function Home() {
+const Home = () => {
   return (
     <PageTransition>
       <HeroSection />
     </PageTransition>
   );
-}
+};
+
+export default Home;

@@ -1,16 +1,24 @@
+// Deps
 import {
-  isRouteErrorResponse,
-  Links,
   Meta,
+  Links,
   Outlet,
   Scripts,
   ScrollRestoration,
+  isRouteErrorResponse,
 } from "react-router";
+import classNames from "classnames";
+
+// Styles
+import "~/assets/styles/index.css";
+
+// Components
+import { Navbar } from "~/components/Navbar";
+import { GrainOverlay } from "~/components/GrainOverlay";
+import { CustomCursor } from "~/components/CustomCursor";
+
+// Types
 import type { Route } from "./+types/root";
-import "./assets/styles/index.css";
-import { GrainOverlay } from "./components/GrainOverlay";
-import { CustomCursor } from "./components/CustomCursor";
-import { Navbar } from "./components/Navbar";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -133,19 +141,51 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
 const App = () => {
   return (
-    <div className="bg-bg min-h-screen">
+    <div className={classNames("bg-bg", "min-h-screen")}>
       <GrainOverlay />
       <CustomCursor />
       <Navbar />
       <main>
         <Outlet />
       </main>
-      <footer className="border-t border-white/6 py-10 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <span className="font-mono text-tag text-white/20 tracking-widest uppercase">
+      <footer
+        className={classNames(
+          "px-8",
+          "py-10",
+          "border-t",
+          "md:px-16",
+          "border-white/6",
+        )}
+      >
+        <div
+          className={classNames(
+            "flex",
+            "mx-auto",
+            "max-w-6xl",
+            "items-center",
+            "justify-between",
+          )}
+        >
+          <span
+            className={classNames(
+              "text-tag",
+              "font-mono",
+              "uppercase",
+              "text-white/20",
+              "tracking-widest",
+            )}
+          >
             © {new Date().getFullYear()} Ramadhanu
           </span>
-          <span className="font-mono text-tag text-white/10 tracking-widest uppercase">
+          <span
+            className={classNames(
+              "text-tag",
+              "font-mono",
+              "uppercase",
+              "text-white/10",
+              "tracking-widest",
+            )}
+          >
             Jakarta, ID
           </span>
         </div>
@@ -166,15 +206,44 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center px-8 bg-bg">
+    <main
+      className={classNames(
+        "flex",
+        "px-8",
+        "bg-bg",
+        "min-h-screen",
+        "items-center",
+        "justify-center",
+      )}
+    >
       <div>
-        <p className="font-mono text-tag text-red tracking-widest uppercase mb-4">
+        <p
+          className={classNames(
+            "mb-4",
+            "text-tag",
+            "uppercase",
+            "font-mono",
+            "text-red",
+            "tracking-widest",
+          )}
+        >
           Error
         </p>
-        <h1 className="font-sans text-giant font-extrabold text-white leading-none mb-4">
+        <h1
+          className={classNames(
+            "mb-4",
+            "font-sans",
+            "text-giant",
+            "text-white",
+            "leading-none",
+            "font-extrabold",
+          )}
+        >
           {message}
         </h1>
-        <p className="text-white/30 font-mono text-sm">{details}</p>
+        <p className={classNames("text-white/30", "font-mono", "text-sm")}>
+          {details}
+        </p>
       </div>
     </main>
   );

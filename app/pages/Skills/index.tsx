@@ -1,10 +1,13 @@
-import { PageTransition } from "~/components/PageTransition";
-import { SkillsSection } from "~/components/SkillsSection";
+// Components
+import SkillsSection from "~/components/SkillsSection";
+import PageTransition from "~/components/PageTransition";
 
-export default function Skills() {
+const Skills = () => {
   return (
     <PageTransition>
       <SkillsSection />
     </PageTransition>
   );
-}
+};
+
+export default Skills;

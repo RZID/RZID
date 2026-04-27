@@ -1,7 +1,8 @@
-import type { FC, ReactNode } from "react";
+// Deps
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
-export const PageTransition: FC<{ children: ReactNode }> = ({ children }) => (
+const PageTransition = ({ children }: { children: ReactNode }) => (
   <motion.div
     initial={{ opacity: 0, filter: "blur(4px)" }}
     animate={{ opacity: 1, filter: "blur(0px)" }}
@@ -11,3 +12,5 @@ export const PageTransition: FC<{ children: ReactNode }> = ({ children }) => (
     {children}
   </motion.div>
 );
+
+export default PageTransition;

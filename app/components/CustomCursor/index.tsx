@@ -1,13 +1,21 @@
-import { type FC, useEffect, useState } from "react";
+// Deps
+import classNames from "classnames";
+import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
-export const CustomCursor: FC = () => {
-  const x = useMotionValue(-100);
-  const y = useMotionValue(-100);
-  const sx = useSpring(x, { stiffness: 600, damping: 45 });
-  const sy = useSpring(y, { stiffness: 600, damping: 45 });
+export const CustomCursor = () => {
+  // Motion values
+  const x = useMotionValue(-100),
+    y = useMotionValue(-100);
+
+  // Spring hooks
+  const sx = useSpring(x, { stiffness: 600, damping: 45 }),
+    sy = useSpring(y, { stiffness: 600, damping: 45 });
+
+  // States
   const [active, setActive] = useState(false);
 
+  // Effects
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
       x.set(e.clientX);
@@ -37,7 +45,13 @@ export const CustomCursor: FC = () => {
       {/* Dot */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none fixed z-9999 rounded-full bg-red"
+        className={classNames(
+          "fixed",
+          "z-9999",
+          "bg-red",
+          "rounded-full",
+          "pointer-events-none",
+        )}
         style={{
           x: sx,
           y: sy,
@@ -50,7 +64,14 @@ export const CustomCursor: FC = () => {
       {/* Ring */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none fixed z-9998 rounded-full border border-[color:var(--color-red)]/40"
+        className={classNames(
+          "fixed",
+          "z-9998",
+          "border",
+          "rounded-full",
+          "border-red/40",
+          "pointer-events-none",
+        )}
         style={{
           x: sx,
           y: sy,
