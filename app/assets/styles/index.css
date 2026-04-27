@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-red: #e8250d;
+  --color-red-hover: #c91e0a;
+  --color-bg: #0c0c0c;
+  --color-surface: #111111;
+
+  /* font sizes */
+  --font-size-2xs: 9px;
+  --font-size-label: 10px;
+  --font-size-tag: 11px;
+  --font-size-body: 14px;
+  --font-size-prose: 15px;
+  --font-size-hero: clamp(4rem, 13vw, 11rem);
+  --font-size-cta: clamp(3rem, 8vw, 7rem);
+  --font-size-giant: 8rem;
+  --font-size-deco: 22vw;
+}
+
+* {
+  cursor: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0c0c0c;
+  color: #ffffff;
+  font-family: "Syne", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #e8250d;
+  color: #ffffff;
+}
+
+/* Subtle scanline texture on hero */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
