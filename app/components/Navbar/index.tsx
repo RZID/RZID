@@ -198,7 +198,7 @@ export const Navbar = () => {
                 "bg-white/70",
                 "transition-all",
                 "duration-300",
-                menuOpen ? "rotate-45 translate-y-[7px]" : "",
+                menuOpen ? "rotate-45 translate-y-1.75" : "",
               )}
             />
             <span
@@ -218,7 +218,7 @@ export const Navbar = () => {
                 "bg-white/70",
                 "transition-all",
                 "duration-300",
-                menuOpen ? "-rotate-45 -translate-y-[7px]" : "",
+                menuOpen ? "-rotate-45 -translate-y-1.75" : "",
               )}
             />
           </button>
@@ -263,7 +263,7 @@ export const Navbar = () => {
                           "uppercase",
                           "tracking-widest",
                           "border-b",
-                          "border-white/[0.05]",
+                          "border-white/5",
                           "transition-colors",
                           isActive
                             ? "text-white border-l-2 border-l-red pl-5"

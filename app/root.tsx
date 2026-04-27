@@ -41,14 +41,14 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* ── SEO ── */}
-        <title>Ramadhanu — Full Stack Engineer, Jakarta</title>
+        <title>Ramadhanu — Software Engineer, Jakarta</title>
         <meta
           name="description"
-          content="Ramadhanu is a Full Stack Engineer with 5+ years of experience building scalable microservices, cross-platform apps, and production infrastructure. Based in Jakarta, Indonesia."
+          content="Ramadhanu is a Software Engineer with 5+ years of experience building scalable microservices, cross-platform apps, and production infrastructure. Based in Jakarta, Indonesia."
         />
         <meta
           name="keywords"
-          content="Full Stack Engineer, NestJS, React, React Native, Node.js, TypeScript, Jakarta, Software Engineer, Microservices"
+          content="Software Engineer, NestJS, React, React Native, Node.js, TypeScript, Jakarta, Microservices"
         />
         <meta name="author" content="Ramadhanu" />
         <meta name="robots" content="index, follow" />
@@ -57,7 +57,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         {/* ── Open Graph ── */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.rzidinc.com" />
-        <meta property="og:title" content="Ramadhanu — Full Stack Engineer" />
+        <meta property="og:title" content="Ramadhanu — Software Engineer" />
         <meta
           property="og:description"
           content="5+ years building end-to-end products. NestJS, React, React Native, AWS, Docker. Based in Jakarta."
@@ -71,7 +71,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
         {/* ── Twitter Card ── */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ramadhanu — Full Stack Engineer" />
+        <meta name="twitter:title" content="Ramadhanu — Software Engineer" />
         <meta
           name="twitter:description"
           content="5+ years building end-to-end products. NestJS, React, React Native, AWS, Docker."
@@ -91,10 +91,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
               name: "Ramadhanu",
               url: "https://www.rzidinc.com",
               email: "rdhanurzid@gmail.com",
-              telephone: "+62-811-66-4233",
-              jobTitle: "Full Stack Engineer",
+              jobTitle: "Software Engineer",
               description:
-                "Full Stack Engineer with 5+ years experience in Node.js, React, NestJS, and cloud infrastructure.",
+                "Software Engineer with 5+ years experience in Node.js, React, NestJS, and cloud infrastructure.",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Jakarta Barat",
@@ -165,8 +164,8 @@ const App = () => {
             "mx-auto",
             "max-w-7xl",
             "items-center",
-            "justify-between",
             "2xl:max-w-7xl",
+            "justify-between",
           )}
         >
           <span

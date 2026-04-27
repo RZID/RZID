@@ -127,7 +127,7 @@ const HeroSection = () => {
               "tracking-[0.35em]",
             )}
           >
-            Full Stack Engineer · Jakarta, ID
+            Software Engineer · Jakarta, ID
           </span>
         </motion.div>
 
