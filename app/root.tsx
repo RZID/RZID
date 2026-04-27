@@ -168,7 +168,7 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   return (
     <main className="min-h-screen flex items-center justify-center px-8 bg-bg">
       <div>
-        <p className="font-mono text-tag text-primary tracking-widest uppercase mb-4">
+        <p className="font-mono text-tag text-red tracking-widest uppercase mb-4">
           Error
         </p>
         <h1 className="font-sans text-giant font-extrabold text-white leading-none mb-4">
