@@ -9,15 +9,15 @@
   --color-surface: #111111;
 
   /* font sizes */
-  --font-size-2xs: 9px;
-  --font-size-label: 10px;
-  --font-size-tag: 11px;
-  --font-size-body: 14px;
-  --font-size-prose: 15px;
-  --font-size-hero: clamp(4rem, 13vw, 11rem);
-  --font-size-cta: clamp(3rem, 8vw, 7rem);
-  --font-size-giant: 8rem;
-  --font-size-deco: 22vw;
+  --text-2xs: 9px;
+  --text-label: 10px;
+  --text-tag: 11px;
+  --text-body: 14px;
+  --text-prose: 15px;
+  --text-hero: clamp(4rem, 13vw, 11rem);
+  --text-cta: clamp(3rem, 8vw, 7rem);
+  --text-giant: 8rem;
+  --text-deco: 22vw;
 }
 
 * {
