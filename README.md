@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=1200&color=E8250D&center=true&vCenter=true&width=600&lines=Full+Stack+Engineer;Microservices+%26+Cloud+Architect;DevOps+%26+Infrastructure+Explorer;React+%2F+React+Native+Developer;Mentor+%26+Builder" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=1200&color=E8250D&center=true&vCenter=true&width=600&lines=Software+Engineer;Microservices+%26+Distributed+Systems;Backend+%7C+Mobile+%7C+Infrastructure;DevOps+%26+Cloud+Architecture;Mentor+%26+Problem+Solver" alt="Typing SVG" /></a>
 
 <br/>
 
@@ -22,27 +22,24 @@
 
 ## Who I Am
 
-I'm a **Full Stack Engineer** with 5+ years shipping production systems — web, mobile, and the infrastructure underneath.
+I'm a **Software Engineer** with 5+ years designing and shipping production systems — from backend services and distributed infrastructure to cross-platform mobile apps.
 
-I gravitate toward **complex, distributed problems**: microservices under load, event-driven architectures, cloud infra that stays alive at 3am, and mobile apps that feel native on both platforms. If a system can break in an interesting way, I want to understand it, fix it, and make sure it never breaks like that again.
+My focus is **systems that hold up under pressure**: microservices that scale, event-driven pipelines that don't lose messages, cloud infrastructure that stays alive at 3am, and APIs that other engineers actually enjoy building on. I think in layers — code, architecture, deployment, and the network in between.
 
-Beyond engineering, I **mentor students** at a vocational school in Jakarta — teaching modern dev practices, server management, and helping them clear national certifications. Building people is as important as building software.
+Beyond building, I **mentor students** at a vocational school in Jakarta — teaching production-grade practices, server management, and helping them clear national certifications. Building people is as important as building software.
 
-Currently deep in: **Kubernetes**, **Kafka**, **Cloudflare edge**, and whatever new tool broke out of the dev ecosystem this week.
+Currently deep in: **Kubernetes**, **Kafka**, **Cloudflare edge**, and whatever new tool broke out of the ecosystem this week.
 
 ---
 
 ## What I Build With
 
-**Frontend & Mobile**
+**Languages**
 
-![JavaScript](https://img.shields.io/badge/JavaScript-fff?style=for-the-badge&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-fff?style=for-the-badge&logo=typescript&logoColor=05122A)
-![React](https://img.shields.io/badge/React-fff?style=for-the-badge&logo=react&logoColor=05122A)
-![React Native](https://img.shields.io/badge/React_Native-fff?style=for-the-badge&logo=react&logoColor=05122A)
-![Next.js](https://img.shields.io/badge/Next.js-fff?style=for-the-badge&logo=next.js&logoColor=05122A)
+![JavaScript](https://img.shields.io/badge/JavaScript-fff?style=for-the-badge&logo=javascript&logoColor=black)
 
-**Backend & Messaging**
+**Backend, APIs & Messaging**
 
 ![Node.js](https://img.shields.io/badge/Node.js-fff?style=for-the-badge&logo=node.js&logoColor=05122A)
 ![NestJS](https://img.shields.io/badge/NestJS-fff?style=for-the-badge&logo=nestjs&logoColor=05122A)
@@ -50,6 +47,12 @@ Currently deep in: **Kubernetes**, **Kafka**, **Cloudflare edge**, and whatever 
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-fff?style=for-the-badge&logo=rabbitmq&logoColor=05122A)
 ![Redis](https://img.shields.io/badge/Redis-fff?style=for-the-badge&logo=redis&logoColor=05122A)
 ![WebSocket](https://img.shields.io/badge/WebSocket-fff?style=for-the-badge)
+
+**Frontend & Mobile**
+
+![React](https://img.shields.io/badge/React-fff?style=for-the-badge&logo=react&logoColor=05122A)
+![React Native](https://img.shields.io/badge/React_Native-fff?style=for-the-badge&logo=react&logoColor=05122A)
+![Next.js](https://img.shields.io/badge/Next.js-fff?style=for-the-badge&logo=next.js&logoColor=05122A)
 
 **Databases**
 
