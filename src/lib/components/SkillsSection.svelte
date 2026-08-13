@@ -9,8 +9,17 @@
 <section
 	id="skills"
 	aria-label="Technical skills"
-	class="py-16 sm:py-24 lg:py-32 min-h-screen bg-surface"
+	class="py-16 sm:py-24 lg:py-32 min-h-screen bg-surface relative overflow-hidden"
 >
+	<!-- Ghost index -->
+	<div
+		aria-hidden="true"
+		class="z-0 top-24 absolute -right-8 text-deco font-sans md:right-4 lg:right-8 select-none leading-none font-extrabold text-white/2.5 pointer-events-none"
+		style="animation: ghost-float 9s ease-in-out infinite alternate; transition: transform 0.5s ease-out;"
+	>
+		03
+	</div>
+
 	<div class="max-w-5xl mx-auto px-6 sm:px-8 md:px-16 2xl:max-w-6xl">
 		<div
 			use:inView={{ margin: '0px', onEnter: () => (visible = true) }}

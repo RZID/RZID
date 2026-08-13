@@ -64,7 +64,9 @@ export const EXPERIENCES: Experience[] = [
 		period: 'Sep 2021 – Present',
 		tag: 'Full-Time',
 		bullets: [
+			'Led a legacy production rewrite — migrating the system from a monolith to microservices to support growing feature scope',
 			'Architected scalable microservices using Next.js, NestJS, TypeScript, and Node.js',
+			'Delivered a full-stack estate-planning web app end-to-end, including encryption of sensitive data and payment gateway integration',
 			'Developed cross-platform apps with React.js and React Native (Expo)',
 			'Optimized system performance via RabbitMQ (messaging) and Redis (caching)',
 			'Managed AWS and Linux-based deployments for 24/7 infrastructure uptime'
@@ -111,4 +113,26 @@ export const CONTACT_LINKS = [
 		href: 'https://www.linkedin.com/in/rama-ramadhanu/'
 	},
 	{ label: 'Website', value: 'rzidinc.com', href: 'https://www.rzidinc.com' }
+];
+
+export const EDUCATION = [
+	{
+		school: 'Cakrawala University',
+		program: 'B.Sc. Computer Science (In Progress)',
+		period: '2025 – Present'
+	},
+	{
+		school: 'Fazztrack',
+		program: 'Full Stack Developer Bootcamp',
+		period: '2020 – 2021'
+	},
+	{
+		school: 'SMK Negeri 12 Jakarta',
+		program: 'Software Engineering',
+		period: '2017 – 2020'
+	}
+];
+
+export const ACHIEVEMENTS = [
+	'3rd Runner-Up — LKS Network Administration, SMK Jakarta Utara I'
 ];

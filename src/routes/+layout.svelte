@@ -2,8 +2,11 @@
 	import '../app.css';
 	import type { Snippet } from 'svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import MeshGradient from '$lib/components/MeshGradient.svelte';
 	import GrainOverlay from '$lib/components/GrainOverlay.svelte';
 	import CustomCursor from '$lib/components/CustomCursor.svelte';
+	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
+	import { NAV_LINKS } from '$lib/data';
 
 	let { children }: { children: Snippet } = $props();
 
@@ -69,20 +72,49 @@
 </svelte:head>
 
 <div class="bg-bg min-h-screen">
+	<MeshGradient />
 	<GrainOverlay />
+
 	<CustomCursor />
 	<Navbar />
 	<main>
 		{@render children()}
 	</main>
-	<footer class="px-6 py-8 border-t sm:px-8 md:px-16 md:py-10 border-white/6">
-		<div class="flex mx-auto max-w-7xl items-center 2xl:max-w-7xl justify-between">
-			<span class="text-tag font-mono uppercase text-white/20 tracking-widest">
-				© {new Date().getFullYear()} Ramadhanu
-			</span>
-			<span class="text-tag font-mono uppercase text-white/10 tracking-widest">
-				Jakarta, ID
-			</span>
+	<footer class="border-t border-white/6">
+		<div class="px-6 mx-auto py-10 max-w-7xl sm:px-12 md:px-16">
+			<div class="flex flex-wrap items-center justify-between gap-6">
+				<a
+					href="#home"
+					class="font-sans text-tag font-bold uppercase text-white/60 transition-colors tracking-widest hover:text-white"
+				>
+					RZID<span class="text-red">/</span>
+				</a>
+				<nav aria-label="Footer" class="flex flex-wrap gap-6">
+					{#each NAV_LINKS as link}
+						<a
+							href={link.to}
+							class="font-mono uppercase text-label text-white/25 transition-colors tracking-widest hover:text-white"
+						>
+							{link.label}
+						</a>
+					{/each}
+				</nav>
+				<a
+					href="mailto:rdhanurzid@gmail.com"
+					class="font-mono uppercase text-label text-white/25 transition-colors tracking-widest hover:text-white"
+				>
+					rdhanurzid@gmail.com
+				</a>
+			</div>
+			<div class="flex pt-6 mt-8 items-center border-t justify-between border-white/6">
+				<span class="text-tag font-mono uppercase text-white/20 tracking-widest">
+					© {new Date().getFullYear()} Ramadhanu
+				</span>
+				<span class="flex items-center gap-2 text-tag font-mono uppercase text-white/20 tracking-widest">
+					<span class="w-1.5 h-1.5 bg-red rounded-full animate-pulse"></span>
+					Jakarta, ID
+				</span>
+			</div>
 		</div>
 	</footer>
 </div>
