@@ -15,6 +15,7 @@ const ContactSection = () => {
 
   return (
     <section
+      id="contact"
       aria-label="Contact"
       className={classNames("py-16", "sm:py-24", "lg:py-32", "min-h-screen", "bg-bg")}
     >

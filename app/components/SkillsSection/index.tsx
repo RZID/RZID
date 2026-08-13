@@ -18,6 +18,7 @@ const SkillsSection = () => {
 
   return (
     <section
+      id="skills"
       aria-label="Technical skills"
       className={classNames("py-16", "sm:py-24", "lg:py-32", "min-h-screen", "bg-surface")}
     >

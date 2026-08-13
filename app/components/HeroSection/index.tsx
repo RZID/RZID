@@ -25,6 +25,7 @@ const HeroSection = () => {
 
   return (
     <section
+      id="home"
       aria-label="Introduction"
       className={classNames(
         "flex",

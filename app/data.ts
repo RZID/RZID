@@ -1,10 +1,10 @@
 import type { Experience, Skill, NavLink } from "./types";
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "Home", to: "/" },
-  { label: "Experience", to: "/experience" },
-  { label: "Skills", to: "/skills" },
-  { label: "Contact", to: "/contact" },
+  { label: "Home", to: "#home" },
+  { label: "Experience", to: "#experience" },
+  { label: "Skills", to: "#skills" },
+  { label: "Contact", to: "#contact" },
 ];
 
 export const SKILLS: Skill[] = [

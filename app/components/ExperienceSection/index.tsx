@@ -16,6 +16,7 @@ const ExperienceSection = () => {
 
   return (
     <section
+      id="experience"
       aria-label="Work experience"
       className={classNames("py-16", "sm:py-24", "lg:py-32", "min-h-screen", "bg-bg")}
     >
