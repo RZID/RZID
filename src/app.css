@@ -45,6 +45,56 @@ body {
   color: #ffffff;
 }
 
+/* Entrance keyframes (match the former framer-motion timings) */
+@keyframes rise {
+  from {
+    transform: translateY(110%);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes fade-in-x {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+}
+@keyframes fade-in-y {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+@keyframes scale-y {
+  from {
+    transform: scaleY(0);
+  }
+}
+@keyframes rail-in {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+}
+@keyframes rail-item-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(0.9);
+  }
+}
+@keyframes cue-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
 /* Subtle scanline texture on hero */
 .scanlines::after {
   content: "";

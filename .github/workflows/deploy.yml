@@ -43,7 +43,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy ./build/client --project-name=personal-website --commit-dirty=true
+          command: pages deploy ./build --project-name=personal-website --commit-dirty=true
 
       - name: Comment preview URL on PR
         if: github.event_name == 'pull_request'
