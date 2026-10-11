@@ -82,14 +82,18 @@
 			aria-label={t.cardTitle}
 		>
 			<p class="font-mono text-[10px] tracking-[0.3em] text-faint uppercase">{t.cardTitle}</p>
-			<div class="mt-4 space-y-4">
+			<dl class="mt-4 space-y-4">
 				{#each t.card as c}
 					<div class="border-b border-line pb-4 last:border-0 last:pb-0">
-						<p class="font-mono text-[10px] tracking-widest text-faint uppercase">{c.label}</p>
-						<p class="mt-1 font-sans text-sm font-medium text-ink">{c.value}</p>
+						<dt class="font-mono text-[10px] tracking-widest text-faint uppercase">{c.label}</dt>
+						{#if c.href}
+							<dd><a href={c.href} class="mt-1 inline-block font-sans text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:text-accent hover:decoration-accent">{c.value}</a></dd>
+						{:else}
+							<dd class="mt-1 font-sans text-sm font-medium text-ink">{c.value}</dd>
+						{/if}
 					</div>
 				{/each}
-			</div>
+			</dl>
 		</aside>
 	</div>
 </section>

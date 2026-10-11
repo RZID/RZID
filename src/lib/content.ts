@@ -194,7 +194,7 @@ interface Copy {
 		secondary: string;
 		stats: { num: string; label: string }[];
 		cardTitle: string;
-		card: { label: string; value: string }[];
+		card: { label: string; value: string; href?: string }[];
 	};
 	logos: string;
 	work: {
@@ -250,9 +250,9 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			],
 			cardTitle: 'At a glance',
 			card: [
-				{ label: 'Based', value: 'Jakarta · remote worldwide' },
-				{ label: 'Open to', value: 'Full-time & consulting' },
-				{ label: 'Reply', value: 'Within 24 hours' }
+				{ label: 'Based', value: 'Jakarta, GMT+7' },
+				{ label: 'Stack', value: 'TypeScript · NestJS · React · RN' },
+				{ label: 'Email', value: 'rdhanurzid@gmail.com', href: 'mailto:rdhanurzid@gmail.com' }
 			]
 		},
 		logos: 'Trusted in production at',
@@ -321,9 +321,9 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			],
 			cardTitle: 'Sekilas',
 			card: [
-				{ label: 'Basis', value: 'Jakarta · remote global' },
-				{ label: 'Terbuka', value: 'Full-time & consulting' },
-				{ label: 'Balasan', value: 'Dalam 24 jam' }
+				{ label: 'Basis', value: 'Jakarta, GMT+7' },
+				{ label: 'Stack', value: 'TypeScript · NestJS · React · RN' },
+				{ label: 'Email', value: 'rdhanurzid@gmail.com', href: 'mailto:rdhanurzid@gmail.com' }
 			]
 		},
 		logos: 'Dipercaya di production oleh',
