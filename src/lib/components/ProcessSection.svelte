@@ -21,14 +21,14 @@
 		</div>
 
 		<ol
-			class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4"
+			class="mt-12 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4"
 		>
 			{#each STEPS as s, i}
 				<li
-					class="bg-bg p-7"
+					class="bg-bg p-7 transition-colors duration-300 hover:bg-accent/5"
 					style={`opacity: ${visible ? 1 : 0}; transition: opacity 0.5s ease ${i * 0.1}s;`}
 				>
-					<span class="font-display text-4xl text-accent/30">0{i + 1}</span>
+					<span class="inline-block -rotate-6 rounded-xl bg-accent px-3 py-1 font-display text-2xl text-white">0{i + 1}</span>
 					<h3 class="mt-4 font-display text-xl text-ink">{s.title}</h3>
 					<p class="mt-2 font-sans text-sm leading-relaxed text-muted">{s.desc}</p>
 				</li>

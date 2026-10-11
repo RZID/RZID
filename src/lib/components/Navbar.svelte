@@ -121,7 +121,7 @@
 			</button>
 			<a
 				href="#contact"
-				class="ml-1 bg-accent px-4 py-2 font-mono text-[11px] font-bold tracking-widest text-white uppercase transition-colors hover:bg-accent-hover"
+				class="ml-1 rounded-full bg-accent px-4 py-2 font-mono text-[11px] font-bold tracking-widest text-white uppercase transition-colors hover:bg-accent-hover"
 			>
 				{t.nav.hire}
 			</a>
@@ -198,7 +198,7 @@
 					</button>
 					<a
 						href="#contact"
-						class="flex-1 bg-accent px-4 py-2.5 text-center font-mono text-[11px] font-bold tracking-widest text-white uppercase"
+						class="flex-1 rounded-full bg-accent px-4 py-2.5 text-center font-mono text-[11px] font-bold tracking-widest text-white uppercase"
 					>
 						{t.nav.hire}
 					</a>

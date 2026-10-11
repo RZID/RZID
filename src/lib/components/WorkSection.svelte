@@ -32,13 +32,17 @@
 			{#each PROJECTS as p, i}
 				{@const v = headVisible}
 				<article
-					class="group rounded-2xl border border-line bg-surface p-6 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)]"
+					class="group rounded-2xl border border-line bg-surface p-6 transition-[transform,border-color,box-shadow] duration-300 hover:rotate-0 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)] {i %
+						2 ===
+					0
+						? '-rotate-1'
+						: 'rotate-1'}"
 					style={`opacity: ${v ? 1 : 0}; transform: translateY(${v ? 0 : 16}px); transition: opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s;`}
 				>
 					<div class="flex items-start justify-between gap-3">
 						<h3 class="font-display text-xl text-ink">{p.name}</h3>
 						<span
-							class="shrink-0 rounded-full border border-line px-2.5 py-1 font-mono text-[10px] tracking-widest text-faint uppercase"
+							class="shrink-0 -rotate-2 rounded-full border border-line px-2.5 py-1 font-mono text-[10px] tracking-widest text-faint uppercase transition-transform group-hover:rotate-0"
 						>
 							{p.role}
 						</span>

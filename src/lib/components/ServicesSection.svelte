@@ -27,10 +27,14 @@
 		<div class="mt-12 grid gap-4 md:grid-cols-2">
 			{#each SERVICES as s, i}
 				<article
-					class="rounded-2xl border border-line bg-bg p-7 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-accent/40"
+					class="rounded-2xl border border-line bg-bg p-7 transition-[transform,border-color,box-shadow] duration-300 hover:rotate-0 hover:border-accent/40 hover:shadow-[0_20px_50px_-30px_rgba(232,37,13,0.4)] {i %
+						2 ===
+					0
+						? 'rotate-1'
+						: '-rotate-1'}"
 					style={`opacity: ${visible ? 1 : 0}; transform: translateY(${visible ? 0 : 16}px); transition: opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s;`}
 				>
-					<span class="font-mono text-[11px] text-faint">0{i + 1}</span>
+					<span class="inline-block -rotate-3 rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[11px] text-accent">0{i + 1}</span>
 					<h3 class="mt-2 font-display text-2xl text-ink">{s.title}</h3>
 					<p class="mt-1 font-sans text-sm text-muted">{s.desc}</p>
 					<ul class="mt-5 space-y-2 border-t border-line pt-5">
