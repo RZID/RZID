@@ -25,7 +25,7 @@ export interface Step {
 	desc: string;
 }
 
-export const CLIENTS = ['Cara.sg', 'Affluent.sg', 'JebHealth', 'Breasy', 'Pinknode', 'Embreo'];
+export const CLIENTS = ['Cara.sg', 'Affluent.sg', 'JebHealth', 'LVE Gym', 'Pinknode', 'Embreo'];
 
 export const CONTACTS = [
 	{ label: 'Email', value: 'rdhanurzid@gmail.com', href: 'mailto:rdhanurzid@gmail.com' },
@@ -60,10 +60,11 @@ export const PROJECTS: Project[] = [
 			'HealthTech marketplace (SG, MY, TH, VN) plus Health-FinTech cards with Airwallex and Visa (Helix Health Card, J World Card): backend payment flows integrated and hardened for production.'
 	},
 	{
-		name: 'Breasy Gym',
+		name: 'LVE Gym',
 		role: 'Mobile Engineer',
 		stack: 'React Native (Expo)',
-		outcome: 'Wellness booking app (ice baths, yoga, breathwork, classes): iOS and Android from one Expo codebase, through store release.'
+		outcome:
+			'Booking app for LVE boutique gyms (circuit training Pandan Valley, combat Boat Quay): class schedules, packs, personal training. iOS and Android from one Expo codebase, through store release.'
 	},
 	{
 		name: 'Pinknode',
