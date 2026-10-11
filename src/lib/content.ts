@@ -25,7 +25,7 @@ export interface Step {
 	desc: string;
 }
 
-export const CLIENTS = ['Cara.sg', 'Affluent.sg', 'Airwallex', 'Breasy', 'Pinknode', 'Embreo'];
+export const CLIENTS = ['Cara.sg', 'Affluent.sg', 'JebHealth', 'Breasy', 'Pinknode', 'Embreo'];
 
 export const CONTACTS = [
 	{ label: 'Email', value: 'rdhanurzid@gmail.com', href: 'mailto:rdhanurzid@gmail.com' },
@@ -53,10 +53,11 @@ export const PROJECTS: Project[] = [
 			'Wills and estate-planning platform for Singapore families (wills, LPA, advance care directives, CPF nominations). Delivered end to end with encrypted client data and payment integration.'
 	},
 	{
-		name: 'Airwallex',
+		name: 'JebHealth',
 		role: 'Backend Engineer',
 		stack: 'NestJS, REST APIs',
-		outcome: 'Fintech payment flows via Airwallex APIs: integrated and hardened for production.'
+		outcome:
+			'HealthTech marketplace (SG, MY, TH, VN) plus Health-FinTech cards with Airwallex and Visa (Helix Health Card, J World Card): backend payment flows integrated and hardened for production.'
 	},
 	{
 		name: 'Breasy Gym',
