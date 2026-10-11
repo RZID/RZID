@@ -24,19 +24,7 @@ export interface Step {
 	desc: string;
 }
 
-export const NAV_IDS = ['work', 'services', 'process', 'about', 'contact'] as const;
-
 export const CLIENTS = ['Cara.sg', 'Affluent.sg', 'Airwallex', 'Breasy', 'Pinknode', 'Embreo'];
-
-export const STACK_CHIPS = [
-	'TypeScript',
-	'NestJS',
-	'React',
-	'Next.js',
-	'React Native',
-	'AWS',
-	'Docker'
-];
 
 export const CONTACTS = [
 	{ label: 'Email', value: 'rdhanurzid@gmail.com', href: 'mailto:rdhanurzid@gmail.com' },
@@ -90,7 +78,7 @@ export const ROLES: Role[] = [
 		period: 'Sep 2021 – Present',
 		tag: 'Full-Time',
 		bullets: [
-			'Led a legacy production rewrite — monolith to microservices, without stopping the business',
+			'Led a legacy production rewrite: monolith to microservices, without stopping the business',
 			'Architected NestJS + TypeScript microservices behind Next.js apps',
 			'Delivered an estate-planning app end to end: encryption + payment gateway',
 			'Shipped cross-platform apps with React Native (Expo)',
@@ -155,7 +143,7 @@ export const SERVICES: Service[] = [
 export const STEPS: Step[] = [
 	{
 		title: 'Discover',
-		desc: 'We agree on the outcome, scope and risks — in days, with a fixed first milestone.'
+		desc: 'We agree on the outcome, scope and risks in days, with a fixed first milestone.'
 	},
 	{
 		title: 'Build',
@@ -163,7 +151,7 @@ export const STEPS: Step[] = [
 	},
 	{
 		title: 'Harden',
-		desc: 'Security, payments, speed and monitoring — production-grade before launch.'
+		desc: 'Security, payments, speed and monitoring, all production-grade before launch.'
 	},
 	{
 		title: 'Handover',
@@ -217,17 +205,15 @@ interface Copy {
 		rolesTitle: string;
 		hint: string;
 	};
-	services: { eyebrow: string; title: string; sub: string };
-	process: { eyebrow: string; title: string; sub: string };
+	services: { title: string; sub: string };
+	process: { title: string; sub: string };
 	about: {
-		eyebrow: string;
 		title: string;
 		bio: string[];
 		facts: { label: string; value: string }[];
 		capTitle: string;
 	};
 	contact: {
-		eyebrow: string;
 		titleA: string;
 		titleB: string;
 		sub: string;
@@ -254,7 +240,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			badge: 'Available for full-time & consulting',
 			titleA: 'I build software',
 			titleB: 'that stays up.',
-			sub: 'Full-stack engineer, 5 years in production: web apps, mobile apps and the backend behind them. Fintech, property, fitness — from legacy rescues to end-to-end builds. Remote worldwide · hybrid in Jabodetabek.',
+			sub: 'Full-stack engineer, 5 years in production: web, mobile, backend. Remote worldwide, hybrid in Jabodetabek.',
 			primary: 'Hire me',
 			secondary: 'See selected work',
 			stats: [
@@ -273,44 +259,40 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		work: {
 			eyebrow: 'Selected work',
 			title: 'Real products, real users.',
-			sub: 'Closed-source client work — named with role and stack. Details shared on a call.',
+			sub: 'Closed-source client work, named with role and stack. Details shared on a call.',
 			stackLabel: 'Stack',
 			rolesTitle: 'Roles',
 			hint: 'Tap a role to expand'
 		},
 		services: {
-			eyebrow: 'Services',
 			title: 'What you can hire me for.',
 			sub: 'Four fixed-shape offers. Pick one, or combine them.'
 		},
 		process: {
-			eyebrow: 'Process',
 			title: 'Boring process, exciting results.',
 			sub: 'You always know what happens next.'
 		},
 		about: {
-			eyebrow: 'About',
 			title: 'Engineer, mentor, owner.',
 			bio: [
-				"I'm Ramadhanu — a full-stack engineer with 5 years in production systems: microservices, cross-platform apps and the infrastructure under them.",
+				"I'm Ramadhanu, a full-stack engineer with 5 years in production systems: microservices, cross-platform apps and the infrastructure under them.",
 				'I also mentor students at SMK Negeri 12 Jakarta and keep school servers running. Same deal for clients: it works, it stays up, and your team can run it.'
 			],
 			facts: [
 				{ label: 'Location', value: 'Jakarta · remote worldwide · hybrid Jabodetabek' },
 				{ label: 'Experience', value: '5+ years, Embreo PTE Ltd (2021–present)' },
 				{ label: 'Education', value: 'B.Sc. Computer Science, in progress (evening program)' },
-				{ label: 'Mentoring', value: 'SMK Negeri 12 Jakarta — national certifications' }
+				{ label: 'Mentoring', value: 'SMK Negeri 12 Jakarta, national certifications' }
 			],
 			capTitle: 'Capabilities'
 		},
 		contact: {
-			eyebrow: 'Contact',
 			titleA: "Let's build",
 			titleB: 'something that lasts.',
-			sub: 'Open to full-time roles and consulting. Tell me the outcome you want — I reply within 24 hours.',
+			sub: 'Open to full-time roles and consulting. Tell me the outcome you want. I reply within 24 hours.',
 			availability: 'Available now',
 			primary: 'Email me',
-			response: 'Prefer LinkedIn? Find me below — same 24h promise.'
+			response: 'Prefer LinkedIn? Find me below. Same 24h promise.'
 		},
 		footer: { tagline: 'Built with SvelteKit · on Cloudflare', back: 'Back to top' }
 	},
@@ -327,9 +309,9 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		},
 		hero: {
 			badge: 'Terbuka untuk full-time & consulting',
-			titleA: 'Software yang jadi —',
+			titleA: 'Software yang jadi',
 			titleB: 'dan tetap jalan.',
-			sub: 'Full-stack engineer, 5 tahun di production: aplikasi web, aplikasi mobile, dan backend di belakangnya. Fintech, properti, fitness — dari rescue sistem legacy sampai build end-to-end. Remote ke seluruh dunia · hybrid Jabodetabek.',
+			sub: 'Full-stack engineer, 5 tahun di production: web, mobile, backend. Remote global, hybrid Jabodetabek.',
 			primary: 'Rekrut Saya',
 			secondary: 'Lihat karya',
 			stats: [
@@ -348,44 +330,40 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		work: {
 			eyebrow: 'Karya pilihan',
 			title: 'Produk nyata, dipakai orang.',
-			sub: 'Project klien closed-source — tercantum nama, peran, dan stack. Detail dibahas saat call.',
+			sub: 'Project klien closed-source, tercantum nama, peran, dan stack. Detail dibahas saat call.',
 			stackLabel: 'Stack',
 			rolesTitle: 'Peran',
 			hint: 'Ketuk peran untuk detail'
 		},
 		services: {
-			eyebrow: 'Layanan',
 			title: 'Yang bisa Anda hire.',
 			sub: 'Empat penawaran jelas. Pilih satu, atau gabungkan.'
 		},
 		process: {
-			eyebrow: 'Proses',
 			title: 'Proses membosankan, hasil menarik.',
 			sub: 'Anda selalu tahu langkah berikutnya.'
 		},
 		about: {
-			eyebrow: 'Tentang',
 			title: 'Engineer, mentor, owner.',
 			bio: [
-				'Saya Ramadhanu — full-stack engineer dengan 5 tahun di sistem production: microservices, aplikasi cross-platform, dan infrastruktur di bawahnya.',
+				'Saya Ramadhanu, full-stack engineer dengan 5 tahun di sistem production: microservices, aplikasi cross-platform, dan infrastruktur di bawahnya.',
 				'Saya juga membimbing siswa SMK Negeri 12 Jakarta dan menjaga server sekolah tetap jalan. Prinsip yang sama untuk klien: berfungsi, tetap menyala, dan tim Anda bisa menjalankannya.'
 			],
 			facts: [
 				{ label: 'Lokasi', value: 'Jakarta · remote global · hybrid Jabodetabek' },
 				{ label: 'Pengalaman', value: '5+ tahun, Embreo PTE Ltd (2021–sekarang)' },
 				{ label: 'Pendidikan', value: 'S1 Ilmu Komputer, berjalan (kelas malam)' },
-				{ label: 'Mentoring', value: 'SMK Negeri 12 Jakarta — sertifikasi nasional' }
+				{ label: 'Mentoring', value: 'SMK Negeri 12 Jakarta, sertifikasi nasional' }
 			],
 			capTitle: 'Kemampuan'
 		},
 		contact: {
-			eyebrow: 'Kontak',
 			titleA: 'Mari bangun',
 			titleB: 'yang tahan lama.',
-			sub: 'Terbuka untuk full-time dan consulting. Ceritakan hasil yang Anda mau — saya balas dalam 24 jam.',
+			sub: 'Terbuka untuk full-time dan consulting. Ceritakan hasil yang Anda mau. Saya balas dalam 24 jam.',
 			availability: 'Tersedia sekarang',
 			primary: 'Email saya',
-			response: 'Lebih suka LinkedIn? Lihat di bawah — janji 24 jam sama.'
+			response: 'Lebih suka LinkedIn? Lihat di bawah. Janji 24 jam sama.'
 		},
 		footer: { tagline: 'Dibangun dengan SvelteKit · di Cloudflare', back: 'Kembali ke atas' }
 	}

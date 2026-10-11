@@ -13,12 +13,11 @@
 		use:inView={{ margin: '0px', onEnter: () => (visible = true) }}
 		style={`opacity: ${visible ? 1 : 0}; transform: translateY(${visible ? 0 : 20}px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);`}
 	>
-		<p class="font-mono text-[11px] tracking-[0.35em] text-accent uppercase">{t.eyebrow}</p>
-		<div class="mt-3 flex flex-wrap items-end justify-between gap-6">
-			<h2 class="max-w-xl font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+		<div class="mt-3">
+			<h2 class="max-w-xl font-display text-4xl tracking-tight text-ink sm:text-5xl">
 				{t.title}
 			</h2>
-			<p class="max-w-sm font-sans text-sm leading-relaxed text-muted">{t.sub}</p>
+			<p class="mt-3 max-w-sm font-sans text-sm leading-relaxed text-muted">{t.sub}</p>
 		</div>
 
 		<ol
@@ -29,8 +28,8 @@
 					class="bg-bg p-7"
 					style={`opacity: ${visible ? 1 : 0}; transition: opacity 0.5s ease ${i * 0.1}s;`}
 				>
-					<span class="font-display text-4xl font-bold text-accent/30">0{i + 1}</span>
-					<h3 class="mt-4 font-display text-xl font-bold text-ink">{s.title}</h3>
+					<span class="font-display text-4xl text-accent/30">0{i + 1}</span>
+					<h3 class="mt-4 font-display text-xl text-ink">{s.title}</h3>
 					<p class="mt-2 font-sans text-sm leading-relaxed text-muted">{s.desc}</p>
 				</li>
 			{/each}

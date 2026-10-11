@@ -18,8 +18,7 @@
 		style={`opacity: ${visible ? 1 : 0}; transform: translateY(${visible ? 0 : 20}px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);`}
 	>
 		<div>
-			<p class="font-mono text-[11px] tracking-[0.35em] text-accent uppercase">{t.eyebrow}</p>
-			<h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+			<h2 class="font-display text-4xl tracking-tight text-ink sm:text-5xl">
 				{t.title}
 			</h2>
 			{#each t.bio as p}
@@ -35,12 +34,12 @@
 			</dl>
 		</div>
 
-		<div class="h-fit rounded-2xl border border-line bg-bg p-7 lg:sticky lg:top-24">
+		<div class="rounded-2xl border border-line bg-bg p-7 lg:sticky lg:top-24">
 			<p class="font-mono text-[11px] tracking-[0.3em] text-faint uppercase">{t.capTitle}</p>
 			<div class="mt-5 space-y-6">
 				{#each CAPABILITIES as c}
 					<div>
-						<p class="font-display text-base font-bold text-ink">{c.title}</p>
+						<p class="font-display text-base text-ink">{c.title}</p>
 						<div class="mt-2.5 flex flex-wrap gap-2">
 							{#each c.items as item}
 								<span

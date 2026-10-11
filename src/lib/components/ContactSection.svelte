@@ -13,16 +13,15 @@
 		use:inView={{ margin: '0px', onEnter: () => (visible = true) }}
 		style={`opacity: ${visible ? 1 : 0}; transform: translateY(${visible ? 0 : 20}px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);`}
 	>
-		<div class="rounded-3xl border border-line bg-surface px-6 py-14 text-center sm:px-12 sm:py-20">
+		<div class="rounded-2xl border border-line bg-surface px-6 py-14 text-center sm:px-12 sm:py-20">
 			<p
 				class="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 font-mono text-[11px] tracking-widest text-muted uppercase"
 			>
 				<span class="h-1.5 w-1.5 animate-pulse rounded-full bg-accent"></span>
 				{t.availability}
 			</p>
-			<p class="mt-6 font-mono text-[11px] tracking-[0.35em] text-accent uppercase">{t.eyebrow}</p>
 			<h2
-				class="mx-auto mt-3 max-w-2xl font-display text-cta leading-[1.05] font-bold tracking-tight text-ink"
+				class="mx-auto mt-6 max-w-2xl font-display text-cta leading-[1.05] tracking-tight text-ink"
 			>
 				{t.titleA}<br />
 				<span class="text-muted">{t.titleB}</span>
@@ -31,7 +30,7 @@
 			<div class="mt-8 flex flex-wrap items-center justify-center gap-4">
 				<a
 					href="mailto:rdhanurzid@gmail.com"
-					class="bg-accent px-8 py-4 font-mono text-xs font-bold tracking-widest text-white uppercase transition-all hover:bg-accent-hover active:scale-95"
+					class="bg-accent px-8 py-4 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,transform] duration-200 hover:bg-accent-hover active:scale-95"
 				>
 					{t.primary}
 				</a>
@@ -42,7 +41,7 @@
 						href={c.href}
 						target={c.href.startsWith('http') ? '_blank' : undefined}
 						rel="noreferrer"
-						class="group flex-1 rounded-xl border border-line px-5 py-4 transition-all hover:-translate-y-0.5 hover:border-accent/40"
+						class="group flex-1 rounded-xl border border-line px-5 py-4 transition-[transform,border-color] duration-200 hover:-translate-y-0.5 hover:border-accent/40"
 					>
 						<span class="block font-mono text-[10px] tracking-widest text-faint uppercase"
 							>{c.label}</span

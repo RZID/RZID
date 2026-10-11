@@ -9,11 +9,12 @@
 	--color-line: var(--line);
 	--color-accent: var(--accent);
 	--color-accent-hover: var(--accent-hover);
+	--color-accent-deep: var(--accent-deep);
 	--color-red: var(--accent);
 	--color-red-hover: var(--accent-hover);
 
-	--font-sans: 'Inter', system-ui, sans-serif;
-	--font-display: 'Space Grotesk', 'Inter', sans-serif;
+	--font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+	--font-display: 'Calistoga', Georgia, serif;
 	--font-mono: 'JetBrains Mono', monospace;
 
 	/* font sizes */
@@ -32,10 +33,11 @@
 	--surface: #141414;
 	--ink: #ffffff;
 	--muted: rgba(255, 255, 255, 0.64);
-	--faint: rgba(255, 255, 255, 0.38);
+	--faint: rgba(255, 255, 255, 0.5);
 	--line: rgba(255, 255, 255, 0.09);
-	--accent: #e8250d;
-	--accent-hover: #c91e0a;
+	--accent: #e04a2e;
+	--accent-hover: #a31608;
+	--accent-deep: #a31608;
 	color-scheme: dark;
 }
 
@@ -46,8 +48,9 @@
 	--muted: #3f3d34;
 	--faint: #6e6b5f;
 	--line: rgba(22, 21, 15, 0.16);
-	--accent: #b81a08;
-	--accent-hover: #931505;
+	--accent: #a83c28;
+	--accent-hover: #8c3222;
+	--accent-deep: #7e1004;
 	color-scheme: light;
 }
 
@@ -66,15 +69,19 @@ section[id] {
 body {
 	background-color: var(--bg);
 	color: var(--ink);
-	font-family: 'Inter', system-ui, sans-serif;
+	font-family: 'IBM Plex Sans', system-ui, sans-serif;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: rgba(224, 74, 46, 0.18);
+	caret-color: var(--accent);
 	transition:
 		background-color 0.35s ease,
 		color 0.35s ease;
 }
 
 ::selection {
-	background: var(--accent);
+	background: var(--accent-deep);
 	color: #ffffff;
 }
 
@@ -83,84 +90,104 @@ body {
 	outline-offset: 2px;
 }
 
-/* Entrance keyframes */
-@keyframes rise {
-	from {
-		transform: translateY(110%);
-	}
+/* Skip link: off-screen until keyboard focus lands on it */
+.skip-link {
+	position: fixed;
+	top: -100px;
+	left: 1rem;
+	z-index: 100;
+	background: var(--ink);
+	color: var(--bg);
+	padding: 0.75rem 1.25rem;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	transition: top 0.2s ease;
 }
-@keyframes fade-in {
-	from {
-		opacity: 0;
-	}
+.skip-link:focus-visible {
+	top: 1rem;
 }
-@keyframes fade-in-x {
-	from {
-		opacity: 0;
-		transform: translateX(-16px);
-	}
+
+/* Display headings never strand a single word on the last line */
+h1,
+h2 {
+	text-wrap: balance;
 }
-@keyframes fade-in-y {
+
+/* Calistoga ships a single 400 weight: never faux-bold it */
+.font-display {
+	font-weight: 400;
+}
+
+/* Minimum 44px touch target for icon buttons and pill toggles */
+.tap {
+	min-height: 44px;
+	min-width: 44px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Every control names an action; every action gets a pointer */
+a,
+button {
+	cursor: pointer;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--faint);
+	border-radius: 8px;
+	border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--accent);
+}
+
+/* Hero entrance: one authored moment, staggered. Opacity + translate only
+   (compositor-friendly; blur deliberately excluded so low-end GPUs keep 60fps).
+   Stagger via inline `animation-delay`, capped at 300ms so LCP copy never waits.
+   Reduced-motion is handled by the global rule below. */
+@keyframes enter-hero {
 	from {
 		opacity: 0;
 		transform: translateY(16px);
 	}
 }
-@keyframes scale-y {
-	from {
-		transform: scaleY(0);
-	}
-}
-@keyframes cue-bounce {
-	0%,
-	100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(6px);
-	}
-}
-@keyframes marquee {
-	to {
-		transform: translateX(-50%);
-	}
-}
-@keyframes blink {
-	0%,
-	49% {
-		opacity: 1;
-	}
-	50%,
-	100% {
-		opacity: 0;
-	}
-}
-@keyframes ghost-float {
-	from {
-		transform: translateY(0) rotate(0deg);
-	}
-	to {
-		transform: translateY(-24px) rotate(5deg);
-	}
+.enter-hero {
+	animation: enter-hero 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Marquee ticker — two copies of the list make -50% loop seamless */
-.marquee-track {
-	animation: marquee 36s linear infinite;
+/* Scroll progress: pure CSS scroll-timeline, zero JS. Falls back to a full
+   hairline on browsers without scroll-driven animation support. */
+.scroll-progress {
+	transform: scaleX(1);
+	transform-origin: 0 50%;
 }
-@media (hover: hover) and (pointer: fine) {
-	.marquee:hover .marquee-track {
-		animation-play-state: paused;
+@supports (animation-timeline: scroll()) {
+	.scroll-progress {
+		transform: scaleX(0);
+		animation: sp-grow linear forwards;
+		animation-timeline: scroll(root block);
 	}
-}
-
-/* Terminal cursor */
-.terminal-cursor {
-	animation: blink 1.1s step-end infinite;
+	@keyframes sp-grow {
+		to {
+			transform: scaleX(1);
+		}
+	}
 }
 
 /* Reduced motion: movement stops, state changes stay instant */
 @media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 	*,
 	*::before,
 	*::after {
@@ -168,20 +195,4 @@ body {
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
 	}
-}
-
-/* Subtle scanline texture on hero */
-.scanlines::after {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background: repeating-linear-gradient(
-		0deg,
-		transparent,
-		transparent 2px,
-		rgba(0, 0, 0, 0.03) 2px,
-		rgba(0, 0, 0, 0.03) 4px
-	);
-	pointer-events: none;
-	z-index: 1;
 }

@@ -19,12 +19,11 @@
 			use:inView={{ margin: '0px', onEnter: () => (headVisible = true) }}
 			style={reveal(headVisible)}
 		>
-			<p class="font-mono text-[11px] tracking-[0.35em] text-accent uppercase">{t.eyebrow}</p>
-			<div class="mt-3 flex flex-wrap items-end justify-between gap-6">
-				<h2 class="max-w-xl font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+			<div class="mt-3">
+				<h2 class="max-w-xl font-display text-4xl tracking-tight text-ink sm:text-5xl">
 					{t.title}
 				</h2>
-				<p class="max-w-sm font-sans text-sm leading-relaxed text-muted">{t.sub}</p>
+				<p class="mt-3 max-w-sm font-sans text-sm leading-relaxed text-muted">{t.sub}</p>
 			</div>
 		</div>
 
@@ -33,11 +32,11 @@
 			{#each PROJECTS as p, i}
 				{@const v = headVisible}
 				<article
-					class="group rounded-2xl border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)]"
+					class="group rounded-2xl border border-line bg-surface p-6 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)]"
 					style={`opacity: ${v ? 1 : 0}; transform: translateY(${v ? 0 : 16}px); transition: opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s;`}
 				>
 					<div class="flex items-start justify-between gap-3">
-						<h3 class="font-display text-xl font-bold text-ink">{p.name}</h3>
+						<h3 class="font-display text-xl text-ink">{p.name}</h3>
 						<span
 							class="shrink-0 rounded-full border border-line px-2.5 py-1 font-mono text-[10px] tracking-widest text-faint uppercase"
 						>
@@ -57,7 +56,7 @@
 			style={reveal(rolesVisible)}
 		>
 			<div class="flex items-center justify-between gap-4">
-				<h3 class="font-display text-2xl font-bold text-ink">{t.rolesTitle}</h3>
+				<h3 class="font-display text-2xl text-ink">{t.rolesTitle}</h3>
 				<p class="hidden font-mono text-[11px] tracking-widest text-faint uppercase sm:block">
 					{t.hint}
 				</p>
@@ -68,6 +67,8 @@
 						<button
 							onclick={() => (openIdx = openIdx === i ? null : i)}
 							aria-expanded={openIdx === i}
+							aria-controls={`role-panel-${i}`}
+							id={`role-button-${i}`}
 							class="group flex w-full items-start justify-between gap-4 py-5 text-left"
 						>
 							<div class="flex items-start gap-5">
@@ -76,7 +77,7 @@
 								</span>
 								<div>
 									<p
-										class="font-display text-lg font-bold text-ink transition-colors group-hover:text-accent"
+										class="font-display text-lg text-ink transition-colors group-hover:text-accent"
 									>
 										{r.title}
 									</p>
@@ -105,7 +106,8 @@
 							</div>
 						</button>
 						{#if openIdx === i}
-							<ul class="space-y-2.5 pb-6 pl-11">
+							<div id={`role-panel-${i}`} role="region" aria-labelledby={`role-button-${i}`}>
+								<ul class="space-y-2.5 pb-6 pl-11">
 								{#each r.bullets as b}
 									<li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-muted">
 										<span aria-hidden="true" class="mt-0.5 shrink-0 text-[11px] text-accent">◆</span
@@ -115,7 +117,8 @@
 								{/each}
 							</ul>
 							<p class="pb-6 pl-11 font-mono text-[11px] text-faint sm:hidden">{r.period}</p>
-						{/if}
+						</div>
+					{/if}
 					</div>
 				{/each}
 			</div>

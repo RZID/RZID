@@ -7,6 +7,8 @@
 				if (t !== 'light' && t !== 'dark')
 					t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 				document.documentElement.dataset.theme = t;
+				var mc = document.querySelector('meta[name="theme-color"]');
+				if (mc) mc.setAttribute('content', t === 'dark' ? '#0c0c0c' : '#f4f2ec');
 			} catch (e) {
 				document.documentElement.dataset.theme = 'dark';
 			}
@@ -15,12 +17,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#0c0c0c" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
-		<meta name="text-scale" content="scale" />
+	<link rel="apple-touch-icon" href="%sveltekit.assets%/apple-touch-icon.png" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Calistoga&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
 		/>
 		%sveltekit.head%
 	</head>

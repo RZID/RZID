@@ -60,10 +60,10 @@
 </script>
 
 <svelte:head>
-	<title>Ramadhanu — Full-Stack Engineer for Hire (Remote)</title>
+	<title>Ramadhanu, Full-Stack Engineer for Hire (Remote)</title>
 	<meta
 		name="description"
-		content="Full-stack engineer, 5 years in production: web, mobile and backend. Fintech, property, fitness. Open to full-time roles and consulting — remote worldwide, hybrid in Jabodetabek."
+		content="Full-stack engineer, 5 years in production: web, mobile and backend. Fintech, property, fitness. Open to full-time roles and consulting. Remote worldwide, hybrid in Jabodetabek."
 	/>
 	<meta
 		name="keywords"
@@ -74,29 +74,35 @@
 	<link rel="canonical" href="https://www.rzidinc.com" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.rzidinc.com" />
-	<meta property="og:title" content="Ramadhanu — Full-Stack Engineer for Hire" />
+	<meta property="og:title" content="Ramadhanu, Full-Stack Engineer for Hire" />
 	<meta
 		property="og:description"
-		content="5 years in production. Web, mobile, backend — shipped and kept stable. Open to full-time & consulting."
+		content="5 years in production. Web, mobile, backend, shipped and kept stable. Open to full-time and consulting."
 	/>
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content="Ramadhanu" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="Ramadhanu — Full-Stack Engineer for Hire" />
+	<meta property="og:image" content="https://www.rzidinc.com/og-dark.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="Ramadhanu, Full-Stack Engineer for Hire" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="https://www.rzidinc.com/og-dark.png" />
+	<meta name="twitter:title" content="Ramadhanu, Full-Stack Engineer for Hire" />
 	<meta
 		name="twitter:description"
-		content="5 years in production. Web, mobile, backend — shipped and kept stable."
+		content="5 years in production. Web, mobile, backend, shipped and kept stable."
 	/>
 	<script type="application/ld+json">{@html JSON.stringify(jsonLd)}</script>
 </svelte:head>
 
-<div id="top" class="min-h-screen bg-bg text-ink">
+<div id="top" class="min-h-dvh bg-bg text-ink">
+	<a href="#main" class="skip-link">Skip to content</a>
 	<MeshGradient />
 	<GrainOverlay />
 
 	<ScrollProgress />
 	<Navbar />
-	<main>
+	<main id="main">
 		{@render children()}
 	</main>
 	<footer class="border-t border-line">

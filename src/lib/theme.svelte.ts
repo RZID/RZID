@@ -15,7 +15,7 @@ function apply() {
 	document.documentElement.dataset.theme = themeState.current;
 	document
 		.querySelector('meta[name="theme-color"]')
-		?.setAttribute('content', themeState.current === 'dark' ? '#0c0c0c' : '#fafaf8');
+		?.setAttribute('content', themeState.current === 'dark' ? '#0c0c0c' : '#f4f2ec');
 }
 
 export function initTheme() {

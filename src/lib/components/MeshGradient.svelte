@@ -15,7 +15,8 @@
 		return () => window.removeEventListener('mousemove', handleMouseMove);
 	});
 
-	// Smoothly follow mouse
+	// Spotlight follows the cursor, then the loop stops at rest and wakes on
+	// the next mousemove, so no perpetual rAF burn, paused when the tab hides.
 	$effect(() => {
 		// ponytail: static glow when reduced-motion; rAF loop skipped entirely. Upgrade to CSS-only drift only if a designer asks.
 		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -23,11 +24,25 @@
 		const tick = () => {
 			raf = requestAnimationFrame(tick);
 			if (document.hidden || themeState.current === 'light') return;
-			spotlightX += (mouseX - spotlightX) * 0.05;
-			spotlightY += (mouseY - spotlightY) * 0.05;
+			const dx = mouseX - spotlightX;
+			const dy = mouseY - spotlightY;
+			if (Math.abs(dx) < 0.2 && Math.abs(dy) < 0.2) {
+				cancelAnimationFrame(raf);
+				raf = 0;
+				return;
+			}
+			spotlightX += dx * 0.08;
+			spotlightY += dy * 0.08;
 		};
+		const wake = () => {
+			if (!raf) raf = requestAnimationFrame(tick);
+		};
+		window.addEventListener('mousemove', wake);
 		raf = requestAnimationFrame(tick);
-		return () => cancelAnimationFrame(raf);
+		return () => {
+			window.removeEventListener('mousemove', wake);
+			if (raf) cancelAnimationFrame(raf);
+		};
 	});
 </script>
 
@@ -45,10 +60,10 @@
 
 		<!-- Fixed Mesh Gradients -->
 		<div
-			class="absolute -top-[20%] -left-[10%] h-[60%] w-[60%] rounded-full bg-red/5 opacity-30 blur-[120px]"
+			class="absolute -top-[20%] -left-[10%] h-[60%] w-[60%] rounded-full bg-accent/5 opacity-30 blur-[120px]"
 		></div>
 		<div
-			class="absolute top-[60%] -right-[10%] h-[50%] w-[50%] rounded-full bg-red/5 opacity-20 blur-[100px]"
+			class="absolute top-[60%] -right-[10%] h-[50%] w-[50%] rounded-full bg-accent/5 opacity-20 blur-[100px]"
 		></div>
 	{:else}
 		<div
