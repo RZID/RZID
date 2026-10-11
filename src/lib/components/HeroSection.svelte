@@ -105,13 +105,15 @@
 			<dl class="mt-5 space-y-4 border-t border-line pt-5">
 				{#each t.card as c}
 					<div class="flex items-start gap-3 border-b border-line pb-4 last:border-0 last:pb-0">
-						<span
-							aria-hidden="true"
-							class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent"
-						>
-							<Icon name={c.icon} class="h-3.5 w-3.5" />
-						</span>
-						<div class="min-w-0">
+						{#if !(c.icon === 'mail' && c.href)}
+							<span
+								aria-hidden="true"
+								class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent"
+							>
+								<Icon name={c.icon} class="h-3.5 w-3.5" />
+							</span>
+						{/if}
+						<div class="min-w-0 flex-1">
 							{#if c.icon === 'mail' && c.href}
 								<dt class="sr-only">{c.label}</dt>
 								<dd>
