@@ -194,7 +194,8 @@ interface Copy {
 		secondary: string;
 		stats: { num: string; label: string }[];
 		cardTitle: string;
-		card: { label: string; value: string; href?: string; icon: 'pin' | 'stack' | 'mail' }[];
+		cardStatus: string;
+		card: { label: string; value: string; href?: string; icon: 'pin' | 'clock' | 'stack' | 'mail' }[];
 	};
 	logos: string;
 	work: {
@@ -249,8 +250,10 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 				{ num: '24h', label: 'Response time' }
 			],
 			cardTitle: 'At a glance',
+			cardStatus: 'Available now',
 			card: [
 				{ label: 'Based', value: 'Jakarta, GMT+7', icon: 'pin' },
+				{ label: 'Local time', value: '', icon: 'clock' },
 				{ label: 'Stack', value: 'TypeScript · NestJS · React · RN', icon: 'stack' },
 				{
 					label: 'Email',
@@ -325,8 +328,10 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 				{ num: '24j', label: 'Waktu respons' }
 			],
 			cardTitle: 'Sekilas',
+			cardStatus: 'Tersedia sekarang',
 			card: [
 				{ label: 'Basis', value: 'Jakarta, GMT+7', icon: 'pin' },
+				{ label: 'Waktu lokal', value: '', icon: 'clock' },
 				{ label: 'Stack', value: 'TypeScript · NestJS · React · RN', icon: 'stack' },
 				{
 					label: 'Email',
