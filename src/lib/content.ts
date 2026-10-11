@@ -14,6 +14,7 @@ export interface Role {
 }
 
 export interface Service {
+	icon: 'package' | 'wrench' | 'mobile' | 'cloud';
 	title: string;
 	desc: string;
 	points: string[];
@@ -40,21 +41,21 @@ export const PROJECTS: Project[] = [
 	{
 		name: 'Cara.sg',
 		role: 'Full-stack Engineer',
-		stack: 'Next.js · NestJS · TypeScript',
+		stack: 'Next.js, NestJS, TypeScript',
 		outcome:
 			'Client platform shipped and kept stable through a monolith-to-microservices migration.'
 	},
 	{
 		name: 'Affluent.sg',
 		role: 'Full-stack Engineer',
-		stack: 'React · Express · MySQL',
+		stack: 'React, Express, MySQL',
 		outcome:
 			'Estate-planning app delivered end to end, incl. data encryption and payment integration.'
 	},
 	{
 		name: 'Airwallex',
 		role: 'Backend Engineer',
-		stack: 'NestJS · REST APIs',
+		stack: 'NestJS, REST APIs',
 		outcome: 'Payment flows integrated and hardened for production use.'
 	},
 	{
@@ -66,7 +67,7 @@ export const PROJECTS: Project[] = [
 	{
 		name: 'Pinknode',
 		role: 'Frontend Engineer',
-		stack: 'React · Next.js',
+		stack: 'React, Next.js',
 		outcome: 'Production web frontend, built and shipped.'
 	}
 ];
@@ -75,7 +76,7 @@ export const ROLES: Role[] = [
 	{
 		title: 'Software Engineer',
 		company: 'Embreo PTE Ltd',
-		period: 'Sep 2021 – Present',
+		period: 'Sep 2021 - Present',
 		tag: 'Full-Time',
 		bullets: [
 			'Led a legacy production rewrite: monolith to microservices, without stopping the business',
@@ -89,7 +90,7 @@ export const ROLES: Role[] = [
 	{
 		title: 'Technical Mentor & Systems Consultant',
 		company: 'SMK Negeri 12 Jakarta',
-		period: 'Jun 2021 – Present',
+		period: 'Jun 2021 - Present',
 		tag: 'Consulting',
 		bullets: [
 			'Mentor students to national dev certifications',
@@ -100,7 +101,7 @@ export const ROLES: Role[] = [
 	{
 		title: 'Software Engineer',
 		company: 'Freelance',
-		period: 'Aug 2019 – Feb 2020',
+		period: 'Aug 2019 - Feb 2020',
 		tag: 'Freelance',
 		bullets: [
 			'Delivered client websites end to end: database to frontend',
@@ -111,13 +112,15 @@ export const ROLES: Role[] = [
 
 export const SERVICES: Service[] = [
 	{
+		icon: 'package',
 		title: 'Product builds, start to finish',
 		desc: 'You bring the idea, I carry it to launch.',
-		points: ['One contact, no handoffs', 'I fit into how you work', 'Docs so your team can take over']
+		points: ['Single contact from scope to deploy', 'I fit into how you work', 'Docs so your team can take over']
 	},
 	{
+		icon: 'wrench',
 		title: 'Legacy rescue & rewrites',
-		desc: 'Old system slowing you down?',
+		desc: 'For systems that got slow and fragile.',
 		points: [
 			'Monolith → microservices',
 			'Zero-downtime migration plan',
@@ -125,25 +128,27 @@ export const SERVICES: Service[] = [
 		]
 	},
 	{
+		icon: 'mobile',
 		title: 'Cross-platform mobile',
 		desc: 'iOS + Android from one codebase.',
-		points: ['React Native / Expo', 'Store release handled', 'OTA updates set up']
+		points: ['One codebase, both app stores', 'I handle the store release', 'Updates without waiting on review']
 	},
 	{
+		icon: 'cloud',
 		title: 'Deploy & infra hardening',
-		desc: 'Your nights stay quiet.',
-		points: ['AWS / Docker / Linux', 'RabbitMQ + Redis performance', 'Monitoring & backups']
+		desc: 'Deploys and servers you stop thinking about.',
+		points: ['Deploy pipeline your team can run', 'Performance fixes that stick', 'Monitoring and backups included']
 	}
 ];
 
 export const STEPS: Step[] = [
 	{
 		title: 'Discover',
-		desc: 'We sketch the goal, the scope, and one small first milestone. In days, not weeks.'
+		desc: 'We sketch the goal, the scope, and one small first milestone. That takes days.'
 	},
 	{
 		title: 'Build',
-		desc: 'Working software from week one. Weekly demos, no black box.'
+		desc: 'Working software from week one, with a demo every week.'
 	},
 	{
 		title: 'Harden',
@@ -188,14 +193,12 @@ interface Copy {
 		sub: string;
 		primary: string;
 		secondary: string;
-		stats: { num: string; label: string }[];
 		cardTitle: string;
 		cardStatus: string;
 		card: { label: string; value: string; href?: string; icon: 'pin' | 'clock' | 'stack' | 'mail' }[];
 	};
 	logos: string;
 	work: {
-		eyebrow: string;
 		title: string;
 		sub: string;
 		stackLabel: string;
@@ -240,17 +243,12 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			sub: "I'm Ramadhanu. I pull things apart to see how they work, then build software from what I learn: web, mobile, backend. Five years in, still curious. Remote worldwide, hybrid in Jabodetabek.",
 			primary: 'Hire me',
 			secondary: 'See selected work',
-			stats: [
-				{ num: '5+', label: 'Years building software' },
-				{ num: '6', label: 'Client projects delivered' },
-				{ num: '24h', label: 'Response time' }
-			],
 			cardTitle: 'At a glance',
 			cardStatus: 'Available now',
 			card: [
 				{ label: 'Based', value: 'Jakarta, GMT+7', icon: 'pin' },
 				{ label: 'Local time', value: '', icon: 'clock' },
-				{ label: 'I make', value: 'web · mobile · backend', icon: 'stack' },
+				{ label: 'I make', value: 'web, mobile, backend', icon: 'stack' },
 				{
 					label: 'Email',
 					value: 'rdhanurzid@gmail.com',
@@ -261,8 +259,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		},
 		logos: "Folks I've worked with",
 		work: {
-			eyebrow: 'Selected work',
-			title: 'Real products, real users.',
+				title: 'Work that shipped to real users.',
 			sub: 'Most of my work lives behind closed doors, so here is what I can share. Ask me anything on a call.',
 			stackLabel: 'Stack',
 			rolesTitle: 'Roles',
@@ -283,8 +280,8 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 				'I also mentor students at SMK Negeri 12 Jakarta and keep the school servers alive. With clients it is the same deal: I join your team, learn how you work, and leave things your team can run.' 
 			],
 			facts: [
-				{ label: 'Location', value: 'Jakarta · remote worldwide · hybrid Jabodetabek' },
-				{ label: 'Experience', value: '5+ years, Embreo PTE Ltd (2021–present)' },
+				{ label: 'Location', value: 'Jakarta, remote worldwide, hybrid Jabodetabek' },
+				{ label: 'Experience', value: '5+ years, Embreo PTE Ltd (2021-present)' },
 				{ label: 'Education', value: 'B.Sc. Computer Science, in progress (evening program)' },
 				{ label: 'Mentoring', value: 'SMK Negeri 12 Jakarta, national certifications' }
 			],
@@ -298,7 +295,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			primary: 'Email me',
 			response: 'More of a LinkedIn person? I am below. Same 24h reply.'
 		},
-		footer: { tagline: 'Built with SvelteKit · on Cloudflare', back: 'Back to top' }
+		footer: { tagline: 'Jakarta, GMT+7. Replies within 24 hours', back: 'Back to top' }
 	},
 	id: {
 		nav: {
@@ -318,17 +315,12 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			sub: 'Saya Ramadhanu. Suka bongkar cara kerja sesuatu, lalu bikin software dari situ: web, mobile, backend. Lima tahun, masih penasaran. Remote global, hybrid Jabodetabek.',
 			primary: 'Rekrut Saya',
 			secondary: 'Lihat karya',
-			stats: [
-				{ num: '5+', label: 'Tahun bikin software' },
-				{ num: '6', label: 'Project klien selesai' },
-				{ num: '24j', label: 'Waktu respons' }
-			],
 			cardTitle: 'Sekilas',
 			cardStatus: 'Tersedia sekarang',
 			card: [
 				{ label: 'Basis', value: 'Jakarta, GMT+7', icon: 'pin' },
 				{ label: 'Waktu lokal', value: '', icon: 'clock' },
-				{ label: 'Saya bikin', value: 'web · mobile · backend', icon: 'stack' },
+				{ label: 'Saya bikin', value: 'web, mobile, backend', icon: 'stack' },
 				{
 					label: 'Email',
 					value: 'rdhanurzid@gmail.com',
@@ -339,8 +331,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		},
 		logos: 'Yang pernah kerja sama',
 		work: {
-			eyebrow: 'Karya pilihan',
-			title: 'Produk nyata, dipakai orang.',
+				title: 'Kerjaan yang sampai ke pengguna.',
 			sub: 'Sebagian besar kerjaan saya tertutup, jadi ini yang bisa saya bagikan. Tanya apa saja saat call.',
 			stackLabel: 'Stack',
 			rolesTitle: 'Peran',
@@ -361,8 +352,8 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 				'Saya juga membimbing siswa SMK Negeri 12 Jakarta dan menjaga server sekolah tetap hidup. Ke klien sama: saya gabung tim Anda, pelajari cara kerja Anda, dan meninggalkan hal yang bisa dijalankan tim Anda.' 
 			],
 			facts: [
-				{ label: 'Lokasi', value: 'Jakarta · remote global · hybrid Jabodetabek' },
-				{ label: 'Pengalaman', value: '5+ tahun, Embreo PTE Ltd (2021–sekarang)' },
+				{ label: 'Lokasi', value: 'Jakarta, remote global, hybrid Jabodetabek' },
+				{ label: 'Pengalaman', value: '5+ tahun, Embreo PTE Ltd (2021-sekarang)' },
 				{ label: 'Pendidikan', value: 'S1 Ilmu Komputer, berjalan (kelas malam)' },
 				{ label: 'Mentoring', value: 'SMK Negeri 12 Jakarta, sertifikasi nasional' }
 			],
@@ -376,6 +367,6 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			primary: 'Email saya',
 			response: 'Lebih suka LinkedIn? Saya ada di bawah. Tetap balas 24 jam.'
 		},
-		footer: { tagline: 'Dibangun dengan SvelteKit · di Cloudflare', back: 'Kembali ke atas' }
+		footer: { tagline: 'Jakarta, GMT+7. Balas dalam 24 jam', back: 'Kembali ke atas' }
 	}
 };

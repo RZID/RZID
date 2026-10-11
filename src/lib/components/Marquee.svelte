@@ -12,13 +12,9 @@
 			{t.logos}
 		</p>
 		<ul class="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3" aria-label={t.logos}>
-			{#each CLIENTS as c, i}
+			{#each CLIENTS as c}
 				<li
-					class="font-display text-lg tracking-tight text-muted transition-all hover:-rotate-3 hover:text-ink {i %
-						2 ===
-					1
-						? 'rotate-1'
-						: '-rotate-1'}"
+					class="font-display text-lg tracking-tight text-muted transition-colors hover:text-ink"
 				>
 					{c}
 				</li>

@@ -34,7 +34,7 @@
 			</dl>
 		</div>
 
-		<div class="-rotate-1 rounded-3xl border border-line bg-bg p-7 transition-transform duration-300 hover:rotate-0 lg:sticky lg:top-24">
+		<div class="rounded-2xl border border-line bg-bg p-7 lg:sticky lg:top-24">
 			<p class="font-mono text-[11px] tracking-[0.3em] text-faint uppercase">{t.capTitle}</p>
 			<div class="mt-5 space-y-6">
 				{#each CAPABILITIES as c}

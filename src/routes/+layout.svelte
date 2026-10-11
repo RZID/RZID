@@ -74,7 +74,7 @@
 	<link rel="canonical" href="https://www.rzidinc.com" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.rzidinc.com" />
-	<meta property="og:title" content="Ramadhanu, Full-Stack Engineer for Hire" />
+	<meta property="og:title" content="Ramadhanu, Curious Engineer Who Writes Code" />
 	<meta
 		property="og:description"
 		content="Curious engineer, 5 years building web, mobile, backend. Open to full-time and consulting."
@@ -84,10 +84,10 @@
 	<meta property="og:image" content="https://www.rzidinc.com/og-dark.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:image:alt" content="Ramadhanu, Full-Stack Engineer for Hire" />
+	<meta property="og:image:alt" content="Ramadhanu, Curious Engineer Who Writes Code" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:image" content="https://www.rzidinc.com/og-dark.png" />
-	<meta name="twitter:title" content="Ramadhanu, Full-Stack Engineer for Hire" />
+	<meta name="twitter:title" content="Ramadhanu, Curious Engineer Who Writes Code" />
 	<meta
 		name="twitter:description"
 		content="Curious engineer, 5 years building web, mobile, backend."
@@ -127,7 +127,7 @@
 			</div>
 			<div class="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-6">
 				<span class="font-mono text-[11px] tracking-widest text-faint uppercase">
-					© {new Date().getFullYear()} Ramadhanu · {t.footer.tagline}
+					© {new Date().getFullYear()} Ramadhanu, {t.footer.tagline}
 				</span>
 				<a href="#top" class="font-mono text-[11px] tracking-widest text-faint uppercase transition-colors hover:text-ink">
 					{t.footer.back} ↑

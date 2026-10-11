@@ -2,6 +2,7 @@
 	import { inView } from '$lib/inView';
 	import { CONTENT, PROJECTS, ROLES } from '$lib/content';
 	import { langState } from '$lib/i18n.svelte';
+	import Icon from './Icon.svelte';
 
 	const t = $derived(CONTENT[langState.current].work);
 	let headVisible = $state(false);
@@ -32,17 +33,13 @@
 			{#each PROJECTS as p, i}
 				{@const v = headVisible}
 				<article
-					class="group rounded-2xl border border-line bg-surface p-6 transition-[transform,border-color,box-shadow] duration-300 hover:rotate-0 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)] {i %
-						2 ===
-					0
-						? '-rotate-1'
-						: 'rotate-1'}"
+					class="group rounded-2xl border border-line bg-surface p-6 transition-[border-color,box-shadow] duration-300 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)]{i === 0 ? ' sm:col-span-2' : ''}"
 					style={`opacity: ${v ? 1 : 0}; transform: translateY(${v ? 0 : 16}px); transition: opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s;`}
 				>
 					<div class="flex items-start justify-between gap-3">
 						<h3 class="font-display text-xl text-ink">{p.name}</h3>
 						<span
-							class="shrink-0 -rotate-2 rounded-full border border-line px-2.5 py-1 font-mono text-[10px] tracking-widest text-faint uppercase transition-transform group-hover:rotate-0"
+							class="shrink-0 rounded-full border border-line px-2.5 py-1 font-mono text-[10px] tracking-widest text-faint uppercase"
 						>
 							{p.role}
 						</span>
@@ -114,8 +111,7 @@
 								<ul class="space-y-2.5 pb-6 pl-11">
 								{#each r.bullets as b}
 									<li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-muted">
-										<span aria-hidden="true" class="mt-0.5 shrink-0 text-[11px] text-accent">◆</span
-										>
+										<span aria-hidden="true" class="mt-0.5 shrink-0 text-accent"><Icon name="check" class="h-4 w-4" /></span>
 										{b}
 									</li>
 								{/each}
@@ -127,7 +123,7 @@
 				{/each}
 			</div>
 			<p class="mt-5 font-mono text-[11px] tracking-widest text-faint uppercase">
-				{t.stackLabel}: TypeScript · NestJS · React · Next.js · React Native · AWS · Docker
+				{t.stackLabel}: TypeScript, NestJS, React, Next.js, React Native, AWS, Docker
 			</p>
 		</div>
 	</div>
