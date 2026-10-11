@@ -59,7 +59,7 @@
 			>
 				<a
 					href="#contact"
-					class="rounded-full bg-accent px-7 py-3.5 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-[0_12px_30px_-12px_rgba(224,74,46,0.65)] active:translate-y-0 active:scale-95"
+					class="rounded-full bg-accent px-7 py-3.5 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,box-shadow,translate,scale] duration-200 hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-[0_12px_30px_-12px_rgba(224,74,46,0.65)] active:translate-y-0 active:scale-95"
 				>
 					{t.primary}
 				</a>
@@ -70,7 +70,7 @@
 					{t.secondary}
 					<Icon
 						name="arrow"
-						class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
+						class="h-3.5 w-3.5 transition-[translate] duration-200 group-hover:translate-x-0.5"
 					/>
 				</a>
 			</div>

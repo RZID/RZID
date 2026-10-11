@@ -28,7 +28,7 @@
 		<div class="mt-12 grid gap-4 md:grid-cols-2">
 			{#each SERVICES as s, i}
 				<article
-					class="reveal rounded-2xl border border-line bg-bg p-7 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-30px_rgba(232,37,13,0.4)] {visible
+					class="reveal rounded-2xl border border-line bg-bg p-7 transition-[border-color,box-shadow,translate] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-30px_rgba(232,37,13,0.4)] {visible
 						? 'on'
 						: ''}"
 					style={`animation-delay: ${i * 0.08}s;`}

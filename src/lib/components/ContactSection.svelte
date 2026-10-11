@@ -31,7 +31,7 @@
 			<div class="mt-8 flex flex-wrap items-center justify-center gap-4">
 				<a
 					href="mailto:rdhanurzid@gmail.com"
-					class="rounded-full bg-accent px-8 py-4 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-[0_12px_30px_-12px_rgba(224,74,46,0.65)] active:translate-y-0 active:scale-95"
+					class="rounded-full bg-accent px-8 py-4 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,box-shadow,translate,scale] duration-200 hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-[0_12px_30px_-12px_rgba(224,74,46,0.65)] active:translate-y-0 active:scale-95"
 				>
 					{t.primary}
 				</a>
@@ -42,7 +42,7 @@
 						href={c.href}
 						target={c.href.startsWith('http') ? '_blank' : undefined}
 						rel="noreferrer"
-						class="group flex-1 rounded-2xl border border-line px-5 py-4 transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-accent/40"
+						class="group flex-1 rounded-2xl border border-line px-5 py-4 transition-[border-color,translate] duration-200 hover:-translate-y-0.5 hover:border-accent/40"
 					>
 						<span
 							class="flex items-center justify-center gap-1.5 font-mono text-[10px] tracking-widest text-faint uppercase"

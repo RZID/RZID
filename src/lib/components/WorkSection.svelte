@@ -33,7 +33,7 @@
 			{#each PROJECTS as p, i}
 				{@const v = headVisible}
 				<article
-					class="reveal group rounded-2xl border border-line bg-surface p-6 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)]{i ===
+					class="reveal group rounded-2xl border border-line bg-surface p-6 transition-[border-color,box-shadow,translate] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)]{i ===
 					0
 						? ' sm:col-span-2'
 						: ''} {v ? 'on' : ''}"
