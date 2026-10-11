@@ -15,12 +15,16 @@
 
 	// Smoothly follow mouse
 	$effect(() => {
+		// ponytail: static glow when reduced-motion; rAF loop skipped entirely. Upgrade to CSS-only drift only if a designer asks.
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		let raf = 0;
 		const tick = () => {
+			raf = requestAnimationFrame(tick);
+			if (document.hidden) return;
 			spotlightX += (mouseX - spotlightX) * 0.05;
 			spotlightY += (mouseY - spotlightY) * 0.05;
-			requestAnimationFrame(tick);
 		};
-		const raf = requestAnimationFrame(tick);
+		raf = requestAnimationFrame(tick);
 		return () => cancelAnimationFrame(raf);
 	});
 </script>

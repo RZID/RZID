@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { tweened } from 'svelte/motion';
 	import { cubicInOut, sineInOut } from 'svelte/easing';
-	import { get } from 'svelte/store';
 	import { NAV_LINKS } from '$lib/data';
-
-	const ROW = 53; // 6 + 40 + 6 padding + 1px divide border
 
 	const stroke = {
 		stroke: 'currentColor',
@@ -19,15 +16,20 @@
 	const scaleX = tweened(1, { duration: 150, easing: cubicInOut });
 	let prevIdx = 0;
 	let chain: Promise<void> = Promise.resolve();
+	let navEl: HTMLElement | undefined;
+
+	function linkCenter(idx: number) {
+		// ponytail: measured live — survives zoom, font swaps, spacing changes. Cache only if travel profiling shows need.
+		const link = navEl?.querySelectorAll('a')[idx] as HTMLElement | undefined;
+		return link ? link.offsetTop + link.offsetHeight / 2 - 1 : 0;
+	}
 
 	function travel(nextIdx: number) {
 		chain = chain.then(async () => {
-			if (nextIdx === prevIdx) return;
-			const delta = (nextIdx - prevIdx) * ROW;
+			if (nextIdx === prevIdx || nextIdx < 0) return;
 			prevIdx = nextIdx;
-			const base = get(y);
 			await scaleX.set(0.1, { duration: 150, easing: cubicInOut });
-			await y.set(base + delta, { duration: 300, easing: sineInOut });
+			await y.set(linkCenter(nextIdx), { duration: 300, easing: sineInOut });
 			await scaleX.set(1, { duration: 150, easing: cubicInOut });
 		});
 	}
@@ -48,6 +50,7 @@
 			const el = document.getElementById(to.slice(1));
 			if (el) observer.observe(el);
 		});
+		y.set(linkCenter(0), { duration: 0 });
 		return () => observer.disconnect();
 	});
 
@@ -84,13 +87,14 @@
 
 <nav
 	aria-label="Section navigation"
+	bind:this={navEl}
 	class="fixed top-1/2 right-4 sm:right-6 z-40 flex flex-col -translate-y-1/2 bg-bg/85 backdrop-blur-sm divide-y divide-white/6 border border-white/6 rounded-2xl"
 	style="animation: rail-in 0.7s cubic-bezier(0.16,1,0.3,1) 0.4s both;"
 >
 	<!-- Active indicator — 2px underline under the icon, dot while travelling -->
 	<span
 		aria-hidden="true"
-		class="bg-red w-5 h-0.5 rounded-full absolute left-4 top-[47px]"
+		class="bg-red w-5 h-0.5 rounded-full absolute left-4 top-0"
 		style={`transform: translateY(${$y}px) scaleX(${$scaleX});`}
 	></span>
 

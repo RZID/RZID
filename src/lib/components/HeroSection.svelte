@@ -11,8 +11,13 @@
 	const opacity = $derived(reduce ? 1 : 1 - Math.min($scrollY / 500, 1));
 
 	$effect(() => {
+		// ponytail: single mount, no replay path. Add hover-replay only if requested.
+		if (reduce) return;
 		const t = setTimeout(() => name.start(), 300);
-		return () => clearTimeout(t);
+		return () => {
+			clearTimeout(t);
+			name.stop();
+		};
 	});
 </script>
 

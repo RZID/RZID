@@ -4,6 +4,13 @@ export function createScramble(text: string) {
 	let out = $state(text);
 	let timer: ReturnType<typeof setInterval> | null = null;
 
+	function stop() {
+		if (timer) {
+			clearInterval(timer);
+			timer = null;
+		}
+	}
+
 	function start() {
 		if (timer) return;
 		let i = 0;
@@ -17,8 +24,7 @@ export function createScramble(text: string) {
 				})
 				.join('');
 			if (i >= text.length) {
-				clearInterval(timer!);
-				timer = null;
+				stop();
 			}
 			i += 0.6;
 		}, 28);
@@ -28,6 +34,7 @@ export function createScramble(text: string) {
 		get out() {
 			return out;
 		},
-		start
+		start,
+		stop
 	};
 }

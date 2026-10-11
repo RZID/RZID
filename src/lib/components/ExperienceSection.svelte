@@ -4,7 +4,9 @@
 	import { ACHIEVEMENTS, EDUCATION, EXPERIENCES } from '$lib/data';
 
 	let openIdx = $state<number | null>(0);
-	let visible = $state(false);
+	let headVisible = $state(false);
+	let eduVisible = $state(false);
+	let achVisible = $state(false);
 </script>
 
 <section
@@ -24,9 +26,9 @@
 	<div class="max-w-5xl mx-auto px-6 sm:px-8 md:px-16 relative z-10 2xl:max-w-6xl">
 		<!-- Section header -->
 		<div
-			use:inView={{ margin: '0px', onEnter: () => (visible = true) }}
+			use:inView={{ margin: '0px', onEnter: () => (headVisible = true) }}
 			class="flex mb-10 md:mb-16 items-end justify-between"
-			style={`opacity: ${visible ? 1 : 0}; transition: opacity 0.8s ease;`}
+			style={`opacity: ${headVisible ? 1 : 0}; transition: opacity 0.8s ease;`}
 		>
 			<div>
 				<span class="uppercase font-mono text-label text-red/70 tracking-[0.4em]">02 / Work</span>
@@ -56,15 +58,15 @@
 		<!-- Education + achievements -->
 		<div class="grid gap-10 mt-20 md:grid-cols-2 md:gap-16">
 			<div
-				use:inView={{ margin: '0px', onEnter: () => (visible = true) }}
-				style={`opacity: ${visible ? 1 : 0}; transform: translateY(${visible ? 0 : 20}px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);`}
+				use:inView={{ margin: '0px', onEnter: () => (eduVisible = true) }}
+				style={`opacity: ${eduVisible ? 1 : 0}; transform: translateY(${eduVisible ? 0 : 20}px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);`}
 			>
 				<span class="uppercase font-mono text-label text-white/25 tracking-[0.4em]">Education</span>
 				<div class="mt-4 border-t border-white/[0.07]">
 					{#each EDUCATION as e, i}
 						<div
 							class="flex py-4 border-b items-baseline gap-4 justify-between border-white/[0.07]"
-							style={`opacity: ${visible ? 1 : 0}; transform: translateY(${visible ? 0 : 12}px); transition: opacity 0.5s ease ${i * 0.08 + 0.25}s, transform 0.5s ease ${i * 0.08 + 0.25}s;`}
+							style={`opacity: ${eduVisible ? 1 : 0}; transform: translateY(${eduVisible ? 0 : 12}px); transition: opacity 0.5s ease ${i * 0.08 + 0.25}s, transform 0.5s ease ${i * 0.08 + 0.25}s;`}
 						>
 							<div>
 								<p class="text-body font-sans text-white/70 leading-tight">{e.program}</p>
@@ -77,15 +79,15 @@
 			</div>
 
 			<div
-				use:inView={{ margin: '0px', onEnter: () => (visible = true) }}
-				style={`opacity: ${visible ? 1 : 0}; transform: translateY(${visible ? 0 : 20}px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);`}
+				use:inView={{ margin: '0px', onEnter: () => (achVisible = true) }}
+				style={`opacity: ${achVisible ? 1 : 0}; transform: translateY(${achVisible ? 0 : 20}px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);`}
 			>
 				<span class="uppercase font-mono text-label text-white/25 tracking-[0.4em]">Achievements</span>
 				<div class="mt-4 border-t border-white/[0.07]">
 					{#each ACHIEVEMENTS as a, i}
 						<div
 							class="flex py-4 border-b gap-3 items-start border-white/[0.07]"
-							style={`opacity: ${visible ? 1 : 0}; transform: translateY(${visible ? 0 : 12}px); transition: opacity 0.5s ease ${i * 0.08 + 0.25}s, transform 0.5s ease ${i * 0.08 + 0.25}s;`}
+							style={`opacity: ${achVisible ? 1 : 0}; transform: translateY(${achVisible ? 0 : 12}px); transition: opacity 0.5s ease ${i * 0.08 + 0.25}s, transform 0.5s ease ${i * 0.08 + 0.25}s;`}
 						>
 							<span class="mt-1 shrink-0 text-label text-red/60">◆</span>
 							<p class="text-body font-sans text-white/70 leading-relaxed">{a}</p>

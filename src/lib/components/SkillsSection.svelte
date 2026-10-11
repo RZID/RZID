@@ -4,6 +4,7 @@
 	import { SKILL_TAGS, SKILLS } from '$lib/data';
 
 	let visible = $state(false);
+	let tagsVisible = $state(false);
 </script>
 
 <section
@@ -43,11 +44,11 @@
 		<div class="border-t border-white/6 mb-12"></div>
 
 		<!-- Tag grid -->
-		<div class="flex flex-wrap gap-2">
+		<div use:inView={{ margin: '0px', onEnter: () => (tagsVisible = true) }} class="flex flex-wrap gap-2">
 			{#each SKILL_TAGS as tag, i}
 				<span
 					class="px-3 py-1.5 border uppercase font-mono text-label transition-all cursor-default tracking-widest text-white/30 border-white/[0.07] hover:border-red/40 hover:text-white/60"
-					style={`opacity: ${visible ? 1 : 0}; transition: opacity 0.5s ease ${i * 0.03 + 0.5}s;`}
+					style={`opacity: ${tagsVisible ? 1 : 0}; transition: opacity 0.5s ease ${i * 0.03 + 0.5}s;`}
 				>
 					{tag}
 				</span>
