@@ -81,12 +81,11 @@ export const ROLES: Role[] = [
 		period: 'Sep 2021 - Present',
 		tag: 'Full-Time',
 		bullets: [
-			'Led a legacy production rewrite: monolith to microservices, without stopping the business',
-			'Architected NestJS + TypeScript microservices behind Next.js apps',
-			'Delivered an estate-planning app end to end: encryption + payment gateway',
-			'Shipped cross-platform apps with React Native (Expo)',
-			'RabbitMQ messaging + Redis caching for performance',
-			'AWS + Linux deployments, with monitoring and docs'
+			'Split a live monolith into NestJS microservices with no downtime for clients',
+			'Cut slow endpoint responses ~50% with Redis caching and RabbitMQ offload',
+			'Own backend for client platforms: APIs, auth, queues, HitPay and Airwallex payments',
+			'Shipped Expo apps to iOS and Android, including BLE heart-rate for a gym client',
+			'Shrank deploys from an hour-long manual process to ~10 min AWS pipeline, with docs'
 		]
 	},
 	{
@@ -95,9 +94,9 @@ export const ROLES: Role[] = [
 		period: 'Jun 2021 - Present',
 		tag: 'Consulting',
 		bullets: [
-			'Mentor students to national dev certifications',
-			'Keep school servers running day to day',
-			'Teach production-standard server care, hands on'
+			'Prep students for national dev certifications, hands on',
+			'Keep school servers up and fix fast when they break',
+			'Teach production-standard care, not textbook theory'
 		]
 	},
 	{
@@ -106,8 +105,8 @@ export const ROLES: Role[] = [
 		period: 'Aug 2019 - Feb 2020',
 		tag: 'Freelance',
 		bullets: [
-			'Delivered client websites end to end: database to frontend',
-			'Turned business requirements into production-ready sites'
+			'Built client websites end to end: database to frontend',
+			'Turned vague ideas into sites that launched'
 		]
 	}
 ];
