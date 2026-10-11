@@ -81,11 +81,11 @@ export const ROLES: Role[] = [
 		period: 'Sep 2021 - Present',
 		tag: 'Full-Time',
 		bullets: [
-			'Split a live monolith into NestJS microservices with no downtime for clients',
-			'Cut slow endpoint responses ~50% with Redis caching and RabbitMQ offload',
-			'Own backend for client platforms: APIs, auth, queues, HitPay, Stripe and Airwallex payments',
-			'Shipped Expo apps to iOS and Android, including BLE heart-rate for a gym client',
-			'Shrank deploys from an hour-long manual process to ~10 min AWS pipeline, with docs'
+			'Rebuilt a live monolith into NestJS microservices. Zero downtime, business never stopped',
+			'Slashed slow API responses ~50% with Redis caching and RabbitMQ offload',
+			'Move real money: HitPay, Stripe, and Airwallex payments live in production',
+			'Put Expo apps in users hands on iOS and Android, including BLE heart-rate for a gym client',
+			'Turned hour-long manual deploys into a ~10 min AWS pipeline anyone can run'
 		]
 	},
 	{
