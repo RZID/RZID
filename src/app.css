@@ -41,7 +41,7 @@ section[id] {
 body {
 	background-color: #0c0c0c;
 	color: #ffffff;
-	font-family: 'Syne', sans-serif;
+	font-family: 'JetBrains Mono', monospace;
 	-webkit-font-smoothing: antialiased;
 }
 
