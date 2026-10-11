@@ -38,7 +38,7 @@
 	>
 		<div>
 			<p
-				class="enter-hero inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1.5 font-mono text-[11px] tracking-widest text-muted uppercase"
+				class="enter-hero inline-flex -rotate-2 items-center gap-2 rounded-full border border-line bg-surface px-3 py-1.5 font-mono text-[11px] tracking-widest text-muted uppercase"
 			>
 				<span class="h-1.5 w-1.5 animate-pulse rounded-full bg-accent"></span>
 				{t.badge}
@@ -48,7 +48,7 @@
 				style="animation-delay: 80ms;"
 			>
 				{t.titleA}<br />
-				<span class="text-accent">{t.titleB}</span>
+				<span class="underline decoration-accent decoration-wavy underline-offset-[10px]">{t.titleB}</span>
 			</h1>
 			<p
 				class="enter-hero mt-6 max-w-xl font-sans text-prose leading-relaxed text-muted"
@@ -59,7 +59,7 @@
 			<div class="enter-hero mt-8 flex flex-wrap items-center gap-4" style="animation-delay: 240ms;">
 				<a
 					href="#contact"
-					class="bg-accent px-7 py-3.5 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,transform] duration-200 hover:bg-accent-hover active:scale-95"
+					class="rounded-full bg-accent px-7 py-3.5 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,transform] duration-200 hover:bg-accent-hover active:scale-95"
 				>
 					{t.primary}
 				</a>
@@ -99,14 +99,14 @@
 		</div>
 
 		<aside
-			class="enter-hero h-fit rounded-2xl border border-line bg-surface p-6"
+			class="enter-hero h-fit rotate-1 rounded-2xl border border-line bg-surface p-6 transition-transform duration-300 hover:rotate-0"
 			style="animation-delay: 300ms;"
 			aria-label={t.cardTitle}
 		>
 			<div class="flex items-center gap-3">
 				<span
 					aria-hidden="true"
-					class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent font-display text-xl text-white"
+					class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent font-display text-xl text-white transition-transform duration-300 hover:rotate-12"
 					>R</span
 				>
 				<div class="min-w-0">
@@ -152,7 +152,7 @@
 								<dd>
 									<a
 										href={c.href}
-										class="flex w-full items-center justify-center gap-2 bg-accent px-4 py-3 font-sans text-sm font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+										class="flex w-full items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 font-sans text-sm font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
 									>
 										<svg
 											viewBox="0 0 24 24"

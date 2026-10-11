@@ -30,7 +30,7 @@
 			<div class="mt-8 flex flex-wrap items-center justify-center gap-4">
 				<a
 					href="mailto:rdhanurzid@gmail.com"
-					class="bg-accent px-8 py-4 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,transform] duration-200 hover:bg-accent-hover active:scale-95"
+					class="rounded-full bg-accent px-8 py-4 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,transform] duration-200 hover:bg-accent-hover active:scale-95"
 				>
 					{t.primary}
 				</a>
