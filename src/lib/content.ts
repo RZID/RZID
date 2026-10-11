@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
 	{
 		name: 'Cara.sg',
 		role: 'Full-stack Engineer',
-		stack: 'Next.js, NestJS, TypeScript',
+		stack: 'React, NestJS, Expo, MySQL, Redis',
 		outcome:
 			'CARA SG by Dementia Singapore: free membership app (10K+ installs) for the dementia community. Sign up, pick a profile, member card arrives by post. Inside: Safe Return, missing-person alerts, rewards, resources, Mandarin support. Shipped through a monolith-to-microservices migration.'
 	},
@@ -54,22 +54,22 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		name: 'JebHealth',
-		role: 'Backend Engineer',
-		stack: 'NestJS, REST APIs',
+		role: 'Full-stack Engineer',
+		stack: 'Express, React, Expo',
 		outcome:
 			'HealthTech marketplace (SG, MY, TH, VN) plus Health-FinTech cards with Airwallex and Visa (Helix Health Card, J World Card): backend payment flows integrated and hardened for production.'
 	},
 	{
 		name: 'LVE Gym',
-		role: 'Mobile Engineer',
-		stack: 'React Native (Expo), BLE',
+		role: 'Full-stack Engineer',
+		stack: 'React, NestJS, Expo, BLE',
 		outcome:
 			'Booking app for LVE boutique gyms (circuit training Pandan Valley, combat Boat Quay): class schedules, packs, personal training, plus live heart-rate display via Bluetooth (BLE) monitor integration. iOS and Android from one Expo codebase, through store release.'
 	},
 	{
 		name: 'Pinknode',
 		role: 'Frontend Engineer',
-		stack: 'React, Next.js',
+		stack: 'React',
 		outcome: 'Dashboard for a Polkadot node-as-a-service: API usage analytics and account management, built and shipped to production.'
 	}
 ];
