@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
 		role: 'Full-stack Engineer',
 		stack: 'Express, React, Expo',
 		outcome:
-			'HealthTech marketplace (SG, MY, TH, VN) plus Health-FinTech cards with Airwallex and Visa (Helix Health Card, J World Card): backend payment flows integrated and hardened for production.'
+			'HealthTech marketplace (SG, MY, TH, VN) plus Health-FinTech cards with Airwallex and Visa (Helix Health Card, J World Card): backend payment flows via Stripe and Airwallex integrated and hardened for production.'
 	},
 	{
 		name: 'LVE Gym',
@@ -83,7 +83,7 @@ export const ROLES: Role[] = [
 		bullets: [
 			'Split a live monolith into NestJS microservices with no downtime for clients',
 			'Cut slow endpoint responses ~50% with Redis caching and RabbitMQ offload',
-			'Own backend for client platforms: APIs, auth, queues, HitPay and Airwallex payments',
+			'Own backend for client platforms: APIs, auth, queues, HitPay, Stripe and Airwallex payments',
 			'Shipped Expo apps to iOS and Android, including BLE heart-rate for a gym client',
 			'Shrank deploys from an hour-long manual process to ~10 min AWS pipeline, with docs'
 		]
