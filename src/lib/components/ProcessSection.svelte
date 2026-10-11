@@ -25,8 +25,8 @@
 		>
 			{#each STEPS as s, i}
 				<li
-					class="bg-bg p-7 transition-colors duration-300 hover:bg-accent/5"
-					style={`opacity: ${visible ? 1 : 0}; transition: opacity 0.5s ease ${i * 0.1}s;`}
+					class="reveal bg-bg p-7 transition-colors duration-300 hover:bg-accent/5 {visible ? 'on' : ''}"
+					style={`animation-delay: ${i * 0.1}s;`}
 				>
 					<span class="font-display text-4xl text-accent">0{i + 1}</span>
 					<h3 class="mt-4 font-display text-xl text-ink">{s.title}</h3>

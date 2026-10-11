@@ -28,8 +28,10 @@
 		<div class="mt-12 grid gap-4 md:grid-cols-2">
 			{#each SERVICES as s, i}
 				<article
-					class="rounded-2xl border border-line bg-bg p-7 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-30px_rgba(232,37,13,0.4)]"
-					style={`opacity: ${visible ? 1 : 0}; transform: translateY(${visible ? 0 : 16}px); transition: opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s;`}
+					class="reveal rounded-2xl border border-line bg-bg p-7 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-30px_rgba(232,37,13,0.4)] {visible
+						? 'on'
+						: ''}"
+					style={`animation-delay: ${i * 0.08}s;`}
 				>
 					<div class="flex items-center justify-between gap-3">
 						<span

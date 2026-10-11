@@ -161,7 +161,24 @@ button {
 	}
 }
 .enter-hero {
-	animation: enter-hero 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+	animation: enter-hero 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* Scroll reveal for cards: class-driven so hover transforms survive.
+   `backwards` fill holds the from-state during the stagger delay, then
+   releases to natural styles. No inline opacity/transform. */
+@keyframes rise {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+}
+.reveal {
+	opacity: 0;
+}
+.reveal.on {
+	animation: rise 0.6s var(--ease-out) backwards;
+	opacity: 1;
 }
 
 /* Scroll progress: pure CSS scroll-timeline, zero JS. Falls back to a full

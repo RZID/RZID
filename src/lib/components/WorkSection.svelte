@@ -33,11 +33,11 @@
 			{#each PROJECTS as p, i}
 				{@const v = headVisible}
 				<article
-					class="group rounded-2xl border border-line bg-surface p-6 transition-[border-color,box-shadow] duration-300 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)]{i ===
+					class="reveal group rounded-2xl border border-line bg-surface p-6 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)]{i ===
 					0
 						? ' sm:col-span-2'
-						: ''}"
-					style={`opacity: ${v ? 1 : 0}; transform: translateY(${v ? 0 : 16}px); transition: opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s;`}
+						: ''} {v ? 'on' : ''}"
+					style={`animation-delay: ${i * 0.07}s;`}
 				>
 					<div class="flex items-start justify-between gap-3">
 						<h3 class="font-display text-xl text-ink">{p.name}</h3>
