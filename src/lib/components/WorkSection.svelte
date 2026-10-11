@@ -33,7 +33,10 @@
 			{#each PROJECTS as p, i}
 				{@const v = headVisible}
 				<article
-					class="group rounded-2xl border border-line bg-surface p-6 transition-[border-color,box-shadow] duration-300 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)]{i === 0 ? ' sm:col-span-2' : ''}"
+					class="group rounded-2xl border border-line bg-surface p-6 transition-[border-color,box-shadow] duration-300 hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_rgba(232,37,13,0.25)]{i ===
+					0
+						? ' sm:col-span-2'
+						: ''}"
 					style={`opacity: ${v ? 1 : 0}; transform: translateY(${v ? 0 : 16}px); transition: opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s;`}
 				>
 					<div class="flex items-start justify-between gap-3">
@@ -106,19 +109,27 @@
 								</span>
 							</div>
 						</button>
-						{#if openIdx === i}
-							<div id={`role-panel-${i}`} role="region" aria-labelledby={`role-button-${i}`}>
+						<div
+							id={`role-panel-${i}`}
+							role="region"
+							aria-labelledby={`role-button-${i}`}
+							class="grid transition-[grid-template-rows] duration-300 ease-out"
+							style="grid-template-rows: {openIdx === i ? '1fr' : '0fr'};"
+						>
+							<div class="overflow-hidden">
 								<ul class="space-y-2.5 pb-6 pl-11">
-								{#each r.bullets as b}
-									<li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-muted">
-										<span aria-hidden="true" class="mt-0.5 shrink-0 text-accent"><Icon name="check" class="h-4 w-4" /></span>
-										{b}
-									</li>
-								{/each}
-							</ul>
-							<p class="pb-6 pl-11 font-mono text-[11px] text-faint sm:hidden">{r.period}</p>
+									{#each r.bullets as b}
+										<li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-muted">
+											<span aria-hidden="true" class="mt-0.5 shrink-0 text-accent"
+												><Icon name="check" class="h-4 w-4" /></span
+											>
+											{b}
+										</li>
+									{/each}
+								</ul>
+								<p class="pb-6 pl-11 font-mono text-[11px] text-faint sm:hidden">{r.period}</p>
+							</div>
 						</div>
-					{/if}
 					</div>
 				{/each}
 			</div>

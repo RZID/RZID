@@ -60,10 +60,11 @@
 
 		<!-- Fixed Mesh Gradients -->
 		<div
-			class="absolute -top-[20%] -left-[10%] h-[60%] w-[60%] rounded-full bg-accent/5 opacity-30 blur-[120px]"
+			class="animate-drift absolute -top-[20%] -left-[10%] h-[60%] w-[60%] rounded-full bg-accent/5 opacity-30 blur-[120px]"
 		></div>
 		<div
-			class="absolute top-[60%] -right-[10%] h-[50%] w-[50%] rounded-full bg-accent/5 opacity-20 blur-[100px]"
+			class="animate-drift absolute top-[60%] -right-[10%] h-[50%] w-[50%] rounded-full bg-accent/5 opacity-20 blur-[100px]"
+			style="animation-delay: -9s;"
 		></div>
 	{:else}
 		<div

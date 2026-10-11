@@ -57,7 +57,8 @@
 				<a
 					href="#{l.id}"
 					aria-current={active === l.id ? 'true' : undefined}
-					class="font-mono text-[11px] tracking-[0.2em] uppercase transition-colors {active === l.id
+					class="font-mono text-[11px] tracking-[0.2em] uppercase transition-colors nav-link {active ===
+					l.id
 						? 'text-accent'
 						: 'text-faint hover:text-ink'}"
 				>
@@ -71,7 +72,7 @@
 				role="group"
 				aria-label="Language"
 				class="rounded-full border border-line p-0.5 font-mono text-[11px]"
-				>
+			>
 				{#each ['en', 'id'] as l}
 					<button
 						onclick={() => setLang(l as 'en' | 'id')}
@@ -141,7 +142,7 @@
 								class="tap rounded-full px-3 tracking-widest uppercase {langState.current === l
 									? 'bg-accent text-white'
 									: 'text-faint'}"
-								>
+							>
 								{l === 'en' ? 'EN' : 'ID'}
 							</button>
 						{/each}

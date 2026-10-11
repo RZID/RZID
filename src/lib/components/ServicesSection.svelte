@@ -28,11 +28,14 @@
 		<div class="mt-12 grid gap-4 md:grid-cols-2">
 			{#each SERVICES as s, i}
 				<article
-					class="rounded-2xl border border-line bg-bg p-7 transition-[border-color,box-shadow] duration-300 hover:border-accent/40 hover:shadow-[0_20px_50px_-30px_rgba(232,37,13,0.4)]"
+					class="rounded-2xl border border-line bg-bg p-7 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_50px_-30px_rgba(232,37,13,0.4)]"
 					style={`opacity: ${visible ? 1 : 0}; transform: translateY(${visible ? 0 : 16}px); transition: opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s;`}
 				>
 					<div class="flex items-center justify-between gap-3">
-						<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent"><Icon name={s.icon} class="h-5 w-5" /></span>
+						<span
+							class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent"
+							><Icon name={s.icon} class="h-5 w-5" /></span
+						>
 						<span class="font-mono text-[11px] tracking-widest text-faint">0{i + 1}</span>
 					</div>
 					<h3 class="mt-4 font-display text-2xl text-ink">{s.title}</h3>

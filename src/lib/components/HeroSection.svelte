@@ -5,7 +5,6 @@
 
 	const t = $derived(CONTENT[langState.current].hero);
 
-
 	let jakartaTime = $state('');
 
 	$effect(() => {
@@ -21,7 +20,11 @@
 	});
 </script>
 
-<section id="home" aria-label="Introduction" class="relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24">
+<section
+	id="home"
+	aria-label="Introduction"
+	class="relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24"
+>
 	<div
 		aria-hidden="true"
 		class="pointer-events-none absolute -top-32 left-1/2 h-96 w-[60rem] -translate-x-1/2 rounded-full bg-accent/10 blur-[140px]"
@@ -50,10 +53,13 @@
 			>
 				{t.sub}
 			</p>
-			<div class="enter-hero mt-8 flex flex-wrap items-center gap-4" style="animation-delay: 240ms;">
+			<div
+				class="enter-hero mt-8 flex flex-wrap items-center gap-4"
+				style="animation-delay: 240ms;"
+			>
 				<a
 					href="#contact"
-					class="rounded-full bg-accent px-7 py-3.5 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,transform] duration-200 hover:bg-accent-hover active:scale-95"
+					class="rounded-full bg-accent px-7 py-3.5 font-mono text-xs font-bold tracking-widest text-white uppercase transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-[0_12px_30px_-12px_rgba(224,74,46,0.65)] active:translate-y-0 active:scale-95"
 				>
 					{t.primary}
 				</a>
@@ -62,7 +68,10 @@
 					class="group inline-flex items-center gap-1.5 border-b border-line pb-0.5 font-mono text-xs tracking-widest text-muted uppercase transition-colors duration-200 hover:border-ink hover:text-ink"
 				>
 					{t.secondary}
-					<Icon name="arrow" class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+					<Icon
+						name="arrow"
+						class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
+					/>
 				</a>
 			</div>
 		</div>
@@ -110,7 +119,9 @@
 									</a>
 								</dd>
 							{:else}
-								<dt class="font-mono text-[10px] tracking-widest text-faint uppercase">{c.label}</dt>
+								<dt class="font-mono text-[10px] tracking-widest text-faint uppercase">
+									{c.label}
+								</dt>
 								{#if c.icon === 'clock'}
 									<dd class="mt-1 font-sans text-sm font-medium tabular-nums text-ink">
 										{jakartaTime || '--:--'} <span class="text-faint">WIB</span>
