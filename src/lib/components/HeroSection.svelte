@@ -82,11 +82,16 @@
 			aria-label={t.cardTitle}
 		>
 			<div class="flex items-center gap-3">
-				<span
-					aria-hidden="true"
-					class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent font-display text-xl text-white"
-					>R</span
-				>
+				<img
+					src="/avatar-96.jpg"
+					srcset="/avatar-96.jpg 1x, /avatar-192.jpg 2x"
+					alt="Ramadhanu"
+					width="44"
+					height="44"
+					loading="eager"
+					fetchpriority="high"
+					class="h-11 w-11 shrink-0 rounded-full border border-line object-cover"
+				/>
 				<div class="min-w-0">
 					<p class="font-sans text-sm font-semibold text-ink">Ramadhanu</p>
 					<p
