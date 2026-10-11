@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
 		role: 'Full-stack Engineer',
 		stack: 'Next.js, NestJS, TypeScript',
 		outcome:
-			'CARA SG, by Dementia Singapore: free membership app (10K+ installs) for people living with dementia, caregivers, and the public. Sign up, pick a profile, get a member card by post. Inside: Safe Return and missing-person alerts, partner rewards, curated resources, Mandarin support. Shipped through a monolith-to-microservices migration.'
+			'CARA SG by Dementia Singapore: free membership app (10K+ installs) for the dementia community. Sign up, pick a profile, member card arrives by post. Inside: Safe Return, missing-person alerts, rewards, resources, Mandarin support. Shipped through a monolith-to-microservices migration.'
 	},
 	{
 		name: 'Affluent.sg',
