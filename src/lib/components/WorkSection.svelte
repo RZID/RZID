@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { inView } from '$lib/inView';
-	import { CONTENT, PROJECTS, ROLES } from '$lib/content';
+	import { CONTENT, PROJECTS, ROLES, STACKS, STACK_TEXT } from '$lib/content';
 	import { langState } from '$lib/i18n.svelte';
 	import Icon from './Icon.svelte';
 
@@ -134,8 +134,33 @@
 				{/each}
 			</div>
 			<p class="mt-5 font-mono text-[11px] tracking-widest text-faint uppercase">
-				{t.stackLabel}: TypeScript, NestJS, React, Next.js, React Native, AWS, Docker
+				{t.stackLabel}
 			</p>
+			<div id="stack" class="mt-3 flex flex-wrap items-start gap-x-5 gap-y-4">
+				{#each STACKS as s}
+					<span class="flex flex-col items-center gap-1.5" title={s.name}>
+						<img
+							src={`/stack/${s.file}`}
+							alt={`${s.name} logo`}
+							width="28"
+							height="28"
+							loading="lazy"
+							class="h-7 w-7 object-contain {s.mono ? 'stack-mono' : ''}"
+						/>
+						<span class="font-mono text-[10px] tracking-wide text-muted">{s.name}</span>
+					</span>
+				{/each}
+				{#each STACK_TEXT as s}
+					<span class="flex flex-col items-center gap-1.5" title={s}>
+						<span
+							class="flex h-7 items-center rounded-full border border-line px-3 font-mono text-[10px] tracking-wide text-muted"
+						>
+							{s}
+						</span>
+						<span class="font-mono text-[10px] tracking-wide text-faint">payment</span>
+					</span>
+				{/each}
+			</div>
 		</div>
 	</div>
 </section>

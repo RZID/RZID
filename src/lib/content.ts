@@ -183,6 +183,33 @@ export const CAPABILITIES = [
 	}
 ];
 
+export interface StackLogo {
+	name: string;
+	file: string;
+	mono?: boolean;
+}
+
+// Logos served locally from static/stack (no runtime CDN). Mono logos are
+// black and get inverted in dark mode via CSS. HitPay/Airwallex have no
+// SimpleIcons slug, so they render as text pills in the component.
+export const STACKS: StackLogo[] = [
+	{ name: 'TypeScript', file: 'typescript.svg' },
+	{ name: 'NestJS', file: 'nestjs.svg' },
+	{ name: 'Express', file: 'express.svg', mono: true },
+	{ name: 'React', file: 'react.svg' },
+	{ name: 'Next.js', file: 'nextdotjs.svg', mono: true },
+	{ name: 'Expo', file: 'expo.svg', mono: true },
+	{ name: 'AWS', file: 'amazonaws.svg', mono: true },
+	{ name: 'Docker', file: 'docker.svg' },
+	{ name: 'Redis', file: 'redis.svg' },
+	{ name: 'RabbitMQ', file: 'rabbitmq.svg' },
+	{ name: 'MySQL', file: 'mysql.svg' },
+	{ name: 'PostgreSQL', file: 'postgresql.svg' },
+	{ name: 'Stripe', file: 'stripe.svg' }
+];
+
+export const STACK_TEXT = ['HitPay', 'Airwallex'];
+
 interface Copy {
 	nav: {
 		work: string;

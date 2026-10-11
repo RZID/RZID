@@ -23,7 +23,7 @@
 	--text-tag: 11px;
 	--text-body: 14px;
 	--text-prose: 15px;
-	--text-hero: clamp(2.75rem, 7vw, 5.5rem);
+	--text-hero: clamp(2rem, 5vw + 1rem, 4.25rem);
 	--text-cta: clamp(2.5rem, 6vw, 4.5rem);
 }
 
@@ -63,6 +63,11 @@ html {
 }
 
 section[id] {
+	scroll-margin-top: 5rem;
+}
+
+/* Anchor target inside WorkSection sits under the fixed header otherwise */
+#stack {
 	scroll-margin-top: 5rem;
 }
 
@@ -120,13 +125,16 @@ h2 {
 	font-weight: 400;
 }
 
-/* Minimum 44px touch target for icon buttons and pill toggles */
-.tap {
-	min-height: 44px;
-	min-width: 44px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+/* Minimum 44px touch target for icon buttons and pill toggles.
+   In @layer components so responsive utilities (e.g. md:hidden) win. */
+@layer components {
+	.tap {
+		min-height: 44px;
+		min-width: 44px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 /* Every control names an action; every action gets a pointer */
@@ -218,8 +226,8 @@ button {
 	animation: drift 18s ease-in-out infinite alternate;
 }
 
-/* Logo marquee: track holds two copies, -50% loop. pr-10 on the track
-   equals one gap so the seam lands exactly. */
+/* Logo marquee: track holds two identical halves, -50% loop. Spacing lives
+   on each item (px) so both halves measure equal and the seam is invisible. */
 @keyframes marquee {
 	to {
 		transform: translateX(-50%);
@@ -234,6 +242,12 @@ button {
 }
 .marquee:hover .marquee-track {
 	animation-play-state: paused;
+}
+
+/* Mono stack logos are black files; invert them on dark theme so they read
+   on near-black surfaces. Colored brand SVGs are untouched. */
+[data-theme='dark'] .stack-mono {
+	filter: invert(1);
 }
 
 /* Nav underline: scaleX only, no layout shift */

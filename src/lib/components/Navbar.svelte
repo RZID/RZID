@@ -3,6 +3,7 @@
 	import { langState, setLang } from '$lib/i18n.svelte';
 	import { themeState, toggleTheme } from '$lib/theme.svelte';
 	import Icon from './Icon.svelte';
+import { fade, slide } from 'svelte/transition';
 
 	const t = $derived(CONTENT[langState.current]);
 	const links = $derived([
@@ -37,6 +38,8 @@
 		};
 	});
 </script>
+
+<svelte:window onkeydown={(e) => e.key === 'Escape' && (open = false)} />
 
 {#snippet themeIcon()}
 	<Icon name={themeState.current === 'dark' ? 'sun' : 'moon'} class="h-4 w-4" />
@@ -116,7 +119,17 @@
 	</div>
 
 	{#if open}
-		<div class="border-t border-line bg-bg/95 backdrop-blur-md md:hidden">
+		<button
+			aria-hidden="true"
+			tabindex="-1"
+			transition:fade={{ duration: 180 }}
+			onclick={() => (open = false)}
+			class="fixed inset-x-0 top-16 bottom-0 cursor-default bg-black/50 md:hidden"
+		></button>
+		<div
+			transition:slide={{ duration: 220 }}
+			class="relative border-t border-line bg-bg/95 backdrop-blur-md md:hidden"
+		>
 			<nav aria-label="Sections mobile" class="space-y-1 px-5 py-4">
 				{#each links as l}
 					<a
@@ -156,6 +169,7 @@
 					</button>
 					<a
 						href="#contact"
+						onclick={() => (open = false)}
 						class="flex-1 rounded-full bg-accent px-4 py-2.5 text-center font-mono text-[11px] font-bold tracking-widest text-white uppercase"
 					>
 						{t.nav.hire}

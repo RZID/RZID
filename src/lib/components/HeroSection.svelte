@@ -23,7 +23,7 @@
 <section
 	id="home"
 	aria-label="Introduction"
-	class="relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24"
+	class="relative overflow-hidden pt-20 pb-8 sm:pt-32 sm:pb-20"
 >
 	<div
 		aria-hidden="true"
@@ -31,30 +31,30 @@
 	></div>
 
 	<div
-		class="relative mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-14"
+		class="relative mx-auto grid max-w-6xl gap-8 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-14"
 	>
 		<div>
 			<p
-				class="enter-hero inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1.5 font-mono text-[11px] tracking-widest text-muted uppercase"
+				class="enter-hero inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 font-mono text-[11px] tracking-widest text-muted uppercase"
 			>
 				<span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
 				{t.badge}
 			</p>
 			<h1
-				class="enter-hero mt-6 font-display text-hero leading-[1.02] tracking-tight text-balance text-ink"
+				class="enter-hero mt-5 font-display text-hero leading-[1.02] tracking-tight text-balance text-ink"
 				style="animation-delay: 80ms;"
 			>
 				{t.titleA}<br />
 				<span class="text-accent">{t.titleB}</span>
 			</h1>
 			<p
-				class="enter-hero mt-6 max-w-xl font-sans text-prose leading-relaxed text-muted"
+				class="enter-hero mt-5 max-w-xl font-sans text-prose leading-relaxed text-muted"
 				style="animation-delay: 160ms;"
 			>
 				{t.sub}
 			</p>
 			<div
-				class="enter-hero mt-8 flex flex-wrap items-center gap-4"
+				class="enter-hero mt-6 flex flex-wrap items-center gap-4"
 				style="animation-delay: 240ms;"
 			>
 				<a
@@ -77,7 +77,7 @@
 		</div>
 
 		<aside
-			class="enter-hero h-fit rounded-2xl border border-line bg-surface p-6"
+			class="enter-hero h-fit rounded-2xl border border-line bg-surface p-5 sm:p-6"
 			style="animation-delay: 300ms;"
 			aria-label={t.cardTitle}
 		>
