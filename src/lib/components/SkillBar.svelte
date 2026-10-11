@@ -23,7 +23,9 @@
 		<div class="h-px flex-1 relative bg-white/6 overflow-hidden">
 			<div
 				class="absolute inset-y-0 left-0 bg-red"
-				style="height: 1px; width: {visible ? skill.level : 0}%; transition: width 1.4s cubic-bezier(0.16,1,0.3,1) {index * 0.06 + 0.15}s;"
+				style="height: 1px; width: {visible
+					? skill.level
+					: 0}%; transition: width 1.4s cubic-bezier(0.16,1,0.3,1) {index * 0.06 + 0.15}s;"
 			></div>
 		</div>
 		<span class="w-8 shrink-0 font-mono text-label text-right text-white/20">

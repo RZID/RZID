@@ -20,6 +20,21 @@
 
 ---
 
+## Development
+
+```bash
+bun install
+bun run dev      # local dev server
+bun run check    # type check
+bun run build    # static output in ./build
+bun run format   # prettier
+```
+
+Deploy: push to `main` → GitHub Actions builds and deploys `./build` to Cloudflare Pages
+(`personal-website`, needs `CF_API_TOKEN` + `CF_ACCOUNT_ID` secrets).
+
+---
+
 ## Who I Am
 
 I'm a **Software Engineer** with 5+ years designing and shipping production systems — from backend services and distributed infrastructure to cross-platform mobile apps.
@@ -85,12 +100,15 @@ Currently deep in: **Kubernetes**, **Kafka**, **Cloudflare edge**, and whatever 
 ## Where I've Worked
 
 **Software Engineer — Embreo PTE Ltd** `Sep 2021 – Present`
+
 > Architecting scalable microservices · Cross-platform apps (React Native + Expo) · RabbitMQ & Redis for performance · AWS & Linux infra with 24/7 uptime
 
 **Technical Mentor & Systems Consultant — SMK Negeri 12 Jakarta** `Jun 2021 – Present`
+
 > Mentoring students for national dev certifications · Managing school servers · Hands-on production-standard guidance
 
 **Software Engineer — Freelance** `Aug 2019 – Feb 2020`
+
 > End-to-end web delivery · PHP (CodeIgniter) + MySQL · Direct client collaboration from requirements to production
 
 ---

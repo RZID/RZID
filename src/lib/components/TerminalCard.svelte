@@ -77,14 +77,16 @@
 	<div class="px-4 py-4 font-mono text-body leading-relaxed min-h-44" aria-hidden="true">
 		{#each lines as l}
 			<div class="text-white/90">
-				<span class="text-red/80 select-none">$</span> {l.cmd}
+				<span class="text-red/80 select-none">$</span>
+				{l.cmd}
 			</div>
 			<div class="mb-2 text-white/45">{l.out}</div>
 		{/each}
 
 		{#if current}
 			<div class="text-white/90">
-				<span class="text-red/80 select-none">$</span> {current}
+				<span class="text-red/80 select-none">$</span>
+				{current}
 				<span class="terminal-cursor text-red" aria-hidden="true">▮</span>
 			</div>
 		{:else if !lines.length}

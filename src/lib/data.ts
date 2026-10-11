@@ -133,6 +133,4 @@ export const EDUCATION = [
 	}
 ];
 
-export const ACHIEVEMENTS = [
-	'3rd Runner-Up — LKS Network Administration, SMK Jakarta Utara I'
-];
+export const ACHIEVEMENTS = ['3rd Runner-Up — LKS Network Administration, SMK Jakarta Utara I'];

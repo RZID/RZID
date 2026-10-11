@@ -5,7 +5,11 @@
 	let visible = $state(false);
 </script>
 
-	<section id="contact" aria-label="Contact" class="py-16 sm:py-24 lg:py-32 min-h-screen bg-bg relative overflow-hidden">
+<section
+	id="contact"
+	aria-label="Contact"
+	class="py-16 sm:py-24 lg:py-32 min-h-screen bg-bg relative overflow-hidden"
+>
 	<!-- Ghost index -->
 
 	<div
@@ -23,7 +27,8 @@
 			style={`opacity: ${visible ? 1 : 0}; transition: opacity 0.8s ease;`}
 		>
 			<div>
-				<span class="font-mono uppercase text-label text-red/70 tracking-[0.4em]">04 / Connect</span>
+				<span class="font-mono uppercase text-label text-red/70 tracking-[0.4em]">04 / Connect</span
+				>
 				<!-- Big CTA heading -->
 				<h2 class="mt-3 text-cta font-sans text-white leading-[0.9] font-extrabold">
 					Let's build
@@ -36,9 +41,7 @@
 			</div>
 
 			<!-- Availability chip -->
-			<div
-				class="hidden md:flex gap-2 px-3 py-1.5 border items-center shrink-0 border-white/10"
-			>
+			<div class="hidden md:flex gap-2 px-3 py-1.5 border items-center shrink-0 border-white/10">
 				<span class="w-1.5 h-1.5 bg-red rounded-full animate-pulse"></span>
 				<span class="font-mono uppercase text-label text-white/50 tracking-widest">
 					Available for hire
@@ -64,7 +67,8 @@
 					>
 						{link.value}
 					</span>
-					<span class="text-tag font-mono text-red/0 transition-colors group-hover:text-red">↗</span>
+					<span class="text-tag font-mono text-red/0 transition-colors group-hover:text-red">↗</span
+					>
 				</a>
 			{/each}
 		</div>

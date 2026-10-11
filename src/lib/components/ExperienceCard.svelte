@@ -3,7 +3,12 @@
 	import { inView } from '$lib/inView';
 	import type { Experience } from '$lib/data';
 
-	let { exp, index, isOpen, onToggle }: {
+	let {
+		exp,
+		index,
+		isOpen,
+		onToggle
+	}: {
 		exp: Experience;
 		index: number;
 		isOpen: boolean;

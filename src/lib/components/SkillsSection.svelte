@@ -28,7 +28,9 @@
 			style={`opacity: ${visible ? 1 : 0}; transition: opacity 0.8s ease;`}
 		>
 			<span class="uppercase font-mono text-label text-red/70 tracking-[0.4em]">03 / Arsenal</span>
-			<h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl font-sans text-white leading-none font-extrabold">
+			<h2
+				class="mt-2 text-3xl sm:text-4xl md:text-5xl font-sans text-white leading-none font-extrabold"
+			>
 				Skills
 			</h2>
 		</div>
@@ -44,7 +46,10 @@
 		<div class="border-t border-white/6 mb-12"></div>
 
 		<!-- Tag grid -->
-		<div use:inView={{ margin: '0px', onEnter: () => (tagsVisible = true) }} class="flex flex-wrap gap-2">
+		<div
+			use:inView={{ margin: '0px', onEnter: () => (tagsVisible = true) }}
+			class="flex flex-wrap gap-2"
+		>
 			{#each SKILL_TAGS as tag, i}
 				<span
 					class="px-3 py-1.5 border uppercase font-mono text-label transition-all cursor-default tracking-widest text-white/30 border-white/[0.07] hover:border-red/40 hover:text-white/60"

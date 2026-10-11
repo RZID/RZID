@@ -43,6 +43,8 @@
 	<div
 		aria-hidden="true"
 		class="fixed z-9998 border rounded-full border-red/40 pointer-events-none"
-		style="width: {active ? 40 : 24}px; height: {active ? 40 : 24}px; transform: translate({$sx}px, {$sy}px) translate(-50%, -50%); transition: width 0.2s ease, height 0.2s ease;"
+		style="width: {active ? 40 : 24}px; height: {active
+			? 40
+			: 24}px; transform: translate({$sx}px, {$sy}px) translate(-50%, -50%); transition: width 0.2s ease, height 0.2s ease;"
 	></div>
 {/if}

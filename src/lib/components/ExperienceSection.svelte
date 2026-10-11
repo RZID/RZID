@@ -32,11 +32,15 @@
 		>
 			<div>
 				<span class="uppercase font-mono text-label text-red/70 tracking-[0.4em]">02 / Work</span>
-				<h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl font-sans text-white leading-none font-extrabold">
+				<h2
+					class="mt-2 text-3xl sm:text-4xl md:text-5xl font-sans text-white leading-none font-extrabold"
+				>
 					Experience
 				</h2>
 			</div>
-			<p class="hidden md:block max-w-45 text-tag font-mono text-right tracking-wide text-white/20 leading-relaxed">
+			<p
+				class="hidden md:block max-w-45 text-tag font-mono text-right tracking-wide text-white/20 leading-relaxed"
+			>
 				Click each role to expand details
 			</p>
 		</div>
@@ -45,7 +49,7 @@
 		<div>
 			{#each EXPERIENCES as exp, i}
 				<ExperienceCard
-					exp={exp}
+					{exp}
 					index={i}
 					isOpen={openIdx === i}
 					onToggle={() => (openIdx = openIdx === i ? null : i)}
@@ -82,7 +86,9 @@
 				use:inView={{ margin: '0px', onEnter: () => (achVisible = true) }}
 				style={`opacity: ${achVisible ? 1 : 0}; transform: translateY(${achVisible ? 0 : 20}px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);`}
 			>
-				<span class="uppercase font-mono text-label text-white/25 tracking-[0.4em]">Achievements</span>
+				<span class="uppercase font-mono text-label text-white/25 tracking-[0.4em]"
+					>Achievements</span
+				>
 				<div class="mt-4 border-t border-white/[0.07]">
 					{#each ACHIEVEMENTS as a, i}
 						<div
