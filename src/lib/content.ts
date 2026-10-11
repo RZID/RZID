@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
 		role: 'Full-stack Engineer',
 		stack: 'React, Express, MySQL',
 		outcome:
-			'Wills and estate-planning platform for Singapore families (wills, LPA, advance care directives, CPF nominations). Delivered end to end with encrypted client data and payment integration.'
+			'Wills and estate-planning platform for Singapore families (wills, LPA, advance care directives, CPF nominations). Delivered end to end with encrypted client data and HitPay payment gateway integration.'
 	},
 	{
 		name: 'JebHealth',
