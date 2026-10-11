@@ -43,32 +43,32 @@ export const PROJECTS: Project[] = [
 		role: 'Full-stack Engineer',
 		stack: 'Next.js, NestJS, TypeScript',
 		outcome:
-			'Client platform shipped and kept stable through a monolith-to-microservices migration.'
+			'Dementia Singapore membership app (10K+ installs): Safe Return and missing-person alerts for caregivers, rewards partners, Mandarin support. Shipped through a monolith-to-microservices migration.'
 	},
 	{
 		name: 'Affluent.sg',
 		role: 'Full-stack Engineer',
 		stack: 'React, Express, MySQL',
 		outcome:
-			'Estate-planning app delivered end to end, incl. data encryption and payment integration.'
+			'Wills and estate-planning platform for Singapore families (wills, LPA, advance care directives, CPF nominations). Delivered end to end with encrypted client data and payment integration.'
 	},
 	{
 		name: 'Airwallex',
 		role: 'Backend Engineer',
 		stack: 'NestJS, REST APIs',
-		outcome: 'Payment flows integrated and hardened for production use.'
+		outcome: 'Fintech payment flows via Airwallex APIs: integrated and hardened for production.'
 	},
 	{
 		name: 'Breasy Gym',
 		role: 'Mobile Engineer',
 		stack: 'React Native (Expo)',
-		outcome: 'Cross-platform gym app for iOS and Android from one codebase.'
+		outcome: 'Wellness booking app (ice baths, yoga, breathwork, classes): iOS and Android from one Expo codebase, through store release.'
 	},
 	{
 		name: 'Pinknode',
 		role: 'Frontend Engineer',
 		stack: 'React, Next.js',
-		outcome: 'Production web frontend, built and shipped.'
+		outcome: 'Dashboard for a Polkadot node-as-a-service: API usage analytics and account management, built and shipped to production.'
 	}
 ];
 
