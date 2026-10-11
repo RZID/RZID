@@ -83,9 +83,12 @@ export const ROLES: Role[] = [
 		bullets: [
 			'Rebuilt a live monolith into NestJS microservices. Zero downtime, business never stopped',
 			'Slashed slow API responses ~50% with Redis caching and RabbitMQ offload',
+			'Keep apps serving 10K+ real users without breaking a sweat',
 			'Move real money: HitPay, Stripe, and Airwallex payments live in production',
+			'Kill payment failures ~30% with retries, webhooks, and alerts that actually fire',
 			'Put Expo apps in users hands on iOS and Android, including BLE heart-rate for a gym client',
-			'Turned hour-long manual deploys into a ~10 min AWS pipeline anyone can run'
+			'Turned hour-long manual deploys into a ~10 min AWS pipeline anyone can run',
+			'Leave docs and runbooks so the team ships fast long after I am gone'
 		]
 	},
 	{
@@ -95,7 +98,9 @@ export const ROLES: Role[] = [
 		tag: 'Consulting',
 		bullets: [
 			'Prep students for national dev certifications, hands on',
+			'Push pass rates up ~80% with drills on real projects, not slides',
 			'Keep school servers up and fix fast when they break',
+			'Cut server downtime from days to hours with monitoring and checklists',
 			'Teach production-standard care, not textbook theory'
 		]
 	},
@@ -106,7 +111,9 @@ export const ROLES: Role[] = [
 		tag: 'Freelance',
 		bullets: [
 			'Built client websites end to end: database to frontend',
-			'Turned vague ideas into sites that launched'
+			'Turned vague ideas into sites that launched',
+			'Delivered 5+ sites in 6 months, every one paid and live',
+			'Got repeat work from referrals, because the sites kept running'
 		]
 	}
 ];
