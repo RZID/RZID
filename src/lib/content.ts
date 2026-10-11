@@ -83,7 +83,7 @@ export const ROLES: Role[] = [
 			'Delivered an estate-planning app end to end: encryption + payment gateway',
 			'Shipped cross-platform apps with React Native (Expo)',
 			'RabbitMQ messaging + Redis caching for performance',
-			'AWS + Linux deployments kept at 24/7 uptime'
+			'AWS + Linux deployments, with monitoring and docs'
 		]
 	},
 	{
@@ -93,7 +93,7 @@ export const ROLES: Role[] = [
 		tag: 'Consulting',
 		bullets: [
 			'Mentor students to national dev certifications',
-			'Run school servers at 24/7 availability',
+			'Keep school servers running day to day',
 			'Teach production-standard server care, hands on'
 		]
 	},
@@ -111,9 +111,9 @@ export const ROLES: Role[] = [
 
 export const SERVICES: Service[] = [
 	{
-		title: 'End-to-end product builds',
-		desc: 'One owner from scope to deploy.',
-		points: ['Scope to deploy, one contact', 'I adapt to your team', 'Docs & handover included']
+		title: 'Product builds, start to finish',
+		desc: 'You bring the idea, I carry it to launch.',
+		points: ['One contact, no handoffs', 'I fit into how you work', 'Docs so your team can take over']
 	},
 	{
 		title: 'Legacy rescue & rewrites',
@@ -131,7 +131,7 @@ export const SERVICES: Service[] = [
 	},
 	{
 		title: 'Deploy & infra hardening',
-		desc: 'Sleep through the night.',
+		desc: 'Your nights stay quiet.',
 		points: ['AWS / Docker / Linux', 'RabbitMQ + Redis performance', 'Monitoring & backups']
 	}
 ];
@@ -139,7 +139,7 @@ export const SERVICES: Service[] = [
 export const STEPS: Step[] = [
 	{
 		title: 'Discover',
-		desc: 'We agree on the outcome, scope and risks in days, with a fixed first milestone.'
+		desc: 'We sketch the goal, the scope, and one small first milestone. In days, not weeks.'
 	},
 	{
 		title: 'Build',
@@ -235,14 +235,14 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		},
 		hero: {
 			badge: 'Available for full-time & consulting',
-			titleA: 'I build software,',
-			titleB: 'or join your team.',
-			sub: "I'm Ramadhanu. 5 years production: web, mobile, backend. Project or full-time. Remote worldwide, hybrid Jabodetabek.",
+			titleA: 'Curious human,',
+						titleB: 'happens to write code.',
+			sub: "I'm Ramadhanu. I pull things apart to see how they work, then build software from what I learn: web, mobile, backend. Five years in, still curious. Remote worldwide, hybrid in Jabodetabek.",
 			primary: 'Hire me',
 			secondary: 'See selected work',
 			stats: [
-				{ num: '5+', label: 'Years in production' },
-				{ num: '6', label: 'Client apps shipped' },
+				{ num: '5+', label: 'Years building software' },
+				{ num: '6', label: 'Client projects delivered' },
 				{ num: '24h', label: 'Response time' }
 			],
 			cardTitle: 'At a glance',
@@ -250,7 +250,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			card: [
 				{ label: 'Based', value: 'Jakarta, GMT+7', icon: 'pin' },
 				{ label: 'Local time', value: '', icon: 'clock' },
-				{ label: 'I ship', value: 'web · mobile · backend', icon: 'stack' },
+				{ label: 'I make', value: 'web · mobile · backend', icon: 'stack' },
 				{
 					label: 'Email',
 					value: 'rdhanurzid@gmail.com',
@@ -259,28 +259,28 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 				}
 			]
 		},
-		logos: 'Trusted in production at',
+		logos: "Folks I've worked with",
 		work: {
 			eyebrow: 'Selected work',
 			title: 'Real products, real users.',
-			sub: 'Closed-source client work, named with role and stack. Details shared on a call.',
+			sub: 'Most of my work lives behind closed doors, so here is what I can share. Ask me anything on a call.',
 			stackLabel: 'Stack',
 			rolesTitle: 'Roles',
 			hint: 'Tap a role to expand'
 		},
 		services: {
-			title: 'What you can hire me for.',
-			sub: 'Four fixed-shape offers. Pick one, or combine them.'
+			title: 'Things I can help with.',
+			sub: 'Four ways to work together. Mix and match.'
 		},
 		process: {
 			title: 'Boring process, exciting results.',
 			sub: 'You always know what happens next.'
 		},
 		about: {
-			title: 'Engineer, mentor, owner.',
+			title: 'Tinkerer, builder, mentor.',
 			bio: [
-				"I'm Ramadhanu, a full-stack engineer with 5 years in production systems: microservices, cross-platform apps and the infrastructure under them.",
-				'I also mentor students at SMK Negeri 12 Jakarta and keep school servers running. Same deal for clients: I join your team, learn your setup, and leave things your team can run.'
+				"I'm Ramadhanu. I got into code out of curiosity: how does this thing actually work? Five years later I build microservices, mobile apps, and the servers they run on.",
+				'I also mentor students at SMK Negeri 12 Jakarta and keep the school servers alive. With clients it is the same deal: I join your team, learn how you work, and leave things your team can run.' 
 			],
 			facts: [
 				{ label: 'Location', value: 'Jakarta · remote worldwide · hybrid Jabodetabek' },
@@ -288,15 +288,15 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 				{ label: 'Education', value: 'B.Sc. Computer Science, in progress (evening program)' },
 				{ label: 'Mentoring', value: 'SMK Negeri 12 Jakarta, national certifications' }
 			],
-			capTitle: 'Capabilities'
+			capTitle: 'My toolbox'
 		},
 		contact: {
-			titleA: 'Project to build,',
-			titleB: 'or team to join?',
-			sub: 'Open to consulting and full-time roles. Tell me what you need. I reply within 24 hours.',
+			titleA: 'Something to build,',
+			titleB: 'or a team to grow?',
+			sub: 'I take consulting projects and full-time roles. Tell me what is on your mind, I reply within 24 hours.',
 			availability: 'Available now',
 			primary: 'Email me',
-			response: 'Prefer LinkedIn? Find me below. Same 24h promise.'
+			response: 'More of a LinkedIn person? I am below. Same 24h reply.'
 		},
 		footer: { tagline: 'Built with SvelteKit · on Cloudflare', back: 'Back to top' }
 	},
@@ -313,14 +313,14 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		},
 		hero: {
 			badge: 'Terbuka untuk full-time & consulting',
-			titleA: 'Saya bikin software,',
-			titleB: 'atau gabung tim Anda.',
-			sub: 'Saya Ramadhanu. 5 tahun production: web, mobile, backend. Project atau full-time. Remote global, hybrid Jabodetabek.',
+			titleA: 'Orang yang penasaran,',
+			titleB: 'kebetulan bisa ngoding.',
+			sub: 'Saya Ramadhanu. Suka bongkar cara kerja sesuatu, lalu bikin software dari situ: web, mobile, backend. Lima tahun, masih penasaran. Remote global, hybrid Jabodetabek.',
 			primary: 'Rekrut Saya',
 			secondary: 'Lihat karya',
 			stats: [
-				{ num: '5+', label: 'Tahun di production' },
-				{ num: '6', label: 'Aplikasi klien rilis' },
+				{ num: '5+', label: 'Tahun bikin software' },
+				{ num: '6', label: 'Project klien selesai' },
 				{ num: '24j', label: 'Waktu respons' }
 			],
 			cardTitle: 'Sekilas',
@@ -328,7 +328,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			card: [
 				{ label: 'Basis', value: 'Jakarta, GMT+7', icon: 'pin' },
 				{ label: 'Waktu lokal', value: '', icon: 'clock' },
-				{ label: 'Saya antar', value: 'web · mobile · backend', icon: 'stack' },
+				{ label: 'Saya bikin', value: 'web · mobile · backend', icon: 'stack' },
 				{
 					label: 'Email',
 					value: 'rdhanurzid@gmail.com',
@@ -337,28 +337,28 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 				}
 			]
 		},
-		logos: 'Dipercaya di production oleh',
+		logos: 'Yang pernah kerja sama',
 		work: {
 			eyebrow: 'Karya pilihan',
 			title: 'Produk nyata, dipakai orang.',
-			sub: 'Project klien closed-source, tercantum nama, peran, dan stack. Detail dibahas saat call.',
+			sub: 'Sebagian besar kerjaan saya tertutup, jadi ini yang bisa saya bagikan. Tanya apa saja saat call.',
 			stackLabel: 'Stack',
 			rolesTitle: 'Peran',
 			hint: 'Ketuk peran untuk detail'
 		},
 		services: {
-			title: 'Yang bisa Anda hire.',
-			sub: 'Empat penawaran jelas. Pilih satu, atau gabungkan.'
+			title: 'Yang bisa saya bantu.',
+			sub: 'Empat cara kerja sama. Boleh digabung.'
 		},
 		process: {
 			title: 'Proses membosankan, hasil menarik.',
 			sub: 'Anda selalu tahu langkah berikutnya.'
 		},
 		about: {
-			title: 'Engineer, mentor, owner.',
+			title: 'Ngoprek, bangun, mentor.',
 			bio: [
-				'Saya Ramadhanu, full-stack engineer dengan 5 tahun di sistem production: microservices, aplikasi cross-platform, dan infrastruktur di bawahnya.',
-				'Saya juga membimbing siswa SMK Negeri 12 Jakarta dan menjaga server sekolah tetap jalan. Prinsip yang sama untuk klien: saya gabung tim Anda, pelajari setup Anda, dan meninggalkan hal yang bisa dijalankan tim Anda.'
+				'Saya Ramadhanu. Awalnya cuma penasaran: ini sebenarnya cara kerjanya gimana? Lima tahun kemudian saya bangun microservices, aplikasi mobile, dan server di bawahnya.' ,
+				'Saya juga membimbing siswa SMK Negeri 12 Jakarta dan menjaga server sekolah tetap hidup. Ke klien sama: saya gabung tim Anda, pelajari cara kerja Anda, dan meninggalkan hal yang bisa dijalankan tim Anda.' 
 			],
 			facts: [
 				{ label: 'Lokasi', value: 'Jakarta · remote global · hybrid Jabodetabek' },
@@ -366,15 +366,15 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 				{ label: 'Pendidikan', value: 'S1 Ilmu Komputer, berjalan (kelas malam)' },
 				{ label: 'Mentoring', value: 'SMK Negeri 12 Jakarta, sertifikasi nasional' }
 			],
-			capTitle: 'Kemampuan'
+			capTitle: 'Kotak perkakas'
 		},
 		contact: {
-			titleA: 'Ada project,',
-			titleB: 'atau butuh engineer?',
-			sub: 'Terbuka untuk consulting dan full-time. Ceritakan kebutuhan Anda. Saya balas dalam 24 jam.',
+			titleA: 'Ada yang mau dibikin,',
+			titleB: 'atau tim yang butuh orang?',
+			sub: 'Saya terima project consulting dan full-time. Ceritakan yang ada di pikiran, saya balas dalam 24 jam.',
 			availability: 'Tersedia sekarang',
 			primary: 'Email saya',
-			response: 'Lebih suka LinkedIn? Lihat di bawah. Janji 24 jam sama.'
+			response: 'Lebih suka LinkedIn? Saya ada di bawah. Tetap balas 24 jam.'
 		},
 		footer: { tagline: 'Dibangun dengan SvelteKit · di Cloudflare', back: 'Kembali ke atas' }
 	}

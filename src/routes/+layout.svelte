@@ -22,7 +22,7 @@
 		email: 'rdhanurzid@gmail.com',
 		jobTitle: 'Full Stack Software Engineer',
 		description:
-			'Full-stack engineer with 5 years in production: microservices, cross-platform apps and cloud infrastructure. Remote worldwide, hybrid in Jabodetabek.',
+			'Curious engineer with 5 years building web, mobile and backend. Remote worldwide, hybrid in Jabodetabek.',
 		address: {
 			'@type': 'PostalAddress',
 			addressLocality: 'Jakarta Barat',
@@ -60,10 +60,10 @@
 </script>
 
 <svelte:head>
-	<title>Ramadhanu, Full-Stack Engineer for Hire (Remote)</title>
+	<title>Ramadhanu, Curious Engineer Who Writes Code (Remote)</title>
 	<meta
 		name="description"
-		content="Full-stack engineer, 5 years in production: web, mobile and backend. Fintech, property, fitness. Open to full-time roles and consulting. Remote worldwide, hybrid in Jabodetabek."
+		content="Curious engineer, 5 years building web, mobile and backend. Fintech, property, fitness. Open to full-time roles and consulting. Remote worldwide, hybrid in Jabodetabek."
 	/>
 	<meta
 		name="keywords"
@@ -77,7 +77,7 @@
 	<meta property="og:title" content="Ramadhanu, Full-Stack Engineer for Hire" />
 	<meta
 		property="og:description"
-		content="5 years in production. Web, mobile, backend, shipped and kept stable. Open to full-time and consulting."
+		content="Curious engineer, 5 years building web, mobile, backend. Open to full-time and consulting."
 	/>
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content="Ramadhanu" />
@@ -90,7 +90,7 @@
 	<meta name="twitter:title" content="Ramadhanu, Full-Stack Engineer for Hire" />
 	<meta
 		name="twitter:description"
-		content="5 years in production. Web, mobile, backend, shipped and kept stable."
+		content="Curious engineer, 5 years building web, mobile, backend."
 	/>
 	<script type="application/ld+json">{@html JSON.stringify(jsonLd)}</script>
 </svelte:head>
