@@ -50,6 +50,11 @@ body {
   color: #ffffff;
 }
 
+:focus-visible {
+  outline: 2px solid #e8250d;
+  outline-offset: 2px;
+}
+
 /* Entrance keyframes (match the former framer-motion timings) */
 @keyframes rise {
   from {
