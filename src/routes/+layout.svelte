@@ -4,11 +4,15 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 	import MeshGradient from '$lib/components/MeshGradient.svelte';
 	import GrainOverlay from '$lib/components/GrainOverlay.svelte';
-	import CustomCursor from '$lib/components/CustomCursor.svelte';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
-	import { NAV_LINKS } from '$lib/data';
+	import { CONTENT } from '$lib/content';
+	import { langState } from '$lib/i18n.svelte';
+	import { initTheme } from '$lib/theme.svelte';
+	import { initLang } from '$lib/i18n.svelte';
+	import { onMount } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();
+	const t = $derived(CONTENT[langState.current]);
 
 	const jsonLd = {
 		'@context': 'https://schema.org',
@@ -16,9 +20,9 @@
 		name: 'Ramadhanu',
 		url: 'https://www.rzidinc.com',
 		email: 'rdhanurzid@gmail.com',
-		jobTitle: 'Software Engineer',
+		jobTitle: 'Full Stack Software Engineer',
 		description:
-			'Software Engineer with 5+ years experience in Node.js, React, NestJS, and cloud infrastructure.',
+			'Full-stack engineer with 5 years in production: microservices, cross-platform apps and cloud infrastructure. Remote worldwide, hybrid in Jabodetabek.',
 		address: {
 			'@type': 'PostalAddress',
 			addressLocality: 'Jakarta Barat',
@@ -48,71 +52,80 @@
 			'REST API'
 		]
 	};
+
+	onMount(() => {
+		initTheme();
+		initLang();
+	});
 </script>
 
 <svelte:head>
-	<title>Ramadhanu — Software Engineer, Jakarta</title>
-	<meta name="description" content="Ramadhanu is a Software Engineer with 5+ years of experience building scalable microservices, cross-platform apps, and production infrastructure. Based in Jakarta, Indonesia." />
-	<meta name="keywords" content="Software Engineer, NestJS, React, React Native, Node.js, TypeScript, Jakarta, Microservices" />
+	<title>Ramadhanu — Full-Stack Engineer for Hire (Remote)</title>
+	<meta
+		name="description"
+		content="Full-stack engineer, 5 years in production: web, mobile and backend. Fintech, property, fitness. Open to full-time roles and consulting — remote worldwide, hybrid in Jabodetabek."
+	/>
+	<meta
+		name="keywords"
+		content="Full Stack Engineer, hire developer, NestJS, React, React Native, Node.js, TypeScript, remote developer Indonesia, consulting"
+	/>
 	<meta name="author" content="Ramadhanu" />
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href="https://www.rzidinc.com" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.rzidinc.com" />
-	<meta property="og:title" content="Ramadhanu — Software Engineer" />
-	<meta property="og:description" content="5+ years building end-to-end products. NestJS, React, React Native, AWS, Docker. Based in Jakarta." />
-	<!-- ponytail: og:image dropped — no og-image.jpg in static/. Re-add with a real 1200x630 asset. -->
+	<meta property="og:title" content="Ramadhanu — Full-Stack Engineer for Hire" />
+	<meta
+		property="og:description"
+		content="5 years in production. Web, mobile, backend — shipped and kept stable. Open to full-time & consulting."
+	/>
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content="Ramadhanu" />
 	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="Ramadhanu — Software Engineer" />
-	<meta name="twitter:description" content="5+ years building end-to-end products. NestJS, React, React Native, AWS, Docker." />
+	<meta name="twitter:title" content="Ramadhanu — Full-Stack Engineer for Hire" />
+	<meta
+		name="twitter:description"
+		content="5 years in production. Web, mobile, backend — shipped and kept stable."
+	/>
 	<script type="application/ld+json">{@html JSON.stringify(jsonLd)}</script>
 </svelte:head>
 
-<div class="bg-bg min-h-screen">
+<div id="top" class="min-h-screen bg-bg text-ink">
 	<MeshGradient />
 	<GrainOverlay />
 
-	<CustomCursor />
+	<ScrollProgress />
 	<Navbar />
 	<main>
 		{@render children()}
 	</main>
-	<footer class="border-t border-white/6">
-		<div class="px-6 mx-auto py-10 max-w-7xl sm:px-12 md:px-16">
+	<footer class="border-t border-line">
+		<div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
 			<div class="flex flex-wrap items-center justify-between gap-6">
-				<a
-					href="#home"
-					class="font-sans text-tag font-bold uppercase text-white/60 transition-colors tracking-widest hover:text-white"
-				>
-					RZID<span class="text-red">/</span>
+				<a href="#top" class="font-mono text-sm font-bold tracking-widest text-ink">
+					RZID<span class="text-accent">/</span>
 				</a>
-				<nav aria-label="Footer" class="flex flex-wrap gap-6">
-					{#each NAV_LINKS as link}
-						<a
-							href={link.to}
-							class="font-mono uppercase text-label text-white/25 transition-colors tracking-widest hover:text-white"
-						>
-							{link.label}
-						</a>
-					{/each}
+				<nav aria-label="Footer" class="flex flex-wrap gap-x-6 gap-y-2">
+					<a href="#work" class="font-mono text-[11px] tracking-widest text-faint uppercase transition-colors hover:text-ink">{t.nav.work}</a>
+					<a href="#services" class="font-mono text-[11px] tracking-widest text-faint uppercase transition-colors hover:text-ink">{t.nav.services}</a>
+					<a href="#process" class="font-mono text-[11px] tracking-widest text-faint uppercase transition-colors hover:text-ink">{t.nav.process}</a>
+					<a href="#about" class="font-mono text-[11px] tracking-widest text-faint uppercase transition-colors hover:text-ink">{t.nav.about}</a>
+					<a href="#contact" class="font-mono text-[11px] tracking-widest text-faint uppercase transition-colors hover:text-ink">{t.nav.contact}</a>
 				</nav>
 				<a
 					href="mailto:rdhanurzid@gmail.com"
-					class="font-mono uppercase text-label text-white/25 transition-colors tracking-widest hover:text-white"
+					class="font-mono text-[11px] tracking-widest text-faint uppercase transition-colors hover:text-ink"
 				>
 					rdhanurzid@gmail.com
 				</a>
 			</div>
-			<div class="flex pt-6 mt-8 items-center border-t justify-between border-white/6">
-				<span class="text-tag font-mono uppercase text-white/20 tracking-widest">
-					© {new Date().getFullYear()} Ramadhanu
+			<div class="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-6">
+				<span class="font-mono text-[11px] tracking-widest text-faint uppercase">
+					© {new Date().getFullYear()} Ramadhanu · {t.footer.tagline}
 				</span>
-				<span class="flex items-center gap-2 text-tag font-mono uppercase text-white/20 tracking-widest">
-					<span class="w-1.5 h-1.5 bg-red rounded-full animate-pulse"></span>
-					Jakarta, ID
-				</span>
+				<a href="#top" class="font-mono text-[11px] tracking-widest text-faint uppercase transition-colors hover:text-ink">
+					{t.footer.back} ↑
+				</a>
 			</div>
 		</div>
 	</footer>

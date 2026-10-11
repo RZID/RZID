@@ -18,6 +18,6 @@
 	});
 </script>
 
-<div aria-hidden="true" class="fixed top-0 right-0 left-0 z-40 h-0.5 bg-white/5">
-	<div class="h-full w-full bg-red origin-left" style="transform: scaleX({progress});"></div>
+<div aria-hidden="true" class="fixed top-0 right-0 left-0 z-40 h-0.5 bg-line">
+	<div class="h-full w-full bg-accent origin-left" style="transform: scaleX({progress});"></div>
 </div>

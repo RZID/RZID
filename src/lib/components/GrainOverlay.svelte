@@ -4,6 +4,6 @@
 
 <div
 	aria-hidden="true"
-	class="z-50 fixed inset-0 opacity-[0.04] pointer-events-none"
+	class="pointer-events-none fixed inset-0 z-50 opacity-[0.035]"
 	style={`background-image: ${bg}; background-size: 160px;`}
 ></div>

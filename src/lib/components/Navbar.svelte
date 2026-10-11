@@ -1,142 +1,204 @@
 <script lang="ts">
-	import { tweened } from 'svelte/motion';
-	import { cubicInOut, sineInOut } from 'svelte/easing';
-	import { NAV_LINKS } from '$lib/data';
+	import { CONTENT } from '$lib/content';
+	import { langState, setLang } from '$lib/i18n.svelte';
+	import { themeState, toggleTheme } from '$lib/theme.svelte';
 
-	const stroke = {
-		stroke: 'currentColor',
-		'stroke-width': 1.5,
-		fill: 'none',
-		'stroke-linecap': 'round',
-		'stroke-linejoin': 'round'
-	} as const;
+	const t = $derived(CONTENT[langState.current]);
+	const links = $derived([
+		{ id: 'work', label: t.nav.work },
+		{ id: 'services', label: t.nav.services },
+		{ id: 'process', label: t.nav.process },
+		{ id: 'about', label: t.nav.about },
+		{ id: 'contact', label: t.nav.contact }
+	]);
 
-	// Indicator — collapses to a dot, travels, then widens back out
-	const y = tweened(0, { duration: 300, easing: sineInOut });
-	const scaleX = tweened(1, { duration: 150, easing: cubicInOut });
-	let prevIdx = 0;
-	let chain: Promise<void> = Promise.resolve();
-	let navEl: HTMLElement | undefined;
+	let active = $state('work');
+	let open = $state(false);
+	let scrolled = $state(false);
 
-	function linkCenter(idx: number) {
-		// ponytail: measured live — survives zoom, font swaps, spacing changes. Cache only if travel profiling shows need.
-		const link = navEl?.querySelectorAll('a')[idx] as HTMLElement | undefined;
-		return link ? link.offsetTop + link.offsetHeight / 2 - 1 : 0;
-	}
-
-	function travel(nextIdx: number) {
-		chain = chain.then(async () => {
-			if (nextIdx === prevIdx || nextIdx < 0) return;
-			prevIdx = nextIdx;
-			await scaleX.set(0.1, { duration: 150, easing: cubicInOut });
-			await y.set(linkCenter(nextIdx), { duration: 300, easing: sineInOut });
-			await scaleX.set(1, { duration: 150, easing: cubicInOut });
-		});
-	}
-
-	let active = $state('home');
-
-	// Scroll-spy: highlight the section crossing the viewport middle
 	$effect(() => {
+		const onScroll = () => (scrolled = window.scrollY > 24);
+		onScroll();
+		window.addEventListener('scroll', onScroll, { passive: true });
 		const observer = new IntersectionObserver(
 			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) active = entry.target.id;
-				});
+				for (const e of entries) if (e.isIntersecting) active = e.target.id;
 			},
-			{ rootMargin: '-50% 0px -50% 0px' }
+			{ rootMargin: '-40% 0px -55% 0px' }
 		);
-		NAV_LINKS.forEach(({ to }) => {
-			const el = document.getElementById(to.slice(1));
+		for (const l of links) {
+			const el = document.getElementById(l.id);
 			if (el) observer.observe(el);
-		});
-		y.set(linkCenter(0), { duration: 0 });
-		return () => observer.disconnect();
-	});
-
-	$effect(() => {
-		travel(NAV_LINKS.findIndex((l) => l.to.slice(1) === active));
+		}
+		return () => {
+			window.removeEventListener('scroll', onScroll);
+			observer.disconnect();
+		};
 	});
 </script>
 
-{#snippet icon(id: string)}
-	{#if id === 'home'}
-		<svg viewBox="0 0 24 24" {...stroke} class="w-5 h-5">
-			<path d="m3 10.5 9-7.5 9 7.5" />
-			<path d="M5 9.5V21h14V9.5" />
-			<path d="M9 21v-6h6v6" />
-		</svg>
-	{:else if id === 'experience'}
-		<svg viewBox="0 0 24 24" {...stroke} class="w-5 h-5">
-			<rect x="3" y="7" width="18" height="14" rx="0" />
-			<path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-		</svg>
-	{:else if id === 'skills'}
-		<svg viewBox="0 0 24 24" {...stroke} class="w-5 h-5">
-			<rect x="3" y="4" width="18" height="16" rx="0" />
-			<path d="m7 9 3 3-3 3" />
-			<path d="M12 15h5" />
+{#snippet themeIcon()}
+	{#if themeState.current === 'dark'}
+		<svg
+			viewBox="0 0 24 24"
+			class="h-4 w-4"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.8"
+			stroke-linecap="round"
+		>
+			<circle cx="12" cy="12" r="4" />
+			<path
+				d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+			/>
 		</svg>
 	{:else}
-		<svg viewBox="0 0 24 24" {...stroke} class="w-5 h-5">
-			<rect x="3" y="5" width="18" height="14" rx="0" />
-			<path d="m3 7 9 6 9-6" />
+		<svg
+			viewBox="0 0 24 24"
+			class="h-4 w-4"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.8"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		>
+			<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
 		</svg>
 	{/if}
 {/snippet}
 
-<nav
-	aria-label="Section navigation"
-	bind:this={navEl}
-	class="fixed top-1/2 right-4 sm:right-6 z-40 flex flex-col -translate-y-1/2 bg-bg/85 backdrop-blur-sm divide-y divide-white/6 border border-white/6 rounded-2xl"
-	style="animation: rail-in 0.7s cubic-bezier(0.16,1,0.3,1) 0.4s both;"
+<header
+	class="fixed inset-x-0 top-0 z-40 border-b transition-colors duration-300 {scrolled
+		? 'border-line bg-bg/85 backdrop-blur-md'
+		: 'border-transparent'}"
 >
-	<!-- Active indicator — 2px underline under the icon, dot while travelling -->
-	<span
-		aria-hidden="true"
-		class="bg-red w-5 h-0.5 rounded-full absolute left-4 top-0"
-		style={`transform: translateY(${$y}px) scaleX(${$scaleX});`}
-	></span>
-
-	{#each NAV_LINKS as link, i}
-		{@const isActive = active === link.to.slice(1)}
-		<a
-			href={link.to}
-			aria-label={link.label}
-			class="flex group p-1.5 relative items-center justify-center outline-none rounded-xl focus-visible:bg-white/5"
-			style={`animation: rail-item-in 0.4s cubic-bezier(0.34,1.56,0.64,1) ${0.5 + i * 0.07}s both;`}
-		>
-			<!-- Icon -->
-			<span
-				class="hover-scale flex h-10 w-10 relative z-10 shrink-0 items-center justify-center transition-colors duration-200 {isActive
-					? 'text-red'
-					: 'text-white/40 group-hover:text-white'}"
-				class:active-pop={isActive}
-			>
-				{@render icon(link.to.slice(1))}
-			</span>
+	<div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+		<a href="#top" class="font-mono text-sm font-bold tracking-widest text-ink">
+			RZID<span class="text-accent">/</span>
 		</a>
-	{/each}
-</nav>
 
-<style>
-	@keyframes pop {
-		0% {
-			transform: scale(0.8);
-		}
-		60% {
-			transform: scale(1.15);
-		}
-		100% {
-			transform: scale(1);
-		}
-	}
-	.active-pop {
-		animation: pop 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-	}
-	@media (hover: hover) {
-		.hover-scale:hover {
-			transform: scale(1.18);
-		}
-	}
-</style>
+		<nav aria-label="Sections" class="hidden items-center gap-7 md:flex">
+			{#each links as l}
+				<a
+					href="#{l.id}"
+					class="font-mono text-[11px] tracking-[0.2em] uppercase transition-colors {active === l.id
+						? 'text-accent'
+						: 'text-faint hover:text-ink'}"
+				>
+					{l.label}
+				</a>
+			{/each}
+		</nav>
+
+		<div class="hidden items-center gap-2 md:flex">
+			<div
+				role="group"
+				aria-label="Language"
+				class="flex rounded-full border border-line p-0.5 font-mono text-[11px]"
+			>
+				{#each ['en', 'id'] as l}
+					<button
+						onclick={() => setLang(l as 'en' | 'id')}
+						aria-pressed={langState.current === l}
+						class="rounded-full px-2.5 py-1 tracking-widest uppercase transition-colors {langState.current ===
+						l
+							? 'bg-accent text-white'
+							: 'text-faint hover:text-ink'}"
+					>
+						{l}
+					</button>
+				{/each}
+			</div>
+			<button
+				onclick={toggleTheme}
+				aria-label={themeState.current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+				class="flex h-8 w-8 items-center justify-center rounded-full border border-line text-muted transition-colors hover:text-ink"
+			>
+				{@render themeIcon()}
+			</button>
+			<a
+				href="mailto:rdhanurzid@gmail.com"
+				class="ml-1 bg-accent px-4 py-2 font-mono text-[11px] font-bold tracking-widest text-white uppercase transition-colors hover:bg-accent-hover"
+			>
+				{t.nav.hire}
+			</a>
+		</div>
+
+		<button
+			class="flex h-10 w-10 items-center justify-center text-ink md:hidden"
+			onclick={() => (open = !open)}
+			aria-expanded={open}
+			aria-label={open ? t.nav.close : t.nav.menu}
+		>
+			{#if open}
+				<svg
+					viewBox="0 0 24 24"
+					class="h-5 w-5"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg
+				>
+			{:else}
+				<svg
+					viewBox="0 0 24 24"
+					class="h-5 w-5"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16" /></svg
+				>
+			{/if}
+		</button>
+	</div>
+
+	{#if open}
+		<div class="border-t border-line bg-bg/95 backdrop-blur-md md:hidden">
+			<nav aria-label="Sections mobile" class="space-y-1 px-5 py-4">
+				{#each links as l}
+					<a
+						href="#{l.id}"
+						onclick={() => (open = false)}
+						class="block py-2.5 font-display text-2xl font-bold {active === l.id
+							? 'text-accent'
+							: 'text-ink'}"
+					>
+						{l.label}
+					</a>
+				{/each}
+				<div class="flex items-center gap-3 pt-3">
+					<div
+						role="group"
+						aria-label="Language"
+						class="flex rounded-full border border-line p-0.5 font-mono text-[11px]"
+					>
+						{#each ['en', 'id'] as l}
+							<button
+								onclick={() => setLang(l as 'en' | 'id')}
+								aria-pressed={langState.current === l}
+								class="rounded-full px-3 py-1.5 tracking-widest uppercase {langState.current === l
+									? 'bg-accent text-white'
+									: 'text-faint'}"
+							>
+								{l === 'en' ? 'EN' : 'ID'}
+							</button>
+						{/each}
+					</div>
+					<button
+						onclick={toggleTheme}
+						aria-label="Toggle theme"
+						class="flex h-9 w-9 items-center justify-center rounded-full border border-line text-muted"
+					>
+						{@render themeIcon()}
+					</button>
+					<a
+						href="mailto:rdhanurzid@gmail.com"
+						class="flex-1 bg-accent px-4 py-2.5 text-center font-mono text-[11px] font-bold tracking-widest text-white uppercase"
+					>
+						{t.nav.hire}
+					</a>
+				</div>
+			</nav>
+		</div>
+	{/if}
+</header>
