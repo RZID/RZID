@@ -194,7 +194,7 @@ interface Copy {
 		secondary: string;
 		stats: { num: string; label: string }[];
 		cardTitle: string;
-		card: { label: string; value: string; href?: string }[];
+		card: { label: string; value: string; href?: string; icon: 'pin' | 'stack' | 'mail' }[];
 	};
 	logos: string;
 	work: {
@@ -250,9 +250,14 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			],
 			cardTitle: 'At a glance',
 			card: [
-				{ label: 'Based', value: 'Jakarta, GMT+7' },
-				{ label: 'Stack', value: 'TypeScript · NestJS · React · RN' },
-				{ label: 'Email', value: 'rdhanurzid@gmail.com', href: 'mailto:rdhanurzid@gmail.com' }
+				{ label: 'Based', value: 'Jakarta, GMT+7', icon: 'pin' },
+				{ label: 'Stack', value: 'TypeScript · NestJS · React · RN', icon: 'stack' },
+				{
+					label: 'Email',
+					value: 'rdhanurzid@gmail.com',
+					href: 'mailto:rdhanurzid@gmail.com',
+					icon: 'mail'
+				}
 			]
 		},
 		logos: 'Trusted in production at',
@@ -321,9 +326,14 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			],
 			cardTitle: 'Sekilas',
 			card: [
-				{ label: 'Basis', value: 'Jakarta, GMT+7' },
-				{ label: 'Stack', value: 'TypeScript · NestJS · React · RN' },
-				{ label: 'Email', value: 'rdhanurzid@gmail.com', href: 'mailto:rdhanurzid@gmail.com' }
+				{ label: 'Basis', value: 'Jakarta, GMT+7', icon: 'pin' },
+				{ label: 'Stack', value: 'TypeScript · NestJS · React · RN', icon: 'stack' },
+				{
+					label: 'Email',
+					value: 'rdhanurzid@gmail.com',
+					href: 'mailto:rdhanurzid@gmail.com',
+					icon: 'mail'
+				}
 			]
 		},
 		logos: 'Dipercaya di production oleh',
