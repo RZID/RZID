@@ -61,13 +61,12 @@
 	<meta property="og:url" content="https://www.rzidinc.com" />
 	<meta property="og:title" content="Ramadhanu — Software Engineer" />
 	<meta property="og:description" content="5+ years building end-to-end products. NestJS, React, React Native, AWS, Docker. Based in Jakarta." />
-	<meta property="og:image" content="https://www.rzidinc.com/og-image.jpg" />
+	<!-- ponytail: og:image dropped — no og-image.jpg in static/. Re-add with a real 1200x630 asset. -->
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content="Ramadhanu" />
-	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content="Ramadhanu — Software Engineer" />
 	<meta name="twitter:description" content="5+ years building end-to-end products. NestJS, React, React Native, AWS, Docker." />
-	<meta name="twitter:image" content="https://www.rzidinc.com/og-image.jpg" />
 	<script type="application/ld+json">{@html JSON.stringify(jsonLd)}</script>
 </svelte:head>
 

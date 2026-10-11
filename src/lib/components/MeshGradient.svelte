@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { scrollY } from '$lib/scrollY';
-
 	let mouseX = $state(0);
 	let mouseY = $state(0);
 	let spotlightX = $state(0);
@@ -27,16 +25,13 @@
 	});
 </script>
 
-<div
-	aria-hidden="true"
-	class="fixed inset-0 z-0 pointer-events-none overflow-hidden"
->
-	<!-- Primary Spotlight -->
+<div aria-hidden="true" class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+	<!-- Primary Spotlight (fixed container = viewport coords, no scroll offset) -->
 	<div
 		class="absolute w-[100vmax] h-[100vmax] -translate-x-1/2 -translate-y-1/2 opacity-40 transition-opacity duration-1000"
 		style="
-			left: {spotlightX}px; 
-			top: {spotlightY + $scrollY}px;
+			left: {spotlightX}px;
+			top: {spotlightY}px;
 			background: radial-gradient(circle at center, rgba(232, 37, 13, 0.04) 0%, transparent 40%);
 		"
 	></div>

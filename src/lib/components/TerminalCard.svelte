@@ -73,8 +73,8 @@
 		</span>
 	</div>
 
-	<!-- Terminal body -->
-	<div class="px-4 py-4 font-mono text-body leading-relaxed min-h-44" aria-label="Live system status">
+	<!-- Terminal body (decorative typing — hidden from screen readers) -->
+	<div class="px-4 py-4 font-mono text-body leading-relaxed min-h-44" aria-hidden="true">
 		{#each lines as l}
 			<div class="text-white/90">
 				<span class="text-red/80 select-none">$</span> {l.cmd}

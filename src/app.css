@@ -21,8 +21,13 @@
 }
 
 * {
-  cursor: none;
   box-sizing: border-box;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none;
+  }
 }
 
 html {
