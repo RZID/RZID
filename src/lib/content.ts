@@ -62,9 +62,9 @@ export const PROJECTS: Project[] = [
 	{
 		name: 'LVE Gym',
 		role: 'Mobile Engineer',
-		stack: 'React Native (Expo)',
+		stack: 'React Native (Expo), BLE',
 		outcome:
-			'Booking app for LVE boutique gyms (circuit training Pandan Valley, combat Boat Quay): class schedules, packs, personal training. iOS and Android from one Expo codebase, through store release.'
+			'Booking app for LVE boutique gyms (circuit training Pandan Valley, combat Boat Quay): class schedules, packs, personal training, plus live heart-rate display via Bluetooth (BLE) monitor integration. iOS and Android from one Expo codebase, through store release.'
 	},
 	{
 		name: 'Pinknode',
