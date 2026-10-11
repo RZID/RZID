@@ -112,12 +112,8 @@ export const ROLES: Role[] = [
 export const SERVICES: Service[] = [
 	{
 		title: 'End-to-end product builds',
-		desc: 'Web, mobile and backend under one owner.',
-		points: [
-			'Scope to deploy, one contact',
-			'React/Next.js + NestJS/Node',
-			'Docs & handover included'
-		]
+		desc: 'One owner from scope to deploy.',
+		points: ['Scope to deploy, one contact', 'I adapt to your team', 'Docs & handover included']
 	},
 	{
 		title: 'Legacy rescue & rewrites',
@@ -239,9 +235,9 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		},
 		hero: {
 			badge: 'Available for full-time & consulting',
-			titleA: 'The right stack',
-			titleB: 'for the job.',
-			sub: 'Tech-agnostic software engineer, 5 years in production: web, mobile, backend. Remote worldwide, hybrid in Jabodetabek.',
+			titleA: 'I build software,',
+			titleB: 'or join your team.',
+			sub: "I'm Ramadhanu. 5 years production: web, mobile, backend. Project or full-time. Remote worldwide, hybrid Jabodetabek.",
 			primary: 'Hire me',
 			secondary: 'See selected work',
 			stats: [
@@ -254,7 +250,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			card: [
 				{ label: 'Based', value: 'Jakarta, GMT+7', icon: 'pin' },
 				{ label: 'Local time', value: '', icon: 'clock' },
-				{ label: 'Stack', value: 'TypeScript · NestJS · React · RN', icon: 'stack' },
+				{ label: 'I ship', value: 'web · mobile · backend', icon: 'stack' },
 				{
 					label: 'Email',
 					value: 'rdhanurzid@gmail.com',
@@ -284,7 +280,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			title: 'Engineer, mentor, owner.',
 			bio: [
 				"I'm Ramadhanu, a full-stack engineer with 5 years in production systems: microservices, cross-platform apps and the infrastructure under them.",
-				'I also mentor students at SMK Negeri 12 Jakarta and keep school servers running. Same deal for clients: the stack serves the goal, not the other way around, and your team can run it.'
+				'I also mentor students at SMK Negeri 12 Jakarta and keep school servers running. Same deal for clients: I join your team, learn your setup, and leave things your team can run.'
 			],
 			facts: [
 				{ label: 'Location', value: 'Jakarta · remote worldwide · hybrid Jabodetabek' },
@@ -295,9 +291,9 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			capTitle: 'Capabilities'
 		},
 		contact: {
-			titleA: 'Tell me the goal,',
-			titleB: "I'll pick the stack.",
-			sub: 'Open to full-time roles and consulting. Tell me the outcome you want. I reply within 24 hours.',
+			titleA: 'Project to build,',
+			titleB: 'or team to join?',
+			sub: 'Open to consulting and full-time roles. Tell me what you need. I reply within 24 hours.',
 			availability: 'Available now',
 			primary: 'Email me',
 			response: 'Prefer LinkedIn? Find me below. Same 24h promise.'
@@ -317,9 +313,9 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		},
 		hero: {
 			badge: 'Terbuka untuk full-time & consulting',
-			titleA: 'Stack yang tepat',
-			titleB: 'untuk tiap kebutuhan.',
-			sub: 'Software engineer yang tech-agnostic, 5 tahun di production: web, mobile, backend. Remote global, hybrid Jabodetabek.',
+			titleA: 'Saya bikin software,',
+			titleB: 'atau gabung tim Anda.',
+			sub: 'Saya Ramadhanu. 5 tahun production: web, mobile, backend. Project atau full-time. Remote global, hybrid Jabodetabek.',
 			primary: 'Rekrut Saya',
 			secondary: 'Lihat karya',
 			stats: [
@@ -332,7 +328,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			card: [
 				{ label: 'Basis', value: 'Jakarta, GMT+7', icon: 'pin' },
 				{ label: 'Waktu lokal', value: '', icon: 'clock' },
-				{ label: 'Stack', value: 'TypeScript · NestJS · React · RN', icon: 'stack' },
+				{ label: 'Saya antar', value: 'web · mobile · backend', icon: 'stack' },
 				{
 					label: 'Email',
 					value: 'rdhanurzid@gmail.com',
@@ -362,7 +358,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			title: 'Engineer, mentor, owner.',
 			bio: [
 				'Saya Ramadhanu, full-stack engineer dengan 5 tahun di sistem production: microservices, aplikasi cross-platform, dan infrastruktur di bawahnya.',
-				'Saya juga membimbing siswa SMK Negeri 12 Jakarta dan menjaga server sekolah tetap jalan. Prinsip yang sama untuk klien: stack mengikuti tujuan, bukan sebaliknya, dan tim Anda bisa menjalankannya.'
+				'Saya juga membimbing siswa SMK Negeri 12 Jakarta dan menjaga server sekolah tetap jalan. Prinsip yang sama untuk klien: saya gabung tim Anda, pelajari setup Anda, dan meninggalkan hal yang bisa dijalankan tim Anda.'
 			],
 			facts: [
 				{ label: 'Lokasi', value: 'Jakarta · remote global · hybrid Jabodetabek' },
@@ -373,9 +369,9 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			capTitle: 'Kemampuan'
 		},
 		contact: {
-			titleA: 'Ceritakan tujuannya,',
-			titleB: 'biar saya pilihkan stacknya.',
-			sub: 'Terbuka untuk full-time dan consulting. Ceritakan hasil yang Anda mau. Saya balas dalam 24 jam.',
+			titleA: 'Ada project,',
+			titleB: 'atau butuh engineer?',
+			sub: 'Terbuka untuk consulting dan full-time. Ceritakan kebutuhan Anda. Saya balas dalam 24 jam.',
 			availability: 'Tersedia sekarang',
 			primary: 'Email saya',
 			response: 'Lebih suka LinkedIn? Lihat di bawah. Janji 24 jam sama.'
