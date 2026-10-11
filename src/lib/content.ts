@@ -239,9 +239,9 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		},
 		hero: {
 			badge: 'Available for full-time & consulting',
-			titleA: 'I build software',
-			titleB: 'that stays up.',
-			sub: 'Full-stack engineer, 5 years in production: web, mobile, backend. Remote worldwide, hybrid in Jabodetabek.',
+			titleA: 'The right stack',
+			titleB: 'for the job.',
+			sub: 'Tech-agnostic software engineer, 5 years in production: web, mobile, backend. Remote worldwide, hybrid in Jabodetabek.',
 			primary: 'Hire me',
 			secondary: 'See selected work',
 			stats: [
@@ -284,7 +284,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			title: 'Engineer, mentor, owner.',
 			bio: [
 				"I'm Ramadhanu, a full-stack engineer with 5 years in production systems: microservices, cross-platform apps and the infrastructure under them.",
-				'I also mentor students at SMK Negeri 12 Jakarta and keep school servers running. Same deal for clients: it works, it stays up, and your team can run it.'
+				'I also mentor students at SMK Negeri 12 Jakarta and keep school servers running. Same deal for clients: the stack serves the goal, not the other way around, and your team can run it.'
 			],
 			facts: [
 				{ label: 'Location', value: 'Jakarta · remote worldwide · hybrid Jabodetabek' },
@@ -295,8 +295,8 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			capTitle: 'Capabilities'
 		},
 		contact: {
-			titleA: "Let's build",
-			titleB: 'something that lasts.',
+			titleA: 'Tell me the goal,',
+			titleB: "I'll pick the stack.",
 			sub: 'Open to full-time roles and consulting. Tell me the outcome you want. I reply within 24 hours.',
 			availability: 'Available now',
 			primary: 'Email me',
@@ -317,9 +317,9 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 		},
 		hero: {
 			badge: 'Terbuka untuk full-time & consulting',
-			titleA: 'Software yang jadi',
-			titleB: 'dan tetap jalan.',
-			sub: 'Full-stack engineer, 5 tahun di production: web, mobile, backend. Remote global, hybrid Jabodetabek.',
+			titleA: 'Stack yang tepat',
+			titleB: 'untuk tiap kebutuhan.',
+			sub: 'Software engineer yang tech-agnostic, 5 tahun di production: web, mobile, backend. Remote global, hybrid Jabodetabek.',
 			primary: 'Rekrut Saya',
 			secondary: 'Lihat karya',
 			stats: [
@@ -362,7 +362,7 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			title: 'Engineer, mentor, owner.',
 			bio: [
 				'Saya Ramadhanu, full-stack engineer dengan 5 tahun di sistem production: microservices, aplikasi cross-platform, dan infrastruktur di bawahnya.',
-				'Saya juga membimbing siswa SMK Negeri 12 Jakarta dan menjaga server sekolah tetap jalan. Prinsip yang sama untuk klien: berfungsi, tetap menyala, dan tim Anda bisa menjalankannya.'
+				'Saya juga membimbing siswa SMK Negeri 12 Jakarta dan menjaga server sekolah tetap jalan. Prinsip yang sama untuk klien: stack mengikuti tujuan, bukan sebaliknya, dan tim Anda bisa menjalankannya.'
 			],
 			facts: [
 				{ label: 'Lokasi', value: 'Jakarta · remote global · hybrid Jabodetabek' },
@@ -373,8 +373,8 @@ export const CONTENT: Record<'en' | 'id', Copy> = {
 			capTitle: 'Kemampuan'
 		},
 		contact: {
-			titleA: 'Mari bangun',
-			titleB: 'yang tahan lama.',
+			titleA: 'Ceritakan tujuannya,',
+			titleB: 'biar saya pilihkan stacknya.',
 			sub: 'Terbuka untuk full-time dan consulting. Ceritakan hasil yang Anda mau. Saya balas dalam 24 jam.',
 			availability: 'Tersedia sekarang',
 			primary: 'Email saya',
