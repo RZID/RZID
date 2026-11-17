@@ -1,3 +1,27 @@
 @import 'tailwindcss';
 
-/* Design tokens from DESIGN.md go in an @theme block here. */
+:root {
+  color-scheme: light dark;
+  --background: #f6f3ee;
+  --foreground: #141414;
+  --accent: #e8250d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0e0e10;
+    --foreground: #f3efe8;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --radius-card: 1.25rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
