@@ -8,11 +8,12 @@ const headingTags = {
 } as const
 
 export type HeadingLevel = keyof typeof headingTags
-export type HeadingSize = 'display' | 'section' | 'item'
+export type HeadingSize = 'display' | 'section' | 'heading' | 'item'
 
 const headingSizes: Record<HeadingSize, string> = {
   display: 'text-display',
   section: 'text-title',
+  heading: 'text-heading',
   item: 'text-item',
 }
 
