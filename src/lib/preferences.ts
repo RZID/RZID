@@ -3,6 +3,7 @@ import type { Locale } from '@/types/content'
 
 export const applyTheme = (theme: ThemePreference): void => {
   const root = document.documentElement
+  root.style.colorScheme = theme === 'system' ? '' : theme
   if (theme === 'system') {
     root.removeAttribute('data-theme')
     return

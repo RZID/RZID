@@ -12,6 +12,7 @@
           const theme = window.localStorage.getItem('rzid.theme')
           if (theme === 'light' || theme === 'dark') {
             document.documentElement.dataset.theme = theme
+            document.documentElement.style.colorScheme = theme
           }
           const locale = window.localStorage.getItem('rzid.locale')
           if (locale === 'en' || locale === 'id') {
