@@ -5,15 +5,20 @@ export type LocalizedText = {
   id: string
 }
 
+export type ProfileLink = {
+  label: string
+  href: string
+}
+
 export type Profile = {
   name: string
   role: LocalizedText
   location: LocalizedText
   summary: LocalizedText
   links: {
-    github: string
-    email: string
-    linkedin: string
+    github: ProfileLink
+    email: ProfileLink
+    linkedin: ProfileLink
   }
 }
 

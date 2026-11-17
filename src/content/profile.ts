@@ -9,8 +9,8 @@ export const profile: Profile = {
     id: 'Software engineer yang berbasis di Jakarta dengan 5 tahun pengalaman.',
   },
   links: {
-    github: 'https://github.com/RZID',
-    email: 'TODO',
-    linkedin: 'TODO',
+    github: { label: 'GitHub', href: 'https://github.com/RZID' },
+    email: { label: 'Email', href: 'TODO' },
+    linkedin: { label: 'LinkedIn', href: 'TODO' },
   },
 }
