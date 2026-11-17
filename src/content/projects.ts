@@ -1,36 +1,69 @@
 import type { Project } from '@/types/content'
 
+// The old site had no Indonesian copy for projects, so `id` mirrors `en`.
 export const projects: readonly Project[] = [
   {
     name: 'Cara.sg',
-    summary: {
-      en: 'Full-stack engineer on a free membership app for the dementia community in Singapore, with 10K+ installs.',
-      id: 'Full-stack engineer pada aplikasi keanggotaan gratis untuk komunitas demensia di Singapura, dengan 10 ribu+ instalasi.',
+    role: { en: 'Full-stack Engineer', id: 'Full-stack Engineer' },
+    outcome: {
+      en: 'CARA SG by Dementia Singapore: free membership app (10K+ installs) for the dementia community. Sign up, pick a profile, member card arrives by post. Inside: Safe Return, missing-person alerts, rewards, resources, Mandarin support. Shipped through a monolith-to-microservices migration.',
+      id: 'CARA SG by Dementia Singapore: free membership app (10K+ installs) for the dementia community. Sign up, pick a profile, member card arrives by post. Inside: Safe Return, missing-person alerts, rewards, resources, Mandarin support. Shipped through a monolith-to-microservices migration.',
     },
-    stack: ['React', 'NestJS', 'Expo', 'MySQL', 'Redis'],
+    stack: [
+      { name: 'React', icon: 'react' },
+      { name: 'NestJS', icon: 'nestjs' },
+      { name: 'Expo', icon: 'expo' },
+      { name: 'MySQL', icon: 'mysql' },
+      { name: 'Redis', icon: 'redis' },
+    ],
   },
   {
     name: 'Affluent.sg',
-    summary: {
-      en: 'Wills and estate-planning platform with encrypted client data and HitPay payments.',
-      id: 'Platform wasiat dan perencanaan warisan dengan data klien terenkripsi dan pembayaran HitPay.',
+    role: { en: 'Full-stack Engineer', id: 'Full-stack Engineer' },
+    outcome: {
+      en: 'Wills and estate-planning platform for Singapore families (wills, LPA, advance care directives, CPF nominations). Delivered end to end with encrypted client data and HitPay payment gateway integration.',
+      id: 'Wills and estate-planning platform for Singapore families (wills, LPA, advance care directives, CPF nominations). Delivered end to end with encrypted client data and HitPay payment gateway integration.',
     },
-    stack: ['React', 'Express', 'MySQL'],
+    stack: [
+      { name: 'React', icon: 'react' },
+      { name: 'Express', icon: 'express' },
+      { name: 'MySQL', icon: 'mysql' },
+    ],
   },
   {
     name: 'JebHealth',
-    summary: {
-      en: 'HealthTech marketplace plus health-fintech cards with Stripe and Airwallex.',
-      id: 'Marketplace HealthTech serta kartu health-fintech dengan Stripe dan Airwallex.',
+    role: { en: 'Full-stack Engineer', id: 'Full-stack Engineer' },
+    outcome: {
+      en: 'HealthTech marketplace (SG, MY, TH, VN) plus Health-FinTech cards with Airwallex and Visa (Helix Health Card, J World Card): backend payment flows via Stripe and Airwallex integrated and hardened for production.',
+      id: 'HealthTech marketplace (SG, MY, TH, VN) plus Health-FinTech cards with Airwallex and Visa (Helix Health Card, J World Card): backend payment flows via Stripe and Airwallex integrated and hardened for production.',
     },
-    stack: ['Express', 'React', 'Expo'],
+    stack: [
+      { name: 'Express', icon: 'express' },
+      { name: 'React', icon: 'react' },
+      { name: 'Expo', icon: 'expo' },
+    ],
   },
   {
     name: 'LVE Gym',
-    summary: {
-      en: 'Gym booking app with live heart-rate display over Bluetooth.',
-      id: 'Aplikasi pemesanan gym dengan tampilan detak jantung langsung melalui Bluetooth.',
+    role: { en: 'Full-stack Engineer', id: 'Full-stack Engineer' },
+    outcome: {
+      en: 'Booking app for LVE boutique gyms (circuit training Pandan Valley, combat Boat Quay): class schedules, packs, personal training, plus live heart-rate display via Bluetooth (BLE) monitor integration. iOS and Android from one Expo codebase, through store release.',
+      id: 'Booking app for LVE boutique gyms (circuit training Pandan Valley, combat Boat Quay): class schedules, packs, personal training, plus live heart-rate display via Bluetooth (BLE) monitor integration. iOS and Android from one Expo codebase, through store release.',
     },
-    stack: ['React', 'NestJS', 'Expo', 'BLE'],
+    stack: [
+      { name: 'React', icon: 'react' },
+      { name: 'NestJS', icon: 'nestjs' },
+      { name: 'Expo', icon: 'expo' },
+      { name: 'BLE' },
+    ],
+  },
+  {
+    name: 'Pinknode',
+    role: { en: 'Frontend Engineer', id: 'Frontend Engineer' },
+    outcome: {
+      en: 'Dashboard for a Polkadot node-as-a-service: API usage analytics and account management, built and shipped to production.',
+      id: 'Dashboard for a Polkadot node-as-a-service: API usage analytics and account management, built and shipped to production.',
+    },
+    stack: [{ name: 'React', icon: 'react' }],
   },
 ]

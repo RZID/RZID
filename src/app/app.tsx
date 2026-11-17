@@ -38,11 +38,11 @@ export const App = () => (
                   {project.name}
                 </Heading>
                 <Text tone="muted" className="mt-2 max-w-prose">
-                  {project.summary.en}
+                  {project.outcome.en}
                 </Text>
               </div>
               <TagList
-                tags={project.stack}
+                tags={project.stack.map((item) => item.name)}
                 className="self-start lg:col-span-4 lg:col-start-9 lg:justify-end"
               />
             </li>
