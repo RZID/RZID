@@ -1,4 +1,3 @@
-build
-.svelte-kit
+dist
 node_modules
-src/routes/+layout.svelte
+package-lock.json

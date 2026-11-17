@@ -20,21 +20,6 @@
 
 ---
 
-## Development
-
-```bash
-bun install
-bun run dev      # local dev server
-bun run check    # type check
-bun run build    # static output in ./build
-bun run format   # prettier
-```
-
-Deploy: push to `main` → GitHub Actions builds and deploys `./build` to Cloudflare Pages
-(`personal-website`, needs `CF_API_TOKEN` + `CF_ACCOUNT_ID` secrets).
-
----
-
 ## Who I Am
 
 I'm a **Software Engineer** with 5+ years designing and shipping production systems — from backend services and distributed infrastructure to cross-platform mobile apps.
