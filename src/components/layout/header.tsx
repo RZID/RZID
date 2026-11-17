@@ -51,7 +51,7 @@ export const Header = () => {
     <header className="border-b border-line">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-control focus:bg-surface focus:px-4 focus:py-2 focus:text-small focus:text-foreground focus:shadow-card"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-control focus:bg-surface focus:px-2 focus:py-2 focus:text-small focus:text-foreground focus:shadow-card"
       >
         {pickLocalized(uiLabels.skipToContent, locale)}
       </a>

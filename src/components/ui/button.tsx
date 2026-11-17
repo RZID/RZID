@@ -10,7 +10,7 @@ const buttonVariants: Record<ButtonVariant, string> = {
   primary:
     'rounded-control bg-accent-control text-accent-foreground hover:-translate-y-px hover:brightness-95 active:translate-y-0 active:brightness-90',
   secondary:
-    'rounded-control border border-line bg-surface text-foreground hover:-translate-y-px hover:bg-visual active:translate-y-0',
+    'rounded-control border border-line bg-surface text-foreground hover:-translate-y-px hover:bg-background active:translate-y-0',
   link: 'border-b border-accent pb-1 text-foreground hover:border-accent-text hover:text-accent-text',
 }
 

@@ -70,7 +70,7 @@
   --text-meta: 0.76rem;
   --text-meta--line-height: 1.4;
   --text-meta--letter-spacing: 0.08em;
-  --text-micro: 0.68rem;
+  --text-micro: 0.7rem;
   --text-micro--line-height: 1.4;
   --text-micro--letter-spacing: 0.12em;
   --text-tag: 0.64rem;
@@ -84,6 +84,7 @@
   --tracking-role: 0.14em;
 
   --container-site: 1240px;
+  --max-width-prose: 56ch;
 
   --radius-small: 10px;
   --radius-control: 14px;
@@ -123,6 +124,9 @@
 :focus-visible {
   outline: 3px solid var(--accent-text);
   outline-offset: 4px;
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter;
 }
 
 ::selection {

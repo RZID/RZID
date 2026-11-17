@@ -73,7 +73,7 @@ Instrument Serif for display, headings, and the wordmark. Geist Variable for bod
 | `body`    | 0.98rem                                   | 1.7         | normal   |
 | `small`   | 0.82rem                                   | 1.6         | normal   |
 | `meta`    | 0.76rem                                   | 1.4         | 0.08em   |
-| `micro`   | 0.68rem                                   | 1.4         | 0.12em   |
+| `micro`   | 0.7rem                                    | 1.4         | 0.12em   |
 | `tag`     | 0.64rem                                   | 1.4         | 0.04em   |
 
 The clamps are linear interpolations between the concept sizes at 390px and 1440px. `display` goes from 52.6px to 83.2px, `title` from 40px to 72px, `heading` from 38.4px to 57.6px.
@@ -94,6 +94,7 @@ Base unit 4px. Use 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24.
 ## Grid and container
 
 - Container: `1240px` max width, centered, 20px gutter at 390, 32px from 640 up.
+- Reading measure: `56ch` maximum for body paragraphs.
 - Page grid: 12 columns, 24px gap, single column below 1024px.
 - Header is a three-zone meta row: wordmark / navigation / controls. On mobile it collapses to wordmark + menu, and the menu panel holds navigation and controls.
 - Work will use full-width alternating rows with a real screenshot slot. No slot is rendered until a real image exists.
