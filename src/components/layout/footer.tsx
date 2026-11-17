@@ -15,7 +15,7 @@ export const Footer = () => {
   const { locale } = usePreferences()
 
   return (
-    <footer className="border-t border-line">
+    <footer id="contact" className="scroll-mt-20 border-t border-line">
       <Container className="flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-small text-muted">
           {profile.name} · {pickLocalized(profile.location, locale)}

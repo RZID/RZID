@@ -15,9 +15,9 @@ export const App = () => {
   const { locale } = usePreferences()
 
   return (
-    <div className="flex min-h-dvh flex-col">
+    <div id="top" className="flex min-h-dvh flex-col">
       <Header />
-      <main className="flex-1">
+      <main id="main" className="flex-1">
         <Section>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <Heading level="h1" size="display" className="lg:col-span-7">
@@ -31,7 +31,7 @@ export const App = () => {
           </div>
         </Section>
 
-        <Section heading={pickLocalized(sectionTitles.work, locale)}>
+        <Section id="work" heading={pickLocalized(sectionTitles.work, locale)}>
           <ul className="border-t border-line">
             {projects.map((project) => (
               <li
@@ -55,7 +55,7 @@ export const App = () => {
           </ul>
         </Section>
 
-        <Section heading={pickLocalized(sectionTitles.experience, locale)}>
+        <Section id="experience" heading={pickLocalized(sectionTitles.experience, locale)}>
           {experience.map((job) => (
             <article key={job.company} className="border-t border-line pt-8">
               <div className="grid gap-4 lg:grid-cols-12">
