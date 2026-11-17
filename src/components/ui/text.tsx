@@ -5,14 +5,14 @@ export type TextSize = 'sm' | 'base' | 'lg'
 export type TextTone = 'default' | 'muted'
 
 const textSizes: Record<TextSize, string> = {
-  sm: 'text-sm leading-relaxed',
-  base: 'text-base leading-relaxed',
-  lg: 'text-lg leading-relaxed sm:text-xl',
+  sm: 'text-small',
+  base: 'text-body',
+  lg: 'text-lead',
 }
 
 const textTones: Record<TextTone, string> = {
   default: 'text-foreground',
-  muted: 'text-foreground/70',
+  muted: 'text-muted',
 }
 
 type TextProps = ComponentPropsWithoutRef<'p'> & {

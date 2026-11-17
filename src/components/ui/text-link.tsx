@@ -6,7 +6,7 @@ type TextLinkProps = ComponentPropsWithoutRef<'a'>
 export const TextLink = ({ className, children, ...props }: TextLinkProps) => (
   <a
     className={cn(
-      'underline decoration-accent decoration-1 underline-offset-4 hover:text-accent-text hover:decoration-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
+      'inline-flex min-h-6 items-center border-b border-accent pb-0.5 text-small text-foreground transition-colors duration-fast hover:border-accent-text hover:text-accent-text',
       className,
     )}
     {...props}

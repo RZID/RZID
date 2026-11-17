@@ -6,7 +6,7 @@ type TagProps = ComponentPropsWithoutRef<'span'>
 export const Tag = ({ className, ...props }: TagProps) => (
   <span
     className={cn(
-      'rounded-full border border-foreground/15 px-3 py-1 font-mono text-xs text-foreground/70',
+      'inline-flex items-center rounded-chip border border-line px-2.5 py-1.5 font-mono text-tag text-muted uppercase',
       className,
     )}
     {...props}

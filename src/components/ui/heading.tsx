@@ -11,9 +11,9 @@ export type HeadingLevel = keyof typeof headingTags
 export type HeadingSize = 'display' | 'section' | 'item'
 
 const headingSizes: Record<HeadingSize, string> = {
-  display: 'text-5xl leading-none tracking-tight sm:text-6xl lg:text-7xl',
-  section: 'text-3xl leading-tight tracking-tight sm:text-4xl',
-  item: 'text-xl leading-snug tracking-tight sm:text-2xl',
+  display: 'text-display',
+  section: 'text-title',
+  item: 'text-item',
 }
 
 type HeadingProps = ComponentPropsWithoutRef<'h1'> & {

@@ -65,6 +65,8 @@
   --text-body--line-height: 1.7;
   --text-small: 0.82rem;
   --text-small--line-height: 1.6;
+  --text-control: 0.9rem;
+  --text-control--line-height: 1.4;
   --text-meta: 0.76rem;
   --text-meta--line-height: 1.4;
   --text-meta--letter-spacing: 0.08em;
@@ -112,6 +114,10 @@
 
 @utility duration-card {
   transition-duration: 420ms;
+}
+
+@utility min-h-control {
+  min-height: 46px;
 }
 
 :focus-visible {
