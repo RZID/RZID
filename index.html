@@ -3,7 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0c0c0c" />
+    <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)" />
+    <script>
+      // Keep in sync with src/lib/boundary/preferences.ts.
+      ;(() => {
+        try {
+          const theme = window.localStorage.getItem('rzid.theme')
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.dataset.theme = theme
+          }
+          const locale = window.localStorage.getItem('rzid.locale')
+          if (locale === 'en' || locale === 'id') {
+            document.documentElement.lang = locale
+          }
+        } catch {
+          // Storage can be unavailable; keep the defaults.
+        }
+      })()
+    </script>
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>Ramadhanu, Curious Engineer Who Writes Code (Remote)</title>

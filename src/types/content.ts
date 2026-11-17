@@ -90,11 +90,26 @@ export type SkillGroup = {
 
 export type NavLabels = {
   work: LocalizedText
+  experience: LocalizedText
   about: LocalizedText
   contact: LocalizedText
   hire: LocalizedText
   menu: LocalizedText
   close: LocalizedText
+}
+
+export type UiLabels = {
+  theme: LocalizedText
+  themeSystem: LocalizedText
+  themeLight: LocalizedText
+  themeDark: LocalizedText
+  language: LocalizedText
+  languageEnglish: LocalizedText
+  languageIndonesian: LocalizedText
+  englishShort: LocalizedText
+  indonesianShort: LocalizedText
+  skipToContent: LocalizedText
+  primaryNav: LocalizedText
 }
 
 export type HeroCard = {

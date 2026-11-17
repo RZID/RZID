@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { App } from '@/app/app'
+import { PreferencesProvider } from '@/app/providers'
 import '@/styles/index.css'
 
 const container = document.getElementById('root')
@@ -11,6 +12,8 @@ if (container === null) {
 
 createRoot(container).render(
   <StrictMode>
-    <App />
+    <PreferencesProvider>
+      <App />
+    </PreferencesProvider>
   </StrictMode>,
 )

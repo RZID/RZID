@@ -8,6 +8,7 @@ import type {
   Hero,
   NavLabels,
   ReplyTime,
+  UiLabels,
   WorkSection,
 } from '@/types/content'
 
@@ -131,9 +132,24 @@ export const contact: Contact = {
 
 export const navLabels: NavLabels = {
   work: { en: 'Work', id: 'Karya' },
+  experience: { en: 'Experience', id: 'Pengalaman' },
   about: { en: 'About', id: 'Tentang' },
   contact: { en: 'Contact', id: 'Kontak' },
   hire: { en: 'Hire me', id: 'Rekrut Saya' },
   menu: { en: 'Menu', id: 'Menu' },
   close: { en: 'Close', id: 'Tutup' },
+}
+
+export const uiLabels: UiLabels = {
+  theme: { en: 'Theme', id: 'Tema' },
+  themeSystem: { en: 'System', id: 'Sistem' },
+  themeLight: { en: 'Light', id: 'Terang' },
+  themeDark: { en: 'Dark', id: 'Gelap' },
+  language: { en: 'Language', id: 'Bahasa' },
+  languageEnglish: { en: 'English', id: 'Bahasa Inggris' },
+  languageIndonesian: { en: 'Indonesian', id: 'Bahasa Indonesia' },
+  englishShort: { en: 'EN', id: 'EN' },
+  indonesianShort: { en: 'ID', id: 'ID' },
+  skipToContent: { en: 'Skip to content', id: 'Lewati ke konten' },
+  primaryNav: { en: 'Primary', id: 'Utama' },
 }
