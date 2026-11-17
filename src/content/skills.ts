@@ -33,13 +33,21 @@ export const skillGroups: readonly SkillGroup[] = [
     ],
   },
   {
-    title: { en: 'Infra & Data', id: 'Infra & Data' },
+    title: { en: 'Infra & Data', id: 'Infrastruktur & Data' },
     items: [
       { en: 'AWS', id: 'AWS' },
       { en: 'Docker', id: 'Docker' },
       { en: 'Linux', id: 'Linux' },
       { en: 'PostgreSQL / MySQL', id: 'PostgreSQL / MySQL' },
       { en: 'CI/CD', id: 'CI/CD' },
+    ],
+  },
+  {
+    title: { en: 'Currently learning', id: 'Sedang dipelajari' },
+    items: [
+      { en: 'Kubernetes', id: 'Kubernetes' },
+      { en: 'Kafka', id: 'Kafka' },
+      { en: 'Cloudflare edge', id: 'Cloudflare edge' },
     ],
   },
 ]

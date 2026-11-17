@@ -4,7 +4,7 @@ import type { Profile } from '@/types/content'
 
 export const profile: Profile = {
   name: 'Ramadhanu',
-  role: { en: 'Software engineer', id: 'Software engineer' },
+  role: { en: 'Software Engineer', id: 'Software Engineer' },
   location: { en: 'Jakarta', id: 'Jakarta' },
   summary: {
     en: "I'm Ramadhanu. I pull things apart to see how they work, then build software from what I learn: web, mobile, backend. Five years in, still curious. Remote worldwide, hybrid in Jabodetabek.",

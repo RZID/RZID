@@ -1,11 +1,13 @@
 import { profile } from '@/content/profile'
 import type {
   About,
+  Availability,
   Clients,
   Contact,
   Education,
   Hero,
   NavLabels,
+  ReplyTime,
   WorkSection,
 } from '@/types/content'
 
@@ -16,19 +18,26 @@ export const education: Education = {
   },
 }
 
-export const hero: Hero = {
-  badge: {
+export const availability: Availability = {
+  status: {
     en: 'Available for full-time & consulting',
-    id: 'Terbuka untuk full-time & consulting',
+    id: 'Terbuka untuk posisi full-time dan konsultasi',
   },
+  asOf: '2026-11',
+}
+
+export const replyTime: ReplyTime = {
+  hours: 24,
+}
+
+export const hero: Hero = {
   titleA: { en: 'Curious human,', id: 'Orang yang penasaran,' },
   titleB: { en: 'happens to write code.', id: 'kebetulan bisa ngoding.' },
   summary: profile.summary,
   primaryCta: { en: 'Hire me', id: 'Rekrut Saya' },
-  secondaryCta: { en: 'See selected work', id: 'Lihat karya' },
+  secondaryCta: { en: 'See selected work', id: 'Lihat karya pilihan' },
   card: {
     title: { en: 'At a glance', id: 'Sekilas' },
-    status: { en: 'Available now', id: 'Tersedia sekarang' },
     basedLabel: { en: 'Based', id: 'Basis' },
     basedValue: { en: 'Jakarta, GMT+7', id: 'Jakarta, GMT+7' },
     localTimeLabel: { en: 'Local time', id: 'Waktu lokal' },
@@ -55,8 +64,8 @@ export const workSection: WorkSection = {
   },
   stackLabel: { en: 'Stack', id: 'Stack' },
   rolesTitle: { en: 'Roles', id: 'Peran' },
-  hint: { en: 'Tap a role to expand', id: 'Ketuk peran untuk detail' },
-  paymentLabel: { en: 'payment', id: 'payment' },
+  hint: { en: 'Tap a role to expand', id: 'Ketuk peran untuk lihat detail' },
+  paymentLabel: { en: 'payment', id: 'pembayaran' },
 }
 
 export const about: About = {
@@ -91,7 +100,7 @@ export const about: About = {
       value: education.degree,
     },
     {
-      label: { en: 'Mentoring', id: 'Mentoring' },
+      label: { en: 'Mentoring', id: 'Bimbingan' },
       value: {
         en: 'SMK Negeri 12 Jakarta, national certifications',
         id: 'SMK Negeri 12 Jakarta, sertifikasi nasional',
@@ -105,18 +114,17 @@ export const contact: Contact = {
   titleA: { en: 'Something to build,', id: 'Ada yang mau dibikin,' },
   titleB: { en: 'or a team to grow?', id: 'atau tim yang butuh orang?' },
   summary: {
-    en: 'I take consulting projects and full-time roles. Tell me what is on your mind, I reply within 24 hours.',
-    id: 'Saya terima project consulting dan full-time. Ceritakan yang ada di pikiran, saya balas dalam 24 jam.',
+    en: 'I take consulting projects and full-time roles. Tell me what is on your mind.',
+    id: 'Saya terima proyek konsultasi dan posisi full-time. Ceritakan apa yang ada di pikiran.',
   },
-  availability: { en: 'Available now', id: 'Tersedia sekarang' },
   primaryCta: { en: 'Email me', id: 'Email saya' },
   response: {
-    en: 'More of a LinkedIn person? I am below. Same 24h reply.',
-    id: 'Lebih suka LinkedIn? Saya ada di bawah. Tetap balas 24 jam.',
+    en: 'More of a LinkedIn person? I am below.',
+    id: 'Lebih suka LinkedIn? Saya ada di bawah.',
   },
   footerTagline: {
-    en: 'Jakarta, GMT+7. Replies within 24 hours',
-    id: 'Jakarta, GMT+7. Balas dalam 24 jam',
+    en: 'Jakarta, GMT+7.',
+    id: 'Jakarta, GMT+7.',
   },
   backToTop: { en: 'Back to top', id: 'Kembali ke atas' },
 }

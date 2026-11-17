@@ -51,6 +51,9 @@ Dependency direction: `app` -> `features` -> `components`/`hooks`/`lib`/`content
 - Never invent facts about the owner: projects, technologies, metrics, dates, employers, contact details.
 - Missing information = a visible placeholder and a question to the owner.
 - Document metadata (title, lang, description, OG tags) stays static in `index.html`; it is the only text allowed outside `src/content`.
+- Every `id` string must be a real translation. Only names, product/technical terms, and standard Indonesian loanwords may match `en`.
+- Availability and reply time are data in `src/content/site.ts`; never hardcode "Available now" or a reply-time promise in copy.
+- Numeric and time-sensitive claims are tracked in `docs/claims.md`. Keep it in sync when content changes; claims stay UNVERIFIED until the owner supplies evidence.
 
 ## Design
 

@@ -99,7 +99,6 @@ export type NavLabels = {
 
 export type HeroCard = {
   title: LocalizedText
-  status: LocalizedText
   basedLabel: LocalizedText
   basedValue: LocalizedText
   localTimeLabel: LocalizedText
@@ -110,7 +109,6 @@ export type HeroCard = {
 }
 
 export type Hero = {
-  badge: LocalizedText
   titleA: LocalizedText
   titleB: LocalizedText
   summary: LocalizedText
@@ -149,9 +147,17 @@ export type Contact = {
   titleA: LocalizedText
   titleB: LocalizedText
   summary: LocalizedText
-  availability: LocalizedText
   primaryCta: LocalizedText
   response: LocalizedText
   footerTagline: LocalizedText
   backToTop: LocalizedText
+}
+
+export type Availability = {
+  status: LocalizedText
+  asOf: string
+}
+
+export type ReplyTime = {
+  hours: number
 }
