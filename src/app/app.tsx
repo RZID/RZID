@@ -1,8 +1,8 @@
 import { Footer } from '@/components/layout/footer'
 import { Header } from '@/components/layout/header'
+import { Section } from '@/components/layout/section'
 import { Heading } from '@/components/ui/heading'
-import { Section } from '@/components/ui/section'
-import { Tag } from '@/components/ui/tag'
+import { TagList } from '@/components/ui/tag-list'
 import { Text } from '@/components/ui/text'
 import { experience } from '@/content/experience'
 import { profile } from '@/content/profile'
@@ -26,7 +26,7 @@ export const App = () => (
         </div>
       </Section>
 
-      <Section title={sectionTitles.work.en}>
+      <Section heading={sectionTitles.work.en}>
         <ul className="border-t border-foreground/10">
           {projects.map((project) => (
             <li
@@ -41,17 +41,16 @@ export const App = () => (
                   {project.summary.en}
                 </Text>
               </div>
-              <ul className="flex flex-wrap gap-2 self-start lg:col-span-4 lg:col-start-9 lg:justify-end">
-                {project.stack.map((item) => (
-                  <Tag key={item}>{item}</Tag>
-                ))}
-              </ul>
+              <TagList
+                tags={project.stack}
+                className="self-start lg:col-span-4 lg:col-start-9 lg:justify-end"
+              />
             </li>
           ))}
         </ul>
       </Section>
 
-      <Section title={sectionTitles.experience.en}>
+      <Section heading={sectionTitles.experience.en}>
         {experience.map((job) => (
           <article key={job.company} className="border-t border-foreground/10 pt-8">
             <div className="grid gap-4 lg:grid-cols-12">

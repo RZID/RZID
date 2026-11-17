@@ -17,12 +17,8 @@ export const Footer = () => (
       </p>
       <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
         {links.map((link) => (
-          <li key={link.label}>
-            {link.href === 'TODO' ? (
-              <span className="text-foreground/70">{link.label}: TODO</span>
-            ) : (
-              <TextLink href={link.href}>{link.label}</TextLink>
-            )}
+          <li key={link.label.en}>
+            <TextLink href={link.href}>{link.label.en}</TextLink>
           </li>
         ))}
       </ul>

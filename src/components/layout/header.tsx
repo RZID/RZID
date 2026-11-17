@@ -6,7 +6,7 @@ export const Header = () => (
     <Container className="flex items-baseline justify-between gap-6 py-6">
       <a
         href="/"
-        className="font-serif text-2xl leading-none tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+        className="font-serif text-2xl leading-none tracking-tight hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
       >
         {profile.name}
       </a>

@@ -9,11 +9,11 @@
     "lint": "oxlint --type-aware",
     "preview": "vite preview",
     "typecheck": "tsc -b",
-    "lint:arrow": "node scripts/check-arrow-only.mjs",
+    "lint:arrow": "bun scripts/check-arrow-only.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "dup": "jscpd src",
-    "check": "npm run typecheck && npm run lint && npm run lint:arrow && npm run format:check && npm run dup",
+    "check": "bun run typecheck && bun run lint && bun run lint:arrow && bun run format:check && bun run dup",
     "prepare": "husky"
   },
   "dependencies": {

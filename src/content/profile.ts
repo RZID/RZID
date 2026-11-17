@@ -9,8 +9,11 @@ export const profile: Profile = {
     id: 'Software engineer yang berbasis di Jakarta dengan 5 tahun pengalaman.',
   },
   links: {
-    github: { label: 'GitHub', href: 'https://github.com/RZID' },
-    email: { label: 'Email', href: 'TODO' },
-    linkedin: { label: 'LinkedIn', href: 'TODO' },
+    github: { label: { en: 'GitHub', id: 'GitHub' }, href: 'https://github.com/RZID' },
+    email: { label: { en: 'Email', id: 'Email' }, href: 'mailto:rdhanurzid@gmail.com' },
+    linkedin: {
+      label: { en: 'LinkedIn', id: 'LinkedIn' },
+      href: 'https://www.linkedin.com/in/rama-ramadhanu',
+    },
   },
 }

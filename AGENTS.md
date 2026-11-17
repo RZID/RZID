@@ -4,10 +4,12 @@ Audience: recruiters and junior developers. Quality bar: modern, fast, accessibl
 
 ## Commands
 
-- `npm run dev` - dev server
-- `npm run build` - typecheck + production build
-- `npm run check` - typecheck, lint (type-aware), arrow-only, format check, duplication. **Must pass before you report any task as done.**
-- `npm run format` - Prettier (Tailwind classes are auto-sorted)
+- `bun run dev` - dev server
+- `bun run build` - typecheck + production build
+- `bun run check` - typecheck, lint (type-aware), arrow-only, format check, duplication. **Must pass before you report any task as done.**
+- `bun run format` - Prettier (Tailwind classes are auto-sorted)
+
+Package manager: bun only. Never use npm, yarn or pnpm; never create package-lock.json.
 
 ## Hard rules (enforced by tooling; do not work around them)
 
@@ -48,6 +50,7 @@ Dependency direction: `app` -> `features` -> `components`/`hooks`/`lib`/`content
 
 - Never invent facts about the owner: projects, technologies, metrics, dates, employers, contact details.
 - Missing information = a visible placeholder and a question to the owner.
+- Document metadata (title, lang, description, OG tags) stays static in `index.html`; it is the only text allowed outside `src/content`.
 
 ## Design
 
@@ -57,6 +60,6 @@ Dependency direction: `app` -> `features` -> `components`/`hooks`/`lib`/`content
 
 ## Workflow
 
-- Small steps. After each one: run `npm run check`, then list what changed.
+- Small steps. After each one: run `bun run check`, then list what changed.
 - Conventional commits (`feat:`, `fix:`, `refactor:`, `chore:`).
 - New dependencies: ask first, with a one-line justification. Allowed by design: three, @react-three/fiber, @react-three/drei, gsap.

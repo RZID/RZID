@@ -6,7 +6,7 @@ export type LocalizedText = {
 }
 
 export type ProfileLink = {
-  label: string
+  label: LocalizedText
   href: string
 }
 
