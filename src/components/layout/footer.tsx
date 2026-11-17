@@ -19,7 +19,7 @@ export const Footer = () => (
         {links.map((link) => (
           <li key={link.label}>
             {link.href === 'TODO' ? (
-              <span className="font-mono text-xs text-foreground/70">{link.label}: TODO</span>
+              <span className="text-foreground/70">{link.label}: TODO</span>
             ) : (
               <TextLink href={link.href}>{link.label}</TextLink>
             )}

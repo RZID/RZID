@@ -8,7 +8,7 @@ type SectionProps = ComponentPropsWithoutRef<'section'> & {
 }
 
 export const Section = ({ title, className, children, ...props }: SectionProps) => (
-  <section className={cn('py-20 sm:py-28', className)} {...props}>
+  <section className={cn('py-16 sm:py-24', className)} {...props}>
     <Container>
       {title === undefined ? null : (
         <Heading level="h2" size="section" className="mb-10 sm:mb-14">
