@@ -38,6 +38,20 @@ export const useTypewriter = (sentence: string, instant: boolean) => {
     return () => window.clearTimeout(timer)
   }, [instant, sentence, run])
 
+  useEffect(() => {
+    if (!done || instant || sentence === '') {
+      return
+    }
+
+    const timer = window.setTimeout(() => {
+      setText('')
+      setDone(false)
+      setRun((value) => value + 1)
+    }, 3000)
+
+    return () => window.clearTimeout(timer)
+  }, [done, instant, sentence])
+
   const finish = useCallback(() => {
     stopped.current = true
     setText(sentence)
