@@ -13,56 +13,60 @@ export const hero: Hero = {
   name: profile.name,
   dialogue: [
     {
-      id: 'Halo! Saya Ramadhanu, software engineer di Jakarta.',
-      en: 'Hi! I’m Ramadhanu, a software engineer in Jakarta.',
+      id: 'Boot sequence: engineer penasaran, build Jakarta.',
+      en: 'Boot sequence: curious engineer, Jakarta build.',
     },
     {
-      id: 'Lima tahun bikin web, mobile, dan backend.',
-      en: 'Five years building web, mobile, and backend systems.',
+      id: 'Lima tahun di build log: web, mobile, backend.',
+      en: 'Five years in the build log: web, mobile, backend.',
     },
     {
-      id: 'Suka bongkar cara kerja sesuatu, lalu bangun ulang.',
-      en: 'I like taking things apart to see how they work, then building them back.',
+      id: 'Saya baca sistem kayak save file — lalu tulis ulang yang lebih rapi.',
+      en: 'I read systems like save files, then write better ones.',
     },
     {
-      id: 'Remote global, hybrid Jabodetabek.',
-      en: 'Remote worldwide, hybrid in Jabodetabek.',
+      id: 'Remote jadi default, hybrid di sekitar Jabodetabek.',
+      en: 'Remote by default, hybrid around Jabodetabek.',
     },
     {
-      id: 'Sehari-harinya pakai NestJS, Redis, RabbitMQ, dan microservices.',
-      en: 'Day to day: NestJS, Redis, RabbitMQ, and microservices.',
+      id: 'Inventory hari ini: NestJS, Redis, RabbitMQ, Expo.',
+      en: 'Today’s inventory: NestJS, Redis, RabbitMQ, Expo.',
     },
     {
-      id: 'Aplikasi mobile rilis ke iOS dan Android dari satu codebase Expo.',
-      en: 'Mobile apps ship to iOS and Android from one Expo codebase.',
+      id: 'Satu codebase Expo, dua app store.',
+      en: 'One Expo codebase, two app stores.',
     },
     {
-      id: 'Pembayaran HitPay, Stripe, dan Airwallex jalan di produksi.',
-      en: 'HitPay, Stripe, and Airwallex payments run in production.',
+      id: 'Bos pembayaran yang sudah dikalahkan: HitPay, Stripe, Airwallex.',
+      en: 'Payment bosses cleared: HitPay, Stripe, Airwallex.',
     },
     {
-      id: 'Saya bimbing siswa di SMK Negeri 12 Jakarta.',
-      en: 'I mentor students at SMK Negeri 12 Jakarta.',
+      id: 'Side quest: jaga server sekolah tetap hidup.',
+      en: 'Side quest: keeping the school servers alive.',
     },
     {
-      id: 'Saya juga jaga server sekolah tetap hidup.',
-      en: 'I also keep the school servers alive.',
+      id: 'Monolith masih melayani pengguna, saya pindah ke microservices.',
+      en: 'A monolith kept serving users while I moved it to microservices.',
     },
     {
-      id: 'Monolith yang berjalan jadi microservices NestJS tanpa menghentikan bisnis.',
-      en: 'A live monolith became NestJS microservices without stopping the business.',
+      id: 'Lagi grinding: Kubernetes, Kafka, Cloudflare edge.',
+      en: 'Currently grinding: Kubernetes, Kafka, Cloudflare edge.',
     },
     {
-      id: 'Lagi belajar Kubernetes, Kafka, dan Cloudflare edge.',
-      en: 'Currently learning Kubernetes, Kafka, and Cloudflare edge.',
+      id: 'Saya tinggalkan runbook, tim lanjut tanpa saya.',
+      en: 'I leave runbooks so the team keeps shipping without me.',
     },
     {
-      id: 'Terbuka untuk posisi full-time dan konsultasi.',
-      en: 'Available for full-time roles and consulting.',
+      id: 'Co-op request dibuka: full-time atau konsultasi.',
+      en: 'Co-op requests open: full-time or consulting.',
     },
     {
-      id: 'Saya tinggalkan docs dan runbook supaya tim tetap bisa rilis.',
-      en: 'I leave docs and runbooks so the team can keep shipping.',
+      id: 'Mode mentor aktif di SMK Negeri 12 Jakarta.',
+      en: 'Mentor mode active at SMK Negeri 12 Jakarta.',
+    },
+    {
+      id: 'Debug dulu, rilis kemudian.',
+      en: 'Debug first, ship second.',
     },
   ],
   stats: [
