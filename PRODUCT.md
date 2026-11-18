@@ -1,0 +1,60 @@
+# PRODUCT.md
+
+## What this is
+
+A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers four questions for a recruiter or a junior developer: who he is, what he shipped, what he works with, and how to reach him.
+
+## Audience and job
+
+- Recruiters: scan a role, five years of context, real project names, and a contact path in the first screen.
+- Junior developers: see the stack and the kind of systems he has built, without marketing filler.
+
+## Sections
+
+| Section   | Job                                                             |
+| --------- | --------------------------------------------------------------- |
+| `home`    | Name, role framing, location, short intro, two calls to action. |
+| `quests`  | Five shipped projects with a one-line outcome and stack tags.   |
+| `items`   | Grouped skills, including what is currently being learned.      |
+| `guild`   | Three roles plus an in-progress degree, shown as ordinal ranks. |
+| `contact` | Availability line, short invitation, email / GitHub / LinkedIn. |
+
+## Content rules
+
+- All text and facts come from `src/content/`. Never hardcode them in JSX.
+- Source data: the previous portfolio's content still in git history, the owner's `README.md`, and the supplied prototype.
+- Never invent a project, employer, technology, metric, date, or contact detail.
+- Numeric and time-sensitive statements are tracked in `docs/claims.md` and stay `UNVERIFIED` until the owner supplies evidence.
+- Copy voice: Indonesian prose, English game labels. This is a deliberate direction from the prototype, not a translation accident.
+- The previous site was bilingual. An English toggle is deferred, not forgotten; ask before adding it.
+- No project screenshots until real files exist. Placeholder boxes are banned.
+
+## Decisions
+
+- **Single language for now.** The prototype is Indonesian-first. Adding a locale toggle would change the header density and is a separate task.
+- **Boot gate per session.** The “Press start” screen shows once per browser session and never under reduced motion. It is a framing device, not a login.
+- **Theme persists.** Choice is stored in `localStorage`; system preference is the default.
+- **Hotkeys 1–5.** Shortcut to sections; every section is still reachable by nav links.
+- **No new dependencies without asking.** Current runtime: React, React DOM, clsx, tailwind-merge, Tailwind CSS, one font package.
+
+## Success criteria
+
+- `bun run check`, `bun run build`, and Playwright checks at 390px and 1440px pass.
+- First screen contains a human artifact (pixel avatar) and a name, plus a role/location string.
+- No horizontal overflow at either checked width.
+- Reduced-motion users get static content with no boot gate.
+- Every claim on the page appears in `docs/claims.md`.
+
+## Open questions for the owner
+
+1. Should the email address stay visible on the contact panel? It was public in the previous build.
+2. Is an English version required for recruiters outside Indonesia?
+3. Are there real project screenshots we can add later? None are in the repo today.
+4. Should analytics or a canonical URL be added before deployment?
+
+## Non-goals
+
+- No new visual direction beyond the supplied prototype.
+- No 3D, WebGL, 2D art libraries, or chart libraries.
+- No fake imperfection, no generated hand-drawn marks, no invented screenshots.
+- No metrics without evidence in `docs/claims.md`.
