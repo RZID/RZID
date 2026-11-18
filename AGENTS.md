@@ -44,6 +44,7 @@ Dependency direction: `app` -> `features` -> `components`/`hooks`/`lib`/`content
 - The third repetition of markup, class combination, or logic gets extracted. Class combinations become components, not `@apply`.
 - Text, links, dates, and labels live in `src/content/` and render from there. Never hardcode them in JSX.
 - Use `cn()` from `@/lib/cn` for conditional classes.
+- Copy is bilingual (`Localized`); render it with `useT()` from `@/lib/locale`. Never add a new fact while translating.
 - Colors, fonts, spacing, and motion come from tokens in `src/styles/index.css`. No arbitrary values when a token exists; add the token first.
 
 ## Content integrity

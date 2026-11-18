@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Section } from '@/components/layout/section'
 import { Box } from '@/components/ui/box'
 import { ButtonLink } from '@/components/ui/button-link'
@@ -6,10 +7,14 @@ import { Reveal } from '@/components/ui/reveal'
 import { profile } from '@/content/profile'
 import { hero, ui } from '@/content/site'
 import { useTypewriter } from '@/hooks/use-typewriter'
+import { useLocale, useT } from '@/lib/locale'
 
 export const HeroSection = () => {
+  const locale = useLocale()
+  const t = useT()
+  const lines = useMemo(() => hero.dialogue.map((line) => line[locale]), [locale])
   const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  const { text, done, finish } = useTypewriter(hero.dialogue, instant)
+  const { text, done, finish } = useTypewriter(lines, instant)
 
   return (
     <Section
@@ -18,7 +23,7 @@ export const HeroSection = () => {
     >
       <Reveal>
         <p className="m-0 font-pixel text-lg text-muted">
-          {hero.player} · {profile.role}
+          {t(hero.player)} · {t(profile.role)}
         </p>
         <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
 
@@ -27,7 +32,7 @@ export const HeroSection = () => {
           <button
             type="button"
             onClick={finish}
-            aria-label={ui.dialogueSkip}
+            aria-label={t(ui.dialogueSkip)}
             className="absolute inset-0 cursor-pointer"
           />
           {done ? null : (
@@ -36,12 +41,12 @@ export const HeroSection = () => {
             </span>
           )}
         </Box>
-        <p className="sr-only">{hero.dialogue.join(' ')}</p>
+        <p className="sr-only">{lines.join(' ')}</p>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <ButtonLink href={hero.primaryCta.href}>{hero.primaryCta.label}</ButtonLink>
+          <ButtonLink href={hero.primaryCta.href}>{t(hero.primaryCta.label)}</ButtonLink>
           <ButtonLink href={hero.secondaryCta.href} variant="secondary">
-            {hero.secondaryCta.label}
+            {t(hero.secondaryCta.label)}
           </ButtonLink>
         </div>
       </Reveal>

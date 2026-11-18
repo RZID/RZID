@@ -2,13 +2,16 @@ import type { Profile } from '@/types/content'
 
 export const profile: Profile = {
   name: 'Ramadhanu',
-  role: 'Software Engineer',
-  location: 'Jakarta',
+  role: { id: 'Software Engineer', en: 'Software Engineer' },
+  location: { id: 'Jakarta', en: 'Jakarta' },
   links: {
-    github: { label: 'GitHub', href: 'https://github.com/RZID' },
-    email: { label: 'Email', href: 'mailto:rdhanurzid@gmail.com' },
+    github: { label: { id: 'GitHub', en: 'GitHub' }, href: 'https://github.com/RZID' },
+    email: {
+      label: { id: 'Email', en: 'Email' },
+      href: 'mailto:rdhanurzid@gmail.com',
+    },
     linkedin: {
-      label: 'LinkedIn',
+      label: { id: 'LinkedIn', en: 'LinkedIn' },
       href: 'https://www.linkedin.com/in/rama-ramadhanu',
     },
   },

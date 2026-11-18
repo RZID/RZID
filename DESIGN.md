@@ -18,6 +18,7 @@ Earlier portfolio directions (cream page + serif display, broadsheet hairlines, 
 | 1000px content column            | From the prototype; keeps long Indonesian prose at a readable measure.                                            |
 | Chunky square corners            | Arcade UI has no rounded pill cards; rounding would fight the reference.                                          |
 | Scanline texture                 | The prototype's CRT overlay. It is the only gradient in the system and is decorative.                             |
+| Indonesian + English copy        | Recruiters were the stated audience; English strings come from the previous site, not from invention.             |
 
 ## Tokens
 
@@ -42,6 +43,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 
 - Display and UI chrome: Pixelify Sans 400/700, self-hosted through `@fontsource/pixelify-sans`.
 - Body: system sans. It is deliberately not a second webfont.
+- Copy exists in `id` and `en`; both render with the same layout. Game labels (Quests, Items, Guild, Cleared, LV.5) stay in English in both locales.
 - Scale: h1 `clamp(2.75rem, 9vw, 5.75rem)`, section `clamp(1.625rem, 4vw, 2.25rem)`, body `16px/1.65`.
 - No italics, no tracking-heavy all-caps, no serif.
 

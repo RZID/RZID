@@ -3,21 +3,24 @@ import { hero, nav, ui } from '@/content/site'
 import { useActiveSection } from '@/hooks/use-active-section'
 import { useTheme } from '@/hooks/use-theme'
 import { cn } from '@/lib/cn'
+import { setLocale, useLocale, useT } from '@/lib/locale'
 
 export const Header = () => {
   const active = useActiveSection(nav)
   const { theme, toggle } = useTheme()
+  const locale = useLocale()
+  const t = useT()
 
   return (
     <header className="sticky top-0 z-40 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b-4 border-ink bg-page px-4 py-2">
       <a href="#home" className="font-pixel text-base font-bold whitespace-nowrap">
         {profile.name} <span className="text-accent">{hero.level}</span>{' '}
         <small className="hidden font-sans text-xs font-normal text-muted sm:inline">
-          {profile.role}
+          {t(profile.role)}
         </small>
       </a>
 
-      <nav aria-label={ui.primaryNav} className="flex flex-wrap gap-0.5">
+      <nav aria-label={t(ui.primaryNav)} className="flex flex-wrap gap-0.5">
         {nav.map((item) => {
           const isActive = active === item.id
 
@@ -40,20 +43,30 @@ export const Header = () => {
               >
                 ▶
               </span>
-              {item.label}
+              {t(item.label)}
             </a>
           )
         })}
       </nav>
 
-      <button
-        type="button"
-        onClick={toggle}
-        aria-label={ui.themeToggle}
-        className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-pixel text-base"
-      >
-        {theme === 'light' ? '☀' : '☾'}
-      </button>
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          onClick={() => setLocale(locale === 'id' ? 'en' : 'id')}
+          aria-label={t(ui.language)}
+          className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-pixel text-sm"
+        >
+          {locale === 'id' ? t(ui.englishShort) : t(ui.indonesianShort)}
+        </button>
+        <button
+          type="button"
+          onClick={toggle}
+          aria-label={t(ui.themeToggle)}
+          className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-pixel text-base"
+        >
+          {theme === 'light' ? '☀' : '☾'}
+        </button>
+      </div>
     </header>
   )
 }

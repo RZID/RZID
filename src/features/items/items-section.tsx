@@ -3,29 +3,34 @@ import { Reveal } from '@/components/ui/reveal'
 import { sections } from '@/content/site'
 import { skillGroups } from '@/content/skills'
 import { cn } from '@/lib/cn'
+import { useT } from '@/lib/locale'
 
-export const ItemsSection = () => (
-  <Section id="items" title={sections.items.title}>
-    <div className="space-y-6">
-      {skillGroups.map((group) => (
-        <Reveal key={group.title}>
-          <h3 className="mb-2 font-pixel text-lg text-muted">{group.title}</h3>
-          <ul className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {group.items.map((item) => (
-              <li
-                key={item}
-                className={cn(
-                  'border-2 border-ink bg-panel px-2 py-3 text-center font-pixel text-sm',
-                  'transition-transform duration-100 ease-steps hover:-translate-y-1',
-                  group.learning === true && 'border-dashed text-muted',
-                )}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      ))}
-    </div>
-  </Section>
-)
+export const ItemsSection = () => {
+  const t = useT()
+
+  return (
+    <Section id="items" title={t(sections.items.title)}>
+      <div className="space-y-6">
+        {skillGroups.map((group) => (
+          <Reveal key={group.title.id}>
+            <h3 className="mb-2 font-pixel text-lg text-muted">{t(group.title)}</h3>
+            <ul className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              {group.items.map((item) => (
+                <li
+                  key={item.id}
+                  className={cn(
+                    'border-2 border-ink bg-panel px-2 py-3 text-center font-pixel text-sm',
+                    'transition-transform duration-100 ease-steps hover:-translate-y-1',
+                    group.learning === true && 'border-dashed text-muted',
+                  )}
+                >
+                  {t(item)}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  )
+}

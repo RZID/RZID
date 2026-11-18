@@ -18,6 +18,10 @@
                 : 'dark'
           document.documentElement.dataset.theme = theme
           document.documentElement.style.colorScheme = theme
+          const locale = window.localStorage.getItem('rzid.locale')
+          if (locale === 'id' || locale === 'en') {
+            document.documentElement.lang = locale
+          }
         } catch {
           document.documentElement.dataset.theme = 'dark'
         }

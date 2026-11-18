@@ -25,13 +25,13 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 - Source data: the previous portfolio's content still in git history, the owner's `README.md`, and the supplied prototype.
 - Never invent a project, employer, technology, metric, date, or contact detail.
 - Numeric and time-sensitive statements are tracked in `docs/claims.md` and stay `UNVERIFIED` until the owner supplies evidence.
-- Copy voice: Indonesian prose, English game labels. This is a deliberate direction from the prototype, not a translation accident.
-- The previous site was bilingual. An English toggle is deferred, not forgotten; ask before adding it.
+- Copy voice: Indonesian prose by default, English when toggled; game labels stay in English in both. This is a deliberate direction from the prototype, not a translation accident.
+- Both locales are first-class. English strings come from the previous site's content; never add a new fact while translating.
 - No project screenshots until real files exist. Placeholder boxes are banned.
 
 ## Decisions
 
-- **Single language for now.** The prototype is Indonesian-first. Adding a locale toggle would change the header density and is a separate task.
+- **Bilingual toggle.** `id` and `en` render the same layout; choice is stored in `localStorage` and mirrored to `<html lang>`. The toggle is a small square button beside the theme toggle.
 - **Boot gate per session.** The “Press start” screen shows once per browser session, never under reduced motion, and never when the URL carries a section hash. It is a framing device, not a login.
 - **Theme persists.** Choice is stored in `localStorage`; system preference is the default.
 - **Hotkeys 1–5.** Shortcut to sections; every section is still reachable by nav links.
@@ -40,7 +40,7 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 
 ## Success criteria
 
-- `bun run check`, `bun run build`, and Playwright checks at 390px and 1440px pass.
+- `bun run check`, `bun run build`, and Playwright checks at 320px, 390px, 768px, and 1440px pass.
 - First screen contains a human artifact (pixel avatar) and a name, plus a role/location string.
 - No horizontal overflow at either checked width.
 - Reduced-motion users get static content with no boot gate.
@@ -49,7 +49,7 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 ## Open questions for the owner
 
 1. Should the email address stay visible on the contact panel? It was public in the previous build.
-2. Is an English version required for recruiters outside Indonesia?
+2. English is already available; confirm the translations are acceptable to a native speaker.
 3. Are there real project screenshots we can add later? None are in the repo today.
 4. Should analytics be added before deployment? Canonical and social tags are already static in `index.html`.
 

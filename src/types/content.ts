@@ -1,17 +1,24 @@
+export type Locale = 'id' | 'en'
+
+export type Localized = {
+  id: string
+  en: string
+}
+
 export type NavItem = {
   id: string
-  label: string
+  label: Localized
 }
 
 export type Link = {
-  label: string
+  label: Localized
   href: string
 }
 
 export type Profile = {
   name: string
-  role: string
-  location: string
+  role: Localized
+  location: Localized
   links: {
     github: Link
     email: Link
@@ -21,46 +28,54 @@ export type Profile = {
 
 export type Project = {
   name: string
-  summary: string
+  summary: Localized
   stack: readonly string[]
 }
 
 export type Experience = {
   org: string
-  role: string
-  period: string
-  summary: string
+  role: Localized
+  period: Localized
+  summary: Localized
   kind: 'work' | 'education'
 }
 
 export type SkillGroup = {
-  title: string
-  items: readonly string[]
+  title: Localized
+  items: readonly Localized[]
   learning?: boolean
 }
 
 export type Hero = {
-  player: string
+  player: Localized
   level: string
   name: string
-  dialogue: readonly string[]
+  dialogue: readonly Localized[]
   primaryCta: Link
   secondaryCta: Link
 }
 
 export type SectionCopy = {
-  quests: { title: string; lead: string }
-  items: { title: string }
-  guild: { title: string }
-  contact: { title: string; summary: string; availability: string }
+  quests: { title: Localized; lead: Localized }
+  items: { title: Localized }
+  guild: { title: Localized }
+  contact: { title: Localized; summary: Localized; availability: Localized }
 }
 
 export type UiText = {
-  primaryNav: string
-  skipToContent: string
-  themeToggle: string
-  dialogueSkip: string
-  cleared: string
+  primaryNav: Localized
+  skipToContent: Localized
+  themeToggle: Localized
+  language: Localized
+  englishShort: Localized
+  indonesianShort: Localized
+  dialogueSkip: Localized
+  cleared: Localized
   copyrightYear: string
-  footerHint: string
+  footerHint: Localized
+  bootDialogLabel: Localized
+  bootTitle: Localized
+  pressStart: Localized
+  bootEnterHint: Localized
+  avatarLabel: Localized
 }

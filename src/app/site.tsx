@@ -8,9 +8,11 @@ import { HeroSection } from '@/features/hero'
 import { ItemsSection } from '@/features/items'
 import { QuestsSection } from '@/features/quests'
 import { useSectionHotkeys } from '@/hooks/use-section-hotkeys'
+import { useT } from '@/lib/locale'
 
 export const Site = () => {
   useSectionHotkeys(nav)
+  const t = useT()
 
   return (
     <>
@@ -19,7 +21,7 @@ export const Site = () => {
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:border-4 focus:border-ink focus:bg-accent focus:px-4 focus:py-2 focus:font-pixel focus:text-on-accent"
       >
-        {ui.skipToContent}
+        {t(ui.skipToContent)}
       </a>
       <Header />
       <main id="main" tabIndex={-1} className="scroll-mt-36 lg:scroll-mt-20">

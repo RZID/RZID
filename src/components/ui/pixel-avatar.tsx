@@ -1,4 +1,6 @@
+import { ui } from '@/content/site'
 import { cn } from '@/lib/cn'
+import { useT } from '@/lib/locale'
 
 const art = [
   '...kkkkkk...',
@@ -33,12 +35,13 @@ type PixelAvatarProps = {
 
 export const PixelAvatar = ({ className }: PixelAvatarProps) => {
   const width = art[0]?.length ?? 0
+  const t = useT()
 
   return (
     <svg
       viewBox={`0 0 ${width} ${art.length}`}
       role="img"
-      aria-label="Avatar pixel Ramadhanu"
+      aria-label={t(ui.avatarLabel)}
       shapeRendering="crispEdges"
       className={cn('h-auto', className)}
     >

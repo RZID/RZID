@@ -1,10 +1,15 @@
 import { profile } from '@/content/profile'
 import { ui } from '@/content/site'
+import { useT } from '@/lib/locale'
 
-export const Footer = () => (
-  <footer className="px-5 pb-10 text-center text-sm text-muted">
-    <small>
-      © {ui.copyrightYear} {profile.name}. {ui.footerHint}
-    </small>
-  </footer>
-)
+export const Footer = () => {
+  const t = useT()
+
+  return (
+    <footer className="px-5 pb-10 text-center text-sm text-muted">
+      <small>
+        © {ui.copyrightYear} {profile.name}. {t(ui.footerHint)}
+      </small>
+    </footer>
+  )
+}
