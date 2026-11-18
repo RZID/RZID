@@ -54,11 +54,18 @@
   --ease-steps-5: steps(5);
   --animate-bob: bob 1s steps(2) infinite;
   --animate-load: load 1.4s steps(14) forwards;
+  --animate-blink: blink 1s steps(2) infinite;
 }
 
 @keyframes bob {
   50% {
     transform: translateY(-8px);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
 

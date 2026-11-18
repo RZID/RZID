@@ -1,14 +1,54 @@
+import { useMemo } from 'react'
 import { Section } from '@/components/layout/section'
 import { Box } from '@/components/ui/box'
 import { ButtonLink } from '@/components/ui/button-link'
 import { PixelAvatar } from '@/components/ui/pixel-avatar'
 import { Reveal } from '@/components/ui/reveal'
 import { profile } from '@/content/profile'
-import { hero, sections } from '@/content/site'
-import { useT } from '@/lib/locale'
+import { hero, sections, ui } from '@/content/site'
+import { useTypewriter } from '@/hooks/use-typewriter'
+import { useLocale, useT } from '@/lib/locale'
+
+type ChatDialogueProps = {
+  lines: readonly string[]
+  instant: boolean
+}
+
+const ChatDialogue = ({ lines, instant }: ChatDialogueProps) => {
+  const t = useT()
+  const { text, done, finish, replay } = useTypewriter(lines, instant)
+
+  return (
+    <Box className="relative min-h-34 px-4 py-4 text-lg whitespace-pre-line">
+      <p aria-hidden="true">
+        {text}
+        {done ? null : <span className="animate-blink">▌</span>}
+      </p>
+      <button
+        type="button"
+        onClick={finish}
+        aria-label={t(ui.dialogueSkip)}
+        className="absolute inset-0 cursor-pointer"
+      />
+      {done ? (
+        <button
+          type="button"
+          onClick={replay}
+          aria-label={t(ui.replayDialogue)}
+          className="absolute right-3 bottom-2 z-10 cursor-pointer font-pixel text-sm text-mint underline"
+        >
+          ↻
+        </button>
+      ) : null}
+    </Box>
+  )
+}
 
 export const HeroSection = () => {
+  const locale = useLocale()
   const t = useT()
+  const lines = useMemo(() => hero.dialogue.map((line) => line[locale]), [locale])
+  const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   return (
     <Section
@@ -22,9 +62,8 @@ export const HeroSection = () => {
         <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
         <p className="mt-2 mb-5 font-pixel text-mint">{t(sections.contact.availability)}</p>
 
-        <Box className="px-4 py-4 text-lg">
-          <p className="m-0">{t(profile.summary)}</p>
-        </Box>
+        <ChatDialogue key={locale} lines={lines} instant={instant} />
+        <p className="sr-only">{t(profile.summary)}</p>
 
         <div className="mt-6 flex flex-wrap gap-3">
           <ButtonLink href={hero.primaryCta.href}>{t(hero.primaryCta.label)}</ButtonLink>

@@ -1,5 +1,5 @@
 import { profile } from '@/content/profile'
-import { hero, nav, ui } from '@/content/site'
+import { nav, ui } from '@/content/site'
 import { useActiveSection } from '@/hooks/use-active-section'
 import { useTheme } from '@/hooks/use-theme'
 import { cn } from '@/lib/cn'
@@ -14,7 +14,7 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-40 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b-4 border-ink bg-page px-4 py-2">
       <a href="#home" className="font-pixel text-base font-bold whitespace-nowrap">
-        {profile.name} <span className="text-accent">{hero.level}</span>{' '}
+        {profile.name}{' '}
         <small className="hidden font-sans text-xs font-normal text-muted sm:inline">
           {t(profile.role)}
         </small>

@@ -48,8 +48,8 @@ export type SkillGroup = {
 }
 
 export type Hero = {
-  level: string
   name: string
+  dialogue: readonly Localized[]
   primaryCta: Link
   secondaryCta: Link
 }
@@ -69,6 +69,8 @@ export type UiText = {
   englishShort: Localized
   indonesianShort: Localized
   shipped: Localized
+  dialogueSkip: Localized
+  replayDialogue: Localized
   playIntro: Localized
   copyrightYear: string
   footerHint: Localized

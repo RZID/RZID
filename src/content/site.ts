@@ -10,8 +10,21 @@ export const nav: readonly NavItem[] = [
 ]
 
 export const hero: Hero = {
-  level: 'LV.5',
   name: profile.name,
+  dialogue: [
+    {
+      id: 'Halo! Saya Ramadhanu, software engineer di Jakarta.',
+      en: 'Hi! I’m Ramadhanu, a software engineer in Jakarta.',
+    },
+    {
+      id: 'Lima tahun bikin web, mobile, dan backend.',
+      en: 'Five years building web, mobile, and backend systems.',
+    },
+    {
+      id: 'Suka bongkar cara kerja sesuatu, lalu bangun ulang.',
+      en: 'I like taking things apart to see how they work, then building them back.',
+    },
+  ],
   primaryCta: {
     label: { id: 'Lihat karya pilihan', en: 'See selected work' },
     href: '#quests',
@@ -53,6 +66,8 @@ export const ui: UiText = {
   englishShort: { id: 'EN', en: 'EN' },
   indonesianShort: { id: 'ID', en: 'ID' },
   shipped: { id: 'Dirilis', en: 'Shipped' },
+  dialogueSkip: { id: 'Lewati dialog', en: 'Skip dialogue' },
+  replayDialogue: { id: 'Ulangi dialog', en: 'Replay dialogue' },
   playIntro: { id: 'Putar intro', en: 'Play intro' },
   copyrightYear: '2026',
   footerHint: {
