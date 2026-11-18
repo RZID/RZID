@@ -31,9 +31,9 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 
 ## Decisions
 
-- **Bilingual toggle.** `id` and `en` render the same layout; choice is stored in `localStorage` and mirrored to `<html lang>`. The toggle is a small square button beside the theme toggle.
+- **Bilingual toggle.** `id` and `en` render the same layout; choice is stored in `localStorage` and mirrored to `<html lang>`. Default is English; Indonesian is used only when the browser explicitly reports `id` or `id-ID`. The toggle is a small square button beside the theme toggle.
 - **Boot gate per session.** The “Press start” screen shows once per browser session, never under reduced motion, and never when the URL carries a section hash. It is a framing device, not a login.
-- **Theme persists.** Choice is stored in `localStorage`; system preference is the default.
+- **Theme follows the system by default.** `localStorage` is written only when the user explicitly toggles; until then, OS colour-scheme changes are followed live.
 - **Hotkeys 1–5.** Shortcut to sections; every section is still reachable by nav links.
 - **Static metadata.** Canonical URL and OG/Twitter tags live in `index.html`; `public/og.png` is generated from the real palette, name, role, and pixel avatar.
 - **No new dependencies without asking.** Current runtime: React, React DOM, clsx, tailwind-merge, Tailwind CSS, one font package.

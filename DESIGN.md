@@ -37,7 +37,7 @@ Defined in `src/styles/index.css` and exposed through `@theme inline`.
 
 Utilities: `bg-page`, `bg-panel`, `text-ink`, `text-muted`, `text-accent`, `text-on-accent`, `text-mint`, `shadow-hard`, `shadow-hard-sm`, `shadow-hard-lg`, `text-shadow-hard`, `font-pixel`, `font-sans`, `text-hero`, `text-boot`, `text-section`, `max-w-content`, `ease-steps`, `ease-steps-3`, `ease-steps-5`, `animate-bob`, `animate-load`.
 
-No arbitrary colour or size values in components. Add a token first if one is missing.
+No arbitrary colour or size values in components. Add a token first if one is missing. The default theme is the OS colour scheme; only an explicit user choice is stored and overrides it.
 
 ## Type
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -18,10 +18,14 @@
                 : 'dark'
           document.documentElement.dataset.theme = theme
           document.documentElement.style.colorScheme = theme
-          const locale = window.localStorage.getItem('rzid.locale')
-          if (locale === 'id' || locale === 'en') {
-            document.documentElement.lang = locale
-          }
+          const storedLocale = window.localStorage.getItem('rzid.locale')
+          const browserLocale = (window.navigator.language || '').toLowerCase()
+          document.documentElement.lang =
+            storedLocale === 'id' || storedLocale === 'en'
+              ? storedLocale
+              : browserLocale === 'id' || browserLocale === 'id-id'
+                ? 'id'
+                : 'en'
         } catch {
           document.documentElement.dataset.theme = 'dark'
         }

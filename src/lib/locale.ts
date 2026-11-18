@@ -15,7 +15,7 @@ const readLocale = (): Locale => {
     // Storage can be unavailable; the document language is the fallback.
   }
 
-  return document.documentElement.lang === 'en' ? 'en' : 'id'
+  return document.documentElement.lang === 'id' ? 'id' : 'en'
 }
 
 let current: Locale = readLocale()
