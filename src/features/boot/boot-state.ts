@@ -1,6 +1,10 @@
 const storageKey = 'rzid.boot'
 
 export const shouldSkipBoot = () => {
+  if (window.location.hash !== '') {
+    return true
+  }
+
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     return true
   }
