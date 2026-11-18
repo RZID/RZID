@@ -10,9 +10,9 @@ export const ItemsSection = () => (
       {skillGroups.map((group) => (
         <Reveal key={group.title}>
           <h3 className="mb-2 font-pixel text-lg text-muted">{group.title}</h3>
-          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          <ul className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {group.items.map((item) => (
-              <div
+              <li
                 key={item}
                 className={cn(
                   'border-2 border-ink bg-panel px-2 py-3 text-center font-pixel text-sm',
@@ -21,9 +21,9 @@ export const ItemsSection = () => (
                 )}
               >
                 {item}
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </Reveal>
       ))}
     </div>
