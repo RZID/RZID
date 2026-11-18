@@ -35,7 +35,7 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 - **Boot gate per session.** The “Press start” screen shows once per browser session, never under reduced motion, and never when the URL carries a section hash. It is a framing device, not a login.
 - **Theme persists.** Choice is stored in `localStorage`; system preference is the default.
 - **Hotkeys 1–5.** Shortcut to sections; every section is still reachable by nav links.
-- **Static metadata.** Canonical URL and OG/Twitter tags live in `index.html`; no OG image until a real one exists.
+- **Static metadata.** Canonical URL and OG/Twitter tags live in `index.html`; `public/og.png` is generated from the real palette, name, role, and pixel avatar.
 - **No new dependencies without asking.** Current runtime: React, React DOM, clsx, tailwind-merge, Tailwind CSS, one font package.
 
 ## Success criteria
