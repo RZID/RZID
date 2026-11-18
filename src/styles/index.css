@@ -45,6 +45,7 @@
   --text-shadow-hard: 4px 4px 0 var(--accent);
 
   --text-hero: clamp(2.75rem, 9vw, 5.75rem);
+  --text-boot: clamp(2rem, 8vw, 4rem);
   --text-section: clamp(1.625rem, 4vw, 2.25rem);
   --container-content: 62.5rem;
 
