@@ -4,7 +4,7 @@ Every numeric or time-sensitive statement rendered on the site. Status is **UNVE
 
 | Claim                                                | Where used                                                  | Kind                | Evidence needed                                    | Source                        | Status     |
 | ---------------------------------------------------- | ----------------------------------------------------------- | ------------------- | -------------------------------------------------- | ----------------------------- | ---------- |
-| Lima tahun (five years)                              | `src/content/profile.ts` `summary`                          | Owner statement     | Written confirmation with a start date             | `README.md`, previous site    | UNVERIFIED |
+| Lima tahun (five years)                              | `src/content/profile.ts` `summary`, `site.ts` dialogue      | Owner statement     | Written confirmation with a start date             | `README.md`, previous site    | UNVERIFIED |
 | Software engineer di Jakarta                         | `src/content/profile.ts` `role` + `location`                | Owner statement     | Written confirmation of role and location          | `README.md`, previous site    | UNVERIFIED |
 | Sep 2021 – sekarang                                  | `src/content/experience.ts` Embreo `period`                 | Owner-provided date | Contract, HR record, or dated written confirmation | Previous site `experience.ts` | UNVERIFIED |
 | Jun 2021 – sekarang                                  | `src/content/experience.ts` SMK `period`                    | Owner-provided date | Contract, HR record, or dated written confirmation | Previous site `experience.ts` | UNVERIFIED |

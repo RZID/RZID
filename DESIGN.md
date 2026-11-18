@@ -60,7 +60,8 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 ## Motion
 
 - `steps()` easing everywhere; no smooth easing curves.
-- Copy is static and immediately readable. Motion is decorative: star drift, avatar bob, reveal, and the optional intro.
+- The hero chat types character by character (12ms) with a blinking caret, click-to-skip, and a replay control. The full copy is present in a `.sr-only` paragraph and is instant under reduced motion.
+- Other motion is decorative: star drift, avatar bob, reveal, and the optional intro.
 - Star drift, avatar bob, reveal, boot progress — all disabled or static under `prefers-reduced-motion`.
 - No scroll-linked animation, no parallax, no WebGL.
 
