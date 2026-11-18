@@ -62,7 +62,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 ## Motion
 
 - `steps()` easing everywhere; no smooth easing curves.
-- The hero chat types character by character (12ms) with a blinking caret, click-to-skip, and a replay control. When it finishes it holds 2.6s, then picks a new combination from the real line pool with a seeded shuffle, so each cycle reads differently without inventing facts. The full copy is present in a `.sr-only` paragraph and is instant and static under reduced motion.
+- The hero chat types one full sentence character by character (12ms) with a blinking caret, click-to-skip, and a replay control. The box has a fixed responsive height (`h-64 sm:h-44 lg:h-36`) so typing never shifts the layout. The full copy is present in a `.sr-only` paragraph and is instant under reduced motion.
 - Other motion is decorative: star drift, avatar bob, reveal, and the optional intro.
 - Star drift, avatar bob, reveal, boot progress — all disabled or static under `prefers-reduced-motion`.
 - No scroll-linked animation, no parallax, no WebGL.

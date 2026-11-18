@@ -11,64 +11,10 @@ export const nav: readonly NavItem[] = [
 
 export const hero: Hero = {
   name: profile.name,
-  dialogue: [
-    {
-      id: 'Boot sequence: engineer penasaran, build Jakarta.',
-      en: 'Boot sequence: curious engineer, Jakarta build.',
-    },
-    {
-      id: 'Lima tahun di build log: web, mobile, backend.',
-      en: 'Five years in the build log: web, mobile, backend.',
-    },
-    {
-      id: 'Saya baca sistem kayak save file — lalu tulis ulang yang lebih rapi.',
-      en: 'I read systems like save files, then write better ones.',
-    },
-    {
-      id: 'Remote jadi default, hybrid di sekitar Jabodetabek.',
-      en: 'Remote by default, hybrid around Jabodetabek.',
-    },
-    {
-      id: 'Inventory hari ini: NestJS, Redis, RabbitMQ, Expo.',
-      en: 'Today’s inventory: NestJS, Redis, RabbitMQ, Expo.',
-    },
-    {
-      id: 'Satu codebase Expo, dua app store.',
-      en: 'One Expo codebase, two app stores.',
-    },
-    {
-      id: 'Bos pembayaran yang sudah dikalahkan: HitPay, Stripe, Airwallex.',
-      en: 'Payment bosses cleared: HitPay, Stripe, Airwallex.',
-    },
-    {
-      id: 'Side quest: jaga server sekolah tetap hidup.',
-      en: 'Side quest: keeping the school servers alive.',
-    },
-    {
-      id: 'Monolith masih melayani pengguna, saya pindah ke microservices.',
-      en: 'A monolith kept serving users while I moved it to microservices.',
-    },
-    {
-      id: 'Lagi grinding: Kubernetes, Kafka, Cloudflare edge.',
-      en: 'Currently grinding: Kubernetes, Kafka, Cloudflare edge.',
-    },
-    {
-      id: 'Saya tinggalkan runbook, tim lanjut tanpa saya.',
-      en: 'I leave runbooks so the team keeps shipping without me.',
-    },
-    {
-      id: 'Co-op request dibuka: full-time atau konsultasi.',
-      en: 'Co-op requests open: full-time or consulting.',
-    },
-    {
-      id: 'Mode mentor aktif di SMK Negeri 12 Jakarta.',
-      en: 'Mentor mode active at SMK Negeri 12 Jakarta.',
-    },
-    {
-      id: 'Debug dulu, rilis kemudian.',
-      en: 'Debug first, ship second.',
-    },
-  ],
+  sentence: {
+    id: 'Boot sequence: engineer penasaran asal Jakarta, lima tahun bongkar sistem web, mobile, dan backend lalu bangun ulang dengan NestJS, Expo, Redis, dan sedikit kebandelan.',
+    en: 'Boot sequence: a curious engineer from Jakarta who has spent five years pulling web, mobile, and backend systems apart, then building them back better with NestJS, Expo, Redis, and a healthy amount of stubbornness.',
+  },
   stats: [
     {
       label: { id: 'Basis', en: 'Base' },

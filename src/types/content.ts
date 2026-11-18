@@ -54,7 +54,7 @@ export type HeroStat = {
 
 export type Hero = {
   name: string
-  dialogue: readonly Localized[]
+  sentence: Localized
   stats: readonly HeroStat[]
   primaryCta: Link
   secondaryCta: Link

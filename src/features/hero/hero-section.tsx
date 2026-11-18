@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { Section } from '@/components/layout/section'
 import { Box } from '@/components/ui/box'
 import { ButtonLink } from '@/components/ui/button-link'
@@ -10,17 +9,17 @@ import { useTypewriter } from '@/hooks/use-typewriter'
 import { useLocale, useT } from '@/lib/locale'
 
 type ChatDialogueProps = {
-  lines: readonly string[]
+  sentence: string
   instant: boolean
 }
 
-const ChatDialogue = ({ lines, instant }: ChatDialogueProps) => {
+const ChatDialogue = ({ sentence, instant }: ChatDialogueProps) => {
   const t = useT()
-  const { text, done, finish, replay } = useTypewriter(lines, instant)
+  const { text, done, finish, replay } = useTypewriter(sentence, instant)
 
   return (
-    <Box className="relative min-h-28 px-4 py-4 text-lg whitespace-pre-line">
-      <p aria-hidden="true">
+    <Box className="relative h-64 overflow-hidden px-4 py-4 text-base sm:h-44 sm:text-lg lg:h-36">
+      <p aria-hidden="true" className="m-0">
         {text}
         {done ? null : <span className="animate-blink">▌</span>}
       </p>
@@ -47,7 +46,6 @@ const ChatDialogue = ({ lines, instant }: ChatDialogueProps) => {
 export const HeroSection = () => {
   const locale = useLocale()
   const t = useT()
-  const lines = useMemo(() => hero.dialogue.map((line) => line[locale]), [locale])
   const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   return (
@@ -62,7 +60,7 @@ export const HeroSection = () => {
         <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
         <p className="mt-2 mb-5 font-pixel text-mint">{t(sections.contact.availability)}</p>
 
-        <ChatDialogue key={locale} lines={lines} instant={instant} />
+        <ChatDialogue key={locale} sentence={t(hero.sentence)} instant={instant} />
         <p className="sr-only">{t(profile.summary)}</p>
 
         <div className="mt-6 flex flex-wrap gap-3">
