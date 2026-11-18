@@ -18,4 +18,8 @@ export const skillGroups: readonly SkillGroup[] = [
     items: ['Kubernetes', 'Kafka', 'Cloudflare edge'],
     learning: true,
   },
+  {
+    title: 'Di luar terminal',
+    items: ['Gaming', 'Mentoring', 'Research', 'Troubleshooting'],
+  },
 ]
