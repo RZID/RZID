@@ -25,3 +25,4 @@ The previous site carried these numbers. They are **not** in the current copy. D
 - Availability has no `asOf` date in the rendered copy. If it becomes stale, update `src/content/site.ts` and this register together.
 - To verify a row, attach the evidence to the source named above, set the date it was checked, then change `UNVERIFIED` to `VERIFIED`.
 - Every claim renders in both `id` and `en`. The English string is a translation of the same fact, never a new claim.
+- The hero chat shuffles three lines from `src/content/site.ts` per cycle. Every line is existing copy; shuffling must not introduce a new fact.

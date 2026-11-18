@@ -24,6 +24,46 @@ export const hero: Hero = {
       id: 'Suka bongkar cara kerja sesuatu, lalu bangun ulang.',
       en: 'I like taking things apart to see how they work, then building them back.',
     },
+    {
+      id: 'Remote global, hybrid Jabodetabek.',
+      en: 'Remote worldwide, hybrid in Jabodetabek.',
+    },
+    {
+      id: 'Sehari-harinya pakai NestJS, Redis, RabbitMQ, dan microservices.',
+      en: 'Day to day: NestJS, Redis, RabbitMQ, and microservices.',
+    },
+    {
+      id: 'Aplikasi mobile rilis ke iOS dan Android dari satu codebase Expo.',
+      en: 'Mobile apps ship to iOS and Android from one Expo codebase.',
+    },
+    {
+      id: 'Pembayaran HitPay, Stripe, dan Airwallex jalan di produksi.',
+      en: 'HitPay, Stripe, and Airwallex payments run in production.',
+    },
+    {
+      id: 'Saya bimbing siswa di SMK Negeri 12 Jakarta.',
+      en: 'I mentor students at SMK Negeri 12 Jakarta.',
+    },
+    {
+      id: 'Saya juga jaga server sekolah tetap hidup.',
+      en: 'I also keep the school servers alive.',
+    },
+    {
+      id: 'Monolith yang berjalan jadi microservices NestJS tanpa menghentikan bisnis.',
+      en: 'A live monolith became NestJS microservices without stopping the business.',
+    },
+    {
+      id: 'Lagi belajar Kubernetes, Kafka, dan Cloudflare edge.',
+      en: 'Currently learning Kubernetes, Kafka, and Cloudflare edge.',
+    },
+    {
+      id: 'Terbuka untuk posisi full-time dan konsultasi.',
+      en: 'Available for full-time roles and consulting.',
+    },
+    {
+      id: 'Saya tinggalkan docs dan runbook supaya tim tetap bisa rilis.',
+      en: 'I leave docs and runbooks so the team can keep shipping.',
+    },
   ],
   stats: [
     {
