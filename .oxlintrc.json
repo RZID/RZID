@@ -2,7 +2,7 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": ["react", "typescript", "oxc", "import", "unicorn", "jsx-a11y"],
   "categories": { "correctness": "error" },
-  "ignorePatterns": ["dist", "scripts/**"],
+  "ignorePatterns": ["build", "dist"],
   "rules": {
     "react/rules-of-hooks": "error",
     "react/exhaustive-deps": "error",
@@ -17,17 +17,9 @@
     "no-nested-ternary": "error",
     "no-param-reassign": "error",
     "no-console": "warn",
-    "max-lines": ["error", { "max": 250, "skipBlankLines": true, "skipComments": true }],
+    "max-lines": ["error", { "max": 300, "skipBlankLines": true, "skipComments": true }],
 
     "typescript/no-explicit-any": "error",
-    "typescript/no-restricted-types": [
-      "error",
-      {
-        "types": {
-          "unknown": "unknown is only allowed in src/lib/boundary. Parse and validate at the edge."
-        }
-      }
-    ],
     "typescript/no-non-null-assertion": "error",
     "typescript/consistent-type-assertions": ["error", { "assertionStyle": "never" }],
     "typescript/consistent-type-definitions": ["error", "type"],
@@ -44,8 +36,8 @@
   },
   "overrides": [
     {
-      "files": ["src/lib/boundary/**"],
-      "rules": { "typescript/no-restricted-types": "off" }
+      "files": ["vite.config.ts"],
+      "rules": { "import/no-default-export": "off" }
     },
     {
       "files": ["src/components/**", "src/hooks/**", "src/lib/**", "src/content/**"],
@@ -83,10 +75,6 @@
           }
         ]
       }
-    },
-    {
-      "files": ["vite.config.ts"],
-      "rules": { "import/no-default-export": "off" }
     }
   ]
 }

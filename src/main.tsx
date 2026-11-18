@@ -1,19 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { App } from '@/app/app'
-import { PreferencesProvider } from '@/app/providers'
 import '@/styles/index.css'
 
-const container = document.getElementById('root')
+const rootElement = document.getElementById('root')
 
-if (container === null) {
-  throw new Error('Root element #root not found')
+if (rootElement === null) {
+  throw new Error('Root element not found')
 }
 
-createRoot(container).render(
+createRoot(rootElement).render(
   <StrictMode>
-    <PreferencesProvider>
-      <App />
-    </PreferencesProvider>
+    <App />
   </StrictMode>,
 )

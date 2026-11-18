@@ -1,103 +1,34 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#161a26" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#e9e2cf" media="(prefers-color-scheme: light)" />
     <script>
-      // Keep in sync with src/lib/boundary/preferences.ts.
+      // Keep in sync with src/hooks/use-theme.ts.
       ;(() => {
         try {
-          const theme = window.localStorage.getItem('rzid.theme')
-          if (theme === 'light' || theme === 'dark') {
-            document.documentElement.dataset.theme = theme
-            document.documentElement.style.colorScheme = theme
-          }
-          const locale = window.localStorage.getItem('rzid.locale')
-          if (locale === 'en' || locale === 'id') {
-            document.documentElement.lang = locale
-          }
+          const stored = window.localStorage.getItem('rzid.theme')
+          const theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark'
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme = theme
         } catch {
-          // Storage can be unavailable; keep the defaults.
+          document.documentElement.dataset.theme = 'dark'
         }
       })()
     </script>
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>Ramadhanu, Curious Engineer Who Writes Code (Remote)</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Ramadhanu: software engineer, Jakarta</title>
     <meta
       name="description"
-      content="Curious engineer, 5 years building web, mobile and backend. Fintech, property, fitness. Remote worldwide, hybrid in Jabodetabek."
+      content="Portfolio Ramadhanu, software engineer di Jakarta. Web, mobile, dan backend."
     />
-    <meta
-      name="keywords"
-      content="Software Engineer, hire developer, NestJS, React, React Native, Node.js, TypeScript, PHP, CodeIgniter, remote developer Indonesia, consulting"
-    />
-    <meta name="author" content="Ramadhanu" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.rzidinc.com" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.rzidinc.com" />
-    <meta property="og:title" content="Ramadhanu, Curious Engineer Who Writes Code" />
-    <meta
-      property="og:description"
-      content="Curious engineer, 5 years building web, mobile, backend."
-    />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Ramadhanu" />
-    <meta property="og:image" content="https://www.rzidinc.com/og-dark.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Ramadhanu, Curious Engineer Who Writes Code" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://www.rzidinc.com/og-dark.png" />
-    <meta name="twitter:title" content="Ramadhanu, Curious Engineer Who Writes Code" />
-    <meta
-      name="twitter:description"
-      content="Curious engineer, 5 years building web, mobile, backend."
-    />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Ramadhanu",
-        "url": "https://www.rzidinc.com",
-        "email": "rdhanurzid@gmail.com",
-        "jobTitle": "Software Engineer",
-        "description": "Curious engineer with 5 years building web, mobile and backend. Remote worldwide, hybrid in Jabodetabek.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Jakarta",
-          "addressRegion": "DKI Jakarta",
-          "addressCountry": "ID"
-        },
-        "sameAs": [
-          "https://github.com/RZID",
-          "https://www.linkedin.com/in/rama-ramadhanu/",
-          "https://www.rzidinc.com"
-        ],
-        "knowsAbout": [
-          "JavaScript",
-          "TypeScript",
-          "PHP",
-          "CodeIgniter",
-          "Node.js",
-          "NestJS",
-          "React",
-          "React Native",
-          "Next.js",
-          "AWS",
-          "Docker",
-          "Redis",
-          "RabbitMQ",
-          "PostgreSQL",
-          "Linux",
-          "Microservices",
-          "REST API"
-        ]
-      }
-    </script>
   </head>
   <body>
     <div id="root"></div>
