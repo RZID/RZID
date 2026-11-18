@@ -11,13 +11,13 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 
 ## Sections
 
-| Section   | Job                                                             |
-| --------- | --------------------------------------------------------------- |
-| `home`    | Name, role framing, location, short intro, two calls to action. |
-| `quests`  | Five shipped projects with a one-line outcome and stack tags.   |
-| `items`   | Grouped skills, including what is currently being learned.      |
-| `guild`   | Three roles plus an in-progress degree, shown as ordinal ranks. |
-| `contact` | Availability line, short invitation, email / GitHub / LinkedIn. |
+| Section   | Job                                                                |
+| --------- | ------------------------------------------------------------------ |
+| `home`    | Name, role framing, location, short intro, two calls to action.    |
+| `quests`  | Five shipped projects with a one-line outcome and stack tags.      |
+| `items`   | Grouped skills, what is being learned, and off-terminal interests. |
+| `guild`   | Three roles plus an in-progress degree, shown as ordinal ranks.    |
+| `contact` | Availability line, short invitation, email / GitHub / LinkedIn.    |
 
 ## Content rules
 
@@ -32,9 +32,10 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 ## Decisions
 
 - **Single language for now.** The prototype is Indonesian-first. Adding a locale toggle would change the header density and is a separate task.
-- **Boot gate per session.** The “Press start” screen shows once per browser session and never under reduced motion. It is a framing device, not a login.
+- **Boot gate per session.** The “Press start” screen shows once per browser session, never under reduced motion, and never when the URL carries a section hash. It is a framing device, not a login.
 - **Theme persists.** Choice is stored in `localStorage`; system preference is the default.
 - **Hotkeys 1–5.** Shortcut to sections; every section is still reachable by nav links.
+- **Static metadata.** Canonical URL and OG/Twitter tags live in `index.html`; no OG image until a real one exists.
 - **No new dependencies without asking.** Current runtime: React, React DOM, clsx, tailwind-merge, Tailwind CSS, one font package.
 
 ## Success criteria
@@ -50,7 +51,7 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 1. Should the email address stay visible on the contact panel? It was public in the previous build.
 2. Is an English version required for recruiters outside Indonesia?
 3. Are there real project screenshots we can add later? None are in the repo today.
-4. Should analytics or a canonical URL be added before deployment?
+4. Should analytics be added before deployment? Canonical and social tags are already static in `index.html`.
 
 ## Non-goals
 
