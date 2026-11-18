@@ -3,6 +3,7 @@ import { Header } from '@/components/layout/header'
 import { Starfield } from '@/components/layout/starfield'
 import { nav, ui } from '@/content/site'
 import { HeroSection } from '@/features/hero'
+import { ItemsSection } from '@/features/items'
 import { QuestsSection } from '@/features/quests'
 import { useSectionHotkeys } from '@/hooks/use-section-hotkeys'
 
@@ -22,6 +23,7 @@ export const Site = () => {
       <main id="main">
         <HeroSection />
         <QuestsSection />
+        <ItemsSection />
       </main>
       <Footer />
     </>
