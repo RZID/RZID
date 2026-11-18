@@ -10,7 +10,6 @@ export const nav: readonly NavItem[] = [
 ]
 
 export const hero: Hero = {
-  player: { id: 'Player 1, Jakarta', en: 'Player 1, Jakarta' },
   level: 'LV.5',
   name: profile.name,
   primaryCta: {

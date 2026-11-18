@@ -17,7 +17,7 @@ export const HeroSection = () => {
     >
       <Reveal>
         <p className="m-0 font-pixel text-lg text-muted">
-          {t(hero.player)} · {t(profile.role)}
+          {t(profile.location)} · {t(profile.role)}
         </p>
         <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
         <p className="mt-2 mb-5 font-pixel text-mint">{t(sections.contact.availability)}</p>

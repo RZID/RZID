@@ -48,7 +48,6 @@ export type SkillGroup = {
 }
 
 export type Hero = {
-  player: Localized
   level: string
   name: string
   primaryCta: Link
