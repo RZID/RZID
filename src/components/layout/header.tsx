@@ -25,6 +25,7 @@ export const Header = () => {
             <a
               key={item.id}
               href={`#${item.id}`}
+              aria-current={isActive ? 'location' : undefined}
               className={cn(
                 'group inline-flex items-center px-2 py-1 font-pixel text-sm',
                 isActive ? 'text-accent' : 'hover:text-accent',
