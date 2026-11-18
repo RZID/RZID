@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ramadhanu: software engineer, Jakarta</title>
+<meta name="description" content="Portfolio Ramadhanu, software engineer di Jakarta. Web, mobile, dan backend.">
+<script>
+let t=null;try{t=localStorage.getItem('t')}catch{}
+document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap">
+<style>
+:root{--bg:#161a26;--pan:#1f2535;--ink:#ece8d8;--mut:#a9a79a;--acc:#ffc83d;--on:#161a26;--mint:#4be3a6;--sh:#05060a;--px:"Pixelify Sans",ui-monospace,Menlo,Consolas,monospace;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme=light]{--bg:#e9e2cf;--pan:#f7f1de;--ink:#1c1b22;--mut:#5c5a52;--acc:#a84f00;--on:#fff8e8;--mint:#0b6b49;--sh:#1c1b22;color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:41}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.07) 3px 4px)}
+h1,h2,h3,button,.px,nav a,.btn,.tag,.sl{font-family:var(--px)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+#bg{position:fixed;inset:0;z-index:-1}
+.box{background:var(--pan);border:4px solid var(--ink);box-shadow:6px 6px 0 var(--sh)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.mut{color:var(--mut)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 16px;background:var(--bg);border-bottom:4px solid var(--ink)}
+.me{font:700 16px var(--px);white-space:nowrap}
+.me span{color:var(--acc)}
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{text-decoration:none;padding:4px 8px;font-size:15px}
+nav a:hover::before,nav a.on::before{content:"\25B6 ";color:var(--acc)}
+nav a.on{color:var(--acc)}
+#th{background:none;border:3px solid var(--ink);color:var(--ink);width:36px;height:36px;font-size:16px;cursor:pointer}
+section{max-width:1000px;margin:0 auto;padding:72px 20px;scroll-margin-top:64px}
+h2{font-size:clamp(26px,4vw,36px);margin:0 0 24px;line-height:1.1}
+h2::before{content:"\25B6 ";color:var(--acc)}
+h3{margin:0 0 6px;font-size:22px}
+.hero{min-height:calc(100svh - 60px);display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}
+h1{font-size:clamp(44px,9vw,92px);line-height:1;margin:.15em 0 .3em;text-shadow:4px 4px 0 var(--acc)}
+.dlg{padding:16px 18px 22px;min-height:8.5em;position:relative;white-space:pre-line;font-size:17px}
+.dlg::after{content:"\25BC";position:absolute;right:14px;bottom:6px;color:var(--acc);animation:bl 1s steps(2) infinite}
+.btn{display:inline-block;background:var(--acc);color:var(--on);border:4px solid var(--ink);box-shadow:4px 4px 0 var(--sh);padding:8px 18px;font-weight:700;font-size:18px;text-decoration:none;cursor:pointer;margin:0 8px 8px 0;transition:transform .1s steps(2),box-shadow .1s steps(2)}
+.btn:hover,.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--sh)}
+.btn.alt{background:var(--pan);color:var(--ink)}
+.stage{display:grid;place-items:center;gap:6px;padding:24px 0}
+#spr svg{width:min(210px,52vw);height:auto;display:block;shape-rendering:crispEdges;animation:bob 1s steps(2) infinite}
+.plat{width:150px;height:14px;background:var(--ink);opacity:.25}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.q{padding:18px;position:relative;transition:transform .15s steps(3),box-shadow .15s steps(3)}
+.q:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--sh)}
+.q p{margin:6px 0 12px}
+.st{position:absolute;top:14px;right:14px;font:700 12px var(--px);color:var(--mint);border:2px solid var(--mint);padding:0 6px;transform:rotate(5deg)}
+.q h3{padding-right:80px}
+.tag{font-size:13px;border:2px solid var(--ink);padding:0 7px;margin:0 4px 4px 0;display:inline-block}
+.cat{margin:26px 0 10px;font-size:18px;color:var(--mut)}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.sl{border:3px solid var(--ink);background:var(--pan);padding:12px 6px;text-align:center;font-size:14px;transition:transform .1s steps(2)}
+.sl:hover{transform:translateY(-4px)}
+.sl.lk{border-style:dashed;color:var(--mut)}
+.sv{display:flex;gap:16px;align-items:center;padding:16px 18px;margin-bottom:18px}
+.sv .n{font:700 28px var(--px);color:var(--acc);min-width:2ch}
+.sv p{margin:0}
+.ct{text-align:center;padding:36px 20px}
+.ct h2::before{content:""}
+footer{text-align:center;padding:28px 20px 48px}
+.rv{opacity:0;transform:scale(.96) translateY(10px);transition:opacity .45s steps(5),transform .45s steps(5)}
+.rv.in{opacity:1;transform:none}
+#boot{position:fixed;inset:0;z-index:100;background:#0b0d14;color:#ece8d8;display:grid;place-content:center;justify-items:center;text-align:center;gap:20px;padding:20px;clip-path:inset(0);transition:clip-path .7s steps(10)}
+#boot.out{clip-path:inset(0 0 100% 0)}
+#boot .t{font:700 clamp(32px,8vw,64px)/1.05 var(--px);text-shadow:4px 4px 0 #ffc83d}
+.bar{width:min(320px,70vw);height:24px;border:4px solid #ece8d8;padding:2px}
+.bar i{display:block;height:100%;width:0;background:#4be3a6;animation:ld 1.4s steps(14) forwards}
+#boot .btn{opacity:0;background:#ffc83d;color:#0b0d14;border-color:#ece8d8;animation:sh 0s 1.5s forwards}
+@keyframes ld{to{width:100%}}
+@keyframes sh{to{opacity:1}}
+@keyframes bl{50%{opacity:0}}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@media(max-width:720px){.hero{grid-template-columns:1fr;min-height:auto}.stage{order:-1}.me small{display:none}section{padding:56px 16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#boot .btn{opacity:1}.bar i{width:100%}}
+</style>
+</head>
+<body>
+<div id="boot" role="dialog" aria-label="Layar mulai">
+  <div class="t">Ramadhanu<br>Quest</div>
+  <div class="bar" aria-hidden="true"><i></i></div>
+  <button id="go" class="btn" type="button">Press start</button>
+  <small class="mut">atau tekan Enter</small>
+</div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<header>
+  <div class="me">Ramadhanu <span>LV.5</span> <small class="mut">software engineer</small></div>
+  <nav aria-label="Menu">
+    <a href="#home">Home</a><a href="#quests">Quests</a><a href="#items">Items</a><a href="#guild">Guild</a><a href="#contact">Contact</a>
+  </nav>
+  <button id="th" type="button" aria-label="Ganti tema siang atau malam">&#9790;</button>
+</header>
+<main>
+<section id="home" class="hero">
+  <div class="rv">
+    <p class="px mut" style="margin:0">Player 1, Jakarta</p>
+    <h1>Ramadhanu</h1>
+    <div class="box dlg" id="dlg" aria-hidden="true"><span id="dt"></span></div>
+    <p class="sr">Halo! Saya Ramadhanu, software engineer di Jakarta. Lima tahun bikin web, mobile, dan backend. Suka bongkar cara kerja sesuatu, lalu bangun ulang.</p>
+    <p style="margin-top:22px"><a class="btn" href="#quests">New game</a><a class="btn alt" href="https://github.com/RZID">GitHub</a></p>
+  </div>
+  <div class="stage rv" aria-hidden="true"><div id="spr"></div><div class="plat"></div></div>
+</section>
+
+<section id="quests">
+  <h2 class="rv">Quests</h2>
+  <p class="rv mut" style="margin:-8px 0 24px;max-width:60ch">Kebanyakan kerjaan saya ada di balik pintu tertutup. Ini yang bisa saya ceritakan.</p>
+  <div class="grid">
+    <article class="box q rv"><span class="st">Cleared</span><h3>Cara.sg</h3><p>Aplikasi keanggotaan gratis untuk komunitas demensia di Singapura. Dirilis lewat migrasi monolith ke microservices.</p><span class="tag">React</span><span class="tag">NestJS</span><span class="tag">Expo</span><span class="tag">MySQL</span><span class="tag">Redis</span></article>
+    <article class="box q rv"><span class="st">Cleared</span><h3>Affluent.sg</h3><p>Platform wasiat dan perencanaan warisan, dengan data klien terenkripsi dan pembayaran lewat HitPay.</p><span class="tag">React</span><span class="tag">Express</span><span class="tag">MySQL</span></article>
+    <article class="box q rv"><span class="st">Cleared</span><h3>JebHealth</h3><p>Marketplace HealthTech plus kartu health-fintech, terhubung ke Stripe dan Airwallex.</p><span class="tag">Express</span><span class="tag">React</span><span class="tag">Expo</span></article>
+    <article class="box q rv"><span class="st">Cleared</span><h3>LVE Gym</h3><p>Aplikasi booking gym yang menampilkan detak jantung langsung lewat Bluetooth.</p><span class="tag">React</span><span class="tag">NestJS</span><span class="tag">Expo</span><span class="tag">BLE</span></article>
+  </div>
+</section>
+
+<section id="items">
+  <h2 class="rv">Items</h2>
+  <div id="inv" class="rv"></div>
+</section>
+
+<section id="guild">
+  <h2 class="rv">Guild</h2>
+  <div class="box sv rv"><div class="n">1</div><div><h3>Embreo</h3><p>Software Engineer, full-time sejak Sep 2021. Memindahkan monolith yang sedang berjalan ke microservices NestJS.</p></div></div>
+  <div class="box sv rv"><div class="n">2</div><div><h3>Freelance</h3><p>Web dengan PHP dan CodeIgniter, 2019 sampai 2020.</p></div></div>
+  <div class="box sv rv"><div class="n">3</div><div><h3>B.Sc. Computer Science</h3><p>Masih berjalan, kelas malam.</p></div></div>
+</section>
+
+<section id="contact">
+  <div class="box ct rv">
+    <h2>Continue?</h2>
+    <p style="max-width:52ch;margin:0 auto 20px">Terbuka untuk ngobrol soal kerjaan, kolaborasi, atau sekadar tukar cerita soal bongkar-bongkar sistem.</p>
+    <a class="btn" href="https://github.com/RZID">GitHub</a><a id="em" class="btn alt" hidden>Email</a>
+  </div>
+</section>
+</main>
+<footer class="mut"><small>&copy; 2026 Ramadhanu. Tekan 1 sampai 5 untuk pindah menu.</small></footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)]
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches
+const EMAIL=''
+const root=document.documentElement
+const flag={get:()=>{try{return sessionStorage.getItem('b')}catch{return null}},set:()=>{try{sessionStorage.setItem('b','1')}catch{}}}
+
+/* theme */
+let ink='#fff'
+const readInk=()=>{ink=getComputedStyle(root).getPropertyValue('--ink').trim()}
+const th=$('#th')
+const paintTh=()=>{th.textContent=root.dataset.theme==='light'?'\u2600':'\u263E'}
+th.onclick=()=>{const n=root.dataset.theme==='light'?'dark':'light';root.dataset.theme=n;try{localStorage.setItem('t',n)}catch{};readInk();paintTh()}
+readInk();paintTh()
+
+/* pixel avatar */
+const art=['...kkkkkk...','..kkkkkkkk..','..kssssssk..','..ksessesk..','..kssssssk..','...kssssk...','..hhhhhhhh..','.hhhhhhhhhh.','.hhhhhhhhhh.','.hsLLLLLLsh.','..hLLLLLLh..','..pppppppp..','..pppp.pppp.','..bbbb..bbbb']
+const pal={k:'#2a1f1a',s:'#f0b88e',e:'#111',h:'var(--acc)',L:'#8c93a8',p:'#3b4a7a',b:'#151515'}
+$('#spr').innerHTML='<svg viewBox="0 0 12 14" role="img" aria-label="Avatar pixel Ramadhanu">'+art.map((row,y)=>[...row].map((c,x)=>c==='.'?'':`<rect x="${x}" y="${y}" width="1" height="1" style="fill:${pal[c]}"/>`).join('')).join('')+'</svg>'
+
+/* inventory */
+const inv={'Backend':['NestJS','Node.js','Express','REST APIs','Microservices','RabbitMQ','Redis'],'Frontend dan mobile':['React','Next.js','Expo'],'Data dan infra':['PostgreSQL','MySQL','AWS','Docker','Linux','CI/CD']}
+const learning=['Kubernetes','Kafka','Cloudflare edge']
+const slots=(a,c='')=>`<div class="slots">${a.map((n)=>`<div class="sl ${c}">${n}</div>`).join('')}</div>`
+$('#inv').innerHTML=Object.entries(inv).map(([k,v])=>`<h3 class="cat">${k}</h3>${slots(v)}`).join('')+`<h3 class="cat">Sedang dipelajari</h3>${slots(learning,'lk')}`
+
+/* email */
+if(EMAIL){const em=$('#em');em.href='mailto:'+EMAIL;em.hidden=false}
+
+/* dialogue */
+const lines=['Halo! Saya Ramadhanu, software engineer di Jakarta.','Lima tahun bikin web, mobile, dan backend.','Suka bongkar cara kerja sesuatu, lalu bangun ulang.']
+const dt=$('#dt')
+let done=false
+const type=()=>{
+  if(rm){dt.textContent=lines.join('\n');return}
+  let l=0,c=0
+  dt.textContent=''
+  const tick=()=>{
+    if(done||l>=lines.length)return
+    if(c<lines[l].length){dt.textContent+=lines[l][c++];setTimeout(tick,24)}
+    else{dt.textContent+='\n';l++;c=0;setTimeout(tick,450)}
+  }
+  tick()
+}
+$('#dlg').onclick=()=>{done=true;dt.textContent=lines.join('\n')}
+
+/* boot */
+const boot=$('#boot')
+const onKey=(e)=>{if(e.key==='Enter')start()}
+const start=()=>{
+  removeEventListener('keydown',onKey)
+  flag.set()
+  boot.classList.add('out')
+  setTimeout(()=>{boot.remove();type()},rm?0:700)
+}
+if(flag.get()||rm){boot.remove();type()}
+else{$('#go').onclick=start;addEventListener('keydown',onKey)}
+
+/* starfield */
+const cv=$('#bg'),cx=cv.getContext('2d')
+const pts=Array.from({length:70},()=>({x:Math.random(),y:Math.random(),s:1+Math.floor(Math.random()*3),v:.02+Math.random()*.06}))
+const size=()=>{cv.width=innerWidth;cv.height=innerHeight}
+const draw=()=>{
+  cx.clearRect(0,0,cv.width,cv.height);cx.fillStyle=ink;cx.globalAlpha=.22
+  pts.forEach((p)=>{cx.fillRect(Math.floor(p.x*cv.width),Math.floor(p.y*cv.height),p.s*2,p.s*2);if(!rm){p.y-=p.v/60;if(p.y<0)p.y=1}})
+}
+const loop=()=>{if(!document.hidden)draw();requestAnimationFrame(loop)}
+size();addEventListener('resize',()=>{size();draw()})
+rm?draw():loop()
+
+/* reveal and scrollspy */
+const io=new IntersectionObserver((es)=>es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12})
+$$('.rv').forEach((el)=>io.observe(el))
+const links=$$('nav a')
+const sp=new IntersectionObserver((es)=>es.forEach((e)=>{if(e.isIntersecting)links.forEach((a)=>a.classList.toggle('on',a.hash==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'})
+$$('section').forEach((s)=>sp.observe(s))
+
+/* hotkeys 1-5 */
+addEventListener('keydown',(e)=>{const a=links[Number(e.key)-1];if(a&&!boot.isConnected)a.click()})
+</script>
+</body>
+</html>
