@@ -22,7 +22,7 @@ export const Site = () => {
         {ui.skipToContent}
       </a>
       <Header />
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <HeroSection />
         <QuestsSection />
         <ItemsSection />
