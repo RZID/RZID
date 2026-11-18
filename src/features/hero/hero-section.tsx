@@ -3,6 +3,7 @@ import { Box } from '@/components/ui/box'
 import { ButtonLink } from '@/components/ui/button-link'
 import { PixelAvatar } from '@/components/ui/pixel-avatar'
 import { Reveal } from '@/components/ui/reveal'
+import { profile } from '@/content/profile'
 import { hero, ui } from '@/content/site'
 import { useTypewriter } from '@/hooks/use-typewriter'
 
@@ -16,7 +17,9 @@ export const HeroSection = () => {
       className="grid grid-cols-1 gap-8 lg:min-h-[calc(100svh-4.5rem)] lg:grid-cols-[1.25fr_0.75fr] lg:items-center"
     >
       <Reveal>
-        <p className="m-0 font-pixel text-lg text-muted">{hero.player}</p>
+        <p className="m-0 font-pixel text-lg text-muted">
+          {hero.player} · {profile.role}
+        </p>
         <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
 
         <Box className="relative min-h-34 px-4 py-4 text-lg whitespace-pre-line">
