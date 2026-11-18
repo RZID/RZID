@@ -163,3 +163,17 @@ Geometry from Concept A; dark shadow color from Concept C. No other shadow is us
 - Empty placeholder boxes in production. No real image, no slot.
 - Text on `accent` (#e8250d).
 - Arbitrary values when a token exists; add the token first.
+
+Added by the 2026-11-19 design reset audit. These bans supersede conflicting guidance above; the earlier direction is historical and must not be extended while a replacement is undecided.
+
+- Cream or off-white page background paired with a serif display face.
+- One italic or coloured phrase inside a headline.
+- Uppercase tracked eyebrows or labels above content.
+- Numbered 01/02/03 markers.
+- Mono all-caps meta labels.
+- Rounded-card kits and "at a glance" cards.
+- Hairline broadsheet rules as the page skeleton.
+- Graph-paper or dot backgrounds.
+- Inter, Geist, Instrument Serif, Fraunces, or Space Grotesk without a written, material-specific reason.
+- Fake imperfection (generated hand-drawn marks).
+- Any palette, font, or layout decision without a one-line rationale tied to the owner's real material, written in DESIGN.md.
