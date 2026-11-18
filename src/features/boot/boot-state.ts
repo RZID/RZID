@@ -1,11 +1,9 @@
 const storageKey = 'rzid.boot'
 
 export const shouldSkipBoot = () => {
-  if (window.location.hash !== '') {
-    return true
-  }
+  const requested = new URLSearchParams(window.location.search).get('intro') === '1'
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (!requested || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     return true
   }
 

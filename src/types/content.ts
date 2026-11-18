@@ -19,6 +19,7 @@ export type Profile = {
   name: string
   role: Localized
   location: Localized
+  summary: Localized
   links: {
     github: Link
     email: Link
@@ -50,7 +51,6 @@ export type Hero = {
   player: Localized
   level: string
   name: string
-  dialogue: readonly Localized[]
   primaryCta: Link
   secondaryCta: Link
 }
@@ -69,8 +69,8 @@ export type UiText = {
   language: Localized
   englishShort: Localized
   indonesianShort: Localized
-  dialogueSkip: Localized
-  cleared: Localized
+  shipped: Localized
+  playIntro: Localized
   copyrightYear: string
   footerHint: Localized
   bootDialogLabel: Localized

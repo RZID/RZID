@@ -1,20 +1,14 @@
-import { useMemo } from 'react'
 import { Section } from '@/components/layout/section'
 import { Box } from '@/components/ui/box'
 import { ButtonLink } from '@/components/ui/button-link'
 import { PixelAvatar } from '@/components/ui/pixel-avatar'
 import { Reveal } from '@/components/ui/reveal'
 import { profile } from '@/content/profile'
-import { hero, ui } from '@/content/site'
-import { useTypewriter } from '@/hooks/use-typewriter'
-import { useLocale, useT } from '@/lib/locale'
+import { hero, sections } from '@/content/site'
+import { useT } from '@/lib/locale'
 
 export const HeroSection = () => {
-  const locale = useLocale()
   const t = useT()
-  const lines = useMemo(() => hero.dialogue.map((line) => line[locale]), [locale])
-  const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  const { text, done, finish } = useTypewriter(lines, instant)
 
   return (
     <Section
@@ -26,25 +20,17 @@ export const HeroSection = () => {
           {t(hero.player)} · {t(profile.role)}
         </p>
         <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
+        <p className="mt-2 mb-5 font-pixel text-mint">{t(sections.contact.availability)}</p>
 
-        <Box className="relative min-h-34 px-4 py-4 text-lg whitespace-pre-line">
-          <p aria-hidden="true">{text}</p>
-          <button
-            type="button"
-            onClick={finish}
-            aria-label={t(ui.dialogueSkip)}
-            className="absolute inset-0 cursor-pointer"
-          />
-          {done ? null : (
-            <span aria-hidden className="absolute right-3 bottom-1 text-accent">
-              ▼
-            </span>
-          )}
+        <Box className="px-4 py-4 text-lg">
+          <p className="m-0">{t(profile.summary)}</p>
         </Box>
-        <p className="sr-only">{lines.join(' ')}</p>
 
         <div className="mt-6 flex flex-wrap gap-3">
           <ButtonLink href={hero.primaryCta.href}>{t(hero.primaryCta.label)}</ButtonLink>
+          <ButtonLink href={profile.links.email.href} variant="secondary">
+            {t(profile.links.email.label)}
+          </ButtonLink>
           <ButtonLink href={hero.secondaryCta.href} variant="secondary">
             {t(hero.secondaryCta.label)}
           </ButtonLink>

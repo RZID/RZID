@@ -8,17 +8,17 @@ Earlier portfolio directions (cream page + serif display, broadsheet hairlines, 
 
 ## Why this direction fits the owner
 
-| Decision                         | One-line rationale tied to real material                                                                          |
-| -------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Game HUD vocabulary              | The owner lists gaming as an interest; the prototype maps five years of work to LV.5, quests, items, and a guild. |
-| Dark navy + amber + mint palette | Taken from the prototype; reads as an arcade/CRT screen rather than a generic SaaS dashboard.                     |
-| Light cream variant              | Also from the prototype; paired with a pixel face, never with a serif.                                            |
-| Pixelify Sans for display/UI     | The prototype uses it; gives the game identity. Body copy stays system sans for readability.                      |
-| 4px borders + 6px hard shadows   | From the prototype; tactile, cabinet-like panels instead of soft card shadows.                                    |
-| 1000px content column            | From the prototype; keeps long Indonesian prose at a readable measure.                                            |
-| Chunky square corners            | Arcade UI has no rounded pill cards; rounding would fight the reference.                                          |
-| Scanline texture                 | The prototype's CRT overlay. It is the only gradient in the system and is decorative.                             |
-| Indonesian + English copy        | Recruiters were the stated audience; English strings come from the previous site, not from invention.             |
+| Decision                         | One-line rationale tied to real material                                                                                                     |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Game HUD flavour                 | The owner lists gaming as an interest; the pixel avatar, LV.5 and arcade styling keep that spirit without replacing standard section labels. |
+| Dark navy + amber + mint palette | Taken from the prototype; reads as an arcade/CRT screen rather than a generic SaaS dashboard.                                                |
+| Light cream variant              | Also from the prototype; paired with a pixel face, never with a serif.                                                                       |
+| Pixelify Sans for display/UI     | The prototype uses it; gives the game identity. Body copy stays system sans for readability.                                                 |
+| 4px borders + 6px hard shadows   | From the prototype; tactile, cabinet-like panels instead of soft card shadows.                                                               |
+| 1000px content column            | From the prototype; keeps long Indonesian prose at a readable measure.                                                                       |
+| Chunky square corners            | Arcade UI has no rounded pill cards; rounding would fight the reference.                                                                     |
+| Scanline texture                 | The prototype's CRT overlay. It is the only gradient in the system and is decorative.                                                        |
+| Indonesian + English copy        | Recruiters were the stated audience; English strings come from the previous site, not from invention.                                        |
 
 ## Tokens
 
@@ -43,7 +43,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 
 - Display and UI chrome: Pixelify Sans 400/700, self-hosted through `@fontsource/pixelify-sans`.
 - Body: system sans. It is deliberately not a second webfont.
-- Copy exists in `id` and `en`; both render with the same layout. Game labels (Quests, Items, Guild, Cleared, LV.5) stay in English in both locales.
+- Copy exists in `id` and `en`; both render with the same layout. Section labels are standard recruiter terms (Work, Skills, Experience); LV.5 remains as visual flavour.
 - Scale: h1 `clamp(2.75rem, 9vw, 5.75rem)`, section `clamp(1.625rem, 4vw, 2.25rem)`, body `16px/1.65`.
 - No italics, no tracking-heavy all-caps, no serif.
 
@@ -55,12 +55,12 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - `PixelAvatar` — inline SVG sprite from the prototype's pixel grid; `shapeRendering="crispEdges"`.
 - `Reveal` — IntersectionObserver fade/slide with `steps(5)` easing; visible immediately under reduced motion.
 - `Starfield` — fixed 2D canvas, 70 drifting pixels, colour comes from `--ink`; one static frame under reduced motion.
-- `BootScreen` — session-gated start screen; skipped on reduced motion or after the first start.
+- `BootScreen` — opt-in start screen via `?intro=1`; never shown by default or under reduced motion.
 
 ## Motion
 
 - `steps()` easing everywhere; no smooth easing curves.
-- Typewriter dialogue with click-to-finish; static under reduced motion.
+- Copy is static and immediately readable. Motion is decorative: star drift, avatar bob, reveal, and the optional intro.
 - Star drift, avatar bob, reveal, boot progress — all disabled or static under `prefers-reduced-motion`.
 - No scroll-linked animation, no parallax, no WebGL.
 

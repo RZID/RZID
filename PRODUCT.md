@@ -11,13 +11,13 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 
 ## Sections
 
-| Section   | Job                                                                |
-| --------- | ------------------------------------------------------------------ |
-| `home`    | Name, role framing, location, short intro, two calls to action.    |
-| `quests`  | Five shipped projects with a one-line outcome and stack tags.      |
-| `items`   | Grouped skills, what is being learned, and off-terminal interests. |
-| `guild`   | Three roles plus an in-progress degree, shown as ordinal ranks.    |
-| `contact` | Availability line, short invitation, email / GitHub / LinkedIn.    |
+| Section   | Job                                                                     |
+| --------- | ----------------------------------------------------------------------- |
+| `home`    | Name, role, location, availability, short intro, three calls to action. |
+| `quests`  | Five shipped projects with a one-line outcome and stack tags.           |
+| `items`   | Grouped skills, what is being learned, and off-terminal interests.      |
+| `guild`   | Three roles plus an in-progress degree, shown as ordinal ranks.         |
+| `contact` | Availability line, short invitation, email / GitHub / LinkedIn.         |
 
 ## Content rules
 
@@ -25,14 +25,16 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 - Source data: the previous portfolio's content still in git history, the owner's `README.md`, and the supplied prototype.
 - Never invent a project, employer, technology, metric, date, or contact detail.
 - Numeric and time-sensitive statements are tracked in `docs/claims.md` and stay `UNVERIFIED` until the owner supplies evidence.
-- Copy voice: Indonesian prose by default, English when toggled; game labels stay in English in both. This is a deliberate direction from the prototype, not a translation accident.
+- Copy voice: English by default, Indonesian when the browser or toggle selects it. Section labels use standard recruiter terms (Work, Skills, Experience); the game flavour lives in the pixel avatar, LV.5, and visual treatment.
 - Both locales are first-class. English strings come from the previous site's content; never add a new fact while translating.
 - No project screenshots until real files exist. Placeholder boxes are banned.
 
 ## Decisions
 
 - **Bilingual toggle.** `id` and `en` render the same layout; choice is stored in `localStorage` and mirrored to `<html lang>`. Default is English; Indonesian is used only when the browser explicitly reports `id` or `id-ID`. The toggle is a small square button beside the theme toggle.
-- **Boot gate per session.** The “Press start” screen shows once per browser session, never under reduced motion, and never when the URL carries a section hash. It is a framing device, not a login.
+- **Intro is opt-in.** The “Press start” screen appears only with `?intro=1` (footer link), never by default and never under reduced motion. A recruiter never has to click through a gate.
+- **Recruiter-first labelling.** Nav and section headings use Work / Skills / Experience / Contact. The game flavour stays visual; it does not block information scent.
+- **Static first screen.** The summary is fully rendered on load; no typewriter or click-to-reveal stands between a recruiter and the copy.
 - **Theme follows the system by default.** `localStorage` is written only when the user explicitly toggles; until then, OS colour-scheme changes are followed live.
 - **Hotkeys 1–5.** Shortcut to sections; every section is still reachable by nav links.
 - **Static metadata.** Canonical URL and OG/Twitter tags live in `index.html`; `public/og.png` is generated from the real palette, name, role, and pixel avatar.
@@ -41,7 +43,7 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 ## Success criteria
 
 - `bun run check`, `bun run build`, and Playwright checks at 320px, 390px, 768px, and 1440px pass.
-- First screen contains a human artifact (pixel avatar) and a name, plus a role/location string.
+- First screen contains a name, role, location, availability, a complete summary, and work/email/GitHub links; no gate and no delayed copy.
 - No horizontal overflow at either checked width.
 - Reduced-motion users get static content with no boot gate.
 - Every claim on the page appears in `docs/claims.md`.
