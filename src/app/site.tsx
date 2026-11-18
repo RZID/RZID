@@ -22,7 +22,7 @@ export const Site = () => {
         {ui.skipToContent}
       </a>
       <Header />
-      <main id="main" tabIndex={-1}>
+      <main id="main" tabIndex={-1} className="scroll-mt-36 lg:scroll-mt-20">
         <HeroSection />
         <QuestsSection />
         <ItemsSection />
