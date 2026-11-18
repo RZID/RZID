@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "dup": "jscpd src",
-    "check": "bun run typecheck && bun run lint && bun run lint:arrow && bun run format:check && bun run dup",
+    "check": "bun run typecheck && bun run lint && bun run lint:arrow && bun run format:check && bun scripts/check-contrast.mjs && bun run dup",
     "prepare": "husky"
   },
   "dependencies": {
