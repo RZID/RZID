@@ -1,14 +1,23 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 export const useTypewriter = (lines: readonly string[], instant: boolean) => {
   const [text, setText] = useState(() => (instant ? lines.join('\n') : ''))
   const [done, setDone] = useState(instant)
   const [run, setRun] = useState(0)
+  const [cycle, setCycle] = useState(0)
   const stopped = useRef(instant)
 
+  const ordered = useMemo(() => {
+    if (lines.length === 0) {
+      return lines
+    }
+
+    const start = cycle % lines.length
+    return [...lines.slice(start), ...lines.slice(0, start)]
+  }, [lines, cycle])
+
   useEffect(() => {
-    if (instant) {
-      stopped.current = true
+    if (instant || ordered.length === 0) {
       return
     }
 
@@ -24,7 +33,7 @@ export const useTypewriter = (lines: readonly string[], instant: boolean) => {
         return
       }
 
-      const current = lines[line]
+      const current = ordered[line]
 
       if (current === undefined) {
         setDone(true)
@@ -49,13 +58,27 @@ export const useTypewriter = (lines: readonly string[], instant: boolean) => {
     timer = window.setTimeout(tick, 150)
 
     return () => window.clearTimeout(timer)
-  }, [instant, lines, run])
+  }, [instant, ordered, run])
+
+  useEffect(() => {
+    if (!done || instant || ordered.length === 0) {
+      return
+    }
+
+    const timer = window.setTimeout(() => {
+      setText('')
+      setDone(false)
+      setCycle((current) => current + 1)
+    }, 2600)
+
+    return () => window.clearTimeout(timer)
+  }, [done, instant, ordered.length])
 
   const finish = useCallback(() => {
     stopped.current = true
-    setText(lines.join('\n'))
+    setText(ordered.join('\n'))
     setDone(true)
-  }, [lines])
+  }, [ordered])
 
   const replay = useCallback(() => {
     stopped.current = false
