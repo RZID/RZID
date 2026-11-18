@@ -2,6 +2,8 @@ import { Footer } from '@/components/layout/footer'
 import { Header } from '@/components/layout/header'
 import { Starfield } from '@/components/layout/starfield'
 import { nav, ui } from '@/content/site'
+import { ContactSection } from '@/features/contact'
+import { GuildSection } from '@/features/guild'
 import { HeroSection } from '@/features/hero'
 import { ItemsSection } from '@/features/items'
 import { QuestsSection } from '@/features/quests'
@@ -24,6 +26,8 @@ export const Site = () => {
         <HeroSection />
         <QuestsSection />
         <ItemsSection />
+        <GuildSection />
+        <ContactSection />
       </main>
       <Footer />
     </>
