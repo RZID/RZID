@@ -50,8 +50,8 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 
 1. Should the email address stay visible on the contact panel? It was public in the previous build.
 2. English is already available; confirm the translations are acceptable to a native speaker.
-3. Are there real project screenshots we can add later? None are in the repo today.
-4. Should analytics be added before deployment? Canonical and social tags are already static in `index.html`.
+3. No real project screenshots are available; none will be added until files exist. No placeholders.
+4. Analytics is skipped: no ID or token was supplied. Canonical and social tags are already static in `index.html`.
 
 ## Non-goals
 
