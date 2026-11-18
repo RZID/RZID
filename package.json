@@ -11,7 +11,7 @@
     "lint": "oxlint --type-aware",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "bun run typecheck && bun run lint && bun run format:check",
+    "check": "bun run typecheck && bun run lint && bun run format:check && bun scripts/check-contrast.mjs",
     "prepare": "husky"
   },
   "dependencies": {

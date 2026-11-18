@@ -1,4 +1,5 @@
 {
-  "*.{ts,tsx,js,mjs}": ["prettier --write", "oxlint --type-aware"],
+  "*.{ts,tsx}": ["prettier --write", "oxlint --type-aware"],
+  "*.{js,mjs,html}": ["prettier --write"],
   "*.{json,css,md}": ["prettier --write"]
 }

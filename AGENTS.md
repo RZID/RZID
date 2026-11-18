@@ -7,7 +7,7 @@ React 19 + TypeScript + Vite + Tailwind CSS v4. Audience: recruiters and junior 
 - `bun run dev` — dev server
 - `bun run build` — typecheck + production build into `build/`
 - `bun run preview` — serve the build
-- `bun run check` — typecheck, type-aware lint, Prettier check
+- `bun run check` — typecheck, type-aware lint, Prettier check, contrast guard
 - `bun run format` — Prettier (Tailwind classes are sorted)
 
 Package manager: bun only. Never use npm, yarn, or pnpm; never create `package-lock.json`. `bun run check` must pass before a task is reported as done.
