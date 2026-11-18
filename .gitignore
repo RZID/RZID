@@ -25,3 +25,7 @@ dist-ssr
 *.sw?
 .impeccable
 .playwright-mcp
+
+# Local design reference, not part of the app
+prototype-reference.html
+prototype-reference.html
