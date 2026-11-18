@@ -19,7 +19,7 @@ const ChatDialogue = ({ lines, instant }: ChatDialogueProps) => {
   const { text, done, finish, replay } = useTypewriter(lines, instant)
 
   return (
-    <Box className="relative min-h-34 px-4 py-4 text-lg whitespace-pre-line">
+    <Box className="relative min-h-28 px-4 py-4 text-lg whitespace-pre-line">
       <p aria-hidden="true">
         {text}
         {done ? null : <span className="animate-blink">▌</span>}
@@ -53,7 +53,7 @@ export const HeroSection = () => {
   return (
     <Section
       id="home"
-      className="grid grid-cols-1 gap-8 lg:min-h-[calc(100svh-4.5rem)] lg:grid-cols-[1.25fr_0.75fr] lg:items-center"
+      className="grid grid-cols-1 gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-center"
     >
       <Reveal>
         <p className="m-0 font-pixel text-lg text-muted">
@@ -79,6 +79,15 @@ export const HeroSection = () => {
       <Reveal className="order-first grid place-items-center lg:order-none">
         <PixelAvatar className="w-[min(210px,52vw)] animate-bob" />
         <div aria-hidden className="mt-2 h-3.5 w-40 bg-ink/25" />
+      </Reveal>
+
+      <Reveal className="col-span-full grid gap-4 border-t-4 border-ink pt-5 sm:grid-cols-3">
+        {hero.stats.map((stat) => (
+          <div key={stat.label.id} className="border-l-4 border-accent pl-3">
+            <p className="m-0 font-pixel text-sm text-muted">{t(stat.label)}</p>
+            <p className="m-0 text-base">{t(stat.value)}</p>
+          </div>
+        ))}
       </Reveal>
     </Section>
   )

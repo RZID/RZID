@@ -1,6 +1,6 @@
 import { Section } from '@/components/layout/section'
 import { Reveal } from '@/components/ui/reveal'
-import { sections } from '@/content/site'
+import { sections, ui } from '@/content/site'
 import { skillGroups } from '@/content/skills'
 import { cn } from '@/lib/cn'
 import { useT } from '@/lib/locale'
@@ -9,7 +9,11 @@ export const ItemsSection = () => {
   const t = useT()
 
   return (
-    <Section id="items" title={t(sections.items.title)}>
+    <Section
+      id="items"
+      title={t(sections.items.title)}
+      meta={`${skillGroups.reduce((total, group) => total + group.items.length, 0)} ${t(ui.countItems)}`}
+    >
       <div className="space-y-6">
         {skillGroups.map((group) => (
           <Reveal key={group.title.id}>
@@ -19,7 +23,7 @@ export const ItemsSection = () => {
                 <li
                   key={item.id}
                   className={cn(
-                    'border-2 border-ink bg-panel px-2 py-3 text-center font-pixel text-sm',
+                    'border-2 border-ink bg-panel px-2 py-3 text-center font-pixel text-base',
                     'transition-transform duration-100 ease-steps hover:-translate-y-1',
                     group.learning === true && 'border-dashed text-muted',
                   )}

@@ -10,7 +10,12 @@ export const QuestsSection = () => {
   const t = useT()
 
   return (
-    <Section id="quests" title={t(sections.quests.title)} lead={t(sections.quests.lead)}>
+    <Section
+      id="quests"
+      title={t(sections.quests.title)}
+      lead={t(sections.quests.lead)}
+      meta={`${projects.length} ${t(ui.countShipped)}`}
+    >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <Reveal key={project.name} className="h-full">
@@ -22,7 +27,7 @@ export const QuestsSection = () => {
                 {t(ui.shipped)}
               </span>
               <h3 className="mb-1.5 pr-20 font-pixel text-xl">{project.name}</h3>
-              <p className="mb-3 text-sm">{t(project.summary)}</p>
+              <p className="mb-3 text-base">{t(project.summary)}</p>
               <div className="flex flex-wrap gap-1.5">
                 {project.stack.map((item) => (
                   <Tag key={item}>{item}</Tag>

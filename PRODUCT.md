@@ -11,13 +11,13 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 
 ## Sections
 
-| Section   | Job                                                                     |
-| --------- | ----------------------------------------------------------------------- |
-| `home`    | Name, role, location, availability, short intro, three calls to action. |
-| `quests`  | Five shipped projects with a one-line outcome and stack tags.           |
-| `items`   | Grouped skills, what is being learned, and off-terminal interests.      |
-| `guild`   | Three roles plus an in-progress degree, shown as ordinal ranks.         |
-| `contact` | Availability line, short invitation, email / GitHub / LinkedIn.         |
+| Section   | Job                                                                                              |
+| --------- | ------------------------------------------------------------------------------------------------ |
+| `home`    | Name, role, location, availability, intro chat, base/work/mode HUD strip, three calls to action. |
+| `quests`  | Five shipped projects with a one-line outcome and stack tags.                                    |
+| `items`   | Grouped skills, what is being learned, and off-terminal interests.                               |
+| `guild`   | Three roles plus an in-progress degree, shown as ordinal ranks.                                  |
+| `contact` | Availability line, short invitation, email / GitHub / LinkedIn.                                  |
 
 ## Content rules
 

@@ -47,9 +47,15 @@ export type SkillGroup = {
   learning?: boolean
 }
 
+export type HeroStat = {
+  label: Localized
+  value: Localized
+}
+
 export type Hero = {
   name: string
   dialogue: readonly Localized[]
+  stats: readonly HeroStat[]
   primaryCta: Link
   secondaryCta: Link
 }
@@ -69,6 +75,9 @@ export type UiText = {
   englishShort: Localized
   indonesianShort: Localized
   shipped: Localized
+  countShipped: Localized
+  countItems: Localized
+  countEntries: Localized
   dialogueSkip: Localized
   replayDialogue: Localized
   playIntro: Localized

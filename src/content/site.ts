@@ -25,6 +25,26 @@ export const hero: Hero = {
       en: 'I like taking things apart to see how they work, then building them back.',
     },
   ],
+  stats: [
+    {
+      label: { id: 'Basis', en: 'Base' },
+      value: { id: 'Jakarta', en: 'Jakarta' },
+    },
+    {
+      label: { id: 'Bidang', en: 'Work' },
+      value: {
+        id: 'Web · Mobile · Backend',
+        en: 'Web · Mobile · Backend',
+      },
+    },
+    {
+      label: { id: 'Mode', en: 'Mode' },
+      value: {
+        id: 'Remote global · Hybrid Jabodetabek',
+        en: 'Remote worldwide · Hybrid in Jabodetabek',
+      },
+    },
+  ],
   primaryCta: {
     label: { id: 'Lihat karya pilihan', en: 'See selected work' },
     href: '#quests',
@@ -66,6 +86,9 @@ export const ui: UiText = {
   englishShort: { id: 'EN', en: 'EN' },
   indonesianShort: { id: 'ID', en: 'ID' },
   shipped: { id: 'Dirilis', en: 'Shipped' },
+  countShipped: { id: 'dirilis', en: 'shipped' },
+  countItems: { id: 'item', en: 'items' },
+  countEntries: { id: 'entri', en: 'entries' },
   dialogueSkip: { id: 'Lewati dialog', en: 'Skip dialogue' },
   replayDialogue: { id: 'Ulangi dialog', en: 'Replay dialogue' },
   playIntro: { id: 'Putar intro', en: 'Play intro' },
