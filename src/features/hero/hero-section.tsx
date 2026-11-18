@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Section } from '@/components/layout/section'
 import { Box } from '@/components/ui/box'
 import { ButtonLink } from '@/components/ui/button-link'
@@ -9,16 +10,16 @@ import { useTypewriter } from '@/hooks/use-typewriter'
 import { useLocale, useT } from '@/lib/locale'
 
 type ChatDialogueProps = {
-  sentence: string
+  sentences: readonly string[]
   instant: boolean
 }
 
-const ChatDialogue = ({ sentence, instant }: ChatDialogueProps) => {
+const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
   const t = useT()
-  const { text, done, finish, replay } = useTypewriter(sentence, instant)
+  const { text, done, finish, replay } = useTypewriter(sentences, instant)
 
   return (
-    <Box className="relative h-72 px-4 py-4 text-base sm:h-48 sm:text-lg lg:h-40">
+    <Box className="relative h-68 px-4 py-4 text-base min-[360px]:h-56 sm:h-40 sm:text-lg">
       <span aria-hidden className="chat-tail chat-tail-top sm:hidden" />
       <span aria-hidden className="chat-tail chat-tail-top-inner sm:hidden" />
       <span aria-hidden className="chat-tail chat-tail-right hidden sm:block" />
@@ -52,6 +53,7 @@ const ChatDialogue = ({ sentence, instant }: ChatDialogueProps) => {
 export const HeroSection = () => {
   const locale = useLocale()
   const t = useT()
+  const sentences = useMemo(() => hero.sentences.map((item) => item[locale]), [locale])
   const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   return (
@@ -66,7 +68,7 @@ export const HeroSection = () => {
         <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
         <p className="mt-2 mb-5 font-pixel text-mint">{t(sections.contact.availability)}</p>
 
-        <ChatDialogue key={locale} sentence={t(hero.sentence)} instant={instant} />
+        <ChatDialogue key={locale} sentences={sentences} instant={instant} />
         <p className="sr-only">{t(profile.summary)}</p>
 
         <div className="mt-6 flex flex-wrap gap-3">

@@ -1,13 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-export const useTypewriter = (sentence: string, instant: boolean) => {
-  const [text, setText] = useState(() => (instant ? sentence : ''))
-  const [done, setDone] = useState(instant)
+export const useTypewriter = (sentences: readonly string[], instant: boolean) => {
+  const [cycle, setCycle] = useState(0)
   const [run, setRun] = useState(0)
+
+  const current = sentences[cycle % sentences.length] ?? ''
+
+  const [text, setText] = useState(() => (instant ? current : ''))
+  const [done, setDone] = useState(instant)
   const stopped = useRef(instant)
 
   useEffect(() => {
-    if (instant || sentence === '') {
+    if (instant || current === '') {
       return
     }
 
@@ -22,12 +26,12 @@ export const useTypewriter = (sentence: string, instant: boolean) => {
         return
       }
 
-      if (index >= sentence.length) {
+      if (index >= current.length) {
         setDone(true)
         return
       }
 
-      built += sentence.charAt(index)
+      built += current.charAt(index)
       index += 1
       setText(built)
       timer = window.setTimeout(tick, 12)
@@ -36,27 +40,27 @@ export const useTypewriter = (sentence: string, instant: boolean) => {
     timer = window.setTimeout(tick, 150)
 
     return () => window.clearTimeout(timer)
-  }, [instant, sentence, run])
+  }, [instant, current, run])
 
   useEffect(() => {
-    if (!done || instant || sentence === '') {
+    if (!done || instant || sentences.length === 0) {
       return
     }
 
     const timer = window.setTimeout(() => {
       setText('')
       setDone(false)
-      setRun((value) => value + 1)
+      setCycle((value) => value + 1)
     }, 3000)
 
     return () => window.clearTimeout(timer)
-  }, [done, instant, sentence])
+  }, [done, instant, sentences.length])
 
   const finish = useCallback(() => {
     stopped.current = true
-    setText(sentence)
+    setText(current)
     setDone(true)
-  }, [sentence])
+  }, [current])
 
   const replay = useCallback(() => {
     stopped.current = false
