@@ -11,6 +11,7 @@ export const nav: readonly NavItem[] = [
 
 export const hero: Hero = {
   player: 'Player 1, Jakarta',
+  level: 'LV.5',
   name: profile.name,
   dialogue: [
     'Halo! Saya Ramadhanu, software engineer di Jakarta.',
@@ -37,9 +38,11 @@ export const sections: SectionCopy = {
 }
 
 export const ui: UiText = {
+  primaryNav: 'Menu utama',
   skipToContent: 'Lewati ke konten',
   themeToggle: 'Ganti tema terang atau gelap',
   dialogueSkip: 'Lewati dialog',
   cleared: 'Cleared',
+  copyrightYear: '2026',
   footerHint: 'Tekan 1 sampai 5 untuk pindah menu.',
 }

@@ -41,6 +41,7 @@ export type SkillGroup = {
 
 export type Hero = {
   player: string
+  level: string
   name: string
   dialogue: readonly string[]
   primaryCta: Link
@@ -55,9 +56,11 @@ export type SectionCopy = {
 }
 
 export type UiText = {
+  primaryNav: string
   skipToContent: string
   themeToggle: string
   dialogueSkip: string
   cleared: string
+  copyrightYear: string
   footerHint: string
 }
