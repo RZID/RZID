@@ -18,11 +18,17 @@ const ChatDialogue = ({ sentence, instant }: ChatDialogueProps) => {
   const { text, done, finish, replay } = useTypewriter(sentence, instant)
 
   return (
-    <Box className="relative h-64 overflow-hidden px-4 py-4 text-base sm:h-44 sm:text-lg lg:h-36">
-      <p aria-hidden="true" className="m-0">
-        {text}
-        {done ? null : <span className="animate-blink">▌</span>}
-      </p>
+    <Box className="relative h-64 px-4 py-4 text-base sm:h-44 sm:text-lg lg:h-36">
+      <span aria-hidden className="chat-tail chat-tail-top sm:hidden" />
+      <span aria-hidden className="chat-tail chat-tail-top-inner sm:hidden" />
+      <span aria-hidden className="chat-tail chat-tail-right hidden sm:block" />
+      <span aria-hidden className="chat-tail chat-tail-right-inner hidden sm:block" />
+      <div className="h-full overflow-hidden">
+        <p aria-hidden="true" className="m-0">
+          {text}
+          {done ? null : <span className="animate-blink">▌</span>}
+        </p>
+      </div>
       <button
         type="button"
         onClick={finish}

@@ -63,6 +63,45 @@
   }
 }
 
+.chat-tail {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.chat-tail-top {
+  top: -0.75rem;
+  left: 2rem;
+  border-right: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid var(--ink);
+  border-left: 0.75rem solid transparent;
+}
+
+.chat-tail-top-inner {
+  top: -0.5rem;
+  left: calc(2rem + 4px);
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid var(--panel);
+  border-left: 0.5rem solid transparent;
+}
+
+.chat-tail-right {
+  top: 2rem;
+  right: -0.75rem;
+  border-top: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid transparent;
+  border-left: 0.75rem solid var(--ink);
+}
+
+.chat-tail-right-inner {
+  top: calc(2rem + 4px);
+  right: -0.5rem;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+  border-left: 0.5rem solid var(--panel);
+}
+
 @keyframes blink {
   50% {
     opacity: 0;
