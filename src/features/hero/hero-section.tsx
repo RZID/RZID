@@ -13,7 +13,7 @@ export const HeroSection = () => {
   return (
     <Section
       id="home"
-      className="lg:grid lg:min-h-[calc(100svh-4.5rem)] lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-8"
+      className="grid grid-cols-1 gap-8 lg:min-h-[calc(100svh-4.5rem)] lg:grid-cols-[1.25fr_0.75fr] lg:items-center"
     >
       <Reveal>
         <p className="m-0 font-pixel text-lg text-muted">{hero.player}</p>
@@ -43,7 +43,7 @@ export const HeroSection = () => {
         </div>
       </Reveal>
 
-      <Reveal className="order-first place-items-center lg:order-none lg:grid">
+      <Reveal className="order-first grid place-items-center lg:order-none">
         <PixelAvatar className="w-[min(210px,52vw)] animate-bob" />
         <div aria-hidden className="mt-2 h-3.5 w-40 bg-ink/25" />
       </Reveal>
