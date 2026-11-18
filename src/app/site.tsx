@@ -2,6 +2,7 @@ import { Footer } from '@/components/layout/footer'
 import { Header } from '@/components/layout/header'
 import { Starfield } from '@/components/layout/starfield'
 import { nav, ui } from '@/content/site'
+import { HeroSection } from '@/features/hero'
 import { useSectionHotkeys } from '@/hooks/use-section-hotkeys'
 
 export const Site = () => {
@@ -18,7 +19,7 @@ export const Site = () => {
       </a>
       <Header />
       <main id="main">
-        <p className="mx-auto max-w-content px-5 py-16">Project sedang dibangun.</p>
+        <HeroSection />
       </main>
       <Footer />
     </>
