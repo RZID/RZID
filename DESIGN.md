@@ -8,56 +8,62 @@ Modern, dimensional, warm. Confident and calm, not "hacker terminal". Light pape
 
 ## Color
 
-### Light (default)
+### Tokens
 
-| Token               | Value                    | Use                                |
-| ------------------- | ------------------------ | ---------------------------------- |
-| `background`        | `#f6f3ee`                | Page                               |
-| `surface`           | `#fffdf8`                | Cards, raised surfaces             |
-| `foreground`        | `#141414`                | Body and headings                  |
-| `muted`             | `#625d56`                | Secondary text, labels             |
-| `line`              | `rgba(20, 20, 20, 0.14)` | Borders and rules                  |
-| `accent`            | `#e8250d`                | Decorative rules, dots, marks only |
-| `accent-text`       | `#c91f0a`                | Accent text and links              |
-| `accent-control`    | `#c91f0a`                | Filled control background          |
-| `accent-foreground` | `#ffffff`                | Text on `accent-control`           |
-| `visual`            | `#efeae1`                | Project visual ground (future)     |
+| Token                     | Light                    | Dark                        | Use                                          |
+| ------------------------- | ------------------------ | --------------------------- | -------------------------------------------- |
+| `background`              | `#f6f3ee`                | `#0e0e10`                   | Page                                         |
+| `surface`                 | `#fffdf8`                | `#17171a`                   | Cards, raised surfaces                       |
+| `foreground`              | `#141414`                | `#f3efe8`                   | Body and headings                            |
+| `muted`                   | `#625d56`                | `#a49e95`                   | Secondary text, labels                       |
+| `line`                    | `rgba(20, 20, 20, 0.14)` | `rgba(243, 239, 232, 0.14)` | Decorative borders and rules only            |
+| `line-control`            | `#8c8780`                | `#6f6b65`                   | Borders that identify an interactive control |
+| `accent`                  | `#e8250d`                | `#e8250d`                   | Decorative rules, dots, marks only           |
+| `accent-text`             | `#c91f0a`                | `#ff6b5a`                   | Accent text, links, focus ring               |
+| `accent-control`          | `#c91f0a`                | `#c91f0a`                   | Filled control background                    |
+| `accent-control-hover`    | `#bf1d0c`                | `#bf1d0c`                   | Filled control on hover                      |
+| `accent-control-active`   | `#b51c09`                | `#b51c09`                   | Filled control on press                      |
+| `accent-control-disabled` | `#e7e2d9`                | `#26262a`                   | Filled control when disabled                 |
+| `on-accent`               | `#ffffff`                | `#ffffff`                   | Text on any filled accent control            |
+| `on-accent-disabled`      | `#5a554e`                | `#b8b2a9`                   | Text on a disabled filled control            |
+| `visual`                  | `#efeae1`                | `#f6f3ee`                   | Project visual ground (future)               |
 
-### Dark
-
-| Token               | Value                       | Use                                |
-| ------------------- | --------------------------- | ---------------------------------- |
-| `background`        | `#0e0e10`                   | Page                               |
-| `surface`           | `#17171a`                   | Cards, raised surfaces             |
-| `foreground`        | `#f3efe8`                   | Body and headings                  |
-| `muted`             | `#a49e95`                   | Secondary text, labels             |
-| `line`              | `rgba(243, 239, 232, 0.14)` | Borders and rules                  |
-| `accent`            | `#e8250d`                   | Decorative rules, dots, marks only |
-| `accent-text`       | `#ff6b5a`                   | Accent text and links              |
-| `accent-control`    | `#c91f0a`                   | Filled control background          |
-| `accent-foreground` | `#ffffff`                   | Text on `accent-control`           |
-| `visual`            | `#f6f3ee`                   | Project visual ground (future)     |
+`line` is decorative: at 14% alpha it is 1.34:1 (light) / 1.42:1 (dark). WCAG 1.4.11 exempts boundaries that are not required to identify a control, so cards and section rules keep it. Anything a user must find and operate (secondary button, toggle fieldsets, mobile menu button) uses `line-control`.
 
 ### Computed contrast
 
-WCAG 2.1 ratios, sRGB, computed from the values above.
+WCAG 2.1 ratios, sRGB, computed from the token values. Text pairs need 4.5:1, UI pairs need 3:1.
 
-| Pair                                       | Ratio   | Result |
-| ------------------------------------------ | ------- | ------ |
-| Light: foreground on background            | 16.64:1 | AAA    |
-| Light: muted on background                 | 5.89:1  | AA     |
-| Light: muted on surface                    | 6.42:1  | AA     |
-| Light: accent-text on background           | 5.15:1  | AA     |
-| Light: accent-text on surface              | 5.61:1  | AA     |
-| Light: accent-foreground on accent-control | 5.70:1  | AA     |
-| Dark: foreground on background             | 16.83:1 | AAA    |
-| Dark: muted on background                  | 7.26:1  | AAA    |
-| Dark: muted on surface                     | 6.73:1  | AAA    |
-| Dark: accent-text on background            | 6.89:1  | AAA    |
-| Dark: accent-text on surface               | 6.39:1  | AA     |
-| Dark: accent-foreground on accent-control  | 5.70:1  | AA     |
+| Pair                                            | Light   | Dark    | Minimum | Result |
+| ----------------------------------------------- | ------- | ------- | ------- | ------ |
+| foreground on background                        | 16.64:1 | 16.83:1 | 4.5     | AAA    |
+| foreground on surface                           | 18.12:1 | 15.61:1 | 4.5     | AAA    |
+| muted on background                             | 5.89:1  | 7.26:1  | 4.5     | AA/AAA |
+| muted on surface                                | 6.42:1  | 6.73:1  | 4.5     | AA     |
+| accent-text on background                       | 5.15:1  | 6.89:1  | 4.5     | AA/AAA |
+| accent-text on surface                          | 5.61:1  | 6.39:1  | 4.5     | AA     |
+| background on foreground (pressed toggle label) | 16.64:1 | 16.83:1 | 4.5     | AAA    |
+| on-accent on accent-control                     | 5.70:1  | 5.70:1  | 4.5     | AA     |
+| on-accent on accent-control-hover               | 6.18:1  | 6.18:1  | 4.5     | AA     |
+| on-accent on accent-control-active              | 6.70:1  | 6.70:1  | 4.5     | AA     |
+| on-accent-disabled on accent-control-disabled   | 5.72:1  | 7.16:1  | 4.5     | AA/AAA |
+| accent-text focus ring on background            | 5.15:1  | 6.89:1  | 3       | pass   |
+| accent-text focus ring on surface               | 5.61:1  | 6.39:1  | 3       | pass   |
+| line-control on background                      | 3.22:1  | 3.64:1  | 3       | pass   |
+| line-control on surface                         | 3.51:1  | 3.38:1  | 3       | pass   |
+| accent rule on background (decorative)          | 4.04:1  | 4.39:1  | 3       | pass   |
 
 `accent` (#e8250d) is decorative only. White on it is 4.47:1, so it never carries text.
+
+### Contrast changes
+
+| Item                | Before                                             | After                                                       |
+| ------------------- | -------------------------------------------------- | ----------------------------------------------------------- |
+| Primary label token | `accent-foreground` `#ffffff` → 5.70:1             | `on-accent` `#ffffff` → 5.70:1 (renamed, theme-independent) |
+| Primary hover       | `brightness-95` filter, ≈5.52:1 and not auditable  | `accent-control-hover` → 6.18:1                             |
+| Primary active      | `brightness-90` filter, ≈5.37:1 and not auditable  | `accent-control-active` → 6.70:1                            |
+| Primary disabled    | 60% opacity over page → 3.01:1 light / 3.92:1 dark | solid disabled tokens → 5.72:1 light / 7.16:1 dark          |
+| Interactive borders | `line` → 1.34:1 light / 1.42:1 dark                | `line-control` → 3.22:1 / 3.64:1 on background              |
 
 ## Type
 
@@ -132,7 +138,7 @@ Geometry from Concept A; dark shadow color from Concept C. No other shadow is us
 
 ## Components
 
-- **Button**: primary is `accent-control` with `accent-foreground`; secondary is `surface` with a `line` border; link is text with a 1px `accent` bottom rule. Height 46px, radius `control`, weight 600. Hover lift 1px, never a color that drops below AA. Focus is global: 3px `accent-text` outline, 4px offset.
+- **Button**: primary is `accent-control` with `on-accent`, `accent-control-hover` on hover, `accent-control-active` on press, and the solid disabled token pair when disabled; secondary is `surface` with a `line-control` border; link is text with a 1px `accent` bottom rule. Height 46px, radius `control`, weight 600. Hover lift 1px, never a color that drops below AA. Focus is global: 3px `accent-text` outline, 4px offset.
 - **Card**: `surface`, 1px `line`, radius `card`, shadow `card`, 24px padding.
 - **Eyebrow**: one per section maximum. `micro`, uppercase, `tracking-label`, `muted`. It introduces the section; it is not a repeated caption.
 - **TextLink**: body size, `foreground`, 1px `accent` bottom rule. Hover switches to `accent-text`. Minimum 44px target.
