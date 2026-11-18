@@ -21,10 +21,15 @@
   --foreground: light-dark(#141414, #f3efe8);
   --muted: light-dark(#625d56, #a49e95);
   --line: light-dark(rgba(20, 20, 20, 0.14), rgba(243, 239, 232, 0.14));
+  --line-control: light-dark(#8c8780, #6f6b65);
   --accent: #e8250d;
   --accent-text: light-dark(#c91f0a, #ff6b5a);
   --accent-control: #c91f0a;
-  --accent-foreground: #ffffff;
+  --accent-control-hover: #bf1d0c;
+  --accent-control-active: #b51c09;
+  --accent-control-disabled: light-dark(#e7e2d9, #26262a);
+  --on-accent: #ffffff;
+  --on-accent-disabled: light-dark(#5a554e, #b8b2a9);
   --visual: light-dark(#efeae1, #f6f3ee);
 }
 
@@ -102,10 +107,15 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-line-control: var(--line-control);
   --color-accent: var(--accent);
   --color-accent-text: var(--accent-text);
   --color-accent-control: var(--accent-control);
-  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-control-hover: var(--accent-control-hover);
+  --color-accent-control-active: var(--accent-control-active);
+  --color-accent-control-disabled: var(--accent-control-disabled);
+  --color-on-accent: var(--on-accent);
+  --color-on-accent-disabled: var(--on-accent-disabled);
   --color-visual: var(--visual);
 }
 
@@ -131,7 +141,7 @@
 
 ::selection {
   background-color: var(--accent-control);
-  color: var(--accent-foreground);
+  color: var(--on-accent);
 }
 
 html {

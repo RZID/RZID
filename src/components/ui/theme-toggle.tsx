@@ -20,7 +20,7 @@ export const ThemeToggle = () => {
   const { theme, setTheme, locale } = usePreferences()
 
   return (
-    <fieldset className="m-0 flex min-w-0 items-center gap-1 rounded-control border border-line p-1">
+    <fieldset className="m-0 flex min-w-0 items-center gap-1 rounded-control border border-line-control p-1">
       <legend className="sr-only">{pickLocalized(uiLabels.theme, locale)}</legend>
       {themeOptions.map((option) => (
         <button

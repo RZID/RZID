@@ -68,7 +68,7 @@ export const Header = () => {
           aria-expanded={menuOpen}
           aria-controls="site-menu"
           onClick={() => setMenuOpen((open) => !open)}
-          className="min-h-11 rounded-control border border-line px-3 text-micro tracking-label text-muted uppercase transition-colors duration-fast hover:text-foreground lg:hidden"
+          className="min-h-11 rounded-control border border-line-control px-3 text-micro tracking-label text-muted uppercase transition-colors duration-fast hover:text-foreground lg:hidden"
         >
           {pickLocalized(menuOpen ? navLabels.close : navLabels.menu, locale)}
         </button>
