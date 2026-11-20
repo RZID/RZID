@@ -27,8 +27,11 @@ export type Profile = {
   }
 }
 
+export type ProjectIconId = 'heart' | 'scroll' | 'crossCoin' | 'dumbbell' | 'diamondNode'
+
 export type Project = {
   name: string
+  icon: ProjectIconId
   summary: Localized
   stack: readonly string[]
 }

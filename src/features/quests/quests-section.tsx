@@ -4,6 +4,7 @@ import { Reveal } from '@/components/ui/reveal'
 import { Tag } from '@/components/ui/tag'
 import { projects } from '@/content/projects'
 import { sections, ui } from '@/content/site'
+import { ProjectIcon } from '@/features/work'
 import { useT } from '@/lib/locale'
 
 export const QuestsSection = () => {
@@ -23,10 +24,13 @@ export const QuestsSection = () => {
               as="article"
               className="relative h-full p-5 transition-[transform,box-shadow] duration-150 ease-steps-3 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard-lg"
             >
-              <span className="absolute top-3 right-3 rotate-3 border-2 border-mint px-1.5 font-pixel text-xs leading-tight text-mint">
-                {t(ui.shipped)}
-              </span>
-              <h3 className="mb-1.5 pr-20 font-pixel text-xl">{project.name}</h3>
+              <div className="mb-3 flex items-start justify-between gap-3">
+                <ProjectIcon icon={project.icon} />
+                <span className="absolute top-3 right-3 rotate-3 border-2 border-mint px-1.5 font-pixel text-xs leading-tight text-mint">
+                  {t(ui.shipped)}
+                </span>
+              </div>
+              <h3 className="mb-1.5 font-pixel text-xl">{project.name}</h3>
               <p className="mb-3 text-base">{t(project.summary)}</p>
               <div className="flex flex-wrap gap-1.5">
                 {project.stack.map((item) => (

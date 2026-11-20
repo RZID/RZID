@@ -55,6 +55,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - `ButtonLink` — chunky bordered button with hard shadow; press translates 3px and drops the shadow.
 - `Tag` — 2px border, pixel text. Only for stack names.
 - `PixelAvatar` — inline SVG sprite from the prototype's pixel grid; `shapeRendering="crispEdges"`.
+- `ProjectIcon` — one hand-defined 16x16 decorative sprite per project domain (heart, scroll, cross + coin, dumbbell, diamond node), rendered from data arrays with palette tokens and `aria-hidden`.
 - `Reveal` — IntersectionObserver fade/slide with `steps(5)` easing; visible immediately under reduced motion.
 - `Starfield` — fixed 2D canvas, 70 drifting pixels, colour comes from `--ink`; one static frame under reduced motion.
 - `BootScreen` — opt-in start screen via `?intro=1`; never shown by default or under reduced motion.
