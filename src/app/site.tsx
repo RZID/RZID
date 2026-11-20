@@ -7,11 +7,13 @@ import { GuildSection } from '@/features/guild'
 import { HeroSection } from '@/features/hero'
 import { ItemsSection } from '@/features/items'
 import { QuestsSection } from '@/features/quests'
+import { useScrollHash } from '@/hooks/use-scroll-hash'
 import { useSectionHotkeys } from '@/hooks/use-section-hotkeys'
 import { useT } from '@/lib/locale'
 
 export const Site = () => {
   useSectionHotkeys(nav)
+  useScrollHash(nav)
   const t = useT()
 
   return (

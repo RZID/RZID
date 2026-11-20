@@ -90,6 +90,7 @@ Full inventory with triggers and reduced-motion behaviour: `docs/motion.md`.
 - Contrast target is AA for body text and 3:1 for UI borders and large text.
 - Measured ratios (computed from the tokens above): dark `ink/page` 14.13, `muted/page` 7.18, `ink/panel` 12.44, `muted/panel` 6.32, `on-accent/accent` 11.23, `mint/page` 10.61; light `ink/page` 13.21, `muted/page` 5.34, `ink/panel` 15.12, `muted/panel` 6.12, `on-accent/accent` 5.25, `mint/page` 5.05. All pass.
 - Hotkeys require Alt+1…Alt+5, so single-key shortcuts cannot fire accidentally. They are an enhancement, never the only path to a section.
+- The URL hash follows scroll position via IntersectionObserver (`replaceState`, no history spam), and `hashchange`/`popstate` scroll back to the requested section with `smoothScrollTo`. Programmatic scrolls suppress hash updates until they settle.
 - No horizontal overflow at 390px or 1440px.
 
 ### Remaining open decision

@@ -1,5 +1,8 @@
 const duration = 640
 let activeFrame = 0
+let programmatic = false
+
+export const isProgrammaticScroll = () => programmatic
 
 export const smoothScrollTo = (id: string, reduced: boolean) => {
   const element = document.getElementById(id)
@@ -16,6 +19,7 @@ export const smoothScrollTo = (id: string, reduced: boolean) => {
   if (activeFrame !== 0) {
     window.cancelAnimationFrame(activeFrame)
     activeFrame = 0
+    programmatic = false
   }
 
   window.history.replaceState(null, '', `#${id}`)
@@ -25,6 +29,7 @@ export const smoothScrollTo = (id: string, reduced: boolean) => {
     return
   }
 
+  programmatic = true
   const startedAt = performance.now()
 
   const step = (time: number) => {
@@ -36,6 +41,7 @@ export const smoothScrollTo = (id: string, reduced: boolean) => {
       activeFrame = window.requestAnimationFrame(step)
     } else {
       activeFrame = 0
+      programmatic = false
     }
   }
 
