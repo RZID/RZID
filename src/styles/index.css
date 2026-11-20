@@ -55,7 +55,7 @@
   --text-lead: 1.125rem;
   --text-title: 1.25rem;
   --text-rank: 1.875rem;
-  --text-hero: clamp(2.75rem, 9vw, 5.75rem);
+  --text-hero: clamp(3.5rem, 9vw, 5.75rem);
   --text-section: clamp(1.625rem, 4vw, 2.25rem);
   --text-meta--line-height: 1.5;
   --text-label--line-height: 1.5;
@@ -103,20 +103,22 @@
   border-left: 0.75rem solid var(--panel);
 }
 
-.chat-tail-down {
-  bottom: -1.25rem;
-  left: calc(50% - 1.25rem);
-  border-top: 1.25rem solid var(--ink);
-  border-right: 1.25rem solid transparent;
-  border-left: 1.25rem solid transparent;
-}
+@media (max-width: 639px) {
+  .chat-tail-right {
+    top: calc(32% - 0.5rem);
+    right: -0.5rem;
+    border-top-width: 0.5rem;
+    border-bottom-width: 0.5rem;
+    border-left-width: 0.5rem;
+  }
 
-.chat-tail-down-inner {
-  bottom: -0.75rem;
-  left: calc(50% - 0.75rem);
-  border-top: 0.75rem solid var(--panel);
-  border-right: 0.75rem solid transparent;
-  border-left: 0.75rem solid transparent;
+  .chat-tail-right-inner {
+    top: calc(32% - 0.3rem);
+    right: -0.3rem;
+    border-top-width: 0.3rem;
+    border-bottom-width: 0.3rem;
+    border-left-width: 0.3rem;
+  }
 }
 
 @supports (animation-timeline: scroll()) {

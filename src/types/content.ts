@@ -84,7 +84,6 @@ export type UiText = {
   englishShort: Localized
   indonesianShort: Localized
   dialogueSkip: Localized
-  replayDialogue: Localized
   copyrightYear: string
   footerHint: Localized
   avatarLabel: Localized

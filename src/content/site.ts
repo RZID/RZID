@@ -136,7 +136,6 @@ export const ui: UiText = {
   englishShort: { id: 'EN', en: 'EN' },
   indonesianShort: { id: 'ID', en: 'ID' },
   dialogueSkip: { id: 'Lewati dialog', en: 'Skip dialogue' },
-  replayDialogue: { id: 'Ulangi dialog', en: 'Replay dialogue' },
   copyrightYear: '2026',
   footerHint: {
     id: 'Alt+1 sampai Alt+5 untuk pindah menu.',

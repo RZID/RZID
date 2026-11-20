@@ -18,7 +18,7 @@ type ChatDialogueProps = {
 
 const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
   const t = useT()
-  const { text, done, finish, replay } = useTypewriter(sentences, instant)
+  const { text, done, finish } = useTypewriter(sentences, instant)
 
   useEffect(() => {
     const heroElement = document.getElementById('home')
@@ -36,10 +36,8 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
 
   return (
     <Box className="relative min-h-24 shrink-0 px-4 py-4 text-meta sm:text-lead">
-      <span aria-hidden className="chat-tail chat-tail-down sm:hidden" />
-      <span aria-hidden className="chat-tail chat-tail-down-inner sm:hidden" />
-      <span aria-hidden className="chat-tail chat-tail-right hidden sm:block" />
-      <span aria-hidden className="chat-tail chat-tail-right-inner hidden sm:block" />
+      <span aria-hidden className="chat-tail chat-tail-right" />
+      <span aria-hidden className="chat-tail chat-tail-right-inner" />
       <p aria-hidden="true" className="m-0 break-words whitespace-pre-wrap">
         {text}
         {done ? null : <span className="animate-blink">▌</span>}
@@ -48,18 +46,8 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
         type="button"
         onClick={finish}
         aria-label={t(ui.dialogueSkip)}
-        className={cn('absolute inset-0 cursor-pointer', done && 'right-12 bottom-10')}
+        className="absolute inset-0 cursor-pointer"
       />
-      {done ? (
-        <button
-          type="button"
-          onClick={replay}
-          aria-label={t(ui.replayDialogue)}
-          className="absolute right-2 bottom-2 z-10 flex size-7 cursor-pointer items-center justify-center border-2 border-ink bg-panel font-pixel text-lead leading-none text-mint"
-        >
-          <span aria-hidden>↻</span>
-        </button>
-      ) : null}
     </Box>
   )
 }
@@ -68,7 +56,7 @@ export const HeroSection = () => {
   const locale = useLocale()
   const t = useT()
   const sentences = useMemo(() => hero.sentences.map((item) => item[locale]), [locale])
-  const slotClass = 'h-52 min-[360px]:h-44 min-[414px]:h-40'
+  const slotClass = 'h-68 min-[360px]:h-72 min-[375px]:h-64 min-[414px]:h-60 sm:h-40'
   const reduced = useReducedMotion()
   const [jump, setJump] = useState(0)
 
@@ -81,7 +69,7 @@ export const HeroSection = () => {
   return (
     <Section
       id="home"
-      className="grid grid-cols-1 gap-y-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-x-8 lg:gap-y-6"
+      className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-x-8 lg:gap-y-6"
     >
       <div className="contents lg:col-start-1 lg:row-start-1 lg:flex lg:flex-col">
         <Reveal className="col-span-full">
@@ -93,35 +81,48 @@ export const HeroSection = () => {
           <p className="sr-only">{t(profile.summary)}</p>
         </Reveal>
 
-        <Reveal className="col-span-full">
+        <Reveal className="col-start-1 row-start-2">
           <div className={cn('flex flex-col justify-center', slotClass)}>
             <ChatDialogue key={`${locale}-${reduced}`} sentences={sentences} instant={reduced} />
           </div>
         </Reveal>
       </div>
 
-      <Reveal className="col-span-full grid place-items-center lg:col-start-2 lg:row-span-2 lg:row-start-1">
+      <Reveal className="col-start-2 row-start-2 grid place-items-center lg:col-start-2 lg:row-span-2 lg:row-start-1">
         <button type="button" onClick={jumpAvatar} aria-label={t(ui.avatarAction)}>
           <div key={jump} className={jump > 0 ? 'animate-jump' : undefined}>
             <span className="avatar-talk block">
-              <PixelAvatar className="w-36 animate-bob sm:w-[min(210px,52vw)]" />
+              <PixelAvatar className="w-28 animate-bob sm:w-[min(210px,52vw)]" />
             </span>
           </div>
         </button>
-        <div aria-hidden className="mt-2 h-3.5 w-36 bg-ink/25 sm:w-40" />
+        <div aria-hidden className="mt-2 h-3.5 w-28 bg-ink/25 sm:w-40" />
       </Reveal>
 
-      <Reveal className="flex flex-wrap gap-3 lg:col-start-1 lg:row-start-2">
-        <ButtonLink href={hero.primaryCta.href}>{t(hero.primaryCta.label)}</ButtonLink>
-        <ButtonLink href={profile.links.email.href} variant="secondary">
+      <Reveal className="col-span-full grid grid-cols-2 gap-2 sm:flex sm:flex-nowrap sm:gap-3 lg:col-start-1 lg:row-start-2">
+        <ButtonLink
+          href={hero.primaryCta.href}
+          className="col-span-2 w-full px-2 text-[0.875rem] sm:w-auto sm:px-4 sm:text-lead"
+        >
+          {t(hero.primaryCta.label)}
+        </ButtonLink>
+        <ButtonLink
+          href={profile.links.email.href}
+          variant="secondary"
+          className="w-full px-2 text-[0.875rem] sm:w-auto sm:px-4 sm:text-lead"
+        >
           {t(profile.links.email.label)}
         </ButtonLink>
-        <ButtonLink href={hero.secondaryCta.href} variant="secondary">
-          {t(hero.secondaryCta.label)}
+        <ButtonLink
+          href={profile.links.github.href}
+          variant="secondary"
+          className="w-full px-2 text-[0.875rem] sm:w-auto sm:px-4 sm:text-lead"
+        >
+          {t(profile.links.github.label)}
         </ButtonLink>
       </Reveal>
 
-      <Reveal className="col-span-full grid gap-4 border-t-4 border-ink pt-5 sm:grid-cols-3">
+      <Reveal className="col-span-full mt-24 grid gap-4 border-t-4 border-ink pt-5 sm:mt-0 sm:grid-cols-3">
         {hero.stats.map((stat) => (
           <div key={stat.label.id} className="border-l-4 border-accent pl-3">
             <p className="m-0 font-pixel text-label text-muted">{t(stat.label)}</p>

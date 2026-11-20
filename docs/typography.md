@@ -8,17 +8,17 @@ Rationale: the owner asked for a fully pixel-typed interface. Hierarchy therefor
 
 ## Scale
 
-| Token          | Size                   | Line height | Use                                           |
-| -------------- | ---------------------- | ----------- | --------------------------------------------- |
-| `text-meta`    | 14px                   | 21px        | Footer, secondary hints, mobile hero dialogue |
-| `text-label`   | 16px                   | 24px        | Nav, buttons, tags, labels, body              |
-| `text-lead`    | 18px                   | 27px        | Hero eyebrow, dialogue, availability          |
-| `text-title`   | 20px                   | 26px        | Card titles, group headings                   |
-| `text-rank`    | 30px                   | 30px        | Guild ordinals                                |
-| `text-section` | clamp(26px, 4vw, 36px) | 1.1         | Section headings                              |
-| `text-hero`    | clamp(44px, 9vw, 92px) | 1           | Hero name                                     |
+| Token          | Size                   | Line height | Use                                  |
+| -------------- | ---------------------- | ----------- | ------------------------------------ |
+| `text-meta`    | 14px                   | 21px        | Footer, secondary hints only         |
+| `text-label`   | 16px                   | 24px        | Nav, buttons, tags, labels, body     |
+| `text-lead`    | 18px                   | 27px        | Hero eyebrow, dialogue, availability |
+| `text-title`   | 20px                   | 26px        | Card titles, group headings          |
+| `text-rank`    | 30px                   | 30px        | Guild ordinals                       |
+| `text-section` | clamp(26px, 4vw, 36px) | 1.1         | Section headings                     |
+| `text-hero`    | clamp(56px, 9vw, 92px) | 1           | Hero name                            |
 
-Meaningful text stays at 16px or larger, except the mobile hero dialogue, which uses `text-meta` (14px) at the owner's request so the twelve long sentences fit without an oversized bubble. No serif, no italic, no tracking-heavy all-caps.
+Meaningful text stays at 16px or larger; 14px is reserved for meta. No serif, no italic, no tracking-heavy all-caps.
 
 ## Principles applied
 

@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 
 export const useTypewriter = (sentences: readonly string[], instant: boolean) => {
   const [cycle, setCycle] = useState(0)
-  const [run, setRun] = useState(0)
 
   const current = sentences[cycle % sentences.length] ?? ''
 
@@ -40,7 +39,7 @@ export const useTypewriter = (sentences: readonly string[], instant: boolean) =>
     timer = window.setTimeout(tick, 150)
 
     return () => window.clearTimeout(timer)
-  }, [instant, current, run])
+  }, [instant, current])
 
   useEffect(() => {
     if (!done || instant || sentences.length === 0) {
@@ -62,12 +61,5 @@ export const useTypewriter = (sentences: readonly string[], instant: boolean) =>
     setDone(true)
   }, [current])
 
-  const replay = useCallback(() => {
-    stopped.current = false
-    setText('')
-    setDone(false)
-    setRun((value) => value + 1)
-  }, [])
-
-  return { text, done, finish, replay }
+  return { text, done, finish }
 }
