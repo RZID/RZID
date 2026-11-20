@@ -13,7 +13,7 @@ export const GuildSection = () => {
       <ol className="space-y-4">
         {experience.map((item, index) => (
           <li key={item.org}>
-            <Reveal>
+            <Reveal delay={index * 60}>
               <Box className="flex items-start gap-4 p-4">
                 <span aria-hidden className="min-w-8 font-pixel text-3xl leading-none text-accent">
                   {index + 1}

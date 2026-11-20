@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState, type ComponentPropsWithoutRef } from 'react'
 import { cn } from '@/lib/cn'
 
-export const Reveal = ({ className, children, ...props }: ComponentPropsWithoutRef<'div'>) => {
+type RevealProps = ComponentPropsWithoutRef<'div'> & {
+  delay?: number
+}
+
+export const Reveal = ({ className, children, delay = 0, style, ...props }: RevealProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(
     () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
@@ -37,6 +41,7 @@ export const Reveal = ({ className, children, ...props }: ComponentPropsWithoutR
         visible ? 'scale-100 opacity-100' : 'translate-y-2.5 scale-95 opacity-0',
         className,
       )}
+      style={{ transitionDelay: `${delay}ms`, ...style }}
       {...props}
     >
       {children}

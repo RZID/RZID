@@ -66,7 +66,7 @@ export const HeroSection = () => {
   return (
     <Section
       id="home"
-      className="grid grid-cols-1 gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-center"
+      className="grid grid-cols-1 gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-8"
     >
       <Reveal>
         <p className="m-0 font-pixel text-lg text-muted">
@@ -89,10 +89,10 @@ export const HeroSection = () => {
         </div>
       </Reveal>
 
-      <Reveal className="order-first grid place-items-center lg:order-none">
+      <Reveal className="grid place-items-center">
         <button type="button" onClick={jumpAvatar} aria-label={t(ui.avatarAction)}>
           <div key={jump} className={jump > 0 ? 'animate-jump' : undefined}>
-            <PixelAvatar className="w-[min(210px,52vw)] animate-bob" />
+            <PixelAvatar className="w-28 animate-bob sm:w-[min(210px,52vw)]" />
           </div>
         </button>
         <div aria-hidden className="mt-2 h-3.5 w-40 bg-ink/25" />

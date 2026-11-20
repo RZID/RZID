@@ -17,6 +17,7 @@ export const QuestsSection = () => {
         {projects.map((project, index) => (
           <Reveal
             key={project.name}
+            delay={index * 60}
             className={cn('h-full', index === projects.length - 1 && 'md:col-span-2')}
           >
             <Box
