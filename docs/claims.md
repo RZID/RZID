@@ -12,7 +12,6 @@ Every numeric or time-sensitive statement rendered on the site. Status is **UNVE
 | B.Sc. Computer Science, kelas malam, sedang berjalan | `src/content/experience.ts` education                       | Owner statement     | Enrolment record or student card                   | Previous site `site.ts`       | UNVERIFIED |
 | Terbuka untuk full-time dan konsultasi               | `src/content/site.ts` `sections.contact.availability`, hero | Owner statement     | Dated confirmation that the status is still true   | Previous site `site.ts`       | UNVERIFIED |
 | LV.5                                                 | `src/content/site.ts` hero `level`                          | Editorial metaphor  | None; game framing for five years                  | Supplied prototype            | EDITORIAL  |
-| Shipped / Dirilis                                    | `src/content/site.ts` `ui.shipped`, work cards              | Editorial label     | None; labels work that shipped                     | Supplied prototype            | EDITORIAL  |
 
 ## Not rendered in this version
 
@@ -21,7 +20,7 @@ The previous site carried these numbers. They are **not** in the current copy. D
 ## Notes
 
 - The contact email is restored from the previous public build. Confirm visibility with the owner if privacy matters.
-- `LV.5` is game vocabulary from the supplied prototype; `Shipped` / `Dirilis` labels work that was released. Neither is a metric.
+- Work-card role labels (`Full-stack Engineer`, `Frontend Engineer`) come from `src/content/projects.ts` and describe the owner’s role, not a metric.
 - Availability has no `asOf` date in the rendered copy. If it becomes stale, update `src/content/site.ts` and this register together.
 - To verify a row, attach the evidence to the source named above, set the date it was checked, then change `UNVERIFIED` to `VERIFIED`.
 - Every claim renders in both `id` and `en`. The English string is a translation of the same fact, never a new claim.

@@ -1,6 +1,6 @@
 import { Section } from '@/components/layout/section'
 import { Reveal } from '@/components/ui/reveal'
-import { sections, ui } from '@/content/site'
+import { sections } from '@/content/site'
 import { skillGroups } from '@/content/skills'
 import { cn } from '@/lib/cn'
 import { useT } from '@/lib/locale'
@@ -9,11 +9,7 @@ export const ItemsSection = () => {
   const t = useT()
 
   return (
-    <Section
-      id="items"
-      title={t(sections.items.title)}
-      meta={`${skillGroups.reduce((total, group) => total + group.items.length, 0)} ${t(ui.countItems)}`}
-    >
+    <Section id="items" title={t(sections.items.title)}>
       <div className="space-y-6">
         {skillGroups.map((group) => (
           <Reveal key={group.title.id}>

@@ -46,7 +46,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - Copy exists in `id` and `en`; both render with the same layout. Section labels are standard recruiter terms (Work, Skills, Experience); LV.5 remains as visual flavour.
 - Scale: h1 `clamp(2.75rem, 9vw, 5.75rem)`, section `clamp(1.625rem, 4vw, 2.25rem)`, body `16px/1.65`. Card copy, skill slots, and guild meta render at `16px` so the pixel face is not forced into tiny sizes.
 - Hero HUD strip: three bordered cells under the fold (Base / Work / Mode) filled from real profile data; it gives the first screen structure instead of empty centred space.
-- Section rhythm: `48px` mobile / `56px` desktop vertical padding, with a right-aligned derived count next to each section heading. Dense enough to read as intentional, not unfinished.
+- Section rhythm: `48px` mobile / `56px` desktop vertical padding. No derived counters; work cards carry their own role label instead.
 - No italics, no tracking-heavy all-caps, no serif.
 
 ## Components
@@ -55,7 +55,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - `ButtonLink` — chunky bordered button with hard shadow; press translates 3px and drops the shadow.
 - `Tag` — 2px border, pixel text. Only for stack names.
 - `PixelAvatar` — inline SVG sprite from the prototype's pixel grid; `shapeRendering="crispEdges"`.
-- `ProjectIcon` — one hand-defined 16x16 decorative sprite per project domain (heart, scroll, cross + coin, dumbbell, diamond node), rendered from data arrays with palette tokens and `aria-hidden`.
+- `ProjectIcon` — one hand-defined 16x16 decorative sprite per project domain (heart, scroll, cross + coin, dumbbell, diamond node), rendered from data arrays with palette tokens and `aria-hidden`. Work cards show the project role label from `src/content/projects.ts`.
 - `Reveal` — IntersectionObserver fade/slide with `steps(5)` easing; visible immediately under reduced motion.
 - `Starfield` — fixed 2D canvas, 70 drifting pixels, colour comes from `--ink`; one static frame under reduced motion.
 - `BootScreen` — opt-in start screen via `?intro=1`; never shown by default or under reduced motion.

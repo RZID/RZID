@@ -32,6 +32,7 @@ export type ProjectIconId = 'heart' | 'scroll' | 'crossCoin' | 'dumbbell' | 'dia
 export type Project = {
   name: string
   icon: ProjectIconId
+  role: Localized
   summary: Localized
   stack: readonly string[]
 }
@@ -77,10 +78,6 @@ export type UiText = {
   language: Localized
   englishShort: Localized
   indonesianShort: Localized
-  shipped: Localized
-  countShipped: Localized
-  countItems: Localized
-  countEntries: Localized
   dialogueSkip: Localized
   replayDialogue: Localized
   playIntro: Localized
