@@ -8,7 +8,8 @@ All motion uses `steps()` easing. Reduced motion removes decorative motion; the 
 | Avatar bob        | 1s infinite                | `steps(2)`  | Always                        | Animation none                          |
 | Caret blink       | 1s infinite                | `steps(2)`  | While typing                  | Static                                  |
 | Typewriter        | 12ms per character         | n/a         | Load / replay                 | Full text instantly                     |
-| Avatar jump       | 360ms                      | `steps(2)`  | Click or Enter on sprite      | No jump state applied                   |
+| Avatar jump       | 320ms                      | `steps(2)`  | Click or Enter on sprite      | No jump state applied                   |
+| Theme wipe        | 480ms (+70ms echo)         | `steps(8)`  | Theme toggle, swap at 200ms   | No overlay rendered                     |
 | XP bar (native)   | scroll timeline            | linear      | Scroll                        | Progress still updates                  |
 | XP bar (fallback) | 90ms                       | `steps(3)`  | Scroll listener               | Transition none, progress still updates |
 | Buttons           | 100ms                      | `steps(2)`  | Hover / active                | Transition none                         |
