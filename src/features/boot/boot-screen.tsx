@@ -43,7 +43,7 @@ export const BootScreen = ({ onDone }: BootScreenProps) => {
       aria-label={t(ui.bootDialogLabel)}
       className={cn(
         'fixed inset-0 z-100 m-0 grid h-screen max-h-none w-screen max-w-none place-content-center justify-items-center gap-5 border-0 bg-[#0b0d14] p-0 px-5 text-center text-[#ece8d8]',
-        'transition-[clip-path] duration-700 ease-steps-5',
+        'transition-[clip-path] duration-[var(--motion-slower)] ease-steps-5',
         closing ? '[clip-path:inset(0_0_100%_0)]' : '[clip-path:inset(0)]',
       )}
     >

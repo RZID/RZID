@@ -37,7 +37,7 @@ export const Reveal = ({ className, children, delay = 0, style, ...props }: Reve
     <div
       ref={ref}
       className={cn(
-        'transition-[opacity,transform] duration-500 ease-steps-5 motion-reduce:transition-none',
+        'transition-[opacity,transform] duration-[var(--motion-slow)] ease-steps-5 motion-reduce:transition-none',
         visible ? 'scale-100 opacity-100' : 'translate-y-2.5 scale-95 opacity-0',
         className,
       )}

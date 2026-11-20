@@ -20,13 +20,13 @@ export const QuestsSection = () => {
           return (
             <Reveal
               key={project.name}
-              delay={index * 60}
+              delay={index * 40}
               className={cn('h-full', isWide && 'md:col-span-2')}
             >
               <Box
                 as="article"
                 className={cn(
-                  'relative h-full p-5 transition-[transform,box-shadow] duration-150 ease-steps-3',
+                  'relative h-full p-5 transition-[transform,box-shadow] duration-[var(--motion-base)] ease-steps-3',
                   'hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard-lg',
                   isWide && 'md:flex md:items-start md:gap-6',
                 )}

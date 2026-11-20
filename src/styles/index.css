@@ -11,6 +11,10 @@
   --on-accent: #161a26;
   --mint: #4be3a6;
   --shadow: #05060a;
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --motion-slow: 320ms;
+  --motion-slower: 600ms;
   color-scheme: dark;
 }
 
@@ -55,7 +59,7 @@
   --animate-bob: bob 1s steps(2) infinite;
   --animate-load: load 1.4s steps(14) forwards;
   --animate-blink: blink 1s steps(2) infinite;
-  --animate-jump: jump 0.36s steps(2) 1;
+  --animate-jump: jump 0.32s steps(2) 1;
 }
 
 @keyframes bob {
@@ -122,7 +126,7 @@
 
 .xp-bar-fallback {
   transform-origin: left;
-  transition: transform 90ms steps(3);
+  transition: transform var(--motion-fast) steps(3);
 }
 
 @keyframes jump {
