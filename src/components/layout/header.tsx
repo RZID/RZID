@@ -6,6 +6,7 @@ import { useReducedMotion } from '@/hooks/use-reduced-motion'
 import { useTheme } from '@/hooks/use-theme'
 import { cn } from '@/lib/cn'
 import { setLocale, useLocale, useT } from '@/lib/locale'
+import { smoothScrollTo } from '@/lib/smooth-scroll'
 
 export const Header = () => {
   const active = useActiveSection(nav)
@@ -90,7 +91,7 @@ export const Header = () => {
       label: next === 'id' ? t(ui.indonesianShort) : t(ui.englishShort),
     })
     window.clearTimeout(swapTimer.current)
-    swapTimer.current = window.setTimeout(() => setLocale(next), 160)
+    swapTimer.current = window.setTimeout(() => setLocale(next), 320)
   }
 
   const handleThemeToggle = (event: MouseEvent<HTMLButtonElement>) => {
@@ -108,7 +109,7 @@ export const Header = () => {
       y: rect.top + rect.height / 2,
     })
     window.clearTimeout(wipeTimer.current)
-    wipeTimer.current = window.setTimeout(toggle, 200)
+    wipeTimer.current = window.setTimeout(toggle, 320)
   }
 
   useEffect(() => {
@@ -151,7 +152,11 @@ export const Header = () => {
       <a
         key={item.id}
         href={`#${item.id}`}
-        onClick={() => setMenuOpen(false)}
+        onClick={(event) => {
+          event.preventDefault()
+          smoothScrollTo(item.id, reduced)
+          setMenuOpen(false)
+        }}
         aria-current={isActive ? 'location' : undefined}
         className={cn(
           'group inline-flex items-center px-2 py-1 font-pixel text-base',

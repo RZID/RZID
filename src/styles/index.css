@@ -149,13 +149,13 @@
 
 .theme-wipe__core {
   background: var(--accent);
-  animation: wipe-core 480ms steps(8) forwards;
+  animation: wipe-core 720ms steps(8) forwards;
 }
 
 .theme-wipe__echo {
   background: var(--mint);
   opacity: 0;
-  animation: wipe-echo 480ms steps(8) 70ms forwards;
+  animation: wipe-echo 720ms steps(8) 80ms forwards;
 }
 
 .lang-slices {
@@ -178,22 +178,22 @@
 
 .lang-slices__band--a {
   top: 0;
-  animation: slice-left 360ms steps(4) forwards;
+  animation: slice-left 720ms steps(8) forwards;
 }
 
 .lang-slices__band--b {
   top: 25%;
-  animation: slice-right 360ms steps(4) forwards;
+  animation: slice-right 720ms steps(8) forwards;
 }
 
 .lang-slices__band--c {
   top: 50%;
-  animation: slice-left 360ms steps(4) forwards;
+  animation: slice-left 720ms steps(8) forwards;
 }
 
 .lang-slices__band--d {
   top: 75%;
-  animation: slice-right 360ms steps(4) forwards;
+  animation: slice-right 720ms steps(8) forwards;
 }
 
 .lang-slices__label {
@@ -207,7 +207,7 @@
   font-size: clamp(4rem, 14vw, 10rem);
   font-weight: 700;
   text-shadow: 6px 6px 0 var(--shadow);
-  animation: slice-label 360ms steps(3) forwards;
+  animation: slice-label 720ms steps(8) forwards;
 }
 
 @keyframes slice-left {
@@ -251,7 +251,7 @@
   0% {
     clip-path: circle(0 at var(--wipe-x) var(--wipe-y));
   }
-  42% {
+  45% {
     clip-path: circle(150vmax at var(--wipe-x) var(--wipe-y));
   }
   100% {

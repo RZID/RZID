@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useReducedMotion } from '@/hooks/use-reduced-motion'
+import { smoothScrollTo } from '@/lib/smooth-scroll'
 import type { NavItem } from '@/types/content'
 
 const editableTags: readonly string[] = ['INPUT', 'TEXTAREA', 'SELECT']
@@ -29,10 +30,7 @@ export const useSectionHotkeys = (items: readonly NavItem[]) => {
       }
 
       event.preventDefault()
-      document.getElementById(item.id)?.scrollIntoView({
-        behavior: reduced ? 'auto' : 'smooth',
-      })
-      window.history.replaceState(null, '', `#${item.id}`)
+      smoothScrollTo(item.id, reduced)
     }
 
     window.addEventListener('keydown', onKeyDown)
