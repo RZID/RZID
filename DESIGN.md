@@ -64,6 +64,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 
 - `steps()` easing everywhere; no smooth easing curves.
 - The hero chat types one full sentence character by character (12ms) with a blinking caret, click-to-skip, and a replay control. The box has a fixed responsive height (`h-68 min-[360px]:h-56 sm:h-40`) so typing never shifts the layout, and a two-layer CSS tail makes it read as a speech bubble pointing at the pixel avatar (up on mobile, right on desktop). After it finishes it waits 3s and types the next sentence from a pool of twelve, endlessly. The full copy is present in a `.sr-only` paragraph and is instant and static under reduced motion.
+- The header XP bar is functional scroll progress: CSS scroll-driven animation inside `@supports`, with a tiny scroll-listener fallback. No other scroll-linked motion.
 - Other motion is decorative: star drift, avatar bob, reveal, and the optional intro.
 - Star drift, avatar bob, reveal, boot progress — all disabled or static under `prefers-reduced-motion`.
 - No scroll-linked animation, no parallax, no WebGL.

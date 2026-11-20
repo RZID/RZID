@@ -102,6 +102,23 @@
   border-left: 0.5rem solid var(--panel);
 }
 
+@supports (animation-timeline: scroll()) {
+  @keyframes xp-progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .xp-bar {
+    transform-origin: left;
+    animation: xp-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
 @keyframes blink {
   50% {
     opacity: 0;

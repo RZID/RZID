@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { profile } from '@/content/profile'
 import { nav, ui } from '@/content/site'
 import { useActiveSection } from '@/hooks/use-active-section'
@@ -10,9 +11,43 @@ export const Header = () => {
   const { theme, toggle } = useTheme()
   const locale = useLocale()
   const t = useT()
+  const barRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const bar = barRef.current
+
+    if (bar === null) {
+      return
+    }
+
+    if (typeof CSS !== 'undefined' && CSS.supports('animation-timeline: scroll()')) {
+      return
+    }
+
+    const update = () => {
+      const documentElement = document.documentElement
+      const maximum = documentElement.scrollHeight - window.innerHeight
+      const progress = maximum > 0 ? window.scrollY / maximum : 0
+      bar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`
+    }
+
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+
+    return () => {
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
+    }
+  }, [])
 
   return (
-    <header className="sticky top-0 z-40 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b-4 border-ink bg-page px-4 py-2">
+    <header className="relative sticky top-0 z-40 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b-4 border-ink bg-page px-4 py-2">
+      <div
+        ref={barRef}
+        aria-hidden
+        className="xp-bar absolute inset-x-0 bottom-0 h-1 origin-left bg-accent"
+      />
       <a href="#home" className="font-pixel text-base font-bold whitespace-nowrap">
         {profile.name}{' '}
         <small className="hidden font-sans text-xs font-normal text-muted sm:inline">
