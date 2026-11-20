@@ -119,6 +119,14 @@ export const ui: UiText = {
     en: 'Toggle light or dark theme',
   },
   language: { id: 'Bahasa', en: 'Language' },
+  switchToEnglish: {
+    id: 'EN, beralih ke Bahasa Inggris',
+    en: 'EN, switch to English',
+  },
+  switchToIndonesian: {
+    id: 'ID, beralih ke Bahasa Indonesia',
+    en: 'ID, switch to Indonesian',
+  },
   englishShort: { id: 'EN', en: 'EN' },
   indonesianShort: { id: 'ID', en: 'ID' },
   dialogueSkip: { id: 'Lewati dialog', en: 'Skip dialogue' },

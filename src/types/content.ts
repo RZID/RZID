@@ -76,6 +76,8 @@ export type UiText = {
   skipToContent: Localized
   themeToggle: Localized
   language: Localized
+  switchToEnglish: Localized
+  switchToIndonesian: Localized
   englishShort: Localized
   indonesianShort: Localized
   dialogueSkip: Localized

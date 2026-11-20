@@ -105,7 +105,7 @@ export const Header = () => {
         <button
           type="button"
           onClick={() => setLocale(locale === 'id' ? 'en' : 'id')}
-          aria-label={t(ui.language)}
+          aria-label={locale === 'id' ? t(ui.switchToEnglish) : t(ui.switchToIndonesian)}
           className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-pixel text-sm"
         >
           {locale === 'id' ? t(ui.englishShort) : t(ui.indonesianShort)}
