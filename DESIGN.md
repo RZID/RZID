@@ -92,15 +92,13 @@ Full inventory with triggers and reduced-motion behaviour: `docs/motion.md`.
 
 ### Known carried gaps (from the audit; not fixed on this branch)
 
-- Light active-nav text `#a84f00` on `#e9e2cf` is 4.29:1, below 4.5 for 14px text (axe/Lighthouse serious).
-- Language toggle visible text `ID`/`EN` is not contained in its accessible name.
-- Replay button hit area is below 24x24px and is overlapped by the skip overlay.
-- `robots.txt` / `sitemap.xml` are SPA HTML fallbacks; no JSON-LD, no `<noscript>` fallback, and `og.png` still shows retired LV.5 / game labels.
-- These live on `fix/first-impression`; they are intentionally not claimed as fixed here.
+- `robots.txt` / `sitemap.xml` are SPA HTML fallbacks in preview; no JSON-LD, no `<noscript>` fallback, and `og.png` still shows retired LV.5 / game labels.
+- `prefers-reduced-motion` is read at mount; changing the OS setting while the page is open is not observed.
+- The light palette remains the prototype's provisional cream + burnt orange; see `docs/palette-options.md`.
 
 ## Measured performance
 
-After Tier 2 (preview): Lighthouse mobile 96 / accessibility 92 / best-practices 100 / SEO 92, desktop 87 / 92 / 100 / 92. LCP 0.8s both; TBT 210ms mobile, 270ms desktop. TBT rose from the B1 baseline (60/90ms), likely from the SVG sprites and XP-bar fallback; investigate before merging further.
+After the layout/motion pass (preview): Lighthouse mobile **99 / 92 / 100 / 92**, desktop **94 / 92 / 100 / 92**. LCP 0.8s on both (one noisy mobile run reported 1.4s, rerun 0.8s). TBT fell to 80–90ms mobile and 170ms desktop, from 210/270ms before tokenising durations and batching the XP fallback. axe-core reports 0 violations in all 8 width/theme/locale combinations after the accent-text, language-label and replay-target fixes.
 
 ## Hard bans
 
