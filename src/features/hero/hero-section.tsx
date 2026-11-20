@@ -7,6 +7,7 @@ import { Reveal } from '@/components/ui/reveal'
 import { profile } from '@/content/profile'
 import { hero, sections, ui } from '@/content/site'
 import { useTypewriter } from '@/hooks/use-typewriter'
+import { cn } from '@/lib/cn'
 import { useLocale, useT } from '@/lib/locale'
 
 type ChatDialogueProps = {
@@ -34,16 +35,16 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
         type="button"
         onClick={finish}
         aria-label={t(ui.dialogueSkip)}
-        className="absolute inset-0 cursor-pointer"
+        className={cn('absolute inset-0 cursor-pointer', done && 'right-12 bottom-10')}
       />
       {done ? (
         <button
           type="button"
           onClick={replay}
           aria-label={t(ui.replayDialogue)}
-          className="absolute right-3 bottom-2 z-10 cursor-pointer font-pixel text-sm text-mint underline"
+          className="absolute right-2 bottom-2 z-10 flex size-7 cursor-pointer items-center justify-center border-2 border-ink bg-panel font-pixel text-lg leading-none text-mint"
         >
-          ↻
+          <span aria-hidden>↻</span>
         </button>
       ) : null}
     </Box>
