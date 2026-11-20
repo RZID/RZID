@@ -51,9 +51,21 @@
   --shadow-hard-lg: 9px 9px 0 var(--shadow);
   --text-shadow-hard: 4px 4px 0 var(--accent);
 
+  --text-meta: 0.875rem;
+  --text-label: 1rem;
+  --text-lead: 1.125rem;
+  --text-title: 1.25rem;
+  --text-rank: 1.875rem;
   --text-hero: clamp(2.75rem, 9vw, 5.75rem);
   --text-boot: clamp(2rem, 8vw, 4rem);
   --text-section: clamp(1.625rem, 4vw, 2.25rem);
+  --text-meta--line-height: 1.5;
+  --text-label--line-height: 1.5;
+  --text-lead--line-height: 1.5;
+  --text-title--line-height: 1.3;
+  --text-rank--line-height: 1;
+  --text-hero--letter-spacing: -0.03em;
+  --text-section--letter-spacing: -0.02em;
   --container-content: 62.5rem;
 
   --ease-steps: steps(2);
@@ -354,6 +366,16 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   body {

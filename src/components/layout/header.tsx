@@ -176,8 +176,8 @@ export const Header = () => {
         }}
         aria-current={isActive ? 'location' : undefined}
         className={cn(
-          'group inline-flex items-center font-pixel text-base',
-          stacked ? 'min-h-12 w-full gap-1 border-l-4 px-3 py-2 text-lg' : 'px-2 py-1',
+          'group inline-flex items-center font-sans text-label',
+          stacked ? 'min-h-12 w-full gap-1 border-l-4 px-3 py-2 text-lead' : 'px-2 py-1',
           isActive
             ? cn('text-accent-text', stacked && 'border-accent-text bg-panel')
             : cn('hover:text-accent-text', stacked && 'border-transparent hover:bg-panel'),
@@ -205,9 +205,9 @@ export const Header = () => {
           aria-hidden
           className="xp-bar absolute inset-x-0 bottom-0 h-1 origin-left bg-accent"
         />
-        <a href="#home" className="font-pixel text-base font-bold whitespace-nowrap">
+        <a href="#home" className="font-sans text-label font-bold whitespace-nowrap">
           {profile.name}{' '}
-          <small className="hidden font-sans text-xs font-normal text-muted sm:inline">
+          <small className="hidden font-sans text-meta font-normal text-muted sm:inline">
             {t(profile.role)}
           </small>
         </a>
@@ -224,7 +224,7 @@ export const Header = () => {
             ref={menuButtonRef}
             aria-label={menuOpen ? t(ui.closeMenu) : t(ui.menu)}
             onClick={() => setMenuOpen((open) => !open)}
-            className="inline-flex h-9 cursor-pointer items-center gap-1.5 border-2 border-ink px-2 font-pixel text-base lg:hidden"
+            className="inline-flex h-9 cursor-pointer items-center gap-1.5 border-2 border-ink px-2 font-sans text-label lg:hidden"
           >
             <span aria-hidden className="inline-flex flex-col gap-0.5">
               <span className="block h-0.5 w-4 bg-current" />
@@ -237,7 +237,7 @@ export const Header = () => {
             type="button"
             onClick={handleLanguageToggle}
             aria-label={locale === 'id' ? t(ui.switchToEnglish) : t(ui.switchToIndonesian)}
-            className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-pixel text-base"
+            className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-sans text-label"
           >
             {locale === 'id' ? t(ui.englishShort) : t(ui.indonesianShort)}
           </button>
@@ -245,7 +245,7 @@ export const Header = () => {
             type="button"
             onClick={handleThemeToggle}
             aria-label={t(ui.themeToggle)}
-            className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-pixel text-base"
+            className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-sans text-label"
           >
             {theme === 'light' ? '☀' : '☾'}
           </button>
@@ -274,14 +274,14 @@ export const Header = () => {
               <span aria-hidden>
                 <PixelAvatar className="h-8 w-auto" />
               </span>
-              <span className="font-pixel text-lg font-bold">{t(ui.menu)}</span>
+              <span className="font-sans text-lead font-bold">{t(ui.menu)}</span>
             </span>
             <button
               ref={menuCloseRef}
               type="button"
               aria-label={t(ui.closeMenu)}
               onClick={closeMenu}
-              className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-pixel text-base"
+              className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-sans text-label"
             >
               ×
             </button>
@@ -289,7 +289,7 @@ export const Header = () => {
           <nav className="flex flex-1 flex-col gap-1 p-3">
             {nav.map((item) => navLink(item, true))}
           </nav>
-          <p className="border-t-4 border-ink px-4 py-3 font-pixel text-sm text-muted">
+          <p className="border-t-4 border-ink px-4 py-3 font-sans text-label text-muted">
             {t(ui.menuHint)}
           </p>
         </aside>

@@ -43,10 +43,10 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 
 ## Type
 
-- Display and UI chrome: Pixelify Sans 400/700, self-hosted through `@fontsource/pixelify-sans`.
-- Body: system sans. It is deliberately not a second webfont.
+- Display: Pixelify Sans 400/700, self-hosted through `@fontsource/pixelify-sans`, used only for the hero name, section headings and boot title.
+- Functional text: system UI stack only. No other family, and no Pixelify at UI sizes. Full allocation and scale in `docs/typography.md`.
 - Copy exists in `id` and `en`; both render with the same layout. Section labels are standard recruiter terms (Work, Skills, Experience); LV.5 remains as visual flavour.
-- Scale: h1 `clamp(2.75rem, 9vw, 5.75rem)`, section `clamp(1.625rem, 4vw, 2.25rem)`, body `16px/1.65`. Card copy, skill slots, and guild meta render at `16px` so the pixel face is not forced into tiny sizes.
+- Scale: tokenized `meta/label/lead/title/rank/section/hero/boot`; body 16px/1.65, headings `text-wrap: balance`, paragraphs `text-wrap: pretty`. See `docs/typography.md`.
 - Hero HUD strip: three bordered cells under the fold (Base / Work / Mode) filled from real profile data; it gives the first screen structure instead of empty centred space.
 - Section rhythm: `56px` mobile / `64px` desktop vertical padding. No derived counters; work cards carry their own role label instead.
 - No italics, no tracking-heavy all-caps, no serif.

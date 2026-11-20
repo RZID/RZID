@@ -6,7 +6,7 @@ export const Footer = () => {
   const t = useT()
 
   return (
-    <footer className="px-5 pb-10 text-center text-sm text-muted">
+    <footer className="px-5 pb-10 text-center text-meta text-muted">
       <small>
         © {ui.copyrightYear} {profile.name}. {t(ui.footerHint)}{' '}
         <a href="?intro=1" className="underline">

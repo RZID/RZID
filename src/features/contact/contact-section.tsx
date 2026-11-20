@@ -15,7 +15,7 @@ export const ContactSection = () => {
         <Box className="px-5 py-10 text-center sm:px-8">
           <h2 className="font-pixel text-section">{t(sections.contact.title)}</h2>
           <p className="mx-auto mt-3 mb-4 max-w-prose text-muted">{t(sections.contact.summary)}</p>
-          <p className="mb-6 font-pixel text-mint">{t(sections.contact.availability)}</p>
+          <p className="mb-6 font-sans text-mint">{t(sections.contact.availability)}</p>
           <div className="flex flex-wrap justify-center gap-3">
             <ButtonLink href={profile.links.email.href}>{t(profile.links.email.label)}</ButtonLink>
             <ButtonLink href={profile.links.github.href} variant="secondary">

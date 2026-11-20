@@ -20,7 +20,9 @@ export const Section = ({ title, lead, meta, className, children, ...props }: Se
           </span>
           {title}
         </h2>
-        {meta === undefined ? null : <span className="font-pixel text-sm text-muted">{meta}</span>}
+        {meta === undefined ? null : (
+          <span className="font-sans text-label text-muted">{meta}</span>
+        )}
       </div>
     )}
     {lead === undefined ? null : <p className="-mt-3 mb-6 max-w-prose text-muted">{lead}</p>}
