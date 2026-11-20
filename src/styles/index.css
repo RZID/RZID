@@ -55,7 +55,7 @@
   --animate-bob: bob 1s steps(2) infinite;
   --animate-load: load 1.4s steps(14) forwards;
   --animate-blink: blink 1s steps(2) infinite;
-  --animate-jump: jump 0.32s steps(2) 1;
+  --animate-jump: jump 0.36s steps(2) 1;
 }
 
 @keyframes bob {
@@ -121,8 +121,20 @@
 }
 
 @keyframes jump {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+  25% {
+    transform: translateY(0) scale(1.08, 0.88);
+  }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-14px) scale(0.96, 1.06);
+  }
+  75% {
+    transform: translateY(0) scale(1.04, 0.94);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
   }
 }
 
