@@ -22,8 +22,8 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
 
   return (
     <Box className="relative h-68 px-4 py-4 text-base min-[360px]:h-56 sm:h-40 sm:text-lg">
-      <span aria-hidden className="chat-tail chat-tail-top sm:hidden" />
-      <span aria-hidden className="chat-tail chat-tail-top-inner sm:hidden" />
+      <span aria-hidden className="chat-tail chat-tail-down sm:hidden" />
+      <span aria-hidden className="chat-tail chat-tail-down-inner sm:hidden" />
       <span aria-hidden className="chat-tail chat-tail-right hidden sm:block" />
       <span aria-hidden className="chat-tail chat-tail-right-inner hidden sm:block" />
       <div className="h-full overflow-hidden">

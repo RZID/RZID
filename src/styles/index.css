@@ -78,24 +78,24 @@
   pointer-events: none;
 }
 
-.chat-tail-top {
-  top: -0.75rem;
-  left: 2rem;
+.chat-tail-down {
+  bottom: -0.75rem;
+  left: calc(50% - 0.75rem);
+  border-top: 0.75rem solid var(--ink);
   border-right: 0.75rem solid transparent;
-  border-bottom: 0.75rem solid var(--ink);
   border-left: 0.75rem solid transparent;
 }
 
-.chat-tail-top-inner {
-  top: -0.5rem;
-  left: calc(2rem + 4px);
+.chat-tail-down-inner {
+  bottom: -0.5rem;
+  left: calc(50% - 0.5rem);
+  border-top: 0.5rem solid var(--panel);
   border-right: 0.5rem solid transparent;
-  border-bottom: 0.5rem solid var(--panel);
   border-left: 0.5rem solid transparent;
 }
 
 .chat-tail-right {
-  top: 2rem;
+  top: calc(45% - 0.75rem);
   right: -0.75rem;
   border-top: 0.75rem solid transparent;
   border-bottom: 0.75rem solid transparent;
@@ -103,7 +103,7 @@
 }
 
 .chat-tail-right-inner {
-  top: calc(2rem + 4px);
+  top: calc(45% - 0.5rem);
   right: -0.5rem;
   border-top: 0.5rem solid transparent;
   border-bottom: 0.5rem solid transparent;
