@@ -37,14 +37,13 @@ Defined in `src/styles/index.css` and exposed through `@theme inline`.
 | `mint`      | `#4be3a6` | `#0b6b49` | Focus ring, cleared, status   |
 | `shadow`    | `#05060a` | `#1c1b22` | Hard shadow, avatar outline   |
 
-Utilities: `bg-page`, `bg-panel`, `text-ink`, `text-muted`, `text-accent`, `text-on-accent`, `text-mint`, `shadow-hard`, `shadow-hard-sm`, `shadow-hard-lg`, `text-shadow-hard`, `font-pixel`, `font-sans`, `text-hero`, `text-boot`, `text-section`, `max-w-content`, `ease-steps`, `ease-steps-3`, `ease-steps-5`, `animate-bob`, `animate-load`, `animate-jump`. Motion tokens: `--motion-fast` 120ms, `--motion-base` 200ms, `--motion-slow` 320ms, `--motion-slower` 600ms.
+Utilities: `bg-page`, `bg-panel`, `text-ink`, `text-muted`, `text-accent`, `text-on-accent`, `text-mint`, `shadow-hard`, `shadow-hard-sm`, `shadow-hard-lg`, `text-shadow-hard`, `font-pixel`, `text-hero`, `text-boot`, `text-section`, `max-w-content`, `ease-steps`, `ease-steps-3`, `ease-steps-5`, `animate-bob`, `animate-load`, `animate-jump`. Motion tokens: `--motion-fast` 120ms, `--motion-base` 200ms, `--motion-slow` 320ms, `--motion-slower` 600ms.
 
 No arbitrary colour or size values in components. Add a token first if one is missing. The default theme is the OS colour scheme; only an explicit user choice is stored and overrides it.
 
 ## Type
 
-- Display: Pixelify Sans 400/700, self-hosted through `@fontsource/pixelify-sans`, used only for the hero name, section headings and boot title.
-- Functional text: system UI stack only. No other family, and no Pixelify at UI sizes. Full allocation and scale in `docs/typography.md`.
+- Typeface: Pixelify Sans 400/700, self-hosted through `@fontsource/pixelify-sans`, used for every piece of text. No second family. Full scale in `docs/typography.md`.
 - Copy exists in `id` and `en`; both render with the same layout. Section labels are standard recruiter terms (Work, Skills, Experience); LV.5 remains as visual flavour.
 - Scale: tokenized `meta/label/lead/title/rank/section/hero/boot`; body 16px/1.65, headings `text-wrap: balance`, paragraphs `text-wrap: pretty`. See `docs/typography.md`.
 - Hero HUD strip: three bordered cells under the fold (Base / Work / Mode) filled from real profile data; it gives the first screen structure instead of empty centred space.

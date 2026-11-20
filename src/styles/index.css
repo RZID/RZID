@@ -44,7 +44,6 @@
   --color-shadow: var(--shadow);
 
   --font-pixel: 'Pixelify Sans', ui-monospace, Menlo, Consolas, monospace;
-  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --shadow-hard: 6px 6px 0 var(--shadow);
   --shadow-hard-sm: 4px 4px 0 var(--shadow);
@@ -384,7 +383,7 @@
     overflow-x: hidden;
     background: var(--page);
     color: var(--ink);
-    font-family: var(--font-sans);
+    font-family: var(--font-pixel);
     font-size: 16px;
     line-height: 1.65;
   }

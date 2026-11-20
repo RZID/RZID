@@ -21,7 +21,7 @@ export const Section = ({ title, lead, meta, className, children, ...props }: Se
           {title}
         </h2>
         {meta === undefined ? null : (
-          <span className="font-sans text-label text-muted">{meta}</span>
+          <span className="font-pixel text-label text-muted">{meta}</span>
         )}
       </div>
     )}

@@ -57,7 +57,7 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
           type="button"
           onClick={replay}
           aria-label={t(ui.replayDialogue)}
-          className="absolute right-2 bottom-2 z-10 flex size-7 cursor-pointer items-center justify-center border-2 border-ink bg-panel font-sans text-lead leading-none text-mint"
+          className="absolute right-2 bottom-2 z-10 flex size-7 cursor-pointer items-center justify-center border-2 border-ink bg-panel font-pixel text-lead leading-none text-mint"
         >
           <span aria-hidden>↻</span>
         </button>
@@ -85,11 +85,11 @@ export const HeroSection = () => {
       className="grid grid-cols-1 gap-x-8 gap-y-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-y-6"
     >
       <Reveal className="lg:col-start-1 lg:row-start-1">
-        <p className="m-0 font-sans text-lead text-muted">
+        <p className="m-0 font-pixel text-lead text-muted">
           {t(profile.location)} · {t(profile.role)}
         </p>
         <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
-        <p className="mt-2 mb-5 font-sans text-mint">{t(sections.contact.availability)}</p>
+        <p className="mt-2 mb-5 font-pixel text-mint">{t(sections.contact.availability)}</p>
 
         <ChatDialogue key={`${locale}-${reduced}`} sentences={sentences} instant={reduced} />
         <p className="sr-only">{t(profile.summary)}</p>
@@ -119,7 +119,7 @@ export const HeroSection = () => {
       <Reveal className="col-span-full grid gap-4 border-t-4 border-ink pt-5 sm:grid-cols-3">
         {hero.stats.map((stat) => (
           <div key={stat.label.id} className="border-l-4 border-accent pl-3">
-            <p className="m-0 font-sans text-label text-muted">{t(stat.label)}</p>
+            <p className="m-0 font-pixel text-label text-muted">{t(stat.label)}</p>
             <p className="m-0 text-label">{t(stat.value)}</p>
           </div>
         ))}

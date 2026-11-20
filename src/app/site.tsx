@@ -19,7 +19,7 @@ export const Site = () => {
       <Starfield />
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:border-4 focus:border-ink focus:bg-accent focus:px-4 focus:py-2 focus:font-sans focus:text-on-accent"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:border-4 focus:border-ink focus:bg-accent focus:px-4 focus:py-2 focus:font-pixel focus:text-on-accent"
       >
         {t(ui.skipToContent)}
       </a>

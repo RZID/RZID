@@ -38,12 +38,12 @@ export const QuestsSection = () => {
                   )}
                 >
                   <ProjectIcon icon={project.icon} />
-                  <span className="border-2 border-mint px-1.5 font-sans text-label leading-tight text-mint">
+                  <span className="border-2 border-mint px-1.5 font-pixel text-label leading-tight text-mint">
                     {t(project.role)}
                   </span>
                 </div>
                 <div className={cn(isWide && 'md:flex-1')}>
-                  <h3 className="mb-1.5 font-sans text-title">{project.name}</h3>
+                  <h3 className="mb-1.5 font-pixel text-title">{project.name}</h3>
                   <p className="mb-3 text-label">{t(project.summary)}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {project.stack.map((item) => (

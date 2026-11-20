@@ -64,7 +64,7 @@ export const BootScreen = ({ onDone }: BootScreenProps) => {
         ref={buttonRef}
         type="button"
         onClick={start}
-        className="cursor-pointer border-4 border-[#ece8d8] bg-[#ffc83d] px-5 py-2 font-sans text-lead font-bold text-[#0b0d14]"
+        className="cursor-pointer border-4 border-[#ece8d8] bg-[#ffc83d] px-5 py-2 font-pixel text-lead font-bold text-[#0b0d14]"
       >
         {t(ui.pressStart)}
       </button>
