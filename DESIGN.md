@@ -96,7 +96,7 @@ Full inventory with triggers and reduced-motion behaviour: `docs/motion.md`.
 
 ## Measured performance
 
-After the layout/motion pass (preview): Lighthouse mobile **99 / 100 / 100 / 92**, desktop **98 / 100 / 100 / 92**. LCP 0.8s both (one earlier noisy mobile run reported 1.4s, reruns 0.8s). TBT 120ms mobile / 70ms desktop, down from 210/270ms before tokenising durations and batching the XP fallback. axe-core reports 0 violations in all 8 width/theme/locale combinations after the accent-text, language-label and replay-target fixes.
+After all fixes (preview): Lighthouse mobile **99 / 100 / 100 / 100**, desktop **98 / 100 / 100 / 100**. Two mobile runs reported LCP 1.4s (earlier runs were 0.8s); desktop stayed 0.8s. TBT 90–120ms mobile / 60ms desktop, down from 210/270ms before tokenising durations and batching the XP fallback. axe-core reports 0 violations in all 8 width/theme/locale combinations.
 
 ## Hard bans
 
