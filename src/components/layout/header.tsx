@@ -199,10 +199,6 @@ export const Header = () => {
           </small>
         </a>
 
-        <nav aria-label={t(ui.primaryNav)} className="hidden items-center gap-0.5 lg:flex">
-          {nav.map((item) => navLink(item))}
-        </nav>
-
         <div className="flex items-center gap-2">
           <button
             type="button"

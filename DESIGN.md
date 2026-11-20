@@ -53,7 +53,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 
 ## Layout refinements
 
-- Header is a single 56px row on mobile: wordmark left, Menu button plus theme and language toggles right. The Menu button is available at every viewport and opens a left arcade sidebar (panel fill, hard shadow, mini sprite stamp, active accent bar) with a dark scrim; desktop keeps its inline nav as well. It closes on Esc, outside click, or link selection.
+- Header is a single 56px row on mobile: wordmark left, Menu button plus theme and language toggles right. The Menu button is available at every viewport and opens a left arcade sidebar (panel fill, hard shadow, mini sprite stamp, active accent bar) with a dark scrim; there is no inline nav at any width. It closes on Esc, outside click, or link selection.
 - Mobile hero resolves text first: location/role, name, availability, dialogue, then the sprite at `w-28`; at `lg` it returns to a 1.25fr/0.75fr two-column composition. Vertical gap tightens from `gap-8` to `gap-6` on mobile.
 - Work grid is two columns at `md`. The final card spans both columns and splits internally into an icon/role sidebar and a content column, so the wide cell does not read as dead space.
 
@@ -61,7 +61,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 
 - `Box` — 4px `ink` border, `panel` fill, hard shadow. Use `as="article"` for semantic cards.
 - `ButtonLink` — chunky bordered button with hard shadow; press translates 3px and drops the shadow.
-- `Header` — one 56px row on mobile; desktop keeps inline nav plus the Menu button. The button has `aria-expanded`/`aria-controls` and opens a fixed sidebar at every viewport with a scrim, mini `PixelAvatar`, 48px links and a focusable close button.
+- `Header` — one 56px row at every viewport; the Menu button is the only navigation entry point. The button has `aria-expanded`/`aria-controls` and opens a fixed sidebar at every viewport with a scrim, mini `PixelAvatar`, 48px links and a focusable close button.
 - `Tag` — 2px border, pixel text. Only for stack names.
 - `PixelAvatar` — inline SVG sprite from the prototype's pixel grid; `shapeRendering="crispEdges"`. Click or Enter makes it jump one stepped frame; reduced motion keeps it static.
 - `ProjectIcon` — one hand-defined 16x16 decorative sprite per project domain (heart, scroll, cross + coin, dumbbell, diamond node), rendered from data arrays with palette tokens and `aria-hidden`. Work cards show the project role label from `src/content/projects.ts` in a two-column grid with no derived counters.
