@@ -1,12 +1,15 @@
 import { useEffect } from 'react'
+import { useReducedMotion } from '@/hooks/use-reduced-motion'
 import type { NavItem } from '@/types/content'
 
 const editableTags: readonly string[] = ['INPUT', 'TEXTAREA', 'SELECT']
 
 export const useSectionHotkeys = (items: readonly NavItem[]) => {
+  const reduced = useReducedMotion()
+
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.metaKey || event.ctrlKey || event.altKey || event.repeat) {
+      if (!event.altKey || event.metaKey || event.ctrlKey || event.repeat) {
         return
       }
 
@@ -25,8 +28,9 @@ export const useSectionHotkeys = (items: readonly NavItem[]) => {
         return
       }
 
+      event.preventDefault()
       document.getElementById(item.id)?.scrollIntoView({
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        behavior: reduced ? 'auto' : 'smooth',
       })
       window.history.replaceState(null, '', `#${item.id}`)
     }
@@ -34,5 +38,5 @@ export const useSectionHotkeys = (items: readonly NavItem[]) => {
     window.addEventListener('keydown', onKeyDown)
 
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [items])
+  }, [items, reduced])
 }

@@ -134,8 +134,8 @@ export const ui: UiText = {
   playIntro: { id: 'Putar intro', en: 'Play intro' },
   copyrightYear: '2026',
   footerHint: {
-    id: 'Tekan 1 sampai 5 untuk pindah menu.',
-    en: 'Press 1 to 5 to jump between sections.',
+    id: 'Alt+1 sampai Alt+5 untuk pindah menu.',
+    en: 'Alt+1 to Alt+5 to jump between sections.',
   },
   bootDialogLabel: { id: 'Layar mulai', en: 'Start screen' },
   bootTitle: { id: 'Ramadhanu\nQuest', en: 'Ramadhanu\nQuest' },
