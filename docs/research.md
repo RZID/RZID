@@ -1,0 +1,19 @@
+# Motion & layout research
+
+Sources consulted 2026-11-20. Only principles that fit the pixel/arcade direction were adopted; no generic spring or blurred-glass language was copied.
+
+| Source                                                                                                                                                                                          | Takeaway                                                                          | Applied here                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [Material Design 3 — Easing and duration](https://m3.material.io/styles/motion/easing-and-duration)                                                                                             | Motion needs deliberate easing; linear feels mechanical.                          | Kept `steps()` as the deliberate arcade easing instead of adding springs.                              |
+| [Motion design principles 2026 (Mantlr)](https://mantlr.com/blog/motion-design-principles-2026)                                                                                                 | Small UI feedback ~200–300ms; large transitions ~300–500ms; ambient loops steady. | Tokenised 120 / 200 / 320 / 600ms; reduced reveal from 500 to 320ms so entrances resolve faster.       |
+| [Ilir Ivezaj — Animation & motion in UX](https://ilirivezaj.com/design/animation-ux)                                                                                                            | Durations that gate interaction become obstructive past ~300ms.                   | Hero blocks are not staggered; only cards/groups/rows use 40–50ms offsets.                             |
+| [MDN — Scroll-driven animation timelines](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations/Timelines)                                                           | Prefer compositor-friendly scroll timelines; avoid main-thread layout work.       | XP bar uses `animation-timeline: scroll(root)` with a passive, rAF-batched fallback.                   |
+| [Focus Point — Motion craft 2026](https://focuspoint-agency.com/en/blog/motion-design-web-experience-2026)                                                                                      | Entering elements should decelerate; leaving ones accelerate.                     | With `steps()` the last step lands and holds, giving the same settle without smooth curves.            |
+| [White space in portfolios](https://examples-of.com/career-professional-development/portfolio-layouts/visual-storytelling-in-portfolios/examples-of-effective-use-of-white-space-in-portfolios) | Space between project groups signals "main acts"; it is not wasted space.         | Section padding raised from 48/56 to 56/64px; card interiors stay tight.                               |
+| [UX portfolio — designing for busy people](https://uxportfolio.design/read/designing-for-busy-people)                                                                                           | Grids and alignment help reviewers scan quickly.                                  | Work grid stays two columns; the odd final card uses an internal sidebar so the grid has no dead cell. |
+
+## Decisions NOT taken
+
+- No spring physics or GSAP: would add a dependency and fight the `steps()` identity.
+- No View Transitions API: not needed for a single-page anchor site.
+- No parallax or blur: banned in `DESIGN.md`.

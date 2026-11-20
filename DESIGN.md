@@ -37,7 +37,7 @@ Defined in `src/styles/index.css` and exposed through `@theme inline`.
 | `mint`      | `#4be3a6` | `#0b6b49` | Focus ring, cleared, status   |
 | `shadow`    | `#05060a` | `#1c1b22` | Hard shadow, avatar outline   |
 
-Utilities: `bg-page`, `bg-panel`, `text-ink`, `text-muted`, `text-accent`, `text-on-accent`, `text-mint`, `shadow-hard`, `shadow-hard-sm`, `shadow-hard-lg`, `text-shadow-hard`, `font-pixel`, `font-sans`, `text-hero`, `text-boot`, `text-section`, `max-w-content`, `ease-steps`, `ease-steps-3`, `ease-steps-5`, `animate-bob`, `animate-load`, `animate-jump`.
+Utilities: `bg-page`, `bg-panel`, `text-ink`, `text-muted`, `text-accent`, `text-on-accent`, `text-mint`, `shadow-hard`, `shadow-hard-sm`, `shadow-hard-lg`, `text-shadow-hard`, `font-pixel`, `font-sans`, `text-hero`, `text-boot`, `text-section`, `max-w-content`, `ease-steps`, `ease-steps-3`, `ease-steps-5`, `animate-bob`, `animate-load`, `animate-jump`. Motion tokens: `--motion-fast` 120ms, `--motion-base` 200ms, `--motion-slow` 320ms, `--motion-slower` 600ms.
 
 No arbitrary colour or size values in components. Add a token first if one is missing. The default theme is the OS colour scheme; only an explicit user choice is stored and overrides it.
 
@@ -48,7 +48,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - Copy exists in `id` and `en`; both render with the same layout. Section labels are standard recruiter terms (Work, Skills, Experience); LV.5 remains as visual flavour.
 - Scale: h1 `clamp(2.75rem, 9vw, 5.75rem)`, section `clamp(1.625rem, 4vw, 2.25rem)`, body `16px/1.65`. Card copy, skill slots, and guild meta render at `16px` so the pixel face is not forced into tiny sizes.
 - Hero HUD strip: three bordered cells under the fold (Base / Work / Mode) filled from real profile data; it gives the first screen structure instead of empty centred space.
-- Section rhythm: `48px` mobile / `56px` desktop vertical padding. No derived counters; work cards carry their own role label instead.
+- Section rhythm: `56px` mobile / `64px` desktop vertical padding. No derived counters; work cards carry their own role label instead.
 - No italics, no tracking-heavy all-caps, no serif.
 
 ## Layout refinements

@@ -46,7 +46,7 @@ Dependency direction: `app` -> `features` -> `components`/`hooks`/`lib`/`content
 - Use `cn()` from `@/lib/cn` for conditional classes.
 - Copy is bilingual (`Localized`); render it with `useT()` from `@/lib/locale`. Never add a new fact while translating.
 - Colors, fonts, spacing, and motion come from tokens in `src/styles/index.css`. No arbitrary values when a token exists; add the token first.
-- Stagger reveals with the `delay` prop on `Reveal`; keep the hero blocks un-staggered. See `docs/motion.md` before changing a duration or easing.
+- Stagger reveals with the `delay` prop on `Reveal`; keep the hero blocks un-staggered. Durations come from `--motion-fast/base/slow/slower`; see `docs/motion.md` and `docs/research.md` before changing a duration or easing.
 - Decorative pixel art is hand-defined data arrays rendered to SVG (`src/features/work/icons/`), never generated screenshots or fake UI.
 
 ## Content integrity

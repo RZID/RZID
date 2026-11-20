@@ -20,4 +20,4 @@ All motion uses `steps()` easing. Reduced motion removes decorative motion; the 
 
 `prefers-reduced-motion` is read at mount. Reacting to the media-query change while the page is open is not implemented; it is the remaining behaviour item from Tier 3.
 
-Stagger is applied through the `delay` prop on `Reveal`: work cards 60ms apart, skill groups 70ms, guild rows 60ms. The hero blocks are not staggered so the first screen resolves immediately.
+Stagger is applied through the `delay` prop on `Reveal`: work cards 40ms apart, skill groups 50ms, guild rows 40ms. The hero blocks are not staggered so the first screen resolves immediately. Durations are tokens in `src/styles/index.css` (`--motion-fast/base/slow/slower`). See `docs/research.md` for the sources behind these ranges.
