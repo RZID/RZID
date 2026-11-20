@@ -8,6 +8,7 @@
   --ink: #ece8d8;
   --muted: #a9a79a;
   --accent: #ffc83d;
+  --accent-text: #ffc83d;
   --on-accent: #161a26;
   --mint: #4be3a6;
   --shadow: #05060a;
@@ -24,6 +25,7 @@
   --ink: #1c1b22;
   --muted: #5c5a52;
   --accent: #a84f00;
+  --accent-text: #964500;
   --on-accent: #fff8e8;
   --mint: #0b6b49;
   --shadow: #1c1b22;
@@ -36,6 +38,7 @@
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
   --color-on-accent: var(--on-accent);
   --color-mint: var(--mint);
   --color-shadow: var(--shadow);

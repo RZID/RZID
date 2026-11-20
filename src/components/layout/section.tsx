@@ -15,7 +15,7 @@ export const Section = ({ title, lead, meta, className, children, ...props }: Se
     {title === undefined ? null : (
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h2 className="font-pixel text-section leading-tight">
-          <span aria-hidden className="text-accent">
+          <span aria-hidden className="text-accent-text">
             ▶{' '}
           </span>
           {title}

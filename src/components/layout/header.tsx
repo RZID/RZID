@@ -83,13 +83,13 @@ export const Header = () => {
               aria-current={isActive ? 'location' : undefined}
               className={cn(
                 'group inline-flex items-center px-2 py-1 font-pixel text-sm',
-                isActive ? 'text-accent' : 'hover:text-accent',
+                isActive ? 'text-accent-text' : 'hover:text-accent-text',
               )}
             >
               <span
                 aria-hidden
                 className={cn(
-                  'inline-block w-3 text-accent',
+                  'inline-block w-3 text-accent-text',
                   isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100',
                 )}
               >

@@ -15,7 +15,10 @@ export const GuildSection = () => {
           <li key={item.org}>
             <Reveal delay={index * 40}>
               <Box className="flex items-start gap-4 p-4">
-                <span aria-hidden className="min-w-8 font-pixel text-3xl leading-none text-accent">
+                <span
+                  aria-hidden
+                  className="min-w-8 font-pixel text-3xl leading-none text-accent-text"
+                >
                   {index + 1}
                 </span>
                 <div>
