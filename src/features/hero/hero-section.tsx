@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Section } from '@/components/layout/section'
 import { Box } from '@/components/ui/box'
 import { ButtonLink } from '@/components/ui/button-link'
@@ -19,6 +19,20 @@ type ChatDialogueProps = {
 const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
   const t = useT()
   const { text, done, finish, replay } = useTypewriter(sentences, instant)
+
+  useEffect(() => {
+    const hero = document.getElementById('home')
+
+    if (hero === null) {
+      return
+    }
+
+    hero.dataset.talking = done ? 'false' : 'true'
+
+    return () => {
+      delete hero.dataset.talking
+    }
+  }, [done])
 
   return (
     <Box className="relative h-68 px-4 py-4 text-base min-[360px]:h-56 sm:h-40 sm:text-lg">
@@ -94,7 +108,9 @@ export const HeroSection = () => {
       <Reveal className="grid place-items-center">
         <button type="button" onClick={jumpAvatar} aria-label={t(ui.avatarAction)}>
           <div key={jump} className={jump > 0 ? 'animate-jump' : undefined}>
-            <PixelAvatar className="w-28 animate-bob sm:w-[min(210px,52vw)]" />
+            <span className="avatar-talk block">
+              <PixelAvatar className="w-28 animate-bob sm:w-[min(210px,52vw)]" />
+            </span>
           </div>
         </button>
         <div aria-hidden className="mt-2 h-3.5 w-40 bg-ink/25" />

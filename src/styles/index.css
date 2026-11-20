@@ -95,7 +95,7 @@
 }
 
 .chat-tail-right {
-  top: calc(45% - 0.75rem);
+  top: calc(35% - 0.75rem);
   right: -0.75rem;
   border-top: 0.75rem solid transparent;
   border-bottom: 0.75rem solid transparent;
@@ -103,7 +103,7 @@
 }
 
 .chat-tail-right-inner {
-  top: calc(45% - 0.5rem);
+  top: calc(35% - 0.5rem);
   right: -0.5rem;
   border-top: 0.5rem solid transparent;
   border-bottom: 0.5rem solid transparent;
@@ -156,6 +156,16 @@
   background: var(--mint);
   opacity: 0;
   animation: wipe-echo 720ms steps(8) 80ms forwards;
+}
+
+#home[data-talking='true'] .avatar-talk {
+  animation: talk 160ms steps(2) infinite alternate;
+}
+
+@keyframes talk {
+  to {
+    transform: translateY(-2px);
+  }
 }
 
 .menu-drop {
