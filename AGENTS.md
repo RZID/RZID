@@ -27,7 +27,7 @@ Package manager: bun only. Never use npm, yarn, or pnpm; never create `package-l
 ```text
 src/
   app/          App shell and the post-boot site; may import anything
-  features/     One folder per section (boot, hero, quests, items, guild, contact). Public API = index.ts only.
+  features/     One folder per section (boot, hero, quests, items, guild, contact) plus work/icons for project sprites. Public API = index.ts only.
   components/   ui/ = presentational primitives, layout/ = Header, Footer, Section, Starfield. No feature imports.
   content/      Typed data: profile, projects, experience, skills, site. Single source of truth for all text facts.
   hooks/        Shared hooks
@@ -46,6 +46,7 @@ Dependency direction: `app` -> `features` -> `components`/`hooks`/`lib`/`content
 - Use `cn()` from `@/lib/cn` for conditional classes.
 - Copy is bilingual (`Localized`); render it with `useT()` from `@/lib/locale`. Never add a new fact while translating.
 - Colors, fonts, spacing, and motion come from tokens in `src/styles/index.css`. No arbitrary values when a token exists; add the token first.
+- Decorative pixel art is hand-defined data arrays rendered to SVG (`src/features/work/icons/`), never generated screenshots or fake UI.
 
 ## Content integrity
 
@@ -60,7 +61,7 @@ Dependency direction: `app` -> `features` -> `components`/`hooks`/`lib`/`content
 - Follow `DESIGN.md`. It records the palette, type, components, motion, and hard bans with material rationales.
 - If a visual decision is not covered there, ask; do not improvise.
 - No serif display, no rounded cards, no hairline broadsheet rules, no hand-drawn fake imperfection, no placeholder boxes.
-- Accessibility: semantic HTML, visible mint focus, AA contrast, `prefers-reduced-motion` respected.
+- Accessibility: semantic HTML, visible mint focus, AA contrast, `prefers-reduced-motion` respected. Known carried gaps are listed in `DESIGN.md`; do not claim they are fixed.
 - Heavy libraries (3D, charts, animation) are not allowed without asking first.
 
 ## Workflow
