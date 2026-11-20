@@ -36,11 +36,11 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 - **Recruiter-first labelling.** Nav and section headings use Work / Skills / Experience / Contact. The game flavour stays visual; it does not block information scent.
 - **Fast interactive chat.** The dialogue types one full, creatively worded sentence at 12ms per character with skip and replay. The box is fixed-height so nothing shifts; the wording uses game metaphors but restates only existing facts. After finishing it waits 3s and types the next sentence from a pool of twelve. The full summary is in the DOM for assistive tech and reduced-motion users get it instantly and statically.
 - **Theme follows the system by default.** `localStorage` is written only when the user explicitly toggles; until then, OS colour-scheme changes are followed live.
-- **Hotkeys 1–5.** Shortcut to sections; every section is still reachable by nav links.
+- **Alt+1…Alt+5 hotkeys.** Requirement of the Alt modifier prevents accidental single-key jumps; nav links remain the primary path and the footer announces the shortcut.
 - **Staggered reveals.** Cards and rows enter 40ms apart, skill groups 50ms; the hero does not stagger, so the first screen resolves immediately. Durations and sources are in `docs/motion.md` and `docs/research.md`.
 - **Work-card identity.** One decorative 16x16 sprite per project domain plus the project's role label; no fake screenshots and no derived counters.
 - **Light palette undecided.** Two alternatives are documented in `docs/palette-options.md`; the prototype's cream + burnt orange stays until the owner picks one.
-- **Static metadata.** Canonical URL and OG/Twitter tags live in `index.html`; `public/og.png` is generated from the real palette, name, role, and pixel avatar.
+- **Static metadata.** Canonical URL, OG/Twitter tags, Person JSON-LD and a `<noscript>` fallback live in `index.html`; `public/og.png` is a real screenshot of the current hero. `public/robots.txt` and `public/sitemap.xml` are real files, with `public/_headers` requesting `application/xml` for the sitemap on Cloudflare Pages.
 - **No new dependencies without asking.** Current runtime: React, React DOM, clsx, tailwind-merge, Tailwind CSS, one font package.
 
 ## Success criteria
@@ -57,7 +57,7 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 2. English is already available; confirm the translations are acceptable to a native speaker.
 3. No real project screenshots are available; none will be added until files exist. No placeholders.
 4. Analytics is skipped: no ID or token was supplied. Canonical and social tags are already static in `index.html`.
-5. Which light palette from `docs/palette-options.md` should replace the provisional cream + burnt orange?
+5. Which light palette from `docs/palette-options.md` should replace the provisional cream + burnt orange? (only remaining decision)
 
 ## Non-goals
 

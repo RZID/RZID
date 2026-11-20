@@ -65,7 +65,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - `ProjectIcon` — one hand-defined 16x16 decorative sprite per project domain (heart, scroll, cross + coin, dumbbell, diamond node), rendered from data arrays with palette tokens and `aria-hidden`. Work cards show the project role label from `src/content/projects.ts` in a two-column grid with no derived counters.
 - XP bar — a 4px scroll-progress line at the bottom of the header. CSS scroll-driven animation inside `@supports`, with a tiny scroll-listener fallback; the only functional motion.
 - `Reveal` — IntersectionObserver fade/slide with `steps(5)` easing and an optional `delay` prop for stagger; visible immediately under reduced motion.
-- `Starfield` — fixed 2D canvas, 70 drifting pixels, colour comes from `--ink`; one static frame under reduced motion.
+- `Starfield` — fixed 2D canvas, 70 drifting pixels, colour comes from `--ink`. rAF pauses when the canvas leaves the viewport or the tab is hidden; a `data-frame-count` attribute exposes the frame counter. One static frame under reduced motion.
 - `BootScreen` — opt-in start screen via `?intro=1`; never shown by default or under reduced motion.
 
 ## Motion
@@ -87,14 +87,12 @@ Full inventory with triggers and reduced-motion behaviour: `docs/motion.md`.
 - Dialogue is `aria-hidden` while typing; the full text is in a `.sr-only` paragraph and the overlay button has a label.
 - Contrast target is AA for body text and 3:1 for UI borders and large text.
 - Measured ratios (computed from the tokens above): dark `ink/page` 14.13, `muted/page` 7.18, `ink/panel` 12.44, `muted/panel` 6.32, `on-accent/accent` 11.23, `mint/page` 10.61; light `ink/page` 13.21, `muted/page` 5.34, `ink/panel` 15.12, `muted/panel` 6.12, `on-accent/accent` 5.25, `mint/page` 5.05. All pass.
-- Hotkeys 1–5 are an enhancement, never the only path to a section.
+- Hotkeys require Alt+1…Alt+5, so single-key shortcuts cannot fire accidentally. They are an enhancement, never the only path to a section.
 - No horizontal overflow at 390px or 1440px.
 
-### Known carried gaps (from the audit; not fixed on this branch)
+### Remaining open decision
 
-- `robots.txt` / `sitemap.xml` are SPA HTML fallbacks in preview; no JSON-LD, no `<noscript>` fallback, and `og.png` still shows retired LV.5 / game labels.
-- `prefers-reduced-motion` is read at mount; changing the OS setting while the page is open is not observed.
-- The light palette remains the prototype's provisional cream + burnt orange; see `docs/palette-options.md`.
+- The light palette remains the prototype's provisional cream + burnt orange; two alternatives are in `docs/palette-options.md`. No choice has been made.
 
 ## Measured performance
 
