@@ -120,6 +120,11 @@
   }
 }
 
+.xp-bar-fallback {
+  transform-origin: left;
+  transition: transform 90ms steps(3);
+}
+
 @keyframes jump {
   0% {
     transform: translateY(0) scale(1, 1);

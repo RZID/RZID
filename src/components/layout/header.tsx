@@ -24,6 +24,8 @@ export const Header = () => {
       return
     }
 
+    bar.classList.add('xp-bar-fallback')
+
     const update = () => {
       const documentElement = document.documentElement
       const maximum = documentElement.scrollHeight - window.innerHeight
@@ -36,6 +38,7 @@ export const Header = () => {
     window.addEventListener('resize', update)
 
     return () => {
+      bar.classList.remove('xp-bar-fallback')
       window.removeEventListener('scroll', update)
       window.removeEventListener('resize', update)
     }
