@@ -79,35 +79,35 @@
 }
 
 .chat-tail-down {
+  bottom: -1.25rem;
+  left: calc(50% - 1.25rem);
+  border-top: 1.25rem solid var(--ink);
+  border-right: 1.25rem solid transparent;
+  border-left: 1.25rem solid transparent;
+}
+
+.chat-tail-down-inner {
   bottom: -0.75rem;
   left: calc(50% - 0.75rem);
-  border-top: 0.75rem solid var(--ink);
+  border-top: 0.75rem solid var(--panel);
   border-right: 0.75rem solid transparent;
   border-left: 0.75rem solid transparent;
 }
 
-.chat-tail-down-inner {
-  bottom: -0.5rem;
-  left: calc(50% - 0.5rem);
-  border-top: 0.5rem solid var(--panel);
-  border-right: 0.5rem solid transparent;
-  border-left: 0.5rem solid transparent;
-}
-
 .chat-tail-right {
-  top: calc(35% - 0.75rem);
-  right: -0.75rem;
-  border-top: 0.75rem solid transparent;
-  border-bottom: 0.75rem solid transparent;
-  border-left: 0.75rem solid var(--ink);
+  top: calc(32% - 1.25rem);
+  right: -1.25rem;
+  border-top: 1.25rem solid transparent;
+  border-bottom: 1.25rem solid transparent;
+  border-left: 1.25rem solid var(--ink);
 }
 
 .chat-tail-right-inner {
-  top: calc(35% - 0.5rem);
-  right: -0.5rem;
-  border-top: 0.5rem solid transparent;
-  border-bottom: 0.5rem solid transparent;
-  border-left: 0.5rem solid var(--panel);
+  top: calc(32% - 0.75rem);
+  right: -0.75rem;
+  border-top: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid transparent;
+  border-left: 0.75rem solid var(--panel);
 }
 
 @supports (animation-timeline: scroll()) {

@@ -21,21 +21,21 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
   const { text, done, finish, replay } = useTypewriter(sentences, instant)
 
   useEffect(() => {
-    const hero = document.getElementById('home')
+    const heroElement = document.getElementById('home')
 
-    if (hero === null) {
+    if (heroElement === null) {
       return
     }
 
-    hero.dataset.talking = done ? 'false' : 'true'
+    heroElement.dataset.talking = done ? 'false' : 'true'
 
     return () => {
-      delete hero.dataset.talking
+      delete heroElement.dataset.talking
     }
   }, [done])
 
   return (
-    <Box className="relative h-68 px-4 py-4 text-base min-[360px]:h-56 sm:h-40 sm:text-lg">
+    <Box className="relative h-68 px-4 py-4 text-base min-[360px]:h-56 sm:h-40 sm:text-lg lg:h-40">
       <span aria-hidden className="chat-tail chat-tail-down sm:hidden" />
       <span aria-hidden className="chat-tail chat-tail-down-inner sm:hidden" />
       <span aria-hidden className="chat-tail chat-tail-right hidden sm:block" />
@@ -82,9 +82,9 @@ export const HeroSection = () => {
   return (
     <Section
       id="home"
-      className="grid grid-cols-1 gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-8"
+      className="grid grid-cols-1 gap-x-8 gap-y-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-y-6"
     >
-      <Reveal>
+      <Reveal className="lg:col-start-1 lg:row-start-1">
         <p className="m-0 font-pixel text-lg text-muted">
           {t(profile.location)} · {t(profile.role)}
         </p>
@@ -93,19 +93,9 @@ export const HeroSection = () => {
 
         <ChatDialogue key={`${locale}-${reduced}`} sentences={sentences} instant={reduced} />
         <p className="sr-only">{t(profile.summary)}</p>
-
-        <div className="mt-6 flex flex-wrap gap-3">
-          <ButtonLink href={hero.primaryCta.href}>{t(hero.primaryCta.label)}</ButtonLink>
-          <ButtonLink href={profile.links.email.href} variant="secondary">
-            {t(profile.links.email.label)}
-          </ButtonLink>
-          <ButtonLink href={hero.secondaryCta.href} variant="secondary">
-            {t(hero.secondaryCta.label)}
-          </ButtonLink>
-        </div>
       </Reveal>
 
-      <Reveal className="grid place-items-center">
+      <Reveal className="grid place-items-center lg:col-start-2 lg:row-span-2 lg:row-start-1">
         <button type="button" onClick={jumpAvatar} aria-label={t(ui.avatarAction)}>
           <div key={jump} className={jump > 0 ? 'animate-jump' : undefined}>
             <span className="avatar-talk block">
@@ -114,6 +104,16 @@ export const HeroSection = () => {
           </div>
         </button>
         <div aria-hidden className="mt-2 h-3.5 w-40 bg-ink/25" />
+      </Reveal>
+
+      <Reveal className="flex flex-wrap gap-3 lg:col-start-1 lg:row-start-2">
+        <ButtonLink href={hero.primaryCta.href}>{t(hero.primaryCta.label)}</ButtonLink>
+        <ButtonLink href={profile.links.email.href} variant="secondary">
+          {t(profile.links.email.label)}
+        </ButtonLink>
+        <ButtonLink href={hero.secondaryCta.href} variant="secondary">
+          {t(hero.secondaryCta.label)}
+        </ButtonLink>
       </Reveal>
 
       <Reveal className="col-span-full grid gap-4 border-t-4 border-ink pt-5 sm:grid-cols-3">
