@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { useReducedMotion } from '@/hooks/use-reduced-motion'
 
 type Point = {
   x: number
@@ -11,6 +12,7 @@ const pointCount = 70
 
 export const Starfield = () => {
   const ref = useRef<HTMLCanvasElement>(null)
+  const reduced = useReducedMotion()
 
   useEffect(() => {
     const canvas = ref.current
@@ -25,8 +27,6 @@ export const Starfield = () => {
       return
     }
 
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
     const points: Point[] = Array.from({ length: pointCount }, () => ({
       x: Math.random(),
       y: Math.random(),
@@ -35,6 +35,10 @@ export const Starfield = () => {
     }))
 
     let ink = '#ece8d8'
+    let frame = 0
+    let frames = 0
+    let running = false
+    let onScreen = true
 
     const readInk = () => {
       const value = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim()
@@ -74,39 +78,92 @@ export const Starfield = () => {
       }
 
       context.globalAlpha = 1
+      frames += 1
+      canvas.dataset.frameCount = String(frames)
+    }
+
+    const loop = () => {
+      paint()
+
+      if (onScreen && !document.hidden) {
+        frame = window.requestAnimationFrame(loop)
+      } else {
+        frame = 0
+        running = false
+      }
+    }
+
+    const start = () => {
+      if (!running && !reduced && onScreen && !document.hidden) {
+        running = true
+        frame = window.requestAnimationFrame(loop)
+      }
+    }
+
+    const stop = () => {
+      if (frame !== 0) {
+        window.cancelAnimationFrame(frame)
+      }
+
+      frame = 0
+      running = false
     }
 
     readInk()
     resize()
     paint()
+    start()
 
-    const observer = new MutationObserver(readInk)
-    observer.observe(document.documentElement, {
+    const inkObserver = new MutationObserver(readInk)
+    inkObserver.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['data-theme'],
     })
-    window.addEventListener('resize', resize)
 
-    let frame = 0
+    const visibilityObserver = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
 
-    const loop = () => {
-      if (!document.hidden) {
-        paint()
+        if (entry === undefined) {
+          return
+        }
+
+        onScreen = entry.isIntersecting
+
+        if (onScreen) {
+          start()
+        } else {
+          stop()
+        }
+      },
+      { threshold: 0 },
+    )
+    visibilityObserver.observe(canvas)
+
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        stop()
+      } else {
+        start()
       }
-
-      frame = window.requestAnimationFrame(loop)
     }
 
-    if (!reduced) {
-      frame = window.requestAnimationFrame(loop)
+    const onResize = () => {
+      resize()
+      paint()
     }
+
+    window.addEventListener('resize', onResize)
+    document.addEventListener('visibilitychange', onVisibilityChange)
 
     return () => {
-      observer.disconnect()
-      window.removeEventListener('resize', resize)
-      window.cancelAnimationFrame(frame)
+      stop()
+      inkObserver.disconnect()
+      visibilityObserver.disconnect()
+      window.removeEventListener('resize', onResize)
+      document.removeEventListener('visibilitychange', onVisibilityChange)
     }
-  }, [])
+  }, [reduced])
 
   return (
     <canvas

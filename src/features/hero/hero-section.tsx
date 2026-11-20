@@ -6,6 +6,7 @@ import { PixelAvatar } from '@/components/ui/pixel-avatar'
 import { Reveal } from '@/components/ui/reveal'
 import { profile } from '@/content/profile'
 import { hero, sections, ui } from '@/content/site'
+import { useReducedMotion } from '@/hooks/use-reduced-motion'
 import { useTypewriter } from '@/hooks/use-typewriter'
 import { cn } from '@/lib/cn'
 import { useLocale, useT } from '@/lib/locale'
@@ -55,11 +56,11 @@ export const HeroSection = () => {
   const locale = useLocale()
   const t = useT()
   const sentences = useMemo(() => hero.sentences.map((item) => item[locale]), [locale])
-  const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const reduced = useReducedMotion()
   const [jump, setJump] = useState(0)
 
   const jumpAvatar = () => {
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (!reduced) {
       setJump((value) => value + 1)
     }
   }
@@ -76,7 +77,7 @@ export const HeroSection = () => {
         <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
         <p className="mt-2 mb-5 font-pixel text-mint">{t(sections.contact.availability)}</p>
 
-        <ChatDialogue key={locale} sentences={sentences} instant={instant} />
+        <ChatDialogue key={`${locale}-${reduced}`} sentences={sentences} instant={reduced} />
         <p className="sr-only">{t(profile.summary)}</p>
 
         <div className="mt-6 flex flex-wrap gap-3">

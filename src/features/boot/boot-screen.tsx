@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { ui } from '@/content/site'
+import { useReducedMotion } from '@/hooks/use-reduced-motion'
 import { cn } from '@/lib/cn'
 import { useT } from '@/lib/locale'
 import { markBootDone } from './boot-state'
@@ -12,6 +13,7 @@ export const BootScreen = ({ onDone }: BootScreenProps) => {
   const [closing, setClosing] = useState(false)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const t = useT()
+  const reduced = useReducedMotion()
 
   const start = useCallback(() => {
     if (closing) {
@@ -24,6 +26,11 @@ export const BootScreen = ({ onDone }: BootScreenProps) => {
   }, [closing, onDone])
 
   useEffect(() => {
+    if (reduced) {
+      onDone()
+      return
+    }
+
     buttonRef.current?.focus()
 
     const onKeyDown = (event: KeyboardEvent) => {
@@ -35,7 +42,7 @@ export const BootScreen = ({ onDone }: BootScreenProps) => {
     window.addEventListener('keydown', onKeyDown)
 
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [start])
+  }, [onDone, reduced, start])
 
   return (
     <dialog
