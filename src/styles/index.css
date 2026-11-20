@@ -158,6 +158,21 @@
   animation: wipe-echo 720ms steps(8) 80ms forwards;
 }
 
+.menu-drop {
+  animation: menu-drop 240ms steps(4) both;
+}
+
+@keyframes menu-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .lang-slices {
   position: fixed;
   inset: 0;

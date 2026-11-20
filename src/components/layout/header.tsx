@@ -145,7 +145,7 @@ export const Header = () => {
     '--wipe-y': `${themeWipe?.y ?? 0}px`,
   }
 
-  const navLink = (item: (typeof nav)[number]) => {
+  const navLink = (item: (typeof nav)[number], stacked = false) => {
     const isActive = active === item.id
 
     return (
@@ -159,8 +159,11 @@ export const Header = () => {
         }}
         aria-current={isActive ? 'location' : undefined}
         className={cn(
-          'group inline-flex items-center px-2 py-1 font-pixel text-base',
-          isActive ? 'text-accent-text' : 'hover:text-accent-text',
+          'group inline-flex items-center font-pixel text-base',
+          stacked ? 'min-h-11 w-full gap-1 border-l-4 px-3 py-2' : 'px-2 py-1',
+          isActive
+            ? cn('text-accent-text', stacked && 'border-accent-text bg-panel')
+            : cn('hover:text-accent-text', stacked && 'border-transparent hover:bg-panel'),
         )}
       >
         <span
@@ -193,7 +196,7 @@ export const Header = () => {
         </a>
 
         <nav aria-label={t(ui.primaryNav)} className="hidden items-center gap-0.5 lg:flex">
-          {nav.map(navLink)}
+          {nav.map((item) => navLink(item))}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -203,8 +206,13 @@ export const Header = () => {
             aria-controls="mobile-menu"
             aria-label={menuOpen ? t(ui.closeMenu) : t(ui.menu)}
             onClick={() => setMenuOpen((open) => !open)}
-            className="h-9 cursor-pointer border-2 border-ink px-2 font-pixel text-base lg:hidden"
+            className="inline-flex h-9 cursor-pointer items-center gap-1.5 border-2 border-ink px-2 font-pixel text-base lg:hidden"
           >
+            <span aria-hidden className="inline-flex flex-col gap-0.5">
+              <span className="block h-0.5 w-4 bg-current" />
+              <span className="block h-0.5 w-4 bg-current" />
+              <span className="block h-0.5 w-4 bg-current" />
+            </span>
             {menuOpen ? t(ui.closeMenu) : t(ui.menu)}
           </button>
           <button
@@ -230,9 +238,9 @@ export const Header = () => {
         <nav
           id="mobile-menu"
           aria-label={t(ui.primaryNav)}
-          className="absolute top-full right-0 left-0 flex flex-col border-b-4 border-ink bg-page px-4 py-2 lg:hidden"
+          className="menu-drop absolute top-full right-0 left-0 flex flex-col border-b-4 border-ink bg-panel px-2 py-2 shadow-hard lg:hidden"
         >
-          {nav.map(navLink)}
+          {nav.map((item) => navLink(item, true))}
         </nav>
       ) : null}
 
