@@ -51,6 +51,11 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - Section rhythm: `48px` mobile / `56px` desktop vertical padding. No derived counters; work cards carry their own role label instead.
 - No italics, no tracking-heavy all-caps, no serif.
 
+## Layout refinements
+
+- Mobile hero resolves text first: location/role, name, availability, dialogue, then the sprite at `w-28`; at `lg` it returns to a 1.25fr/0.75fr two-column composition. Vertical gap tightens from `gap-8` to `gap-6` on mobile.
+- Work grid is two columns at `md`. The final card spans both columns and splits internally into an icon/role sidebar and a content column, so the wide cell does not read as dead space.
+
 ## Components
 
 - `Box` — 4px `ink` border, `panel` fill, hard shadow. Use `as="article"` for semantic cards.
@@ -59,16 +64,18 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - `PixelAvatar` — inline SVG sprite from the prototype's pixel grid; `shapeRendering="crispEdges"`. Click or Enter makes it jump one stepped frame; reduced motion keeps it static.
 - `ProjectIcon` — one hand-defined 16x16 decorative sprite per project domain (heart, scroll, cross + coin, dumbbell, diamond node), rendered from data arrays with palette tokens and `aria-hidden`. Work cards show the project role label from `src/content/projects.ts` in a two-column grid with no derived counters.
 - XP bar — a 4px scroll-progress line at the bottom of the header. CSS scroll-driven animation inside `@supports`, with a tiny scroll-listener fallback; the only functional motion.
-- `Reveal` — IntersectionObserver fade/slide with `steps(5)` easing; visible immediately under reduced motion.
+- `Reveal` — IntersectionObserver fade/slide with `steps(5)` easing and an optional `delay` prop for stagger; visible immediately under reduced motion.
 - `Starfield` — fixed 2D canvas, 70 drifting pixels, colour comes from `--ink`; one static frame under reduced motion.
 - `BootScreen` — opt-in start screen via `?intro=1`; never shown by default or under reduced motion.
 
 ## Motion
 
+Full inventory with triggers and reduced-motion behaviour: `docs/motion.md`.
+
 - `steps()` easing everywhere; no smooth easing curves.
 - The hero chat types one full sentence character by character (12ms) with a blinking caret, click-to-skip, and a replay control. The box has a fixed responsive height (`h-68 min-[360px]:h-56 sm:h-40`) so typing never shifts the layout, and a two-layer CSS tail makes it read as a speech bubble pointing at the pixel avatar (up on mobile, right on desktop). After it finishes it waits 3s and types the next sentence from a pool of twelve, endlessly. The full copy is present in a `.sr-only` paragraph and is instant and static under reduced motion.
 - The header XP bar is functional scroll progress: CSS scroll-driven animation inside `@supports`, with a tiny scroll-listener fallback. No other scroll-linked motion.
-- The avatar jumps one stepped frame on click or Enter (`animate-jump`), unless reduced motion is requested.
+- The avatar jumps a stepped squash-and-stretch frame on click or Enter (`animate-jump`, 360ms), unless reduced motion is requested.
 - Other motion is decorative: star drift, avatar bob, reveal, and the optional intro.
 - Star drift, avatar bob, reveal, boot progress — all disabled or static under `prefers-reduced-motion`.
 - The XP bar is the only scroll-linked motion. No parallax, no WebGL.

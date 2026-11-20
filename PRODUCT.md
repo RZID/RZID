@@ -11,13 +11,13 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 
 ## Sections
 
-| Section   | Job                                                                                                                        |
-| --------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `home`    | Name, role, location, availability, intro chat, clickable jumping avatar, base/work/mode HUD strip, three calls to action. |
-| `quests`  | Five work cards with hand-defined pixel icons, per-project role labels, outcomes and stack tags; no derived counters.      |
-| `items`   | Grouped skills, what is being learned, and off-terminal interests.                                                         |
-| `guild`   | Three roles plus an in-progress degree, shown as ordinal ranks.                                                            |
-| `contact` | Availability line, short invitation, email / GitHub / LinkedIn.                                                            |
+| Section   | Job                                                                                                                                                                   |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `home`    | Name, role, location, availability, intro chat, clickable jumping avatar, base/work/mode HUD strip, three calls to action; text resolves before the sprite on mobile. |
+| `quests`  | Five work cards with hand-defined pixel icons, per-project role labels, outcomes and stack tags; no derived counters.                                                 |
+| `items`   | Grouped skills, what is being learned, and off-terminal interests.                                                                                                    |
+| `guild`   | Three roles plus an in-progress degree, shown as ordinal ranks.                                                                                                       |
+| `contact` | Availability line, short invitation, email / GitHub / LinkedIn.                                                                                                       |
 
 ## Content rules
 
@@ -37,6 +37,7 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 - **Fast interactive chat.** The dialogue types one full, creatively worded sentence at 12ms per character with skip and replay. The box is fixed-height so nothing shifts; the wording uses game metaphors but restates only existing facts. After finishing it waits 3s and types the next sentence from a pool of twelve. The full summary is in the DOM for assistive tech and reduced-motion users get it instantly and statically.
 - **Theme follows the system by default.** `localStorage` is written only when the user explicitly toggles; until then, OS colour-scheme changes are followed live.
 - **Hotkeys 1–5.** Shortcut to sections; every section is still reachable by nav links.
+- **Staggered reveals.** Cards, groups and rows enter 60–70ms apart; the hero does not stagger, so the first screen resolves immediately.
 - **Work-card identity.** One decorative 16x16 sprite per project domain plus the project's role label; no fake screenshots and no derived counters.
 - **Light palette undecided.** Two alternatives are documented in `docs/palette-options.md`; the prototype's cream + burnt orange stays until the owner picks one.
 - **Static metadata.** Canonical URL and OG/Twitter tags live in `index.html`; `public/og.png` is generated from the real palette, name, role, and pixel avatar.
