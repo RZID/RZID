@@ -35,17 +35,13 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
   }, [done])
 
   return (
-    <Box className="relative h-68 px-4 py-4 text-label min-[360px]:h-56 sm:h-40 sm:text-lead lg:h-40">
-      <span aria-hidden className="chat-tail chat-tail-down sm:hidden" />
-      <span aria-hidden className="chat-tail chat-tail-down-inner sm:hidden" />
-      <span aria-hidden className="chat-tail chat-tail-right hidden sm:block" />
-      <span aria-hidden className="chat-tail chat-tail-right-inner hidden sm:block" />
-      <div className="h-full overflow-hidden">
-        <p aria-hidden="true" className="m-0">
-          {text}
-          {done ? null : <span className="animate-blink">▌</span>}
-        </p>
-      </div>
+    <Box className="relative min-h-24 shrink-0 px-4 py-4 text-meta sm:text-lead">
+      <span aria-hidden className="chat-tail chat-tail-right" />
+      <span aria-hidden className="chat-tail chat-tail-right-inner" />
+      <p aria-hidden="true" className="m-0 break-words whitespace-pre-wrap">
+        {text}
+        {done ? null : <span className="animate-blink">▌</span>}
+      </p>
       <button
         type="button"
         onClick={finish}
@@ -70,6 +66,12 @@ export const HeroSection = () => {
   const locale = useLocale()
   const t = useT()
   const sentences = useMemo(() => hero.sentences.map((item) => item[locale]), [locale])
+  const slotClass = cn(
+    locale === 'id'
+      ? 'h-60 min-[360px]:h-52 min-[375px]:h-48'
+      : 'h-68 min-[360px]:h-56 min-[375px]:h-52',
+    'sm:h-40',
+  )
   const reduced = useReducedMotion()
   const [jump, setJump] = useState(0)
 
@@ -82,28 +84,34 @@ export const HeroSection = () => {
   return (
     <Section
       id="home"
-      className="grid grid-cols-1 gap-x-8 gap-y-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-y-6"
+      className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-x-8 lg:gap-y-6"
     >
-      <Reveal className="lg:col-start-1 lg:row-start-1">
-        <p className="m-0 font-pixel text-lead text-muted">
-          {t(profile.location)} · {t(profile.role)}
-        </p>
-        <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
-        <p className="mt-2 mb-5 font-pixel text-mint">{t(sections.contact.availability)}</p>
+      <div className="contents lg:col-start-1 lg:row-start-1 lg:flex lg:flex-col">
+        <Reveal className="col-span-full">
+          <p className="m-0 font-pixel text-lead text-muted">
+            {t(profile.location)} · {t(profile.role)}
+          </p>
+          <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
+          <p className="mt-2 mb-5 font-pixel text-mint">{t(sections.contact.availability)}</p>
+          <p className="sr-only">{t(profile.summary)}</p>
+        </Reveal>
 
-        <ChatDialogue key={`${locale}-${reduced}`} sentences={sentences} instant={reduced} />
-        <p className="sr-only">{t(profile.summary)}</p>
-      </Reveal>
+        <Reveal className="col-start-1 row-start-2">
+          <div className={cn('flex flex-col justify-center', slotClass)}>
+            <ChatDialogue key={`${locale}-${reduced}`} sentences={sentences} instant={reduced} />
+          </div>
+        </Reveal>
+      </div>
 
-      <Reveal className="grid place-items-center lg:col-start-2 lg:row-span-2 lg:row-start-1">
+      <Reveal className="col-start-2 row-start-2 grid place-items-center lg:col-start-2 lg:row-span-2 lg:row-start-1">
         <button type="button" onClick={jumpAvatar} aria-label={t(ui.avatarAction)}>
           <div key={jump} className={jump > 0 ? 'animate-jump' : undefined}>
             <span className="avatar-talk block">
-              <PixelAvatar className="w-28 animate-bob sm:w-[min(210px,52vw)]" />
+              <PixelAvatar className="w-36 animate-bob sm:w-[min(210px,52vw)]" />
             </span>
           </div>
         </button>
-        <div aria-hidden className="mt-2 h-3.5 w-40 bg-ink/25" />
+        <div aria-hidden className="mt-2 h-3.5 w-36 bg-ink/25 sm:w-40" />
       </Reveal>
 
       <Reveal className="flex flex-wrap gap-3 lg:col-start-1 lg:row-start-2">

@@ -37,7 +37,7 @@ Defined in `src/styles/index.css` and exposed through `@theme inline`.
 | `mint`      | `#4be3a6` | `#0b6b49` | Focus ring, cleared, status   |
 | `shadow`    | `#05060a` | `#1c1b22` | Hard shadow, avatar outline   |
 
-Utilities: `bg-page`, `bg-panel`, `text-ink`, `text-muted`, `text-accent`, `text-on-accent`, `text-mint`, `shadow-hard`, `shadow-hard-sm`, `shadow-hard-lg`, `text-shadow-hard`, `font-pixel`, `text-hero`, `text-boot`, `text-section`, `max-w-content`, `ease-steps`, `ease-steps-3`, `ease-steps-5`, `animate-bob`, `animate-load`, `animate-jump`. Motion tokens: `--motion-fast` 120ms, `--motion-base` 200ms, `--motion-slow` 320ms, `--motion-slower` 600ms.
+Utilities: `bg-page`, `bg-panel`, `text-ink`, `text-muted`, `text-accent`, `text-on-accent`, `text-mint`, `shadow-hard`, `shadow-hard-sm`, `shadow-hard-lg`, `text-shadow-hard`, `font-pixel`, `text-hero`, `text-section`, `max-w-content`, `ease-steps`, `ease-steps-3`, `ease-steps-5`, `animate-bob`, `animate-jump`. Motion tokens: `--motion-fast` 120ms, `--motion-base` 200ms, `--motion-slow` 320ms, `--motion-slower` 600ms.
 
 No arbitrary colour or size values in components. Add a token first if one is missing. The default theme is the OS colour scheme; only an explicit user choice is stored and overrides it.
 
@@ -45,7 +45,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 
 - Typeface: Pixelify Sans 400/700, self-hosted through `@fontsource/pixelify-sans`, used for every piece of text. No second family. Full scale in `docs/typography.md`.
 - Copy exists in `id` and `en`; both render with the same layout. Section labels are standard recruiter terms (Work, Skills, Experience); LV.5 remains as visual flavour.
-- Scale: tokenized `meta/label/lead/title/rank/section/hero/boot`; body 16px/1.65, headings `text-wrap: balance`, paragraphs `text-wrap: pretty`. See `docs/typography.md`.
+- Scale: tokenized `meta/label/lead/title/rank/section/hero`; body 16px/1.65, headings `text-wrap: balance`, paragraphs `text-wrap: pretty`. See `docs/typography.md`.
 - Hero HUD strip: three bordered cells under the fold (Base / Work / Mode) filled from real profile data; it gives the first screen structure instead of empty centred space.
 - Section rhythm: `56px` mobile / `64px` desktop vertical padding. No derived counters; work cards carry their own role label instead.
 - No italics, no tracking-heavy all-caps, no serif.
@@ -67,25 +67,24 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - XP bar — a 4px scroll-progress line at the bottom of the header. CSS scroll-driven animation inside `@supports`, with a tiny scroll-listener fallback; the only functional motion.
 - `Reveal` — IntersectionObserver fade/slide with `steps(5)` easing and an optional `delay` prop for stagger; visible immediately under reduced motion.
 - `Starfield` — fixed 2D canvas, 70 drifting pixels, colour comes from `--ink`. rAF pauses when the canvas leaves the viewport or the tab is hidden; a `data-frame-count` attribute exposes the frame counter. One static frame under reduced motion.
-- `BootScreen` — opt-in start screen via `?intro=1`; never shown by default or under reduced motion.
 
 ## Motion
 
 Full inventory with triggers and reduced-motion behaviour: `docs/motion.md`.
 
 - `steps()` easing everywhere; no smooth easing curves.
-- The hero chat types one full sentence character by character (12ms) with a blinking caret, click-to-skip, and a replay control. The box has a fixed responsive height (`h-68 min-[360px]:h-56 sm:h-40`) so typing never shifts the layout, and a two-layer CSS tail makes it read as a speech bubble pointing at the pixel avatar (down toward the sprite on mobile, right toward its face at 32% height on desktop). After it finishes it waits 3s and types the next sentence from a pool of twelve, endlessly. The full copy is present in a `.sr-only` paragraph and is instant and static under reduced motion.
+- The hero chat types one full sentence character by character (12ms) with a blinking caret, click-to-skip, and a replay control. The box grows with the typed text from a `min-h-24` floor, so its height follows the generated line count, but it grows from a fixed-height slot so typing never shifts the surrounding layout. The slot is tuned per breakpoint and locale to the longest sentence (`h-68 / h-56 / h-52` for English, `h-60 / h-52 / h-48` for Indonesian, `sm:h-40` for both). The bubble is bottom-anchored on mobile (short tail so it clears the avatar) and vertically centered from `sm` up, where growth expands equally upward and downward. The slot is sized to the longest of the twelve sentences at each breakpoint, so shorter ones leave slack. A two-layer CSS tail makes it read as a speech bubble pointing at the pixel avatar (down toward the sprite on mobile, right toward its face at 32% height on desktop). After it finishes it waits 3s and types the next sentence from a pool of twelve, endlessly. The full copy is present in a `.sr-only` paragraph and is instant and static under reduced motion.
 - The header XP bar is functional scroll progress: CSS scroll-driven animation inside `@supports`, with a tiny scroll-listener fallback. No other scroll-linked motion.
 - The avatar jumps a stepped squash-and-stretch frame on click or Enter (`animate-jump`, 320ms), and makes a small stepped talk wiggle while the dialogue is typing; both are off under reduced motion.
 - Theme changes trigger a stepped radial wipe from the toggle button: an amber core covers the page at 320ms (when the theme swaps), a mint echo follows 80ms later, and both clear at 720ms. Language changes use the same 720ms / `steps(8)` / 320ms-swap rhythm but a different geometry: four horizontal panel slices alternate direction while a large EN/ID stamp flashes. No overlay is rendered under reduced motion.
 - Other motion is decorative: star drift, avatar bob, reveal, and the optional intro.
-- Star drift, avatar bob, reveal, boot progress — all disabled or static under `prefers-reduced-motion`.
+- Star drift, avatar bob and reveal — all disabled or static under `prefers-reduced-motion`.
 - The XP bar is the only scroll-linked motion. No parallax, no WebGL.
 
 ## Accessibility
 
 - Semantic landmarks, skip link, labelled nav, `<ol>` for guild ranks.
-- Focus ring: 3px `mint`, 3px offset. Boot button is focused on mount.
+- Focus ring: 3px `mint`, 3px offset.
 - Dialogue is `aria-hidden` while typing; the full text is in a `.sr-only` paragraph and the overlay button has a label.
 - Contrast target is AA for body text and 3:1 for UI borders and large text.
 - Measured ratios (computed from the tokens above): dark `ink/page` 14.13, `muted/page` 7.18, `ink/panel` 12.44, `muted/panel` 6.32, `on-accent/accent` 11.23, `mint/page` 10.61; light `ink/page` 13.21, `muted/page` 5.34, `ink/panel` 15.12, `muted/panel` 6.12, `on-accent/accent` 5.25, `mint/page` 5.05. All pass.

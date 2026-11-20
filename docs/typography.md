@@ -17,7 +17,6 @@ Rationale: the owner asked for a fully pixel-typed interface. Hierarchy therefor
 | `text-rank`    | 30px                   | 30px        | Guild ordinals                       |
 | `text-section` | clamp(26px, 4vw, 36px) | 1.1         | Section headings                     |
 | `text-hero`    | clamp(44px, 9vw, 92px) | 1           | Hero name                            |
-| `text-boot`    | clamp(32px, 8vw, 64px) | 1.05        | Boot title                           |
 
 Meaningful text stays at 16px or larger; 14px is reserved for meta. No serif, no italic, no tracking-heavy all-caps.
 

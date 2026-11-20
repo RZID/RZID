@@ -17,10 +17,8 @@ All motion uses `steps()` easing. Reduced motion removes decorative motion; the 
 | Buttons             | 100ms                      | `steps(2)`  | Hover / active                 | Transition none                         |
 | Work cards          | 150ms                      | `steps(3)`  | Hover                          | Transition none                         |
 | Skill slots         | 100ms                      | `steps(2)`  | Hover                          | Transition none                         |
-| Boot clip-path      | 700ms                      | `steps(5)`  | Press start (`?intro=1` only)  | Boot never shows                        |
-| Boot progress       | 1.4s                       | `steps(14)` | Boot mount                     | Boot never shows                        |
 | Starfield           | 16.67ms mean frame         | n/a         | rAF loop                       | One static frame                        |
 
-`prefers-reduced-motion` is observed live through `useReducedMotion()`. Changing the OS setting updates the typewriter, canvas and boot gate without a reload.
+`prefers-reduced-motion` is observed live through `useReducedMotion()`. Changing the OS setting updates the typewriter and canvas without a reload.
 
 Stagger is applied through the `delay` prop on `Reveal`: work cards 40ms apart, skill groups 50ms, guild rows 40ms. The hero blocks are not staggered so the first screen resolves immediately. Durations are tokens in `src/styles/index.css` (`--motion-fast/base/slow/slower`). See `docs/research.md` for the sources behind these ranges.

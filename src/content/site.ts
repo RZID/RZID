@@ -137,16 +137,11 @@ export const ui: UiText = {
   indonesianShort: { id: 'ID', en: 'ID' },
   dialogueSkip: { id: 'Lewati dialog', en: 'Skip dialogue' },
   replayDialogue: { id: 'Ulangi dialog', en: 'Replay dialogue' },
-  playIntro: { id: 'Putar intro', en: 'Play intro' },
   copyrightYear: '2026',
   footerHint: {
     id: 'Alt+1 sampai Alt+5 untuk pindah menu.',
     en: 'Alt+1 to Alt+5 to jump between sections.',
   },
-  bootDialogLabel: { id: 'Layar mulai', en: 'Start screen' },
-  bootTitle: { id: 'Ramadhanu\nQuest', en: 'Ramadhanu\nQuest' },
-  pressStart: { id: 'Press start', en: 'Press start' },
-  bootEnterHint: { id: 'atau tekan Enter', en: 'or press Enter' },
   avatarLabel: {
     id: 'Avatar pixel Ramadhanu',
     en: 'Pixel avatar of Ramadhanu',

@@ -32,7 +32,6 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 ## Decisions
 
 - **Bilingual toggle.** `id` and `en` render the same layout; choice is stored in `localStorage` and mirrored to `<html lang>`. Default is English; Indonesian is used only when the browser explicitly reports `id` or `id-ID`. The toggle is a small square button beside the theme toggle.
-- **Intro is opt-in.** The “Press start” screen appears only with `?intro=1` (footer link), never by default and never under reduced motion. A recruiter never has to click through a gate.
 - **Recruiter-first labelling.** Nav and section headings use Work / Skills / Experience / Contact. The game flavour stays visual; it does not block information scent.
 - **Fast interactive chat.** The dialogue types one full, creatively worded sentence at 12ms per character with skip and replay. The box is fixed-height so nothing shifts; the wording uses game metaphors but restates only existing facts. After finishing it waits 3s and types the next sentence from a pool of twelve. The full summary is in the DOM for assistive tech and reduced-motion users get it instantly and statically.
 - **Theme follows the system by default.** `localStorage` is written only when the user explicitly toggles; until then, OS colour-scheme changes are followed live.
@@ -50,7 +49,7 @@ A one-page portfolio for Ramadhanu, a software engineer in Jakarta. It answers f
 - `bun run check`, `bun run build`, and Playwright checks at 320px, 390px, 768px, and 1440px pass.
 - First screen contains a name, role, location, availability, a complete summary, and work/email/GitHub links; no gate and no delayed copy.
 - No horizontal overflow at either checked width; mobile full-page screenshots are tiled at 1600px without capping height.
-- Reduced-motion users get static content with no boot gate.
+- Reduced-motion users get static content with no motion gates.
 - Every claim on the page appears in `docs/claims.md`.
 
 ## Open questions for the owner
