@@ -113,6 +113,8 @@ export const sections: SectionCopy = {
 
 export const ui: UiText = {
   primaryNav: { id: 'Menu utama', en: 'Primary' },
+  menu: { id: 'Menu', en: 'Menu' },
+  closeMenu: { id: 'Tutup', en: 'Close' },
   skipToContent: { id: 'Lewati ke konten', en: 'Skip to content' },
   themeToggle: {
     id: 'Ganti tema terang atau gelap',

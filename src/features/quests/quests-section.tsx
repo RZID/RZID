@@ -26,7 +26,7 @@ export const QuestsSection = () => {
               <Box
                 as="article"
                 className={cn(
-                  'relative h-full p-5 transition-[transform,box-shadow] duration-[var(--motion-base)] ease-steps-3',
+                  'relative h-full p-5 transition-[transform,box-shadow] duration-(--motion-base) ease-steps-3',
                   'hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard-lg',
                   isWide && 'md:flex md:items-start md:gap-6',
                 )}

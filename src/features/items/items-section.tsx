@@ -20,7 +20,7 @@ export const ItemsSection = () => {
                   key={item.id}
                   className={cn(
                     'border-2 border-ink bg-panel px-2 py-3 text-center font-pixel text-base',
-                    'transition-transform duration-[var(--motion-fast)] ease-steps hover:-translate-y-1',
+                    'transition-transform duration-(--motion-fast) ease-steps hover:-translate-y-1',
                     group.learning === true && 'border-dashed text-muted',
                   )}
                 >
