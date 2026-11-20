@@ -6,19 +6,21 @@ The owner supplied `prototype-reference.html` as the visual direction. That file
 
 Earlier portfolio directions (cream page + serif display, broadsheet hairlines, “at a glance” card) are retired. They are not a fallback and must not be reintroduced piecemeal.
 
+The current light palette is provisional. Two alternatives with contrast tables are in `docs/palette-options.md`; the owner has not chosen one, so the prototype's cream + burnt orange remains in `src/styles/index.css`.
+
 ## Why this direction fits the owner
 
-| Decision                         | One-line rationale tied to real material                                                                                                     |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Game HUD flavour                 | The owner lists gaming as an interest; the pixel avatar, LV.5 and arcade styling keep that spirit without replacing standard section labels. |
-| Dark navy + amber + mint palette | Taken from the prototype; reads as an arcade/CRT screen rather than a generic SaaS dashboard.                                                |
-| Light cream variant              | Also from the prototype; paired with a pixel face, never with a serif.                                                                       |
-| Pixelify Sans for display/UI     | The prototype uses it; gives the game identity. Body copy stays system sans for readability.                                                 |
-| 4px borders + 6px hard shadows   | From the prototype; tactile, cabinet-like panels instead of soft card shadows.                                                               |
-| 1000px content column            | From the prototype; keeps long Indonesian prose at a readable measure.                                                                       |
-| Chunky square corners            | Arcade UI has no rounded pill cards; rounding would fight the reference.                                                                     |
-| Scanline texture                 | The prototype's CRT overlay. It is the only gradient in the system and is decorative.                                                        |
-| Indonesian + English copy        | Recruiters were the stated audience; English strings come from the previous site, not from invention.                                        |
+| Decision                          | One-line rationale tied to real material                                                                                                     |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Game HUD flavour                  | The owner lists gaming as an interest; the pixel avatar, LV.5 and arcade styling keep that spirit without replacing standard section labels. |
+| Dark navy + amber + mint palette  | Taken from the prototype; reads as an arcade/CRT screen rather than a generic SaaS dashboard.                                                |
+| Light cream variant (provisional) | Kept from the prototype; paired with a pixel face, never with a serif. Alternatives await the owner's choice (`docs/palette-options.md`).    |
+| Pixelify Sans for display/UI      | The prototype uses it; gives the game identity. Body copy stays system sans for readability.                                                 |
+| 4px borders + 6px hard shadows    | From the prototype; tactile, cabinet-like panels instead of soft card shadows.                                                               |
+| 1000px content column             | From the prototype; keeps long Indonesian prose at a readable measure.                                                                       |
+| Chunky square corners             | Arcade UI has no rounded pill cards; rounding would fight the reference.                                                                     |
+| Scanline texture                  | The prototype's CRT overlay. It is the only gradient in the system and is decorative.                                                        |
+| Indonesian + English copy         | Recruiters were the stated audience; English strings come from the previous site, not from invention.                                        |
 
 ## Tokens
 
@@ -35,7 +37,7 @@ Defined in `src/styles/index.css` and exposed through `@theme inline`.
 | `mint`      | `#4be3a6` | `#0b6b49` | Focus ring, cleared, status   |
 | `shadow`    | `#05060a` | `#1c1b22` | Hard shadow, avatar outline   |
 
-Utilities: `bg-page`, `bg-panel`, `text-ink`, `text-muted`, `text-accent`, `text-on-accent`, `text-mint`, `shadow-hard`, `shadow-hard-sm`, `shadow-hard-lg`, `text-shadow-hard`, `font-pixel`, `font-sans`, `text-hero`, `text-boot`, `text-section`, `max-w-content`, `ease-steps`, `ease-steps-3`, `ease-steps-5`, `animate-bob`, `animate-load`.
+Utilities: `bg-page`, `bg-panel`, `text-ink`, `text-muted`, `text-accent`, `text-on-accent`, `text-mint`, `shadow-hard`, `shadow-hard-sm`, `shadow-hard-lg`, `text-shadow-hard`, `font-pixel`, `font-sans`, `text-hero`, `text-boot`, `text-section`, `max-w-content`, `ease-steps`, `ease-steps-3`, `ease-steps-5`, `animate-bob`, `animate-load`, `animate-jump`.
 
 No arbitrary colour or size values in components. Add a token first if one is missing. The default theme is the OS colour scheme; only an explicit user choice is stored and overrides it.
 
@@ -55,7 +57,8 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - `ButtonLink` — chunky bordered button with hard shadow; press translates 3px and drops the shadow.
 - `Tag` — 2px border, pixel text. Only for stack names.
 - `PixelAvatar` — inline SVG sprite from the prototype's pixel grid; `shapeRendering="crispEdges"`. Click or Enter makes it jump one stepped frame; reduced motion keeps it static.
-- `ProjectIcon` — one hand-defined 16x16 decorative sprite per project domain (heart, scroll, cross + coin, dumbbell, diamond node), rendered from data arrays with palette tokens and `aria-hidden`. Work cards show the project role label from `src/content/projects.ts`.
+- `ProjectIcon` — one hand-defined 16x16 decorative sprite per project domain (heart, scroll, cross + coin, dumbbell, diamond node), rendered from data arrays with palette tokens and `aria-hidden`. Work cards show the project role label from `src/content/projects.ts` in a two-column grid with no derived counters.
+- XP bar — a 4px scroll-progress line at the bottom of the header. CSS scroll-driven animation inside `@supports`, with a tiny scroll-listener fallback; the only functional motion.
 - `Reveal` — IntersectionObserver fade/slide with `steps(5)` easing; visible immediately under reduced motion.
 - `Starfield` — fixed 2D canvas, 70 drifting pixels, colour comes from `--ink`; one static frame under reduced motion.
 - `BootScreen` — opt-in start screen via `?intro=1`; never shown by default or under reduced motion.
@@ -65,9 +68,10 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - `steps()` easing everywhere; no smooth easing curves.
 - The hero chat types one full sentence character by character (12ms) with a blinking caret, click-to-skip, and a replay control. The box has a fixed responsive height (`h-68 min-[360px]:h-56 sm:h-40`) so typing never shifts the layout, and a two-layer CSS tail makes it read as a speech bubble pointing at the pixel avatar (up on mobile, right on desktop). After it finishes it waits 3s and types the next sentence from a pool of twelve, endlessly. The full copy is present in a `.sr-only` paragraph and is instant and static under reduced motion.
 - The header XP bar is functional scroll progress: CSS scroll-driven animation inside `@supports`, with a tiny scroll-listener fallback. No other scroll-linked motion.
+- The avatar jumps one stepped frame on click or Enter (`animate-jump`), unless reduced motion is requested.
 - Other motion is decorative: star drift, avatar bob, reveal, and the optional intro.
 - Star drift, avatar bob, reveal, boot progress — all disabled or static under `prefers-reduced-motion`.
-- No scroll-linked animation, no parallax, no WebGL.
+- The XP bar is the only scroll-linked motion. No parallax, no WebGL.
 
 ## Accessibility
 
@@ -78,6 +82,18 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - Measured ratios (computed from the tokens above): dark `ink/page` 14.13, `muted/page` 7.18, `ink/panel` 12.44, `muted/panel` 6.32, `on-accent/accent` 11.23, `mint/page` 10.61; light `ink/page` 13.21, `muted/page` 5.34, `ink/panel` 15.12, `muted/panel` 6.12, `on-accent/accent` 5.25, `mint/page` 5.05. All pass.
 - Hotkeys 1–5 are an enhancement, never the only path to a section.
 - No horizontal overflow at 390px or 1440px.
+
+### Known carried gaps (from the audit; not fixed on this branch)
+
+- Light active-nav text `#a84f00` on `#e9e2cf` is 4.29:1, below 4.5 for 14px text (axe/Lighthouse serious).
+- Language toggle visible text `ID`/`EN` is not contained in its accessible name.
+- Replay button hit area is below 24x24px and is overlapped by the skip overlay.
+- `robots.txt` / `sitemap.xml` are SPA HTML fallbacks; no JSON-LD, no `<noscript>` fallback, and `og.png` still shows retired LV.5 / game labels.
+- These live on `fix/first-impression`; they are intentionally not claimed as fixed here.
+
+## Measured performance
+
+After Tier 2 (preview): Lighthouse mobile 96 / accessibility 92 / best-practices 100 / SEO 92, desktop 87 / 92 / 100 / 92. LCP 0.8s both; TBT 210ms mobile, 270ms desktop. TBT rose from the B1 baseline (60/90ms), likely from the SVG sprites and XP-bar fallback; investigate before merging further.
 
 ## Hard bans
 
