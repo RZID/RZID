@@ -33,14 +33,28 @@ export const Header = () => {
       bar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`
     }
 
+    let frame = 0
+
+    const schedule = () => {
+      if (frame !== 0) {
+        return
+      }
+
+      frame = window.requestAnimationFrame(() => {
+        frame = 0
+        update()
+      })
+    }
+
     update()
-    window.addEventListener('scroll', update, { passive: true })
-    window.addEventListener('resize', update)
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
 
     return () => {
       bar.classList.remove('xp-bar-fallback')
-      window.removeEventListener('scroll', update)
-      window.removeEventListener('resize', update)
+      window.cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
     }
   }, [])
 
