@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type MouseEvent } from 'react'
+import { PixelAvatar } from '@/components/ui/pixel-avatar'
 import { profile } from '@/content/profile'
 import { nav, ui } from '@/content/site'
 import { useActiveSection } from '@/hooks/use-active-section'
@@ -16,6 +17,7 @@ export const Header = () => {
   const reduced = useReducedMotion()
   const barRef = useRef<HTMLDivElement>(null)
   const headerRef = useRef<HTMLElement>(null)
+  const menuCloseRef = useRef<HTMLButtonElement>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [themeWipe, setThemeWipe] = useState<{ id: number; x: number; y: number } | null>(null)
   const [languageSwap, setLanguageSwap] = useState<{ id: number; label: string } | null>(null)
@@ -117,6 +119,8 @@ export const Header = () => {
       return
     }
 
+    menuCloseRef.current?.focus()
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setMenuOpen(false)
@@ -160,7 +164,7 @@ export const Header = () => {
         aria-current={isActive ? 'location' : undefined}
         className={cn(
           'group inline-flex items-center font-pixel text-base',
-          stacked ? 'min-h-11 w-full gap-1 border-l-4 px-3 py-2' : 'px-2 py-1',
+          stacked ? 'min-h-12 w-full gap-1 border-l-4 px-3 py-2 text-lg' : 'px-2 py-1',
           isActive
             ? cn('text-accent-text', stacked && 'border-accent-text bg-panel')
             : cn('hover:text-accent-text', stacked && 'border-transparent hover:bg-panel'),
@@ -235,13 +239,43 @@ export const Header = () => {
       </div>
 
       {menuOpen ? (
-        <nav
-          id="mobile-menu"
-          aria-label={t(ui.primaryNav)}
-          className="menu-drop absolute top-full right-0 left-0 flex flex-col border-b-4 border-ink bg-panel px-2 py-2 shadow-hard lg:hidden"
-        >
-          {nav.map((item) => navLink(item, true))}
-        </nav>
+        <div className="fixed inset-0 z-50 lg:hidden">
+          <button
+            type="button"
+            aria-label={t(ui.closeMenu)}
+            onClick={() => setMenuOpen(false)}
+            className="menu-scrim absolute inset-0 bg-shadow/80"
+          />
+          <aside
+            id="mobile-menu"
+            aria-label={t(ui.primaryNav)}
+            className="menu-panel absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col border-r-4 border-ink bg-panel shadow-hard-lg"
+          >
+            <div className="flex h-13 items-center justify-between border-b-4 border-ink px-4">
+              <span className="flex items-center gap-2">
+                <span aria-hidden>
+                  <PixelAvatar className="h-8 w-auto" />
+                </span>
+                <span className="font-pixel text-lg font-bold">{t(ui.menu)}</span>
+              </span>
+              <button
+                ref={menuCloseRef}
+                type="button"
+                aria-label={t(ui.closeMenu)}
+                onClick={() => setMenuOpen(false)}
+                className="flex size-9 items-center justify-center border-2 border-ink font-pixel text-base"
+              >
+                ×
+              </button>
+            </div>
+            <nav className="flex flex-1 flex-col gap-1 p-3">
+              {nav.map((item) => navLink(item, true))}
+            </nav>
+            <p className="border-t-4 border-ink px-4 py-3 font-pixel text-sm text-muted">
+              {t(ui.menuHint)}
+            </p>
+          </aside>
+        </div>
       ) : null}
 
       {!reduced && themeWipe !== null ? (

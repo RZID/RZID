@@ -75,6 +75,7 @@ export type UiText = {
   primaryNav: Localized
   menu: Localized
   closeMenu: Localized
+  menuHint: Localized
   skipToContent: Localized
   themeToggle: Localized
   language: Localized
