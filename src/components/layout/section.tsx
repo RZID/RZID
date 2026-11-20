@@ -9,7 +9,7 @@ type SectionProps = ComponentPropsWithoutRef<'section'> & {
 
 export const Section = ({ title, lead, meta, className, children, ...props }: SectionProps) => (
   <section
-    className={cn('mx-auto max-w-content scroll-mt-20 px-5 py-12 sm:py-14', className)}
+    className={cn('mx-auto max-w-content scroll-mt-20 px-5 py-14 sm:py-16', className)}
     {...props}
   >
     {title === undefined ? null : (
