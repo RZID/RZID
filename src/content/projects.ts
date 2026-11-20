@@ -6,8 +6,8 @@ export const projects: readonly Project[] = [
     icon: 'heart',
     role: { id: 'Pengembang Full-stack', en: 'Full-stack Engineer' },
     summary: {
-      id: 'Aplikasi keanggotaan gratis untuk komunitas demensia di Singapura. Safe Return, notifikasi orang hilang, hadiah, dan dukungan Mandarin.',
-      en: 'Free membership app for the dementia community in Singapore. Safe Return, missing-person alerts, rewards, and Mandarin support.',
+      id: 'Aplikasi keanggotaan untuk komunitas demensia di Singapura. Safe Return, notifikasi orang hilang, hadiah, dan dukungan Mandarin.',
+      en: 'Membership app for the dementia community in Singapore. Safe Return, missing-person alerts, rewards, and Mandarin support.',
     },
     stack: ['React', 'NestJS', 'Expo', 'MySQL', 'Redis'],
   },

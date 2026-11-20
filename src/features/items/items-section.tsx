@@ -1,4 +1,5 @@
 import { Section } from '@/components/layout/section'
+import { TechIcon } from '@/components/ui/tech-icon'
 import { Reveal } from '@/components/ui/reveal'
 import { sections } from '@/content/site'
 import { skillGroups } from '@/content/skills'
@@ -24,7 +25,10 @@ export const ItemsSection = () => {
                     group.learning === true && 'border-dashed text-muted',
                   )}
                 >
-                  {t(item)}
+                  <span className="inline-flex items-center justify-center gap-1.5">
+                    <TechIcon label={t(item)} />
+                    {t(item)}
+                  </span>
                 </li>
               ))}
             </ul>
