@@ -21,6 +21,7 @@ The previous site carried these numbers. They are **not** in the current copy. D
 
 - The contact email is restored from the previous public build. Confirm visibility with the owner if privacy matters.
 - Work-card role labels (`Full-stack Engineer`, `Frontend Engineer`) come from `src/content/projects.ts` and describe the owner’s role, not a metric.
+- Work-card pixel icons are decorative data arrays in `src/features/work/icons/`; they are not screenshots and carry no claims.
 - Availability has no `asOf` date in the rendered copy. If it becomes stale, update `src/content/site.ts` and this register together.
 - To verify a row, attach the evidence to the source named above, set the date it was checked, then change `UNVERIFIED` to `VERIFIED`.
 - Every claim renders in both `id` and `en`. The English string is a translation of the same fact, never a new claim.
