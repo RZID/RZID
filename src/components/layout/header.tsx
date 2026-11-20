@@ -17,8 +17,11 @@ export const Header = () => {
   const headerRef = useRef<HTMLElement>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [themeWipe, setThemeWipe] = useState<{ id: number; x: number; y: number } | null>(null)
+  const [languageSwap, setLanguageSwap] = useState<{ id: number; label: string } | null>(null)
   const wipeId = useRef(0)
   const wipeTimer = useRef(0)
+  const swapId = useRef(0)
+  const swapTimer = useRef(0)
 
   useEffect(() => {
     const bar = barRef.current
@@ -65,7 +68,30 @@ export const Header = () => {
     }
   }, [])
 
-  useEffect(() => () => window.clearTimeout(wipeTimer.current), [])
+  useEffect(
+    () => () => {
+      window.clearTimeout(wipeTimer.current)
+      window.clearTimeout(swapTimer.current)
+    },
+    [],
+  )
+
+  const handleLanguageToggle = () => {
+    const next = locale === 'id' ? 'en' : 'id'
+
+    if (reduced) {
+      setLocale(next)
+      return
+    }
+
+    swapId.current += 1
+    setLanguageSwap({
+      id: swapId.current,
+      label: next === 'id' ? t(ui.indonesianShort) : t(ui.englishShort),
+    })
+    window.clearTimeout(swapTimer.current)
+    swapTimer.current = window.setTimeout(() => setLocale(next), 160)
+  }
 
   const handleThemeToggle = (event: MouseEvent<HTMLButtonElement>) => {
     if (reduced) {
@@ -178,7 +204,7 @@ export const Header = () => {
           </button>
           <button
             type="button"
-            onClick={() => setLocale(locale === 'id' ? 'en' : 'id')}
+            onClick={handleLanguageToggle}
             aria-label={locale === 'id' ? t(ui.switchToEnglish) : t(ui.switchToIndonesian)}
             className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-pixel text-base"
           >
@@ -212,6 +238,18 @@ export const Header = () => {
             onAnimationEnd={() => setThemeWipe(null)}
           />
           <span className="theme-wipe__band theme-wipe__echo" />
+        </div>
+      ) : null}
+
+      {!reduced && languageSwap !== null ? (
+        <div key={languageSwap.id} aria-hidden className="lang-slices">
+          <span className="lang-slices__band lang-slices__band--a" />
+          <span className="lang-slices__band lang-slices__band--b" />
+          <span className="lang-slices__band lang-slices__band--c" />
+          <span className="lang-slices__band lang-slices__band--d" />
+          <span className="lang-slices__label" onAnimationEnd={() => setLanguageSwap(null)}>
+            {languageSwap.label}
+          </span>
         </div>
       ) : null}
     </header>
