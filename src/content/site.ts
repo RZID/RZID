@@ -137,4 +137,8 @@ export const ui: UiText = {
     id: 'Avatar pixel Ramadhanu',
     en: 'Pixel avatar of Ramadhanu',
   },
+  avatarAction: {
+    id: 'Bikin avatar lompat',
+    en: 'Make the avatar jump',
+  },
 }

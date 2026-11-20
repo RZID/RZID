@@ -55,6 +55,7 @@
   --animate-bob: bob 1s steps(2) infinite;
   --animate-load: load 1.4s steps(14) forwards;
   --animate-blink: blink 1s steps(2) infinite;
+  --animate-jump: jump 0.32s steps(2) 1;
 }
 
 @keyframes bob {
@@ -116,6 +117,12 @@
     transform-origin: left;
     animation: xp-progress linear both;
     animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes jump {
+  50% {
+    transform: translateY(-12px);
   }
 }
 

@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Section } from '@/components/layout/section'
 import { Box } from '@/components/ui/box'
 import { ButtonLink } from '@/components/ui/button-link'
@@ -55,6 +55,13 @@ export const HeroSection = () => {
   const t = useT()
   const sentences = useMemo(() => hero.sentences.map((item) => item[locale]), [locale])
   const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const [jump, setJump] = useState(0)
+
+  const jumpAvatar = () => {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setJump((value) => value + 1)
+    }
+  }
 
   return (
     <Section
@@ -83,7 +90,11 @@ export const HeroSection = () => {
       </Reveal>
 
       <Reveal className="order-first grid place-items-center lg:order-none">
-        <PixelAvatar className="w-[min(210px,52vw)] animate-bob" />
+        <button type="button" onClick={jumpAvatar} aria-label={t(ui.avatarAction)}>
+          <div key={jump} className={jump > 0 ? 'animate-jump' : undefined}>
+            <PixelAvatar className="w-[min(210px,52vw)] animate-bob" />
+          </div>
+        </button>
         <div aria-hidden className="mt-2 h-3.5 w-40 bg-ink/25" />
       </Reveal>
 

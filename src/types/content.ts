@@ -88,4 +88,5 @@ export type UiText = {
   pressStart: Localized
   bootEnterHint: Localized
   avatarLabel: Localized
+  avatarAction: Localized
 }

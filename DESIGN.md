@@ -54,7 +54,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 - `Box` — 4px `ink` border, `panel` fill, hard shadow. Use `as="article"` for semantic cards.
 - `ButtonLink` — chunky bordered button with hard shadow; press translates 3px and drops the shadow.
 - `Tag` — 2px border, pixel text. Only for stack names.
-- `PixelAvatar` — inline SVG sprite from the prototype's pixel grid; `shapeRendering="crispEdges"`.
+- `PixelAvatar` — inline SVG sprite from the prototype's pixel grid; `shapeRendering="crispEdges"`. Click or Enter makes it jump one stepped frame; reduced motion keeps it static.
 - `ProjectIcon` — one hand-defined 16x16 decorative sprite per project domain (heart, scroll, cross + coin, dumbbell, diamond node), rendered from data arrays with palette tokens and `aria-hidden`. Work cards show the project role label from `src/content/projects.ts`.
 - `Reveal` — IntersectionObserver fade/slide with `steps(5)` easing; visible immediately under reduced motion.
 - `Starfield` — fixed 2D canvas, 70 drifting pixels, colour comes from `--ink`; one static frame under reduced motion.
