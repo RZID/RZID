@@ -210,7 +210,7 @@ export const Header = () => {
             aria-controls="mobile-menu"
             aria-label={menuOpen ? t(ui.closeMenu) : t(ui.menu)}
             onClick={() => setMenuOpen((open) => !open)}
-            className="inline-flex h-9 cursor-pointer items-center gap-1.5 border-2 border-ink px-2 font-pixel text-base lg:hidden"
+            className="inline-flex h-9 cursor-pointer items-center gap-1.5 border-2 border-ink px-2 font-pixel text-base"
           >
             <span aria-hidden className="inline-flex flex-col gap-0.5">
               <span className="block h-0.5 w-4 bg-current" />
@@ -239,7 +239,7 @@ export const Header = () => {
       </div>
 
       {menuOpen ? (
-        <div className="fixed inset-0 z-50 lg:hidden">
+        <div className="fixed inset-0 z-50">
           <button
             type="button"
             aria-label={t(ui.closeMenu)}
