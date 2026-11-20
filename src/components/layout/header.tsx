@@ -1,4 +1,11 @@
-import { useEffect, useRef, useState, type CSSProperties, type MouseEvent } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type MouseEvent,
+} from 'react'
 import { PixelAvatar } from '@/components/ui/pixel-avatar'
 import { profile } from '@/content/profile'
 import { nav, ui } from '@/content/site'
@@ -18,6 +25,7 @@ export const Header = () => {
   const barRef = useRef<HTMLDivElement>(null)
   const headerRef = useRef<HTMLElement>(null)
   const menuCloseRef = useRef<HTMLButtonElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [themeWipe, setThemeWipe] = useState<{ id: number; x: number; y: number } | null>(null)
   const [languageSwap, setLanguageSwap] = useState<{ id: number; label: string } | null>(null)
@@ -114,6 +122,11 @@ export const Header = () => {
     wipeTimer.current = window.setTimeout(toggle, 320)
   }
 
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false)
+    menuButtonRef.current?.focus()
+  }, [])
+
   useEffect(() => {
     if (!menuOpen) {
       return
@@ -123,7 +136,7 @@ export const Header = () => {
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setMenuOpen(false)
+        closeMenu()
       }
     }
 
@@ -131,7 +144,7 @@ export const Header = () => {
       const header = headerRef.current
 
       if (header !== null && event.target instanceof Node && !header.contains(event.target)) {
-        setMenuOpen(false)
+        closeMenu()
       }
     }
 
@@ -142,7 +155,7 @@ export const Header = () => {
       window.removeEventListener('keydown', onKeyDown)
       window.removeEventListener('pointerdown', onPointerDown)
     }
-  }, [menuOpen])
+  }, [closeMenu, menuOpen])
 
   const wipeStyle: CSSProperties & Record<'--wipe-x' | '--wipe-y', string> = {
     '--wipe-x': `${themeWipe?.x ?? 0}px`,
@@ -159,7 +172,7 @@ export const Header = () => {
         onClick={(event) => {
           event.preventDefault()
           smoothScrollTo(item.id, reduced)
-          setMenuOpen(false)
+          closeMenu()
         }}
         aria-current={isActive ? 'location' : undefined}
         className={cn(
@@ -208,6 +221,7 @@ export const Header = () => {
             type="button"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
+            ref={menuButtonRef}
             aria-label={menuOpen ? t(ui.closeMenu) : t(ui.menu)}
             onClick={() => setMenuOpen((open) => !open)}
             className="inline-flex h-9 cursor-pointer items-center gap-1.5 border-2 border-ink px-2 font-pixel text-base lg:hidden"
@@ -238,45 +252,48 @@ export const Header = () => {
         </div>
       </div>
 
-      {menuOpen ? (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <button
-            type="button"
-            aria-label={t(ui.closeMenu)}
-            onClick={() => setMenuOpen(false)}
-            className="menu-scrim absolute inset-0 bg-shadow/80"
-          />
-          <aside
-            id="mobile-menu"
-            aria-label={t(ui.primaryNav)}
-            className="menu-panel absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col border-r-4 border-ink bg-panel shadow-hard-lg"
-          >
-            <div className="flex h-13 items-center justify-between border-b-4 border-ink px-4">
-              <span className="flex items-center gap-2">
-                <span aria-hidden>
-                  <PixelAvatar className="h-8 w-auto" />
-                </span>
-                <span className="font-pixel text-lg font-bold">{t(ui.menu)}</span>
+      <div
+        className="sidebar-root fixed inset-0 z-50 lg:hidden"
+        data-open={menuOpen}
+        aria-hidden={!menuOpen}
+        inert={!menuOpen}
+      >
+        <button
+          type="button"
+          aria-label={t(ui.closeMenu)}
+          onClick={closeMenu}
+          className="sidebar-scrim absolute inset-0 cursor-pointer bg-shadow/80"
+        />
+        <aside
+          id="mobile-menu"
+          aria-label={t(ui.primaryNav)}
+          className="sidebar-panel absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col border-r-4 border-ink bg-panel shadow-hard-lg"
+        >
+          <div className="flex h-13 items-center justify-between border-b-4 border-ink px-4">
+            <span className="flex items-center gap-2">
+              <span aria-hidden>
+                <PixelAvatar className="h-8 w-auto" />
               </span>
-              <button
-                ref={menuCloseRef}
-                type="button"
-                aria-label={t(ui.closeMenu)}
-                onClick={() => setMenuOpen(false)}
-                className="flex size-9 items-center justify-center border-2 border-ink font-pixel text-base"
-              >
-                ×
-              </button>
-            </div>
-            <nav className="flex flex-1 flex-col gap-1 p-3">
-              {nav.map((item) => navLink(item, true))}
-            </nav>
-            <p className="border-t-4 border-ink px-4 py-3 font-pixel text-sm text-muted">
-              {t(ui.menuHint)}
-            </p>
-          </aside>
-        </div>
-      ) : null}
+              <span className="font-pixel text-lg font-bold">{t(ui.menu)}</span>
+            </span>
+            <button
+              ref={menuCloseRef}
+              type="button"
+              aria-label={t(ui.closeMenu)}
+              onClick={closeMenu}
+              className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-pixel text-base"
+            >
+              ×
+            </button>
+          </div>
+          <nav className="flex flex-1 flex-col gap-1 p-3">
+            {nav.map((item) => navLink(item, true))}
+          </nav>
+          <p className="border-t-4 border-ink px-4 py-3 font-pixel text-sm text-muted">
+            {t(ui.menuHint)}
+          </p>
+        </aside>
+      </div>
 
       {!reduced && themeWipe !== null ? (
         <div key={themeWipe.id} aria-hidden className="theme-wipe" style={wipeStyle}>

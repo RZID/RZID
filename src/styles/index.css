@@ -168,30 +168,33 @@
   }
 }
 
-.menu-scrim {
-  animation: menu-scrim 240ms steps(4) both;
+.sidebar-root {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms steps(4);
 }
 
-.menu-panel {
-  animation: menu-panel 320ms steps(6) both;
+.sidebar-scrim {
+  opacity: 0;
+  transition: opacity 240ms steps(4);
 }
 
-@keyframes menu-scrim {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.sidebar-panel {
+  transform: translateX(-100%);
+  transition: transform 320ms steps(6);
 }
 
-@keyframes menu-panel {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+.sidebar-root[data-open='true'] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar-root[data-open='true'] .sidebar-scrim {
+  opacity: 1;
+}
+
+.sidebar-root[data-open='true'] .sidebar-panel {
+  transform: translateX(0);
 }
 
 .lang-slices {
