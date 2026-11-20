@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties, type MouseEvent } from 'react'
 import { profile } from '@/content/profile'
 import { nav, ui } from '@/content/site'
 import { useActiveSection } from '@/hooks/use-active-section'
+import { useReducedMotion } from '@/hooks/use-reduced-motion'
 import { useTheme } from '@/hooks/use-theme'
 import { cn } from '@/lib/cn'
 import { setLocale, useLocale, useT } from '@/lib/locale'
@@ -11,9 +12,13 @@ export const Header = () => {
   const { theme, toggle } = useTheme()
   const locale = useLocale()
   const t = useT()
+  const reduced = useReducedMotion()
   const barRef = useRef<HTMLDivElement>(null)
   const headerRef = useRef<HTMLElement>(null)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [themeWipe, setThemeWipe] = useState<{ id: number; x: number; y: number } | null>(null)
+  const wipeId = useRef(0)
+  const wipeTimer = useRef(0)
 
   useEffect(() => {
     const bar = barRef.current
@@ -60,6 +65,26 @@ export const Header = () => {
     }
   }, [])
 
+  useEffect(() => () => window.clearTimeout(wipeTimer.current), [])
+
+  const handleThemeToggle = (event: MouseEvent<HTMLButtonElement>) => {
+    if (reduced) {
+      toggle()
+      return
+    }
+
+    const rect = event.currentTarget.getBoundingClientRect()
+
+    wipeId.current += 1
+    setThemeWipe({
+      id: wipeId.current,
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+    })
+    window.clearTimeout(wipeTimer.current)
+    wipeTimer.current = window.setTimeout(toggle, 200)
+  }
+
   useEffect(() => {
     if (!menuOpen) {
       return
@@ -87,6 +112,11 @@ export const Header = () => {
       window.removeEventListener('pointerdown', onPointerDown)
     }
   }, [menuOpen])
+
+  const wipeStyle: CSSProperties & Record<'--wipe-x' | '--wipe-y', string> = {
+    '--wipe-x': `${themeWipe?.x ?? 0}px`,
+    '--wipe-y': `${themeWipe?.y ?? 0}px`,
+  }
 
   const navLink = (item: (typeof nav)[number]) => {
     const isActive = active === item.id
@@ -156,7 +186,7 @@ export const Header = () => {
           </button>
           <button
             type="button"
-            onClick={toggle}
+            onClick={handleThemeToggle}
             aria-label={t(ui.themeToggle)}
             className="flex size-9 cursor-pointer items-center justify-center border-2 border-ink font-pixel text-base"
           >
@@ -173,6 +203,16 @@ export const Header = () => {
         >
           {nav.map(navLink)}
         </nav>
+      ) : null}
+
+      {!reduced && themeWipe !== null ? (
+        <div key={themeWipe.id} aria-hidden className="theme-wipe" style={wipeStyle}>
+          <span
+            className="theme-wipe__band theme-wipe__core"
+            onAnimationEnd={() => setThemeWipe(null)}
+          />
+          <span className="theme-wipe__band theme-wipe__echo" />
+        </div>
       ) : null}
     </header>
   )

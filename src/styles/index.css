@@ -132,6 +132,63 @@
   transition: transform var(--motion-fast) steps(3);
 }
 
+.theme-wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  --wipe-x: 50vw;
+  --wipe-y: 50vh;
+}
+
+.theme-wipe__band {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.theme-wipe__core {
+  background: var(--accent);
+  animation: wipe-core 480ms steps(8) forwards;
+}
+
+.theme-wipe__echo {
+  background: var(--mint);
+  opacity: 0;
+  animation: wipe-echo 480ms steps(8) 70ms forwards;
+}
+
+@keyframes wipe-core {
+  0% {
+    clip-path: circle(0 at var(--wipe-x) var(--wipe-y));
+  }
+  42% {
+    clip-path: circle(150vmax at var(--wipe-x) var(--wipe-y));
+  }
+  100% {
+    clip-path: circle(150vmax at var(--wipe-x) var(--wipe-y));
+    opacity: 0;
+  }
+}
+
+@keyframes wipe-echo {
+  0% {
+    clip-path: circle(0 at var(--wipe-x) var(--wipe-y));
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  55% {
+    clip-path: circle(150vmax at var(--wipe-x) var(--wipe-y));
+    opacity: 0.9;
+  }
+  100% {
+    clip-path: circle(150vmax at var(--wipe-x) var(--wipe-y));
+    opacity: 0;
+  }
+}
+
 @keyframes jump {
   0% {
     transform: translateY(0) scale(1, 1);
