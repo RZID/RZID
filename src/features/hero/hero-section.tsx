@@ -36,8 +36,10 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
 
   return (
     <Box className="relative min-h-24 shrink-0 px-4 py-4 text-meta sm:text-lead">
-      <span aria-hidden className="chat-tail chat-tail-right" />
-      <span aria-hidden className="chat-tail chat-tail-right-inner" />
+      <span aria-hidden className="chat-tail chat-tail-down sm:hidden" />
+      <span aria-hidden className="chat-tail chat-tail-down-inner sm:hidden" />
+      <span aria-hidden className="chat-tail chat-tail-right hidden sm:block" />
+      <span aria-hidden className="chat-tail chat-tail-right-inner hidden sm:block" />
       <p aria-hidden="true" className="m-0 break-words whitespace-pre-wrap">
         {text}
         {done ? null : <span className="animate-blink">▌</span>}
@@ -66,12 +68,7 @@ export const HeroSection = () => {
   const locale = useLocale()
   const t = useT()
   const sentences = useMemo(() => hero.sentences.map((item) => item[locale]), [locale])
-  const slotClass = cn(
-    locale === 'id'
-      ? 'h-60 min-[360px]:h-52 min-[375px]:h-48'
-      : 'h-68 min-[360px]:h-56 min-[375px]:h-52',
-    'sm:h-40',
-  )
+  const slotClass = 'h-52 min-[360px]:h-44 min-[414px]:h-40'
   const reduced = useReducedMotion()
   const [jump, setJump] = useState(0)
 
@@ -84,7 +81,7 @@ export const HeroSection = () => {
   return (
     <Section
       id="home"
-      className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-x-8 lg:gap-y-6"
+      className="grid grid-cols-1 gap-y-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-x-8 lg:gap-y-6"
     >
       <div className="contents lg:col-start-1 lg:row-start-1 lg:flex lg:flex-col">
         <Reveal className="col-span-full">
@@ -96,14 +93,14 @@ export const HeroSection = () => {
           <p className="sr-only">{t(profile.summary)}</p>
         </Reveal>
 
-        <Reveal className="col-start-1 row-start-2">
+        <Reveal className="col-span-full">
           <div className={cn('flex flex-col justify-center', slotClass)}>
             <ChatDialogue key={`${locale}-${reduced}`} sentences={sentences} instant={reduced} />
           </div>
         </Reveal>
       </div>
 
-      <Reveal className="col-start-2 row-start-2 grid place-items-center lg:col-start-2 lg:row-span-2 lg:row-start-1">
+      <Reveal className="col-span-full grid place-items-center lg:col-start-2 lg:row-span-2 lg:row-start-1">
         <button type="button" onClick={jumpAvatar} aria-label={t(ui.avatarAction)}>
           <div key={jump} className={jump > 0 ? 'animate-jump' : undefined}>
             <span className="avatar-talk block">
