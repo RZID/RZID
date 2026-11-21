@@ -41,7 +41,8 @@ export const Header = () => {
       return
     }
 
-    if (typeof CSS !== 'undefined' && CSS.supports('animation-timeline: scroll()')) {
+    // The global reduced-motion rule kills CSS animations, so the bar needs the JS path there.
+    if (!reduced && typeof CSS !== 'undefined' && CSS.supports('animation-timeline: scroll()')) {
       return
     }
 
@@ -77,7 +78,7 @@ export const Header = () => {
       window.removeEventListener('scroll', schedule)
       window.removeEventListener('resize', schedule)
     }
-  }, [])
+  }, [reduced])
 
   useEffect(
     () => () => {
