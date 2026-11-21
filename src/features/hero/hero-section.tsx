@@ -43,7 +43,7 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
     >
       <span aria-hidden className="chat-tail chat-tail-right" />
       <span aria-hidden className="chat-tail chat-tail-right-inner" />
-      <p aria-hidden="true" className="m-0 break-words whitespace-pre-wrap">
+      <p aria-hidden="true" className="m-0 font-body text-body break-words whitespace-pre-wrap">
         {text}
         {done ? null : <span className="animate-blink">▌</span>}
       </p>
@@ -143,7 +143,7 @@ export const HeroSection = () => {
         {hero.stats.map((stat) => (
           <div key={stat.label.id} className="border-l-4 border-accent pl-3">
             <p className="m-0 font-pixel text-label text-muted">{t(stat.label)}</p>
-            <p className="m-0 text-label">{t(stat.value)}</p>
+            <p className="m-0 font-body text-body">{t(stat.value)}</p>
           </div>
         ))}
       </Reveal>

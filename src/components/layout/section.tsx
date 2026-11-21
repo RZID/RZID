@@ -25,7 +25,9 @@ export const Section = ({ title, lead, meta, className, children, ...props }: Se
         )}
       </div>
     )}
-    {lead === undefined ? null : <p className="-mt-3 mb-6 max-w-prose text-muted">{lead}</p>}
+    {lead === undefined ? null : (
+      <p className="-mt-3 mb-6 max-w-prose font-body text-body text-muted">{lead}</p>
+    )}
     {children}
   </section>
 )
