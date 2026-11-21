@@ -1,16 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 export const useTypewriter = (sentences: readonly string[], instant: boolean) => {
-  const [cycle, setCycle] = useState(0)
-
-  const current = sentences[cycle % sentences.length] ?? ''
-
-  const [text, setText] = useState(() => (instant ? current : ''))
+  const full = sentences.join('\n')
+  const [run, setRun] = useState(0)
+  const [text, setText] = useState(() => (instant ? full : ''))
   const [done, setDone] = useState(instant)
   const stopped = useRef(instant)
 
   useEffect(() => {
-    if (instant || current === '') {
+    if (instant || full === '') {
       return
     }
 
@@ -25,12 +23,12 @@ export const useTypewriter = (sentences: readonly string[], instant: boolean) =>
         return
       }
 
-      if (index >= current.length) {
+      if (index >= full.length) {
         setDone(true)
         return
       }
 
-      built += current.charAt(index)
+      built += full.charAt(index)
       index += 1
       setText(built)
       timer = window.setTimeout(tick, 12)
@@ -39,27 +37,20 @@ export const useTypewriter = (sentences: readonly string[], instant: boolean) =>
     timer = window.setTimeout(tick, 150)
 
     return () => window.clearTimeout(timer)
-  }, [instant, current])
-
-  useEffect(() => {
-    if (!done || instant || sentences.length === 0) {
-      return
-    }
-
-    const timer = window.setTimeout(() => {
-      setText('')
-      setDone(false)
-      setCycle((value) => value + 1)
-    }, 3000)
-
-    return () => window.clearTimeout(timer)
-  }, [done, instant, sentences.length])
+  }, [instant, full, run])
 
   const finish = useCallback(() => {
     stopped.current = true
-    setText(current)
+    setText(full)
     setDone(true)
-  }, [current])
+  }, [full])
 
-  return { text, done, finish }
+  const replay = useCallback(() => {
+    stopped.current = false
+    setText('')
+    setDone(false)
+    setRun((value) => value + 1)
+  }, [])
+
+  return { text, done, finish, replay }
 }

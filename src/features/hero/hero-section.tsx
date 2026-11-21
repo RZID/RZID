@@ -18,7 +18,7 @@ type ChatDialogueProps = {
 
 const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
   const t = useT()
-  const { text, done, finish } = useTypewriter(sentences, instant)
+  const { text, done, finish, replay } = useTypewriter(sentences, instant)
 
   useEffect(() => {
     const heroElement = document.getElementById('home')
@@ -35,19 +35,33 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
   }, [done])
 
   return (
-    <Box className="relative min-h-24 shrink-0 px-4 py-4 text-meta sm:text-lead">
+    <Box
+      className={cn('relative min-h-24 shrink-0 px-4 py-4 text-meta sm:text-lead', done && 'pb-12')}
+    >
       <span aria-hidden className="chat-tail chat-tail-right" />
       <span aria-hidden className="chat-tail chat-tail-right-inner" />
       <p aria-hidden="true" className="m-0 break-words whitespace-pre-wrap">
         {text}
         {done ? null : <span className="animate-blink">▌</span>}
       </p>
-      <button
-        type="button"
-        onClick={finish}
-        aria-label={t(ui.dialogueSkip)}
-        className="absolute inset-0 cursor-pointer"
-      />
+      {done ? null : (
+        <button
+          type="button"
+          onClick={finish}
+          aria-label={t(ui.dialogueSkip)}
+          className="absolute inset-0 cursor-pointer"
+        />
+      )}
+      {done ? (
+        <button
+          type="button"
+          onClick={replay}
+          aria-label={t(ui.replayDialogue)}
+          className="absolute right-2 bottom-2 z-10 flex size-8 cursor-pointer items-center justify-center border-2 border-ink bg-panel font-pixel text-lead leading-none text-mint"
+        >
+          <span aria-hidden>↻</span>
+        </button>
+      ) : null}
     </Box>
   )
 }

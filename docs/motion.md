@@ -7,7 +7,7 @@ All motion uses `steps()` easing. Reduced motion removes decorative motion; the 
 | `Reveal`            | 500ms (+0/60/70ms stagger) | `steps(5)`  | IntersectionObserver           | Static, visible immediately             |
 | Avatar bob          | 1s infinite                | `steps(2)`  | Always                         | Animation none                          |
 | Caret blink         | 1s infinite                | `steps(2)`  | While typing                   | Static                                  |
-| Typewriter          | 12ms per character         | n/a         | Load                           | Full text instantly                     |
+| Typewriter          | 12ms per character         | n/a         | Load / replay                  | Full text instantly                     |
 | Avatar jump         | 320ms                      | `steps(2)`  | Click or Enter on sprite       | No jump state applied                   |
 | Theme wipe          | 720ms (+80ms echo)         | `steps(8)`  | Theme toggle, swap at 320ms    | No overlay rendered                     |
 | Language slices     | 720ms                      | `steps(8)`  | Language toggle, swap at 320ms | No overlay rendered                     |
