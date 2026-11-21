@@ -131,22 +131,99 @@
     <div id="root"></div>
     <div
       id="boot-shell"
-      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Start screen"
       class="fixed inset-0 z-70 m-0 h-dvh w-dvw max-w-none flex-col items-center justify-center gap-6 overflow-hidden bg-page px-5 text-center"
     >
-      <span class="h-[149px] w-32 sm:h-56 sm:w-48"></span>
+      <svg
+        viewBox="0 0 12 14"
+        aria-hidden="true"
+        shapeRendering="crispEdges"
+        class="h-auto w-32 animate-bob sm:w-48"
+      >
+        <path
+          d="M3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM7 0h1v1h-1zM8 0h1v1h-1zM2 1h1v1h-1zM3 1h1v1h-1zM4 1h1v1h-1zM5 1h1v1h-1zM6 1h1v1h-1zM7 1h1v1h-1zM8 1h1v1h-1zM9 1h1v1h-1zM2 2h1v1h-1zM9 2h1v1h-1zM2 3h1v1h-1zM9 3h1v1h-1zM2 4h1v1h-1zM9 4h1v1h-1zM3 5h1v1h-1zM8 5h1v1h-1z"
+          fill="var(--shadow,#05060a)"
+        />
+        <path
+          d="M3 2h1v1h-1zM4 2h1v1h-1zM5 2h1v1h-1zM6 2h1v1h-1zM7 2h1v1h-1zM8 2h1v1h-1zM3 3h1v1h-1zM5 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1zM8 4h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM6 5h1v1h-1zM7 5h1v1h-1zM2 9h1v1h-1zM9 9h1v1h-1z"
+          fill="#f0b88e"
+        />
+        <path d="M4 3h1v1h-1zM7 3h1v1h-1z" fill="#111111" />
+        <path
+          d="M2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM9 6h1v1h-1zM1 7h1v1h-1zM2 7h1v1h-1zM3 7h1v1h-1zM4 7h1v1h-1zM5 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM10 7h1v1h-1zM1 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM1 9h1v1h-1zM10 9h1v1h-1zM2 10h1v1h-1zM9 10h1v1h-1z"
+          fill="var(--accent,#ffc83d)"
+        />
+        <path
+          d="M3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM6 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1z"
+          fill="#8c93a8"
+        />
+        <path
+          d="M2 11h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM6 11h1v1h-1zM7 11h1v1h-1zM8 11h1v1h-1zM9 11h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM7 12h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1z"
+          fill="#3b4a7a"
+        />
+        <path
+          d="M2 13h1v1h-1zM3 13h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM11 13h1v1h-1z"
+          fill="#151515"
+        />
+      </svg>
       <p class="m-0 font-pixel text-boot leading-none whitespace-pre-line text-shadow-hard">
         Ramadhanu Quest
       </p>
       <div class="h-3 w-56 border-2 border-ink bg-panel sm:w-72">
-        <div class="h-full origin-left animate-load bg-accent"></div>
+        <div id="boot-bar" class="h-full origin-left animate-load bg-accent"></div>
       </div>
-      <span
+      <button
+        id="boot-start"
+        type="button"
         class="invisible border-4 border-ink bg-panel px-6 py-3 font-pixel text-lead text-mint shadow-hard"
-        >Press start</span
       >
-      <small class="invisible font-pixel text-label text-muted">or press Enter</small>
+        Press start
+      </button>
+      <small id="boot-hint" class="invisible font-pixel text-label text-muted"
+        >or press Enter</small
+      >
     </div>
+    <script>
+      // Keep in sync with the gate in the head.
+      ;(() => {
+        const shell = document.getElementById('boot-shell')
+        const button = document.getElementById('boot-start')
+        const hint = document.getElementById('boot-hint')
+        const bar = document.getElementById('boot-bar')
+
+        if (shell === null || button === null || hint === null || bar === null) return
+
+        if (document.documentElement.lang === 'id') hint.textContent = 'atau tekan Enter'
+
+        let ready = false
+        const reveal = () => {
+          ready = true
+          button.classList.remove('invisible')
+          hint.classList.remove('invisible')
+          button.focus()
+        }
+
+        const start = () => {
+          if (!ready) return
+          try {
+            window.sessionStorage.setItem('rzid.boot', 'done')
+          } catch {
+            // Storage can be unavailable; the gate still closes.
+          }
+          document.documentElement.dataset.boot = '0'
+          shell.remove()
+        }
+
+        bar.addEventListener('animationend', reveal)
+        window.setTimeout(reveal, 2000)
+        button.addEventListener('click', start)
+        window.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') start()
+        })
+      })()
+    </script>
     <noscript>
       <main>
         <h1>Ramadhanu</h1>
