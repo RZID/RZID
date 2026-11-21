@@ -13,8 +13,8 @@ export const hero: Hero = {
   name: profile.name,
   sentences: [
     {
-      id: 'Halo, saya Ramadhanu, software engineer di Jakarta.',
-      en: "Hi, I'm Ramadhanu, a software engineer in Jakarta.",
+      id: 'Halo, selamat datang di pojok web saya.',
+      en: 'Hi, welcome to my corner of the web.',
     },
     {
       id: 'Lima tahun mengerjakan web, mobile, dan backend.',
