@@ -66,6 +66,20 @@ export const QuestsSection = () => {
           )
         })}
       </div>
+      <div className="mt-8 border-t-4 border-ink pt-6">
+        <h3 className="font-pixel text-title">{t(sections.quests.decisionsTitle)}</h3>
+        <p className="mb-4 text-body text-muted">{t(sections.quests.decisionsLead)}</p>
+        <ol className="grid gap-3 sm:grid-cols-2">
+          {sections.quests.decisions.map((decision, index) => (
+            <li key={decision.en} className="flex gap-3 border-l-4 border-accent pl-3">
+              <span aria-hidden className="font-pixel text-mint">
+                0{index + 1}
+              </span>
+              <span className="text-body">{t(decision)}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
     </Section>
   )
 }

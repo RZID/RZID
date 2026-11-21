@@ -107,6 +107,29 @@ export const sections: SectionCopy = {
       id: 'Sebagian besar kerjaan saya ada di balik pintu tertutup. Ini yang bisa saya ceritakan.',
       en: 'Most of my work lives behind closed doors, so here is what I can share.',
     },
+    decisionsTitle: { id: 'Keputusan teknis', en: 'Engineering decisions' },
+    decisionsLead: {
+      id: 'Empat keputusan yang masih terasa sampai sekarang.',
+      en: 'Four calls that still shape how I build today.',
+    },
+    decisions: [
+      {
+        id: 'Monolith dipindah ke microservices NestJS sambil tetap melayani pengguna.',
+        en: 'Moved a monolith to NestJS microservices while it kept serving users.',
+      },
+      {
+        id: 'Satu codebase Expo jadi dua rilis store.',
+        en: 'One Expo codebase became two store releases.',
+      },
+      {
+        id: 'Retry, webhook, dan alert yang benar-benar bunyi di alur pembayaran produksi.',
+        en: 'Retries, webhooks and alerts that actually fire on production payment flows.',
+      },
+      {
+        id: 'Deploy manual jadi pipeline AWS yang bisa dijalankan siapa saja.',
+        en: 'A manual deploy became an AWS pipeline anyone can run.',
+      },
+    ],
   },
   items: {
     title: { id: 'Keahlian', en: 'Skills' },

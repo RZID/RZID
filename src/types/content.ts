@@ -67,7 +67,13 @@ export type Hero = {
 }
 
 export type SectionCopy = {
-  quests: { title: Localized; lead: Localized }
+  quests: {
+    title: Localized
+    lead: Localized
+    decisionsTitle: Localized
+    decisionsLead: Localized
+    decisions: readonly Localized[]
+  }
   items: { title: Localized; lead: Localized }
   guild: { title: Localized; lead: Localized }
   contact: { title: Localized; summary: Localized; availability: Localized }
