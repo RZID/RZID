@@ -55,6 +55,7 @@
   --text-lead: 1.125rem;
   --text-title: 1.25rem;
   --text-rank: 1.875rem;
+  --text-boot: clamp(2rem, 8vw, 4rem);
   --text-hero: clamp(3.5rem, 9vw, 5.75rem);
   --text-section: clamp(1.625rem, 4vw, 2.25rem);
   --text-meta--line-height: 1.5;
@@ -72,6 +73,16 @@
   --animate-bob: bob 1s steps(2) infinite;
   --animate-blink: blink 1s steps(2) infinite;
   --animate-jump: jump 0.32s steps(2) 1;
+  --animate-load: load 1.4s steps(14) forwards;
+}
+
+@keyframes load {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes bob {

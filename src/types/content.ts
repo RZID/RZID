@@ -85,6 +85,11 @@ export type UiText = {
   indonesianShort: Localized
   dialogueSkip: Localized
   replayDialogue: Localized
+  playIntro: Localized
+  bootDialogLabel: Localized
+  bootTitle: Localized
+  pressStart: Localized
+  bootEnterHint: Localized
   copyrightYear: string
   footerHint: Localized
   avatarLabel: Localized

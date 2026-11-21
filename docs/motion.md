@@ -5,6 +5,7 @@ All motion uses `steps()` easing. Reduced motion removes decorative motion; the 
 | Element             | Duration / rate            | Easing      | Trigger                        | Reduced motion                          |
 | ------------------- | -------------------------- | ----------- | ------------------------------ | --------------------------------------- |
 | `Reveal`            | 500ms (+0/60/70ms stagger) | `steps(5)`  | IntersectionObserver           | Static, visible immediately             |
+| Boot progress       | 1.4s                       | `steps(14)` | First visit (session)          | Gate not shown                          |
 | Avatar bob          | 1s infinite                | `steps(2)`  | Always                         | Animation none                          |
 | Caret blink         | 1s infinite                | `steps(2)`  | While typing                   | Static                                  |
 | Typewriter          | 12ms per character         | n/a         | Load / replay                  | Full text instantly                     |

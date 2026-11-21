@@ -58,6 +58,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 
 ## Components
 
+- `BootScreen` — first-visit overlay (`dialog`), session-scoped via `sessionStorage`; skipped under reduced motion, on a deep link, or on reload. `?intro=1` and the footer link replay it. The site renders underneath.
 - `Box` — 4px `ink` border, `panel` fill, hard shadow. Use `as="article"` for semantic cards.
 - `ButtonLink` — chunky bordered button with hard shadow; press translates 3px and drops the shadow.
 - `Header` — one 56px row on mobile; desktop keeps inline nav. The Menu button has `aria-expanded`/`aria-controls` and opens a fixed sidebar with a scrim, mini `PixelAvatar`, 48px links and a focusable close button.
@@ -73,6 +74,7 @@ No arbitrary colour or size values in components. Add a token first if one is mi
 Full inventory with triggers and reduced-motion behaviour: `docs/motion.md`.
 
 - `steps()` easing everywhere; no smooth easing curves.
+- Boot progress fills over 1.4s in 14 steps; the gate opens immediately on click, tap or Enter and never blocks content underneath.
 - The hero chat types one full sentence character by character (12ms) with a blinking caret, click-to-skip and a replay button. The box grows with the typed text from a `min-h-24` floor inside a fixed-height slot (`h-[26rem] / h-[25rem] / h-80 / h-[19rem] / sm:h-40`, sized to the three-line sequence in both locales), centered so growth expands equally upward and downward without shifting the layout. On mobile the bubble sits left of the avatar at `text-label` (16px) and a two-layer CSS tail points right at it; from `sm` up the same side-by-side arrangement uses `text-lead` (18px). The three-site sequence is typed once; after it finishes a 32px replay button restarts it. The full copy is present in a `.sr-only` paragraph and is instant and static under reduced motion. The replay button has its own 32px hit area and the skip overlay is removed once typing finishes, so the two never overlap. On mobile the hero fills the first viewport up to the rule under the CTA: the three buttons use a two-column grid at `text-label` (16px) with `px-2` (primary spans both columns, Email and GitHub share the next row), and the HUD strip stacks vertically below the fold. All meaningful text is 16px or larger; the 14px `text-meta` token remains defined but has no component usage.
 - The header XP bar is functional scroll progress: CSS scroll-driven animation inside `@supports`, with a tiny scroll-listener fallback. No other scroll-linked motion.
 - The avatar jumps a stepped squash-and-stretch frame on click or Enter (`animate-jump`, 320ms), and makes a small stepped talk wiggle while the dialogue is typing; both are off under reduced motion.
@@ -84,7 +86,7 @@ Full inventory with triggers and reduced-motion behaviour: `docs/motion.md`.
 ## Accessibility
 
 - Semantic landmarks, skip link, labelled nav, `<ol>` for guild ranks.
-- Focus ring: 3px `mint`, 3px offset.
+- Focus ring: 3px `mint`, 3px offset. The boot dialog focuses its Press start button on mount; Enter or any click/tap dismisses the gate.
 - Dialogue is `aria-hidden` while typing; the full text is in a `.sr-only` paragraph and the overlay button has a label.
 - Contrast target is AA for body text and 3:1 for UI borders and large text.
 - Measured ratios (computed from the tokens above): dark `ink/page` 14.13, `muted/page` 7.18, `ink/panel` 12.44, `muted/panel` 6.32, `on-accent/accent` 11.23, `mint/page` 10.61; light `ink/page` 13.21, `muted/page` 5.34, `ink/panel` 15.12, `muted/panel` 6.12, `on-accent/accent` 5.25, `mint/page` 5.05. All pass.
