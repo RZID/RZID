@@ -37,15 +37,17 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
   return (
     <Box
       className={cn(
-        'relative max-h-full min-h-24 shrink-0 overflow-y-auto px-4 py-4 text-label sm:text-lead',
+        'relative flex max-h-full min-h-24 shrink-0 flex-col px-4 py-4 text-label sm:text-lead',
       )}
     >
       <span aria-hidden className="chat-tail chat-tail-right" />
       <span aria-hidden className="chat-tail chat-tail-right-inner" />
-      <p aria-hidden="true" className="m-0 text-body break-words whitespace-pre-wrap">
-        {text}
-        {done ? null : <span className="animate-blink">▌</span>}
-      </p>
+      <div className="min-h-0 flex-1 overflow-y-auto">
+        <p aria-hidden="true" className="m-0 text-body break-words whitespace-pre-wrap">
+          {text}
+          {done ? null : <span className="animate-blink">▌</span>}
+        </p>
+      </div>
       {done ? null : (
         <button
           type="button"
