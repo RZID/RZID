@@ -22,12 +22,23 @@ Package manager: bun only. Never use npm, yarn, or pnpm; never create `package-l
 - Absolute imports via `@/`. Parent-relative imports (`../`) are banned inside `src/features/`.
 - Do not disable a lint rule or add `// @ts-ignore`. If a rule blocks you, stop and ask.
 
+## Locked decisions (owner-approved; do not revert or "fix")
+
+- Every text role uses Pixelify Sans, body copy included (`text-body` 17px). There is no system-sans body stack; do not reintroduce `--font-body` or `font-body`.
+- Hero dialogue is a pool of 15 sentences (the original 12 plus project/experience facts), typed one sentence at a time, 3s pause, infinite loop. There is no replay button. Keep click-to-skip and the `.sr-only` summary. Do not compress it back to a fixed 3-line block.
+- Boot is a static `#boot-shell` in `index.html` (full viewport, session-scoped, skipped on reload/deep link/reduced motion, replayable with `?intro=1` and the footer link). Do not move it back into React.
+- No horizontal scroll at 320/390/768/1440. Never use `100dvw` for full-bleed overlays; use `inset-0` + `w-full`.
+- Keep these features: starfield, XP bar, project sprites, tech icons, mobile Menu, theme/language wipes, scanlines, boot gate.
+- Project icons render at 32px through one component; both icon sets share `spritePaths` (one path per colour).
+- Wordmark is the name only.
+- Paragraph copy is `text-body` 17px; meaningful text never below 16px.
+
 ## Architecture
 
 ```text
 src/
   app/          App shell and the post-boot site; may import anything
-  features/     One folder per section (boot, hero, quests, items, guild, contact) plus work/icons for project sprites. Public API = index.ts only.
+  features/     One folder per section (hero, quests, items, guild, contact) plus work/icons for project sprites. Public API = index.ts only.
   components/   ui/ = presentational primitives, layout/ = Header, Footer, Section, Starfield. No feature imports.
   content/      Typed data: profile, projects, experience, skills, site. Single source of truth for all text facts.
   hooks/        Shared hooks

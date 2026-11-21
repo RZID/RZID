@@ -14,7 +14,7 @@ export const ContactSection = () => {
       <Reveal>
         <Box className="px-5 py-10 text-center sm:px-8">
           <h2 className="font-pixel text-section">{t(sections.contact.title)}</h2>
-          <p className="mx-auto mt-3 mb-4 max-w-prose font-body text-body text-muted">
+          <p className="mx-auto mt-3 mb-4 max-w-prose text-body text-muted">
             {t(sections.contact.summary)}
           </p>
           <p className="mb-6 font-pixel text-mint">{t(sections.contact.availability)}</p>

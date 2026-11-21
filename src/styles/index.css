@@ -58,7 +58,6 @@
   --color-shadow: var(--shadow);
 
   --font-pixel: 'Pixelify Sans', ui-monospace, Menlo, Consolas, monospace;
-  --font-body: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --shadow-hard: 6px 6px 0 var(--shadow);
   --shadow-hard-sm: 4px 4px 0 var(--shadow);

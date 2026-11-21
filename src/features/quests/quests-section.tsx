@@ -44,7 +44,7 @@ export const QuestsSection = () => {
                 </div>
                 <div className={cn(isWide && 'md:flex-1')}>
                   <h3 className="mb-1.5 font-pixel text-title">{project.name}</h3>
-                  <p className="mb-3 font-body text-body">{t(project.summary)}</p>
+                  <p className="mb-3 text-body">{t(project.summary)}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {project.stack.map((item) => (
                       <Tag key={item}>{item}</Tag>

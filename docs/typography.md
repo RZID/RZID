@@ -4,14 +4,14 @@
 
 Pixelify Sans is the only typeface in the system, used for everything: hero, section headings, nav, buttons, labels, tags, meta, card titles, body copy and footer. Two weights are self-hosted: 400 and 700.
 
-Rationale: Pixelify Sans carries display and UI (headings, nav, buttons, tags, labels, boot). Paragraph copy uses the system sans stack (`font-body`, 17px) so long text stays readable; hierarchy otherwise comes from size, weight, spacing and colour tokens. Two self-hosted Pixelify woff2 files are preloaded; the body stack needs no download.
+Rationale: the owner wants the pixel face everywhere. Pixelify Sans carries display, UI and paragraph copy; hierarchy comes from size, weight, spacing and colour tokens. Two self-hosted Pixelify woff2 files are preloaded.
 
 ## Scale
 
 | Token          | Size                   | Line height | Use                                  |
 | -------------- | ---------------------- | ----------- | ------------------------------------ |
 | `text-meta`    | 14px                   | 21px        | Reserved; no current usage           |
-| `text-body`    | 17px                   | 27px        | Paragraph copy (system sans family)  |
+| `text-body`    | 17px                   | 27px        | Paragraph copy                       |
 | `text-label`   | 16px                   | 24px        | Nav, buttons, tags, labels, body     |
 | `text-lead`    | 18px                   | 27px        | Hero eyebrow, dialogue, availability |
 | `text-title`   | 20px                   | 26px        | Card titles, group headings          |

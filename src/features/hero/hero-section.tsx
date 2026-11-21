@@ -18,7 +18,7 @@ type ChatDialogueProps = {
 
 const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
   const t = useT()
-  const { text, done, finish, replay } = useTypewriter(sentences, instant)
+  const { text, done, finish } = useTypewriter(sentences, instant)
 
   useEffect(() => {
     const heroElement = document.getElementById('home')
@@ -37,13 +37,12 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
   return (
     <Box
       className={cn(
-        'relative min-h-24 shrink-0 px-4 py-4 text-label sm:text-lead',
-        done && 'pb-12',
+        'relative max-h-full min-h-24 shrink-0 overflow-y-auto px-4 py-4 text-label sm:text-lead',
       )}
     >
       <span aria-hidden className="chat-tail chat-tail-right" />
       <span aria-hidden className="chat-tail chat-tail-right-inner" />
-      <p aria-hidden="true" className="m-0 font-body text-body break-words whitespace-pre-wrap">
+      <p aria-hidden="true" className="m-0 text-body break-words whitespace-pre-wrap">
         {text}
         {done ? null : <span className="animate-blink">▌</span>}
       </p>
@@ -55,16 +54,6 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
           className="absolute inset-0 cursor-pointer"
         />
       )}
-      {done ? (
-        <button
-          type="button"
-          onClick={replay}
-          aria-label={t(ui.replayDialogue)}
-          className="absolute right-2 bottom-2 z-10 flex size-8 cursor-pointer items-center justify-center border-2 border-ink bg-panel font-pixel text-lead leading-none text-mint"
-        >
-          <span aria-hidden>↻</span>
-        </button>
-      ) : null}
     </Box>
   )
 }
@@ -145,7 +134,7 @@ export const HeroSection = () => {
         {hero.stats.map((stat) => (
           <div key={stat.label.id} className="border-l-4 border-accent pl-3">
             <p className="m-0 font-pixel text-label text-muted">{t(stat.label)}</p>
-            <p className="m-0 font-body text-body">{t(stat.value)}</p>
+            <p className="m-0 text-body">{t(stat.value)}</p>
           </div>
         ))}
       </Reveal>

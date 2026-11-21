@@ -23,10 +23,10 @@ export const GuildSection = () => {
                 </span>
                 <div>
                   <h3 className="font-pixel text-title">{item.org}</h3>
-                  <p className="font-body text-body text-muted">
+                  <p className="text-body text-muted">
                     {t(item.role)} · {t(item.period)}
                   </p>
-                  <p className="mt-1 font-body text-body">{t(item.summary)}</p>
+                  <p className="mt-1 text-body">{t(item.summary)}</p>
                 </div>
               </Box>
             </Reveal>
