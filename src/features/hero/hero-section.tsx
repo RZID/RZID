@@ -116,24 +116,24 @@ export const HeroSection = () => {
         <div aria-hidden className="mt-2 h-3.5 w-28 bg-ink/25 min-[360px]:w-32 sm:w-40" />
       </Reveal>
 
-      <Reveal className="col-span-full grid grid-cols-2 gap-2 sm:flex sm:flex-nowrap sm:gap-3 lg:col-start-1 lg:row-start-2">
+      <Reveal className="col-span-full grid grid-cols-2 gap-2 text-label sm:flex sm:flex-nowrap sm:gap-3 sm:text-lead lg:col-start-1 lg:row-start-2">
         <ButtonLink
           href={hero.primaryCta.href}
-          className="col-span-2 w-full px-2 text-label sm:w-auto sm:px-4 sm:text-lead"
+          className="col-span-2 w-full px-2 sm:w-auto sm:px-4"
         >
           {t(hero.primaryCta.label)}
         </ButtonLink>
         <ButtonLink
           href={profile.links.email.href}
           variant="secondary"
-          className="w-full px-2 text-label sm:w-auto sm:px-4 sm:text-lead"
+          className="w-full px-2 sm:w-auto sm:px-4"
         >
           {t(profile.links.email.label)}
         </ButtonLink>
         <ButtonLink
           href={profile.links.github.href}
           variant="secondary"
-          className="w-full px-2 text-label sm:w-auto sm:px-4 sm:text-lead"
+          className="w-full px-2 sm:w-auto sm:px-4"
         >
           {t(profile.links.github.label)}
         </ButtonLink>
