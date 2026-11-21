@@ -43,10 +43,7 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
       <span aria-hidden className="chat-tail chat-tail-right" />
       <span aria-hidden className="chat-tail chat-tail-right-inner" />
       <div className="min-h-0 flex-1 overflow-y-auto">
-        <p
-          aria-hidden="true"
-          className="m-0 text-meta break-words whitespace-pre-wrap sm:text-body"
-        >
+        <p aria-hidden="true" className="m-0 text-xs break-words whitespace-pre-wrap sm:text-body">
           {text}
           {done ? null : <span className="animate-blink">▌</span>}
         </p>
@@ -67,7 +64,7 @@ export const HeroSection = () => {
   const locale = useLocale()
   const t = useT()
   const sentences = useMemo(() => hero.sentences.map((item) => item[locale]), [locale])
-  const slotClass = 'h-[26rem] min-[360px]:h-[25rem] min-[390px]:h-80 min-[414px]:h-[19rem] sm:h-40'
+  const slotClass = 'h-[19rem] min-[360px]:h-[18rem] min-[390px]:h-56 min-[414px]:h-[14rem] sm:h-40'
   const reduced = useReducedMotion()
   const [jump, setJump] = useState(0)
 
@@ -80,7 +77,7 @@ export const HeroSection = () => {
   return (
     <Section
       id="home"
-      className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-x-8 lg:gap-y-6"
+      className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-4 max-sm:gap-y-1 max-sm:pt-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-x-8 lg:gap-y-6"
     >
       <div className="contents lg:col-start-1 lg:row-start-1 lg:flex lg:flex-col">
         <Reveal className="col-span-full">
@@ -88,7 +85,7 @@ export const HeroSection = () => {
             {t(profile.location)} · {t(profile.role)}
           </p>
           <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
-          <p className="mt-2 mb-0 font-pixel text-mint sm:mb-5">
+          <p className="mt-0 mb-0 font-pixel text-mint sm:mt-2 sm:mb-5">
             {t(sections.contact.availability)}
           </p>
           <p className="sr-only">{t(profile.summary)}</p>

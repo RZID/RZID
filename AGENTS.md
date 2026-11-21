@@ -31,7 +31,7 @@ Package manager: bun only. Never use npm, yarn, or pnpm; never create `package-l
 - Keep these features: starfield, XP bar, project sprites, tech icons, mobile Menu, theme/language wipes, scanlines, boot gate.
 - Project icons render at 32px through one component; both icon sets share `spritePaths` (one path per colour).
 - Wordmark is the name only.
-- Paragraph copy is `text-body` 17px; the mobile hero chat bubble is `text-meta` 14px up to `sm` at the owner's request, then 17px. Do not revert either size.
+- Paragraph copy is `text-body` 17px; the mobile hero chat bubble is `text-xs` 12px up to `sm` at the owner's request, then 17px. Do not revert either size. The three hero CTAs must stay inside the first screen at 360x640 and larger.
 
 ## Architecture
 
