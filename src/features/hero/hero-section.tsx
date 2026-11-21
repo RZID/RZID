@@ -94,7 +94,9 @@ export const HeroSection = () => {
             {t(profile.location)} · {t(profile.role)}
           </p>
           <h1 className="my-2 font-pixel text-hero leading-none text-shadow-hard">{hero.name}</h1>
-          <p className="mt-2 mb-5 font-pixel text-mint">{t(sections.contact.availability)}</p>
+          <p className="mt-2 mb-0 font-pixel text-mint sm:mb-5">
+            {t(sections.contact.availability)}
+          </p>
           <p className="sr-only">{t(profile.summary)}</p>
         </Reveal>
 
@@ -105,7 +107,7 @@ export const HeroSection = () => {
         </Reveal>
       </div>
 
-      <Reveal className="col-start-2 row-start-2 grid place-items-center lg:col-start-2 lg:row-span-2 lg:row-start-1">
+      <Reveal className="col-start-2 row-start-2 flex flex-col items-center justify-start lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:justify-center">
         <button type="button" onClick={jumpAvatar} aria-label={t(ui.avatarAction)}>
           <div key={jump} className={jump > 0 ? 'animate-jump' : undefined}>
             <span className="avatar-talk block">
@@ -139,7 +141,7 @@ export const HeroSection = () => {
         </ButtonLink>
       </Reveal>
 
-      <Reveal className="col-span-full mt-24 grid gap-4 border-t-4 border-ink pt-5 sm:mt-0 sm:grid-cols-3">
+      <Reveal className="col-span-full mt-0 grid gap-4 border-t-4 border-ink pt-5 sm:mt-0 sm:grid-cols-3">
         {hero.stats.map((stat) => (
           <div key={stat.label.id} className="border-l-4 border-accent pl-3">
             <p className="m-0 font-pixel text-label text-muted">{t(stat.label)}</p>
