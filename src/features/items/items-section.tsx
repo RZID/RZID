@@ -11,24 +11,27 @@ export const ItemsSection = () => {
 
   return (
     <Section id="items" title={t(sections.items.title)}>
-      <div className="space-y-6">
+      <div className="space-y-8">
         {skillGroups.map((group, groupIndex) => (
           <Reveal key={group.title.id} delay={groupIndex * 50}>
-            <h3 className="mb-2 font-pixel text-lead text-muted">{t(group.title)}</h3>
-            <ul className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            <h3 className="mb-3 flex items-center gap-2 font-pixel text-lead text-muted">
+              <span aria-hidden className="text-accent-text">
+                ▸
+              </span>
+              {t(group.title)}
+            </h3>
+            <ul className="flex flex-wrap gap-2.5">
               {group.items.map((item) => (
                 <li
                   key={item.id}
                   className={cn(
-                    'border-2 border-ink bg-panel px-2 py-3 text-center font-pixel text-label',
+                    'inline-flex min-h-11 items-center gap-2 border-2 border-ink bg-panel px-3 py-2 font-pixel text-[0.875rem]',
                     'transition-transform duration-(--motion-fast) ease-steps hover:-translate-y-1',
                     group.learning === true && 'border-dashed text-muted',
                   )}
                 >
-                  <span className="inline-flex items-center justify-center gap-1.5">
-                    <TechIcon label={t(item)} />
-                    {t(item)}
-                  </span>
+                  <TechIcon label={t(item)} />
+                  <span className="whitespace-nowrap">{t(item)}</span>
                 </li>
               ))}
             </ul>

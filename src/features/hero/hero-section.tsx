@@ -56,7 +56,7 @@ export const HeroSection = () => {
   const locale = useLocale()
   const t = useT()
   const sentences = useMemo(() => hero.sentences.map((item) => item[locale]), [locale])
-  const slotClass = 'h-[28rem] min-[360px]:h-80 min-[390px]:h-72 min-[414px]:h-60 sm:h-40'
+  const slotClass = 'h-[25rem] min-[360px]:h-80 min-[390px]:h-72 min-[414px]:h-60 sm:h-40'
   const reduced = useReducedMotion()
   const [jump, setJump] = useState(0)
 
@@ -92,11 +92,11 @@ export const HeroSection = () => {
         <button type="button" onClick={jumpAvatar} aria-label={t(ui.avatarAction)}>
           <div key={jump} className={jump > 0 ? 'animate-jump' : undefined}>
             <span className="avatar-talk block">
-              <PixelAvatar className="w-32 animate-bob sm:w-[min(210px,52vw)]" />
+              <PixelAvatar className="w-28 animate-bob min-[360px]:w-32 sm:w-[min(210px,52vw)]" />
             </span>
           </div>
         </button>
-        <div aria-hidden className="mt-2 h-3.5 w-32 bg-ink/25 sm:w-40" />
+        <div aria-hidden className="mt-2 h-3.5 w-28 bg-ink/25 min-[360px]:w-32 sm:w-40" />
       </Reveal>
 
       <Reveal className="col-span-full grid grid-cols-2 gap-2 sm:flex sm:flex-nowrap sm:gap-3 lg:col-start-1 lg:row-start-2">
