@@ -207,10 +207,7 @@ export const Header = () => {
           className="xp-bar absolute inset-x-0 bottom-0 h-1 origin-left bg-accent"
         />
         <a href="#home" className="font-pixel text-label font-bold whitespace-nowrap">
-          {profile.name}{' '}
-          <small className="hidden font-pixel text-label font-normal text-muted sm:inline">
-            {t(profile.role)}
-          </small>
+          {profile.name}
         </a>
 
         <nav aria-label={t(ui.primaryNav)} className="hidden items-center gap-0.5 lg:flex">
