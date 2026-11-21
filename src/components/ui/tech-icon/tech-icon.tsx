@@ -1,4 +1,5 @@
 import { cn } from '@/lib/cn'
+import { spritePaths } from '@/lib/pixel-sprite'
 import { palette, sprites } from './sprites'
 import { techIconId } from './tech-icon-id'
 
@@ -14,8 +15,6 @@ export const TechIcon = ({ label, className }: TechIconProps) => {
     return null
   }
 
-  const rows = sprites[icon].split('\n')
-
   return (
     <svg
       viewBox="0 0 16 16"
@@ -23,17 +22,9 @@ export const TechIcon = ({ label, className }: TechIconProps) => {
       aria-hidden="true"
       className={cn('h-4 w-4 shrink-0', className)}
     >
-      {rows.flatMap((row, y) =>
-        row.split('').map((cell, x) => {
-          const fill = palette[cell]
-
-          if (fill === undefined) {
-            return null
-          }
-
-          return <rect key={`${x}-${y}`} x={x} y={y} width="1" height="1" style={{ fill }} />
-        }),
-      )}
+      {spritePaths(sprites[icon].split('\n'), palette).map((path) => (
+        <path key={path.fill} d={path.d} style={{ fill: path.fill }} />
+      ))}
     </svg>
   )
 }
