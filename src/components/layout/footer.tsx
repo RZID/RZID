@@ -6,7 +6,7 @@ export const Footer = () => {
   const t = useT()
 
   return (
-    <footer className="px-5 pb-10 text-center text-meta text-muted">
+    <footer className="px-5 pb-10 text-center text-label text-muted">
       <small>
         © {ui.copyrightYear} {profile.name}. {t(ui.footerHint)}
       </small>

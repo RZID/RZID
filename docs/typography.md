@@ -10,7 +10,7 @@ Rationale: the owner asked for a fully pixel-typed interface. Hierarchy therefor
 
 | Token          | Size                   | Line height | Use                                  |
 | -------------- | ---------------------- | ----------- | ------------------------------------ |
-| `text-meta`    | 14px                   | 21px        | Footer, secondary hints only         |
+| `text-meta`    | 14px                   | 21px        | Reserved; no current usage           |
 | `text-label`   | 16px                   | 24px        | Nav, buttons, tags, labels, body     |
 | `text-lead`    | 18px                   | 27px        | Hero eyebrow, dialogue, availability |
 | `text-title`   | 20px                   | 26px        | Card titles, group headings          |

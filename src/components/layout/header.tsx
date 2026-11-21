@@ -207,7 +207,7 @@ export const Header = () => {
         />
         <a href="#home" className="font-pixel text-label font-bold whitespace-nowrap">
           {profile.name}{' '}
-          <small className="hidden font-pixel text-meta font-normal text-muted sm:inline">
+          <small className="hidden font-pixel text-label font-normal text-muted sm:inline">
             {t(profile.role)}
           </small>
         </a>

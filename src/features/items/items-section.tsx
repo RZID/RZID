@@ -25,7 +25,7 @@ export const ItemsSection = () => {
                 <li
                   key={item.id}
                   className={cn(
-                    'inline-flex min-h-11 items-center gap-2 border-2 border-ink bg-panel px-3 py-2 font-pixel text-[0.875rem]',
+                    'inline-flex min-h-11 items-center gap-2 border-2 border-ink bg-panel px-3 py-2 font-pixel text-label',
                     'transition-transform duration-(--motion-fast) ease-steps hover:-translate-y-1',
                     group.learning === true && 'border-dashed text-muted',
                   )}

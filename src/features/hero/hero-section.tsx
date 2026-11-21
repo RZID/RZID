@@ -36,7 +36,10 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
 
   return (
     <Box
-      className={cn('relative min-h-24 shrink-0 px-4 py-4 text-meta sm:text-lead', done && 'pb-12')}
+      className={cn(
+        'relative min-h-24 shrink-0 px-4 py-4 text-label sm:text-lead',
+        done && 'pb-12',
+      )}
     >
       <span aria-hidden className="chat-tail chat-tail-right" />
       <span aria-hidden className="chat-tail chat-tail-right-inner" />
@@ -70,7 +73,7 @@ export const HeroSection = () => {
   const locale = useLocale()
   const t = useT()
   const sentences = useMemo(() => hero.sentences.map((item) => item[locale]), [locale])
-  const slotClass = 'h-[25rem] min-[360px]:h-80 min-[390px]:h-72 min-[414px]:h-60 sm:h-40'
+  const slotClass = 'h-[26rem] min-[360px]:h-[25rem] min-[390px]:h-80 min-[414px]:h-[19rem] sm:h-40'
   const reduced = useReducedMotion()
   const [jump, setJump] = useState(0)
 
@@ -116,21 +119,21 @@ export const HeroSection = () => {
       <Reveal className="col-span-full grid grid-cols-2 gap-2 sm:flex sm:flex-nowrap sm:gap-3 lg:col-start-1 lg:row-start-2">
         <ButtonLink
           href={hero.primaryCta.href}
-          className="col-span-2 w-full px-2 text-[0.875rem] sm:w-auto sm:px-4 sm:text-lead"
+          className="col-span-2 w-full px-2 text-label sm:w-auto sm:px-4 sm:text-lead"
         >
           {t(hero.primaryCta.label)}
         </ButtonLink>
         <ButtonLink
           href={profile.links.email.href}
           variant="secondary"
-          className="w-full px-2 text-[0.875rem] sm:w-auto sm:px-4 sm:text-lead"
+          className="w-full px-2 text-label sm:w-auto sm:px-4 sm:text-lead"
         >
           {t(profile.links.email.label)}
         </ButtonLink>
         <ButtonLink
           href={profile.links.github.href}
           variant="secondary"
-          className="w-full px-2 text-[0.875rem] sm:w-auto sm:px-4 sm:text-lead"
+          className="w-full px-2 text-label sm:w-auto sm:px-4 sm:text-lead"
         >
           {t(profile.links.github.label)}
         </ButtonLink>
