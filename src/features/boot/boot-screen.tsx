@@ -14,6 +14,7 @@ export const BootScreen = ({ onStart }: BootScreenProps) => {
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
+    document.getElementById('boot-shell')?.remove()
     button.current?.focus()
 
     const timer = window.setTimeout(() => setReady(true), 1400)

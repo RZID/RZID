@@ -1,6 +1,20 @@
-@import '@fontsource/pixelify-sans/latin-400.css';
-@import '@fontsource/pixelify-sans/latin-700.css';
 @import 'tailwindcss';
+
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/pixelify-sans-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('/fonts/pixelify-sans-latin-700-normal.woff2') format('woff2');
+}
 
 :root {
   --page: #161a26;
@@ -402,7 +416,15 @@
     background: repeating-linear-gradient(0deg, transparent 0 3px, rgb(0 0 0 / 0.04) 3px 4px);
   }
 
-  :root[data-theme='light'] body::after {
+  :root[data-theme='light'] #boot-shell {
+    display: none;
+  }
+
+  html[data-boot='1'] #boot-shell {
+    display: flex;
+  }
+
+  body::after {
     content: none;
   }
 

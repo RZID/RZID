@@ -31,6 +31,62 @@
         }
       })()
     </script>
+    <script>
+      // Keep in sync with src/features/boot/boot-state.ts.
+      ;(() => {
+        const boot = (() => {
+          try {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false
+            if (window.location.hash !== '') return false
+            if (new URLSearchParams(window.location.search).get('intro') === '1') return true
+            return window.sessionStorage.getItem('rzid.boot') !== 'done'
+          } catch {
+            return true
+          }
+        })()
+        document.documentElement.dataset.boot = boot ? '1' : '0'
+      })()
+    </script>
+    <link
+      rel="preload"
+      href="/fonts/pixelify-sans-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/pixelify-sans-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style>
+      /* First-paint shell; the bundle repeats these rules for the React boot screen. */
+      #boot-shell {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 70;
+        height: 100dvh;
+        width: 100dvw;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        overflow: hidden;
+        background: #161a26;
+        padding: 0 1.25rem;
+        text-align: center;
+      }
+      html[data-theme='light'] #boot-shell {
+        background: #e9e2cf;
+      }
+      html[data-boot='1'] #boot-shell {
+        display: flex;
+      }
+    </style>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="https://www.rzidinc.com" />
     <title>Ramadhanu — Software Engineer, Jakarta</title>
@@ -73,6 +129,24 @@
   </head>
   <body>
     <div id="root"></div>
+    <div
+      id="boot-shell"
+      aria-hidden="true"
+      class="fixed inset-0 z-70 m-0 h-dvh w-dvw max-w-none flex-col items-center justify-center gap-6 overflow-hidden bg-page px-5 text-center"
+    >
+      <span class="h-[149px] w-32 sm:h-56 sm:w-48"></span>
+      <p class="m-0 font-pixel text-boot leading-none whitespace-pre-line text-shadow-hard">
+        Ramadhanu Quest
+      </p>
+      <div class="h-3 w-56 border-2 border-ink bg-panel sm:w-72">
+        <div class="h-full origin-left animate-load bg-accent"></div>
+      </div>
+      <span
+        class="invisible border-4 border-ink bg-panel px-6 py-3 font-pixel text-lead text-mint shadow-hard"
+        >Press start</span
+      >
+      <small class="invisible font-pixel text-label text-muted">or press Enter</small>
+    </div>
     <noscript>
       <main>
         <h1>Ramadhanu</h1>

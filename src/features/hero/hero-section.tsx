@@ -99,7 +99,7 @@ export const HeroSection = () => {
         </Reveal>
 
         <Reveal className="col-start-1 row-start-2">
-          <div className={cn('flex flex-col justify-center', slotClass)}>
+          <div className={cn('flex flex-col justify-start sm:justify-center', slotClass)}>
             <ChatDialogue key={`${locale}-${reduced}`} sentences={sentences} instant={reduced} />
           </div>
         </Reveal>
