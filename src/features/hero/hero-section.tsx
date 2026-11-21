@@ -43,7 +43,10 @@ const ChatDialogue = ({ sentences, instant }: ChatDialogueProps) => {
       <span aria-hidden className="chat-tail chat-tail-right" />
       <span aria-hidden className="chat-tail chat-tail-right-inner" />
       <div className="min-h-0 flex-1 overflow-y-auto">
-        <p aria-hidden="true" className="m-0 text-body break-words whitespace-pre-wrap">
+        <p
+          aria-hidden="true"
+          className="m-0 text-meta break-words whitespace-pre-wrap sm:text-body"
+        >
           {text}
           {done ? null : <span className="animate-blink">▌</span>}
         </p>

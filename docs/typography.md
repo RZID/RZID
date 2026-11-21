@@ -10,7 +10,7 @@ Rationale: the owner wants the pixel face everywhere. Pixelify Sans carries disp
 
 | Token          | Size                   | Line height | Use                                  |
 | -------------- | ---------------------- | ----------- | ------------------------------------ |
-| `text-meta`    | 14px                   | 21px        | Reserved; no current usage           |
+| `text-meta`    | 14px                   | 21px        | Mobile hero chat bubble only         |
 | `text-body`    | 17px                   | 27px        | Paragraph copy                       |
 | `text-label`   | 16px                   | 24px        | Nav, buttons, tags, labels, body     |
 | `text-lead`    | 18px                   | 27px        | Hero eyebrow, dialogue, availability |
