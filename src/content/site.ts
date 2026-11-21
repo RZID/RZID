@@ -65,8 +65,8 @@ export const hero: Hero = {
       en: "The work has names: Cara.sg for a Singapore dementia community, Affluent.sg for wills and estate planning, JebHealth across SG, MY, TH and VN, LVE Gym with live Bluetooth heart rate, and Pinknode's Polkadot dashboard.",
     },
     {
-      id: 'Embreco jadi tempat full-time sejak September 2021; kuliah malam B.Sc. Computer Science jalan bareng itu.',
-      en: 'Embreco has been the full-time home since September 2021; the evening B.Sc. Computer Science runs alongside it.',
+      id: 'Embreo jadi tempat full-time sejak September 2021; kuliah malam B.Sc. Computer Science jalan bareng itu.',
+      en: 'Embreo has been the full-time home since September 2021; the evening B.Sc. Computer Science runs alongside it.',
     },
     {
       id: 'Di luar terminal ada gaming, mentoring, riset, dan troubleshooting — semuanya ikut membentuk cara gue menyelesaikan masalah.',
