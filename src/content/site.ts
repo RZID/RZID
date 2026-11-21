@@ -69,8 +69,8 @@ export const hero: Hero = {
       en: 'Embreco has been the full-time home since September 2021; the evening B.Sc. Computer Science runs alongside it.',
     },
     {
-      id: 'Versi singkat buat recruiter: lima tahun full-stack di web, mobile, dan backend, dengan pembayaran produksi dan migrasi monolith ke microservices.',
-      en: 'Short version for recruiters: five years full-stack across web, mobile and backend, with production payments and a monolith-to-microservices migration.',
+      id: 'Di luar terminal ada gaming, mentoring, riset, dan troubleshooting — semuanya ikut membentuk cara gue menyelesaikan masalah.',
+      en: 'Beyond the terminal: gaming, mentoring, research and troubleshooting all shape how I solve problems.',
     },
   ],
   stats: [
@@ -114,20 +114,20 @@ export const sections: SectionCopy = {
     },
     decisions: [
       {
-        id: 'Monolith dipindah ke microservices NestJS sambil tetap melayani pengguna.',
-        en: 'Moved a monolith to NestJS microservices while it kept serving users.',
+        id: 'Layanan NestJS masuk bertahap; monolith lama tetap hidup sampai perpindahan selesai.',
+        en: 'New NestJS services took over step by step; the old monolith stayed live throughout.',
       },
       {
-        id: 'Satu codebase Expo jadi dua rilis store.',
-        en: 'One Expo codebase became two store releases.',
+        id: 'Satu basis kode Expo, dua target toko aplikasi.',
+        en: 'One Expo codebase, two app-store targets.',
       },
       {
-        id: 'Retry, webhook, dan alert yang benar-benar bunyi di alur pembayaran produksi.',
-        en: 'Retries, webhooks and alerts that actually fire on production payment flows.',
+        id: 'Alur pembayaran produksi punya retry, webhook, dan alert yang benar-benar dipantau.',
+        en: 'Payment paths carry retries, webhooks and alerts that are actually watched.',
       },
       {
-        id: 'Deploy manual jadi pipeline AWS yang bisa dijalankan siapa saja.',
-        en: 'A manual deploy became an AWS pipeline anyone can run.',
+        id: 'Rilis yang dulu manual sekarang lewat pipeline AWS.',
+        en: 'Releases moved from manual steps to an AWS pipeline.',
       },
     ],
   },

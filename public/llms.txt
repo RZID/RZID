@@ -1,0 +1,31 @@
+# Ramadhanu
+
+> Full-stack software engineer based in Jakarta, Indonesia. Five years across web, mobile and backend. Remote worldwide, hybrid in Jabodetabek.
+
+- Website: https://www.rzidinc.com/
+- Email: rdhanurzid@gmail.com
+- GitHub: https://github.com/RZID
+- LinkedIn: https://www.linkedin.com/in/rama-ramadhanu
+
+## Experience
+
+- Software Engineer at Embreo PTE Ltd since September 2021: NestJS microservices migrated from a running monolith, payments through HitPay, Stripe and Airwallex, and an AWS deploy pipeline.
+- Technical Mentor and Systems Consultant at SMK Negeri 12 Jakarta since June 2021: mentoring for national developer certifications and school server operations.
+- Freelance Software Engineer, August 2019 to February 2020: client websites from database to frontend with PHP and CodeIgniter.
+- B.Sc. Computer Science, evening classes, in progress.
+
+## Skills
+
+- Backend: NestJS / Node.js, REST APIs, microservices, RabbitMQ, Redis.
+- Frontend and mobile: React, Next.js, React Native (Expo).
+- Data and infrastructure: AWS, Docker, Linux, PostgreSQL / MySQL, CI/CD.
+- Currently learning: Kubernetes, Kafka, Cloudflare edge.
+- Beyond the terminal: gaming, mentoring, research, troubleshooting.
+
+## Projects
+
+- Cara.sg — Full-stack Engineer. Membership app for the dementia community in Singapore: Safe Return, missing-person alerts, rewards, Mandarin support. React, NestJS, Expo, MySQL, Redis.
+- Affluent.sg — Full-stack Engineer. Wills and estate-planning platform for Singapore families, with encrypted client data and HitPay payments. React, Express, MySQL.
+- JebHealth — Full-stack Engineer. HealthTech marketplace for SG, MY, TH and VN, plus health-fintech cards with Stripe and Airwallex. Express, React, Expo.
+- LVE Gym — Full-stack Engineer. Booking app for boutique gyms: class schedules, packs, personal training and live heart rate over Bluetooth. React, NestJS, Expo, BLE.
+- Pinknode — Frontend Engineer. Dashboard for a Polkadot node-as-a-service: API usage analytics and account management. React.
