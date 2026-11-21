@@ -14,7 +14,7 @@ export const ProjectIcon = ({ icon, className }: ProjectIconProps) => {
       viewBox="0 0 16 16"
       shapeRendering="crispEdges"
       aria-hidden="true"
-      className={cn('h-10 w-10 shrink-0', className)}
+      className={cn('size-8 shrink-0', className)}
     >
       {spritePaths(sprites[icon], palette).map((path) => (
         <path key={path.fill} d={path.d} style={{ fill: path.fill }} />
