@@ -10,7 +10,7 @@ export const ItemsSection = () => {
   const t = useT()
 
   return (
-    <Section id="items" title={t(sections.items.title)}>
+    <Section id="items" title={t(sections.items.title)} lead={t(sections.items.lead)}>
       <div className="space-y-8">
         {skillGroups.map((group, groupIndex) => (
           <Reveal key={group.title.id} delay={groupIndex * 50}>

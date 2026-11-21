@@ -34,6 +34,7 @@ export type Project = {
   icon: ProjectIconId
   role: Localized
   summary: Localized
+  highlights: readonly Localized[]
   stack: readonly string[]
 }
 
@@ -42,6 +43,7 @@ export type Experience = {
   role: Localized
   period: Localized
   summary: Localized
+  highlights: readonly Localized[]
   kind: 'work' | 'education'
 }
 
@@ -66,8 +68,8 @@ export type Hero = {
 
 export type SectionCopy = {
   quests: { title: Localized; lead: Localized }
-  items: { title: Localized }
-  guild: { title: Localized }
+  items: { title: Localized; lead: Localized }
+  guild: { title: Localized; lead: Localized }
   contact: { title: Localized; summary: Localized; availability: Localized }
 }
 

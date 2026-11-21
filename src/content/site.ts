@@ -108,8 +108,20 @@ export const sections: SectionCopy = {
       en: 'Most of my work lives behind closed doors, so here is what I can share.',
     },
   },
-  items: { title: { id: 'Keahlian', en: 'Skills' } },
-  guild: { title: { id: 'Pengalaman', en: 'Experience' } },
+  items: {
+    title: { id: 'Keahlian', en: 'Skills' },
+    lead: {
+      id: 'Alat yang dipakai dari database sampai layar ponsel. Grup terakhir sedang dipelajari.',
+      en: 'The tools I use from database to phone screen. The last group is what I am learning now.',
+    },
+  },
+  guild: {
+    title: { id: 'Pengalaman', en: 'Experience' },
+    lead: {
+      id: 'Lima tahun web, mobile, dan backend: monolith ke microservices, pembayaran produksi, dan kuliah malam sambil bekerja.',
+      en: 'Five years of web, mobile and backend: a monolith moved to microservices, production payments, and evening classes while working.',
+    },
+  },
   contact: {
     title: { id: 'Lanjut?', en: 'Continue?' },
     summary: {

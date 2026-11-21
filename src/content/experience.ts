@@ -9,6 +9,11 @@ export const experience: readonly Experience[] = [
       id: 'Monolith yang sedang berjalan dipindah ke microservices NestJS. Pembayaran HitPay, Stripe, dan Airwallex, plus pipeline deploy AWS.',
       en: 'A running monolith was moved to NestJS microservices. HitPay, Stripe, and Airwallex payments, plus an AWS deploy pipeline.',
     },
+    highlights: [
+      { id: 'Monolith → microservices NestJS', en: 'Monolith → NestJS microservices' },
+      { id: 'HitPay · Stripe · Airwallex', en: 'HitPay · Stripe · Airwallex' },
+      { id: 'Pipeline deploy AWS', en: 'AWS deploy pipeline' },
+    ],
     kind: 'work',
   },
   {
@@ -22,6 +27,10 @@ export const experience: readonly Experience[] = [
       id: 'Bimbing siswa untuk sertifikasi dev nasional dan jaga server sekolah tetap hidup.',
       en: 'Mentoring students for national dev certifications and keeping the school servers alive.',
     },
+    highlights: [
+      { id: 'Sertifikasi dev nasional', en: 'National dev certifications' },
+      { id: 'Server sekolah tetap hidup', en: 'School servers kept alive' },
+    ],
     kind: 'work',
   },
   {
@@ -32,6 +41,10 @@ export const experience: readonly Experience[] = [
       id: 'Website klien dari database sampai frontend dengan PHP dan CodeIgniter.',
       en: 'Client websites end to end, from database to frontend, with PHP and CodeIgniter.',
     },
+    highlights: [
+      { id: 'Database sampai frontend', en: 'Database to frontend' },
+      { id: 'PHP · CodeIgniter', en: 'PHP · CodeIgniter' },
+    ],
     kind: 'work',
   },
   {
@@ -42,6 +55,10 @@ export const experience: readonly Experience[] = [
       id: 'Kuliah malam sambil tetap bekerja.',
       en: 'Evening program while continuing to work.',
     },
+    highlights: [
+      { id: 'Kelas malam', en: 'Evening classes' },
+      { id: 'Sambil bekerja', en: 'While working' },
+    ],
     kind: 'education',
   },
 ]

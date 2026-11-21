@@ -44,7 +44,17 @@ export const QuestsSection = () => {
                 </div>
                 <div className={cn(isWide && 'md:flex-1')}>
                   <h3 className="mb-1.5 font-pixel text-title">{project.name}</h3>
-                  <p className="mb-3 text-body">{t(project.summary)}</p>
+                  <p className="mb-2 text-body">{t(project.summary)}</p>
+                  <ul className="mb-3 space-y-0.5">
+                    {project.highlights.map((highlight) => (
+                      <li key={highlight.en} className="text-body text-muted">
+                        <span aria-hidden className="mr-1.5 text-mint">
+                          ▸
+                        </span>
+                        {t(highlight)}
+                      </li>
+                    ))}
+                  </ul>
                   <div className="flex flex-wrap gap-1.5">
                     {project.stack.map((item) => (
                       <Tag key={item}>{item}</Tag>
